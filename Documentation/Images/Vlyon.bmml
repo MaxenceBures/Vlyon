@@ -1,0 +1,341 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1577" measuredH="2711" mockupW="1543" mockupH="2706">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="208" y="5" w="388" h="489" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Accueil%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::IconLabel" x="232" y="117" w="-1" h="-1" measuredW="118" measuredH="63" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Afficher%20les%20stations</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::IconLabel" x="441" y="117" w="-1" h="-1" measuredW="168" measuredH="63" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Creer%20une%20Fiche%20intervention</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::IconLabel" x="205" y="233" w="-1" h="-1" measuredW="189" measuredH="63" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Afficher%20les%20Fiches%20interventions</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::IconLabel" x="401" y="233" w="-1" h="-1" measuredW="203" measuredH="63" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Creer%20une%20demande%20d%27intervention</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::IconLabel" x="187" y="341" w="-1" h="-1" measuredW="224" measuredH="63" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Afficher%20les%20demandes%20d%27interventions</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::ComboBox" x="475" y="87" w="-1" h="-1" measuredW="92" measuredH="24" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Technicien</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="670" y="5" w="388" h="489" measuredW="450" measuredH="400" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Accueil%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::ComboBox" x="928" y="87" w="-1" h="-1" measuredW="106" measuredH="24" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Responsable</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::IconLabel" x="685" y="117" w="-1" h="-1" measuredW="118" measuredH="63" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Afficher%20les%20stations</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::IconLabel" x="895" y="117" w="-1" h="-1" measuredW="148" measuredH="63" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Afficher%20les%20interventions</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::IconLabel" x="693" y="218" w="-1" h="-1" measuredW="103" measuredH="63" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Demande%20d%27achat</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::IconLabel" x="906" y="218" w="-1" h="-1" measuredW="126" measuredH="63" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Etat%20des%20commandes</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::IconLabel" x="693" y="317" w="-1" h="-1" measuredW="114" measuredH="63" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Deplacement%20velos</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="216" y="533" w="388" h="489" measuredW="450" measuredH="400" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Affichage%20des%20Stations%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Accordion" x="262" y="630" w="296" h="348" measuredW="150" measuredH="348" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <text>Station%0AQuartier%201%0A-Station%201%0A-Station%202%0AQuartier%202%0A-Station%203%0A-Station%204%0AQuartier%203%0A-Station%205%0A-Station%206</text>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="567" y="690" w="-1" h="200" measuredW="16" measuredH="100" zOrder="16" locked="false" isInGroup="-1"/>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::Button" x="441" y="767" w="98" h="21" measuredW="95" measuredH="27" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Informations</text>
+      </controlProperties>
+    </control>
+    <control controlID="22" controlTypeID="com.balsamiq.mockups::Button" x="441" y="794" w="98" h="21" measuredW="95" measuredH="27" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Informations</text>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="708" y="533" w="388" h="489" measuredW="450" measuredH="400" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Informations%20Stations%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::DataGrid" x="723" y="645" w="325" h="143" measuredW="245" measuredH="141" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Code%20Velo%2C%20Etat%20Velo%20%2C%20Intervention%0A01111111%2C%20Repar%E9%0A022222%20%2C%20Endommag%E9%2C%5Bx%5D%0A033333%20%2C%20Neuf%2C%0A044444%20%2C%20Cass%E9%2C%5B-%5D%0A%7B65L%2C%200R%2C%2035%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::Arrow" x="514" y="770" w="267" h="10" measuredW="150" measuredH="100" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="1189" y="533" w="388" h="489" measuredW="450" measuredH="400" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Modification%20Etat%20Velos%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::Button" x="1050" y="670" w="-1" h="-1" measuredW="55" measuredH="27" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Modif</text>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::Button" x="1050" y="697" w="-1" h="-1" measuredW="55" measuredH="27" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Modif</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::Button" x="1050" y="731" w="-1" h="-1" measuredW="55" measuredH="27" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Modif</text>
+      </controlProperties>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::Button" x="1050" y="755" w="-1" h="-1" measuredW="55" measuredH="27" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Modif</text>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::ComboBox" x="1270" y="653" w="70" h="-1" measuredW="55" measuredH="78" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Etat%0ANeuf%0AReparer%0ACasser</text>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::CheckBox" x="1460" y="656" w="106" h="22" measuredW="92" measuredH="22" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Intervention</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="216" y="1080" w="388" h="489" measuredW="450" measuredH="400" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ajouter%20une%20Demande%20%20d%27Intervention%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::TextArea" x="256" y="1247" w="-1" h="-1" measuredW="200" measuredH="140" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Detail%20de%20l%27intervention</text>
+      </controlProperties>
+    </control>
+    <control controlID="42" controlTypeID="com.balsamiq.mockups::ComboBox" x="256" y="1428" w="100" h="-1" measuredW="72" measuredH="24" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Station</text>
+      </controlProperties>
+    </control>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::Button" x="418" y="1467" w="-1" h="-1" measuredW="63" measuredH="27" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Valider</text>
+      </controlProperties>
+    </control>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::Button" x="1482" y="945" w="-1" h="-1" measuredW="63" measuredH="27" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Valider</text>
+      </controlProperties>
+    </control>
+    <control controlID="45" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="664" y="1615" w="533" h="489" measuredW="450" measuredH="400" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Afficher%20les%20Intervention%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="46" controlTypeID="com.balsamiq.mockups::Alert" x="1166" y="846" w="-1" h="-1" measuredW="200" measuredH="133" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Alert%0AEtes%20vous%20sur%20de%20vouloir%20effectuer%20cette%20modification%0ANon%2C%20Oui</text>
+      </controlProperties>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::Arrow" x="1308" y="879" w="195" h="66" measuredW="150" measuredH="100" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::DataGrid" x="693" y="1761" w="489" h="143" measuredW="539" measuredH="111" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Code%20Velo%2C%20Reparation%20Effectu%E9e%20%2C%20Reparation%2C%20Responsable%2C%20Date%2CFin%2C%20dur%E9e%20%28h%29%0A01111111%2C%20Fourche%20cass%E9%2C%20%5B-%5D%2C%200123%2C%2005/11%2C06/11%2C%201%0A022222%20%2C%20Pneu%20degongl%E9%2C%5Bx%5D%2C%204563%2C%2009/12%2C11/12%2C%203%0A%20%0A%7B65L%2C%200R%2C%2035%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="678" y="1073" w="388" h="489" measuredW="450" measuredH="400" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Afficher%20les%20%20demandes%20Intervention%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::DataGrid" x="708" y="1216" w="325" h="143" measuredW="389" measuredH="111" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Code%20Velo%2C%20Motif%20%2C%20Garage%2C%20Station%2C%20Date%2C%20attache%0A01111111%2C%20Fourche%20cass%E9%2C%20%5Bx%5D%2C%2004%2C%2005/11%2C%201%0A022222%20%2C%20Pneu%20degongl%E9%2C%5B-%5D%2C%2008%2C%2009/12%2C%203%0A%20%0A%7B65L%2C%200R%2C%2035%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="183" y="1621" w="414" h="545" measuredW="450" measuredH="400" zOrder="40" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ajouter%20une%20Fiche%20d%27Intervention%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::DateChooser" x="389" y="1736" w="-1" h="-1" measuredW="117" measuredH="25" zOrder="41" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>07/11%20/13%20%20%20%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="58" controlTypeID="com.balsamiq.mockups::Button" x="262" y="1736" w="-1" h="-1" measuredW="57" measuredH="27" zOrder="42" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Debut</text>
+      </controlProperties>
+    </control>
+    <control controlID="60" controlTypeID="com.balsamiq.mockups::TextInput" x="262" y="1789" w="-1" h="-1" measuredW="71" measuredH="27" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Dur%E9e%20%28h%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="61" controlTypeID="com.balsamiq.mockups::TextArea" x="256" y="1831" w="-1" h="-1" measuredW="200" measuredH="140" zOrder="44" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Detail%20de%20la%20reparation</text>
+      </controlProperties>
+    </control>
+    <control controlID="62" controlTypeID="com.balsamiq.mockups::Switch" x="376" y="2030" w="-1" h="-1" measuredW="68" measuredH="28" zOrder="45" locked="false" isInGroup="-1"/>
+    <control controlID="63" controlTypeID="com.balsamiq.mockups::Button" x="280" y="2031" w="-1" h="-1" measuredW="82" measuredH="27" zOrder="46" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Reparable</text>
+      </controlProperties>
+    </control>
+    <control controlID="64" controlTypeID="com.balsamiq.mockups::Button" x="280" y="2086" w="-1" h="-1" measuredW="80" measuredH="27" zOrder="47" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Sur%20place</text>
+      </controlProperties>
+    </control>
+    <control controlID="65" controlTypeID="com.balsamiq.mockups::Switch" x="376" y="2085" w="-1" h="-1" measuredW="68" measuredH="28" zOrder="48" locked="false" isInGroup="-1"/>
+    <control controlID="66" controlTypeID="com.balsamiq.mockups::Button" x="494" y="2095" w="-1" h="-1" measuredW="63" measuredH="27" zOrder="49" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Valider</text>
+      </controlProperties>
+    </control>
+    <control controlID="67" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="187" y="2222" w="388" h="489" measuredW="450" measuredH="400" zOrder="50" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Demande%20d%27achat%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="68" controlTypeID="com.balsamiq.mockups::ComboBox" x="241" y="2342" w="-1" h="-1" measuredW="72" measuredH="93" zOrder="51" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Produit%0ARoue%0AFourche%0ASelle%0AVelo</text>
+      </controlProperties>
+    </control>
+    <control controlID="69" controlTypeID="com.balsamiq.mockups::NumericStepper" x="409" y="2352" w="-1" h="-1" measuredW="41" measuredH="24" zOrder="52" locked="false" isInGroup="-1"/>
+    <control controlID="70" controlTypeID="com.balsamiq.mockups::Button" x="456" y="2636" w="-1" h="-1" measuredW="63" measuredH="27" zOrder="53" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Valider</text>
+      </controlProperties>
+    </control>
+    <control controlID="71" controlTypeID="com.balsamiq.mockups::PointyButton" x="217" y="603" w="-1" h="-1" measuredW="60" measuredH="27" zOrder="54" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Retour</text>
+      </controlProperties>
+    </control>
+    <control controlID="72" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="1019" y="2222" w="533" h="489" measuredW="450" measuredH="400" zOrder="55" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Afficher%20les%20Demandes%20d%27achats%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="73" controlTypeID="com.balsamiq.mockups::DataGrid" x="1043" y="2376" w="489" h="143" measuredW="433" measuredH="111" zOrder="56" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Code%20Produit%2C%20Libell%E9%20Produit%20%2C%20Quantit%E9%2C%20Date%20Commande%2C%20%20Valid%E9%0A01111111%2C%20Fourche%20cass%E9%2C%20%20012%2C%2005/11%2C%20%5B-%5D%2C%0A022222%20%2C%20Pneu%20degongl%E9%2C%20013%2C%2005/11%2C%20%5B-%5D%2C%0A%20%0A%7B65L%2C%200R%2C%2035%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="74" controlTypeID="com.balsamiq.mockups::Switch" x="1407" y="653" w="-1" h="-1" measuredW="68" measuredH="28" zOrder="57" locked="false" isInGroup="-1"/>
+    <control controlID="75" controlTypeID="com.balsamiq.mockups::StickyNote" x="487" y="1329" w="-1" h="-1" measuredW="109" measuredH="123" zOrder="58" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>ajout%20code%20velo%0ANumero%20de%20l%27attache</text>
+      </controlProperties>
+    </control>
+    <control controlID="76" controlTypeID="com.balsamiq.mockups::Button" x="1043" y="1237" w="-1" h="-1" measuredW="57" measuredH="27" zOrder="59" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Detail</text>
+      </controlProperties>
+    </control>
+    <control controlID="77" controlTypeID="com.balsamiq.mockups::Button" x="1043" y="1264" w="-1" h="-1" measuredW="57" measuredH="27" zOrder="60" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Detail</text>
+      </controlProperties>
+    </control>
+    <control controlID="78" controlTypeID="com.balsamiq.mockups::TextInput" x="262" y="1182" w="-1" h="-1" measuredW="150" measuredH="27" zOrder="61" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Libelle%20de%20l%27intervention</text>
+      </controlProperties>
+    </control>
+    <control controlID="80" controlTypeID="com.balsamiq.mockups::StickyNote" x="1114" y="87" w="109" h="182" measuredW="109" measuredH="123" zOrder="62" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Les%20listes%20deroulantes%20ne%20permettent%20de%20changer%20le%20role%20de%20l%27utilisateur</text>
+      </controlProperties>
+    </control>
+    <control controlID="81" controlTypeID="com.balsamiq.mockups::StickyNote" x="1073" y="326" w="150" h="139" measuredW="109" measuredH="123" zOrder="63" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Deplacement%20velo%2C%20affichage%20des%20stations%20ayant%20au%20minimum%20de%203%20attaches</text>
+      </controlProperties>
+    </control>
+    <control controlID="82" controlTypeID="com.balsamiq.mockups::StickyNote" x="34" y="1804" w="-1" h="-1" measuredW="109" measuredH="123" zOrder="64" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Date%20fin%20automatiquement%20ajout%E9e%20%28Date%20syst%E8me%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="83" controlTypeID="com.balsamiq.mockups::ComboBox" x="394" y="1428" w="100" h="-1" measuredW="124" measuredH="24" zOrder="65" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Numero%20attache</text>
+      </controlProperties>
+    </control>
+    <control controlID="84" controlTypeID="com.balsamiq.mockups::Button" x="280" y="1986" w="-1" h="-1" measuredW="75" measuredH="27" zOrder="66" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Terminer</text>
+      </controlProperties>
+    </control>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::Switch" x="376" y="1985" w="-1" h="-1" measuredW="68" measuredH="28" zOrder="67" locked="false" isInGroup="-1"/>
+    <control controlID="86" controlTypeID="com.balsamiq.mockups::Alert" x="601" y="2458" w="-1" h="-1" measuredW="200" measuredH="133" zOrder="68" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Alert%0AEtes%20vous%20sur%20de%20vouloir%20effectuer%20cette%20modification%0ANon%2C%20Oui</text>
+      </controlProperties>
+    </control>
+    <control controlID="87" controlTypeID="com.balsamiq.mockups::Button" x="659" y="2581" w="-1" h="-1" measuredW="72" measuredH="27" zOrder="69" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Modifiier</text>
+      </controlProperties>
+    </control>
+    <control controlID="88" controlTypeID="com.balsamiq.mockups::Arrow" x="489" y="2468" w="-1" h="-1" measuredW="150" measuredH="100" zOrder="70" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Modification%20demande</text>
+      </controlProperties>
+    </control>
+    <control controlID="90" controlTypeID="com.balsamiq.mockups::MenuBar" x="1381" y="2452" w="-1" h="-1" measuredW="164" measuredH="29" zOrder="71" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Modifier%2C%20Supprimer</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
