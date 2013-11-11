@@ -53,6 +53,7 @@ create table TECHNICIEN
     Tec_Matricule     CHAR(5)                not null,
     Tec_Nom           VARCHAR(35)           null    ,
     Tec_Prenom        VARCHAR(35)           null    ,
+    Tec_Pwd        	  VARCHAR(40)            not null    ,
     constraint PK_TECHNICIEN primary key (Tec_Matricule)
 );
 
