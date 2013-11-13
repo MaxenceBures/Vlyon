@@ -1,6 +1,6 @@
 <?php
 
-    include('/include/functions.php');
+    include('./include/functions.php');
     login();
 
     session_start();
