@@ -8,13 +8,27 @@
     if(!isset($_SESSION['id'])) {
         // On redirige l'utilisateur vers une page de login
         header('Location:/Vlyon/Pages/connexion.php');
+		die;
     }
-    else
-    {
+   
+	switch($_GET['page'])
+				{
+					case "afficherStation":
+						$fichier = "FO/Vues/Station/fo_AfficherStation.php" ;
+						$titre   = "CréeStation";
+						break ;	
+					default :
+						$fichier = "Pages/accueil.php" ;
+						$titre   = "Accueil";
+						break;
+				}
+											
+	require_once("mdl/menu.php") ;				
     		echo 'vous etes connectes';
-    ?>		</br>
-    		
+    ?>	
+	
     		<a href="/Vlyon/Pages/deconnexion.php">Se deconnecter</a>
-    <?php }
- 
+		<?php
+		include($fichier);
+	
 ?>
