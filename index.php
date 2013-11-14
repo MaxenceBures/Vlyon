@@ -11,7 +11,8 @@
     }
     else
     {
-    		echo 'vous etes connectes';
+    		
+
     ?>		</br>
     		
     		<a href="/Vlyon/Pages/deconnexion.php">Se deconnecter</a>
