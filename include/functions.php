@@ -57,5 +57,16 @@ catch(Exception $e)
         session_destroy();
         header ('Location:../index.php');
     }
+    
+	function createdemandeint(){
+		 if(isset($_POST['go_createint'])) {
+ 
+			 $date = date("d-m-Y") + date("H:i");
+ 
+            // Si les deux champs ne sont pas vides
+            if(!empty($_POST['velo']) && !empty($_POST['motif'])) {
+            }
 
+	}
+	}
 ?>
