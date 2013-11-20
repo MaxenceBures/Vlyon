@@ -9,8 +9,7 @@
         // On redirige l'utilisateur vers une page de login
         header('Location:/Vlyon/Pages/connexion.php');
 		die;
-    }
-
+    
    
 	switch($_GET['page'])
 				{
@@ -26,18 +25,19 @@
 											
 	require_once("mdl/menu.php") ;				
     		echo 'vous etes connectes';
-    ?>	
+    	
 	
-
+	}
+		
     else
     {
     		
 
-    ?>		</br>
+    ?>	
+    	</br><a href="/Vlyon/Pages/deconnexion.php">Se deconnecter</a>
     		
-
-    		<a href="/Vlyon/Pages/deconnexion.php">Se deconnecter</a>
-		<?php
+		<?php 
+		}
 		include($fichier);
 	
 ?>

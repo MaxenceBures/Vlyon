@@ -2,8 +2,8 @@
  try
 {
   
-    mysql_connect('localhost', 'vlyon', 'mpvlyon','Vlyon'); // Votre serveur (ex : 'localhost'), login serveur (ex : 'root'), mot de passe (ex : '')
-   // mysqli_select_db('Vlyon'); // Nom de votre base de données
+    mysql_connect('localhost', 'Vlyon', 'mpvlyon'); // Votre serveur (ex : 'localhost'), login serveur (ex : 'root'), mot de passe (ex : '')
+    mysql_select_db('Vlyon'); // Nom de votre base de données
  }
 catch(Exception $e)
 {
@@ -20,8 +20,8 @@ catch(Exception $e)
             if(!empty($_POST['login']) && !empty($_POST['password'])) {
  
                 // On éxécute une requête pour détecter si le login entré existe dans la base
-                $query = mysql_query("SELECT Tec_Pwd FROM TECHNICIEN WHERE TEC_MATRICULE = '".$_POST['login']."'");
- 
+                $query = mysql_query("SELECT * FROM TECHNICIEN WHERE TEC_MATRICULE = '".$_POST['login']."'");
+
                 // Si on a un résultat => il existe
                 if(mysql_num_rows($query) == 1) {
                     $user = mysql_fetch_object($query);
@@ -51,7 +51,7 @@ catch(Exception $e)
             }
         }
     }
-    
+   
     function logout() {
     
         session_start();
@@ -67,7 +67,17 @@ catch(Exception $e)
  
             // Si les deux champs ne sont pas vides
             if(!empty($_POST['velo']) && !empty($_POST['motif'])) {
+           echo($_POST['velo']);
+           echo($_POST['motif']);
+           	if(empty($_POST['traite'])){
+	           	$traite = false;
+           	}
+           	else{
+	           	$traite = true;
+           	}
+           echo($traite);
             }
+            
 
 	}
 	}
