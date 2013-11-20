@@ -2,8 +2,8 @@
  try
 {
   
-    mysql_connect('localhost', 'vlyon', 'mpvlyon'); // Votre serveur (ex : 'localhost'), login serveur (ex : 'root'), mot de passe (ex : '')
-    mysql_select_db('vlyon'); // Nom de votre base de données
+    mysql_connect('localhost', 'vlyon', 'mpvlyon','Vlyon'); // Votre serveur (ex : 'localhost'), login serveur (ex : 'root'), mot de passe (ex : '')
+   // mysqli_select_db('Vlyon'); // Nom de votre base de données
  }
 catch(Exception $e)
 {
@@ -20,7 +20,7 @@ catch(Exception $e)
             if(!empty($_POST['login']) && !empty($_POST['password'])) {
  
                 // On éxécute une requête pour détecter si le login entré existe dans la base
-                $query = mysql_query("SELECT * FROM TECHNICIEN WHERE TEC_MATRICULE = '".$_POST['login']."'");
+                $query = mysql_query("SELECT Tec_Pwd FROM TECHNICIEN WHERE TEC_MATRICULE = '".$_POST['login']."'");
  
                 // Si on a un résultat => il existe
                 if(mysql_num_rows($query) == 1) {
@@ -42,9 +42,11 @@ catch(Exception $e)
                     }
  
                 } else {
+                var_dump($query);
                     echo 'Ce login nexiste pas dans notre base.';
                 }
             } else {
+            
                 echo 'Vous devez remplir tous les champs !';
             }
         }

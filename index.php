@@ -10,7 +10,7 @@
         header('Location:/Vlyon/Pages/connexion.php');
 		die;
     }
-<<<<<<< HEAD
+
    
 	switch($_GET['page'])
 				{
@@ -28,14 +28,14 @@
     		echo 'vous etes connectes';
     ?>	
 	
-=======
+
     else
     {
     		
 
     ?>		</br>
     		
->>>>>>> 60647d9f0e0e03508f564bc42ef583008c966e4d
+
     		<a href="/Vlyon/Pages/deconnexion.php">Se deconnecter</a>
 		<?php
 		include($fichier);
