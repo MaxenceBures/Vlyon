@@ -1,9 +1,9 @@
 <?php
-
+    session_start();
     include('./include/functions.php');
     login();
 
-    session_start();
+
     // Si la variable de session n'existe pas
     if(!isset($_SESSION['id'])) {
         // On redirige l'utilisateur vers une page de login
@@ -39,9 +39,7 @@
 	require_once("mdl/menu.php") ;				
     		echo 'vous etes connectes';
     	
-	
-	
-    		
+
 
     ?>	
     	</br><a href="/Vlyon/Pages/deconnexion.php">Se deconnecter</a>

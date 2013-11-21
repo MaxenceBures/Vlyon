@@ -1,4 +1,5 @@
 <?php
+session_start();
  try
 {
   
@@ -65,27 +66,39 @@ catch(Exception $e)
         session_destroy();
         header ('Location:../index.php');
     }
-    
+   
 	function createdemandeint(){
-		 if(isset($_POST['go_createint'])) {
+		 if (isset($_POST['go_createint'])) 
+		 {
  
 			 $date = date("d-m-Y") + date("H:i");
  
             // Si les deux champs ne sont pas vides
-            if(!empty($_POST['velo']) && !empty($_POST['motif'])) {
-				echo($_POST['velo']);
-				echo($_POST['motif']);
-					if(empty($_POST['traite']))
-						{
-						$traite = false;
-						}
-						else{
-	           	$traite = true;
-           	}
-           echo($traite);
-            }
-            
-
+            if( !empty($_POST['velo']) && !empty($_POST['motif'])) 
+            {
+            	$motif = $_POST['motif'];
+				//echo($_POST['velo']);
+				//echo($_POST['motif']);
+				if (empty($_POST['traite']))
+				{
+					$traite = false;
+				}
+				else
+				{
+					$traite = true;
+				}
+				echo($traite);
+			
+				$count = mysql_num_rows(mysql_query("SELECT count(DemI_Num) from DEMANDEINTER"));
+						//echo ($count+'<br>');
+						//echo ("velo "+$_POST['velo']+'</br>');	
+						//echo ($motif);
+						//echo ("id "+$_SESSION['id']+'</br>');								
+						///echo ($count  +' Num '+ $_POST['velo'] +' Velo '+$_SESSION['id']+' Technicien '+$_POST['motif']+' motif '+$traite+' Traite');
+				$query = mysql_query("INSERT INTO DEMANDEINTER(DemI_Num, DemI_Velo, DemI_Date, DemI_Technicien, DemI_Motif, DemI_Traite) VALUES('$count','', '".$_POST['velo']."', '".$_SESSION['id']."', '".$_POST['motif']."', '$traite')");
+             var_dump($query);
+             
+			 }
 	}
 	}
 ?>
