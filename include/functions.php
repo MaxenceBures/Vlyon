@@ -17,17 +17,20 @@ catch(Exception $e)
         if(isset($_POST['go_login'])) {
  
             // Si les deux champs ne sont pas vides
-            if(!empty($_POST['login']) && !empty($_POST['password'])) {
+            if(!empty($_POST['login']) && !empty($_POST['password'])) 
+            {
  
                 // On éxécute une requête pour détecter si le login entré existe dans la base
                 $query = mysql_query("SELECT * FROM TECHNICIEN WHERE TEC_MATRICULE = '".$_POST['login']."'");
 
                 // Si on a un résultat => il existe
-                if(mysql_num_rows($query) == 1) {
+                if (mysql_num_rows($query) == 1) 
+                {
                     $user = mysql_fetch_object($query);
  
                     // On vérifie la concordance des mots de passe (en md5)
-                    if(sha1($_POST['password']) == $user->Tec_Pwd) {
+                    if(sha1($_POST['password']) == $user->Tec_Pwd) 
+                    {
  
                         // Si on arrive jusque ici c'est que le couple login / mot de passe est résolu
                         // On lance donc la session
@@ -37,15 +40,18 @@ catch(Exception $e)
                         //$_SESSION['login'] = $user->login;
                           header('Location: ../index.php');
  
-                    } else {
+                    }
+                    else {
                         echo 'Mauvais mot de passe pour cet utilisateur.';
                     }
  
-                } else {
+                } 
+                else {
                 var_dump($query);
                     echo 'Ce login nexiste pas dans notre base.';
                 }
-            } else {
+            } 
+            else {
             
                 echo 'Vous devez remplir tous les champs !';
             }
@@ -67,12 +73,13 @@ catch(Exception $e)
  
             // Si les deux champs ne sont pas vides
             if(!empty($_POST['velo']) && !empty($_POST['motif'])) {
-           echo($_POST['velo']);
-           echo($_POST['motif']);
-           	if(empty($_POST['traite'])){
-	           	$traite = false;
-           	}
-           	else{
+				echo($_POST['velo']);
+				echo($_POST['motif']);
+					if(empty($_POST['traite']))
+						{
+						$traite = false;
+						}
+						else{
 	           	$traite = true;
            	}
            echo($traite);

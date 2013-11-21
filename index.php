@@ -10,7 +10,9 @@
         header('Location:/Vlyon/Pages/connexion.php');
 		die;
     
-   
+   }
+   else
+   {
 	switch($_GET['page'])
 				{
 					case "afficherStation":
@@ -27,10 +29,7 @@
     		echo 'vous etes connectes';
     	
 	
-	}
-		
-    else
-    {
+	
     		
 
     ?>	
