@@ -13,17 +13,28 @@
    }
    else
    {
-	switch($_GET['page'])
-				{
-					case "afficherStation":
-						$fichier = "FO/Vues/Station/fo_AfficherStation.php" ;
-						$titre   = "CréeStation";
-						break ;	
-					default :
-						$fichier = "Pages/accueil.php" ;
-						$titre   = "Accueil";
-						break;
-				}
+		switch($_GET['page'])
+		{
+			case "afficherStation":
+				$fichier = "FO/Vues/Station/fo_AfficherStation.php" ;
+				$titre   = "CréeStation";
+				break ;	
+			case "commanderProduit":
+				$fichier = "FO/Vues/Produit/fo_commanderProduit.php";
+				$titre   = "Commander un produit";
+				break;
+			case "cdeProduit":
+				$fichier = "FO/Modeles/Produit/ajouterCommande.inc.php";
+				break;
+			case "listeCommande":
+				$fichier = "FO/Vues/Produit/fo_listeCommandePdt.php";
+				$titre   = "Liste des commandes";
+				break;
+			default :
+				$fichier = "Pages/accueil.php" ;
+				$titre   = "Accueil";
+				break;
+		}
 											
 	require_once("mdl/menu.php") ;				
     		echo 'vous etes connectes';
