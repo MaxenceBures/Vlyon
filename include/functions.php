@@ -71,7 +71,7 @@ catch(Exception $e)
 		 if (isset($_POST['go_createint'])) 
 		 {
 			 
-			 $date = date("d-m-Y");
+			 $date = date("Y-m-d");
 			 $id = $_SESSION['id'];
 			 $velo = $_POST['velo'];
 			 $motif = $_POST['motif'];
@@ -83,17 +83,17 @@ catch(Exception $e)
 				//echo($_POST['motif']);
 				if (empty($_POST['traite']))
 				{
-					$traite = false;
+					$traite = 0;
 				}
 				else
 				{
-					$traite = true;
+					$traite = 1;
 				}
 				echo($traite);
-			
-				$count = mysql_num_rows(mysql_query("SELECT count(DemI_Num) from DEMANDEINTER"));
-						//echo ($count);
-				$query = mysql_query("INSERT INTO DEMANDEINTER(DemI_Num, DemI_Velo, DemI_Date, DemI_Technicien, DemI_Motif, DemI_Traite) VALUES('".$count."','".$date."', '".$velo."', '".$id."', '".$motif."', '".$traite."')") or die (mysql_error());
+				
+				$count = mysql_fetch_row(mysql_query("SELECT max(DemI_Num) from DEMANDEINTER"));
+				$test = $count[0] + 1;
+				$query = mysql_query("INSERT INTO DEMANDEINTER(DemI_Num, DemI_Velo, DemI_Date, DemI_Technicien, DemI_Motif, DemI_Traite) VALUES('".$test."', '".$velo."','".$date."', '".$id."', '".$motif."', '".$traite."')") or die (mysql_error());
              var_dump($query);
              
 			 }

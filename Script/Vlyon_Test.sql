@@ -29,7 +29,7 @@ USE `Vlyon`;
 --
 
 CREATE TABLE `BONINTERV` (
-  `BI_Num` char(10) NOT NULL,
+  `BI_Num` INTEGER(10) NOT NULL,
   `BI_Velo` char(5) NOT NULL,
   `BI_DatDebut` date DEFAULT NULL,
   `BI_DatFin` date DEFAULT NULL,
@@ -52,7 +52,7 @@ CREATE TABLE `BONINTERV` (
 --
 
 CREATE TABLE `DEMANDEINTER` (
-  `DemI_Num` char(5) NOT NULL,
+  `DemI_Num` INTEGER(5) NOT NULL,
   `DemI_Velo` char(5) NOT NULL,
   `DemI_Date` date DEFAULT NULL,
   `DemI_Technicien` char(5) NOT NULL,
