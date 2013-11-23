@@ -1,4 +1,5 @@
 <?php
+	//session_start();
     include('../include/functions.php');
     login();
 ?>
