@@ -61,7 +61,7 @@ catch(Exception $e)
    
     function logout() {
     
-        //session_start();
+        session_start();
         unset($_SESSION);
         session_destroy();
         header ('Location:../index.php');
