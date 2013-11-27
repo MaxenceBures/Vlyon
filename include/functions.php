@@ -64,9 +64,39 @@ catch(Exception $e)
         session_start();
         unset($_SESSION);
         session_destroy();
-        header ('Location:../index.php');
+       // header ('Location:../index.php');
+        ?>
+             	<script language="Javascript">
+			alert("Vous êtes deconnecté");
+			window.location.replace("../index.php")
+			</script>
+		<?php
     }
    
+
+/*function listedemandeint(){
+	
+ 	$id = $_SESSION['id'];
+			
+	$query = mysql_query("SELECT DemI_Num, DemI_Velo, DemI_Date, DemI_Motif, DemI_Traite FROM DEMANDEINTER WHERE DemI_Technicien='".$id."'") or die (mysql_error());
+             var_dump($query);
+	}		*/
+FUNCTION listedemandeint()
+	{		
+		$oSql=  new clstBaseMysql("localhost", "Vlyon", "mpvlyon", "Vlyon");	
+		$sReq = " SELECT DemI_Num, DemI_Velo, DemI_Date, DemI_Motif, DemI_Traite FROM DEMANDEINTER WHERE DemI_Technicien='".$id."' ";
+		$rstPdt = $oSql->query($sReq) ;
+		$iNb = 0 ;
+		$demande = array() ;		
+		while ($demande2 = $oSql->tabAssoc($rstPdt) )
+		{
+			$iNb = $iNb + 1 ;
+			$demande[$iNb] =  $demande2 ;
+		}
+		return ($demande) ;
+	}
+	
+
 	function createdemandeint(){
 		 if (isset($_POST['go_createint'])) 
 		 {
@@ -95,7 +125,12 @@ catch(Exception $e)
 				$test = $count[0] + 1;
 				$query = mysql_query("INSERT INTO DEMANDEINTER(DemI_Num, DemI_Velo, DemI_Date, DemI_Technicien, DemI_Motif, DemI_Traite) VALUES('".$test."', '".$velo."','".$date."', '".$id."', '".$motif."', '".$traite."')") or die (mysql_error());
              var_dump($query);
-             
+		?>
+             	<script language="Javascript">
+			alert("Demande enregistré");
+			window.location.replace("../index.php")
+			</script>
+		<?php
 			 }
 	}
 	}
