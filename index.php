@@ -30,6 +30,10 @@
 				$fichier = "FO/Vues/Produit/fo_listeCommandePdt.php";
 				$titre   = "Liste des commandes";
 				break;
+			case "ajouterInterv":
+				$fichier = "FO/Vues/Intervention/fo_ajouterInterv.php";
+				$titre   = "Ajouter une intervention";
+				break;
 			default :
 				$fichier = "Pages/accueil.php" ;
 				$titre   = "Accueil";
