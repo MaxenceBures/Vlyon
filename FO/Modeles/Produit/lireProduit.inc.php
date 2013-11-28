@@ -1,4 +1,11 @@
 <?php
+	function connecter()
+	{
+		require_once("classe/clstBaseMysql.classe.php") ;	
+		$oSql = new clstBaseMysql("localhost", "Vlyon", "mpvlyon", "vlyon") ;
+		return ($oSql) ;
+	}	
+	
 	FUNCTION getAllProduits()
 	{		
 		$oSql= connecter() ;		
@@ -19,7 +26,7 @@
 	{
 		$oSql = connecter();
 		$sReq = "SELECT Com_Code, Com_Date, Com_Qte, Com_Produit, Com_Valide, Pdt_Libelle
-				 FROM COMMANDE
+				 FROM COMMANDE, PRODUIT
 				 WHERE COMMANDE.Com_Produit = PRODUIT.Pdt_Code";
 		$rstCde = $oSql->query($sReq);
 		$iNb = 0;

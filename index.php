@@ -35,7 +35,7 @@
 				$titre   = "Accueil";
 				break;
 		}
-											
+
 	require_once("mdl/menu.php") ;				
     		echo 'vous etes connectes';
     	

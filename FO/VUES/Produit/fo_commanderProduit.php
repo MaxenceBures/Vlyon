@@ -8,10 +8,11 @@
 			foreach ($lesProduits as $unProduit)
 			{
 ?>
-				<option value="<?php echo $unProduit["Pdt_Code"]; ?>"><?php echo $unProduit["Pdt_Libelle"] ?> </option>
+				<option value="<?php echo $unProduit['Pdt_Code']; ?>"><?php echo $unProduit["Pdt_Libelle"] ?> </option>
 <?php	
 			}
 ?>
+		<input type="text" id="txt_qte" name="txt_qte" placeholder="Quantite"/>
 		</select>
 		<input type="submit" id="cmd_valider" name="cmd_valider" value="Valider">
 	</form>
