@@ -6,9 +6,9 @@
 		return ($oSql) ;
 	}	
 	
-	FUNCTION getAllStation()
+	FUNCTION getAllInfo()
 	{
-		$lesStations = array() ;
+		$lesInfos = array() ;
 		$oSql= connecter() ;
 		
 		$sReq = " SELECT Sta_Code, Sta_Nom, Sta_Quartier, Qua_id, Qua_lib
@@ -18,11 +18,10 @@
 		$sReqExe = $oSql->query($sReq);
 				
 		while ($uneLigne = $oSql->tabAssoc($sReqExe) ){
-			$lesStations[] =  $uneLigne ;
+			$lesInfos[] =  $uneLigne ;
 		}
 		
-		return $lesStations ;
+		return $lesInfos ;
 	}
-	
-	//FUNCTION getAllStation
+				
 ?>

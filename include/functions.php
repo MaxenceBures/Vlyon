@@ -81,7 +81,7 @@ catch(Exception $e)
 	$query = mysql_query("SELECT DemI_Num, DemI_Velo, DemI_Date, DemI_Motif, DemI_Traite FROM DEMANDEINTER WHERE DemI_Technicien='".$id."'") or die (mysql_error());
              var_dump($query);
 	}		*/
-FUNCTION listedemandeint()
+	function listedemandeint()
 	{		
 		$oSql=  new clstBaseMysql("localhost", "Vlyon", "mpvlyon", "Vlyon");	
 		$sReq = " SELECT DemI_Num, DemI_Velo, DemI_Date, DemI_Motif, DemI_Traite FROM DEMANDEINTER WHERE DemI_Technicien='".$id."' ";
