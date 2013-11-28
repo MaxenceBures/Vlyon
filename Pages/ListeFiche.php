@@ -1,7 +1,8 @@
 <?php
 	session_start();
-	require_once('../include/functions.php');
- //  listedemandeint();
+		require_once('../include/functions.php');
+		
+  //listedemandeint();
 ?>
 	<table border = 1 width="100%" >
 		<tr>
@@ -12,7 +13,10 @@
 			<th width="20%">Traite</th>
 		</tr>
 <?php
-		$demande = listedemandeint() ;
+	
+	//$id = $_SESSION('id');
+	echo $id;
+$demande = listedemandeint() ;
 		foreach ($demande as $demandes)			
 		{
 ?>

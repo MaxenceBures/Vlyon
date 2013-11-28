@@ -76,19 +76,20 @@ catch(Exception $e)
 
 /*function listedemandeint(){
 	
- 	$id = $_SESSION['id'];
+ 	
 			
 	$query = mysql_query("SELECT DemI_Num, DemI_Velo, DemI_Date, DemI_Motif, DemI_Traite FROM DEMANDEINTER WHERE DemI_Technicien='".$id."'") or die (mysql_error());
              var_dump($query);
 	}		*/
 	function listedemandeint()
 	{		
-		$oSql=  new clstBaseMysql("localhost", "Vlyon", "mpvlyon", "Vlyon");	
+		//$id = $_SESSION['id'];
+		$oSql=  mysql_connect("localhost", "Vlyon", "mpvlyon");	
 		$sReq = " SELECT DemI_Num, DemI_Velo, DemI_Date, DemI_Motif, DemI_Traite FROM DEMANDEINTER WHERE DemI_Technicien='".$id."' ";
-		$rstPdt = $oSql->query($sReq) ;
+		$rstPdt = mysql_query($sReq) ;
 		$iNb = 0 ;
 		$demande = array() ;		
-		while ($demande2 = $oSql->tabAssoc($rstPdt) )
+		while ($demande2 = mysql_fetch_assoc($rstPdt) )
 		{
 			$iNb = $iNb + 1 ;
 			$demande[$iNb] =  $demande2 ;
