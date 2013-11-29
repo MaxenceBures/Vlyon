@@ -15,7 +15,7 @@
 <?php
 	
 	//$id = $_SESSION('id');
-	echo $id;
+//	echo $id;
 $demande = listedemandeint() ;
 		foreach ($demande as $demandes)			
 		{

@@ -83,7 +83,7 @@ catch(Exception $e)
 	}		*/
 	function listedemandeint()
 	{		
-		//$id = $_SESSION['id'];
+		$id = $_SESSION['id'];
 		$oSql=  mysql_connect("localhost", "Vlyon", "mpvlyon");	
 		$sReq = " SELECT DemI_Num, DemI_Velo, DemI_Date, DemI_Motif, DemI_Traite FROM DEMANDEINTER WHERE DemI_Technicien='".$id."' ";
 		$rstPdt = mysql_query($sReq) ;
