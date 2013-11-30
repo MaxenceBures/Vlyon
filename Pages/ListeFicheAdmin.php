@@ -1,6 +1,6 @@
 <?php
 	session_start();
-		include('../include/functions.php');
+		require_once('../include/functions.php');
 		
   //listedemandeint();
 ?>
@@ -14,33 +14,26 @@
 			<th width="13%">Date</th>
 			<th width="13%">Motif</th>
 			<th width="20%">Traite</th>
+			<th width="13%">Technicien</th>
 		</tr>
-		<form  action="<?php $_SERVER['PHP_SELF']; ?>" name="SuppDem" method="POST">
 <?php
 	
 
-$demande = listedemandeint() ;
+$demande = listedemandeintAdmin() ;
 		foreach ($demande as $demandes)			
 		{
 ?>
 			<tr>
-				<td><?php echo $demandes["DemI_Num"] ; $code = $demandes["DemI_Num"] ;  var_dump($code); ?><input type="hidden"  value="<?= $code ?>" id="code" name="code"/></td>
+				<td><?php echo $demandes["DemI_Num"] ;  ?></td>
 				<td><?php echo $demandes["DemI_Velo"]; ?></td>
 				<td><?php echo $demandes["DemI_Station"]; ?></td>
 				<td><?php echo $demandes["DemI_Attache"] ; ?></td>
 				<td><?php echo $demandes["DemI_Date"] ; ?></td>
 				<td><?php echo $demandes["DemI_Motif"] ; ?></td>
 				<td><?php echo $demandes["DemI_Traite"] ;?></td>
-				<td colspan="1" ><input type="submit" name="go_SuppDem" id="go_SuppDem" value="Suppresion" onClick="
-						if(confirm('Vous allez consulter les informations concernant les stations'))
-						{	
-							submit();
-							
-						}
-						" />
-				</td>
+				<td><?php echo $demandes["DemI_Technicien"] ;?></td>
 			</tr>
 <?php
 		}
-?>	</form>
+?>
 	</table>

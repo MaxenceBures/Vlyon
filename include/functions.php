@@ -3,8 +3,11 @@
  try
 {
   
-    mysql_connect('localhost', 'Vlyon', 'mpvlyon'); // Votre serveur (ex : 'localhost'), login serveur (ex : 'root'), mot de passe (ex : '')
-    mysql_select_db('Vlyon'); // Nom de votre base de données
+  function connect(){
+     mysql_connect('localhost', 'Vlyon', 'mpvlyon'); // Votre serveur (ex : 'localhost'), login serveur (ex : 'root'), mot de passe (ex : '')
+     mysql_select_db('Vlyon'); // Nom de votre base de données
+  } 
+
  }
 catch(Exception $e)
 {
@@ -12,6 +15,7 @@ catch(Exception $e)
         die('Erreur : '.$e->getMessage());
         echo"connexion non fonctionnel";
 }
+     connect();
     function login() {
  
         // Si on a soumit le formulaire (si on a cliqué sur "Se connecter")
@@ -73,7 +77,21 @@ catch(Exception $e)
 		<?php
     }
    
-
+    function ListeDeroulanteStation()
+    {       
+     //   $oSql= connect() ;        
+        $sReq = " SELECT Sta_Code, Sta_Nom 
+                  FROM Station ";
+        $rstPdt = mysql_query($sReq) ;
+        $iNb = 0 ;
+        $oStation = array() ;        
+        while ($Station = mysql_fetch_assoc($rstPdt) )
+        {
+            $iNb = $iNb + 1 ;
+            $oStation[$iNb] =  $Station ;
+        }
+        return ($oStation) ;
+    }
 /*function listedemandeint(){
 	
  	
@@ -83,9 +101,10 @@ catch(Exception $e)
 	}		*/
 	function listedemandeint()
 	{		
-		$id = $_SESSION['id'];
-		$oSql=  mysql_connect("localhost", "Vlyon", "mpvlyon");	
-		$sReq = " SELECT DemI_Num, DemI_Velo, DemI_Date, DemI_Motif, DemI_Traite FROM DEMANDEINTER WHERE DemI_Technicien='".$id."' ";
+		
+        $id = $_SESSION['id'];
+		//$oSql=  mysql_connect("localhost", "Vlyon", "mpvlyon");	
+		$sReq = " SELECT DemI_Num, DemI_Velo, DemI_Attache, DemI_Station, DemI_Date, DemI_Motif, DemI_Traite  FROM DEMANDEINTER WHERE DemI_Technicien='".$id."' ";
 		$rstPdt = mysql_query($sReq) ;
 		$iNb = 0 ;
 		$demande = array() ;		
@@ -96,16 +115,45 @@ catch(Exception $e)
 		}
 		return ($demande) ;
 	}
-	
+
+    function listedemandeintAdmin()
+    {       
+        $id = $_SESSION['id'];
+     //   $oSql=  mysql_connect("localhost", "Vlyon", "mpvlyon"); 
+        $sReq = "SELECT DemI_Num, DemI_Velo, DemI_Attache, DemI_Station, DemI_Date, DemI_Motif, DemI_Traite, DemI_Technicien FROM DEMANDEINTER ";
+        $rstPdt = mysql_query($sReq) ;
+        $iNb = 0 ;
+        $demande = array() ;        
+        while ($demande2 = mysql_fetch_assoc($rstPdt) )
+        {
+            $iNb = $iNb + 1 ;
+            $demande[$iNb] =  $demande2 ;
+        }
+        return ($demande) ;
+    }	
+
+    function SuppDem()
+    {
+         if (isset($_POST['go_SuppDem'])) 
+         {
+             $id = $_POST['code'];
+                echo ($id);
+                var_dump($id);            
+              // $query = mysql_query("DELETE * FROM DEMANDEINTER WHERE DemI_Num ='".$id."'") or die (mysql_error());
+            //var_dump($query);
+         }
+    }
 
 	function createdemandeint(){
 		 if (isset($_POST['go_createint'])) 
 		 {
-			 
+			// connect();
 			 $date = date("Y-m-d");
 			 $id = $_SESSION['id'];
 			 $velo = $_POST['velo'];
 			 $motif = $_POST['motif'];
+             $attache = $_POST['attache'];
+             $station = $_POST['station'];
             // Si les deux champs ne sont pas vides
             if( !empty($_POST['velo']) && !empty($_POST['motif'])) 
             {
@@ -124,7 +172,7 @@ catch(Exception $e)
 				
 				$count = mysql_fetch_row(mysql_query("SELECT max(DemI_Num) from DEMANDEINTER"));
 				$test = $count[0] + 1;
-				$query = mysql_query("INSERT INTO DEMANDEINTER(DemI_Num, DemI_Velo, DemI_Date, DemI_Technicien, DemI_Motif, DemI_Traite) VALUES('".$test."', '".$velo."','".$date."', '".$id."', '".$motif."', '".$traite."')") or die (mysql_error());
+				$query = mysql_query("INSERT INTO DEMANDEINTER(DemI_Num, DemI_Velo, DemI_Date, DemI_Technicien, DemI_Motif, DemI_Traite, DemI_Attache, DemI_Station) VALUES('".$test."', '".$velo."','".$date."', '".$id."', '".$motif."', '".$traite."','".$attache."','".$station."')") or die (mysql_error());
              var_dump($query);
 		?>
              	<script language="Javascript">

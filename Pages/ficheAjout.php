@@ -2,6 +2,7 @@
     session_start();
     include('../include/functions.php');
     createdemandeint();
+  //  ListeDeroulanteStation();
     
    // phpinfo();
 ?>
@@ -17,6 +18,34 @@
 				</td>
 				<td>
 					<input type="text" id="velo" name="velo"/>
+				</td>
+			</tr>
+			</br>
+			<tr>
+				<td>
+				<label for="Station">Station : </label>
+				</td>
+				<td>
+				<select id="station" name="station">
+			<?php
+			$oStation = ListeDeroulanteStation() ;
+			foreach ($oStation as $Station)
+			{
+?>
+				<option value="<?php echo $Station['Sta_Code']; ?>"><?php echo $Station["Sta_Nom"] ?> </option>
+<?php	
+			}
+?>
+				</select>
+				</td>
+			</tr>
+			</br>
+			<tr>
+				<td>
+					<label for="attache">N° Attache : </label>
+				</td>
+				<td>
+					<input type="text" id="attache" name="attache"/>
 				</td>
 			</tr>
 			</br>
@@ -43,3 +72,4 @@
 	</form>
 </body>
 </html>
+
