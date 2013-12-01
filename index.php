@@ -1,5 +1,5 @@
 <?php
-    session_start();
+ session_start();
     include('./include/functions.php');
     login();
 
@@ -48,7 +48,6 @@
     ?>	
     	</br><a href="/Vlyon/Pages/listefiche.php">liste demande</a>
     	</br><a href="/Vlyon/Pages/listeficheAdmin.php">liste demande Admin</a>
-    	</br><a href="/Vlyon/Pages/Modiffiche.php">Modif demande </a>
     	</br><a href="/Vlyon/Pages/ficheajout.php">Ajout demande</a>
     	</br><a href="/Vlyon/Pages/deconnexion.php">Se deconnecter</a>
     		

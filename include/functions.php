@@ -50,7 +50,7 @@ catch(Exception $e)
  
                 } 
                 else {
-                var_dump($query);
+                
                     echo 'Ce login nexiste pas dans notre base.';
                 }
             } 
@@ -167,11 +167,8 @@ catch(Exception $e)
         {
           $traite = 1;
         }
-        echo($traite);
-        
-        
         $query = mysql_query("UPDATE demandeinter SET DemI_Motif='".$motif."', DemI_Attache='".$attache."', DemI_Station='".$station."', DemI_Traite='".$traite."'  Where DemI_Num='".$id."'") or die (mysql_error());
-             var_dump($query);
+            
          ?>
               <script language="Javascript">
                 alert("Modification enregistré");
