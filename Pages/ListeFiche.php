@@ -14,7 +14,7 @@
 			<th width="13%">Date</th>
 			<th width="13%">Motif</th>
 			<th width="20%">Traite</th>
-		</tr>
+			</tr>
 		<form  action="<?php $_SERVER['PHP_SELF']; ?>" name="SuppDem" method="POST">
 <?php
 	
@@ -31,14 +31,22 @@ $demande = listedemandeint() ;
 				<td><?php echo $demandes["DemI_Date"] ; ?></td>
 				<td><?php echo $demandes["DemI_Motif"] ; ?></td>
 				<td><?php echo $demandes["DemI_Traite"] ;?></td>
-				<td colspan="1" ><input type="submit" name="go_SuppDem" id="go_SuppDem" value="Suppresion" onClick="
-						if(confirm('Vous allez consulter les informations concernant les stations'))
+				<td><a href="suppression.php?variable=<?php print($demandes["DemI_Num"]) ?>"><input type="button" value="supprimer" onClick="if(confirm('Vous allez supprimer la demande choisie'))
 						{	
 							submit();
 							
 						}
-						" />
-				</td>
+						else
+   							 return false;
+						" /></a></td>
+				<td><a href="ModifFiche.php?variable=<?php print($demandes["DemI_Num"]) ?>"><input type="button" value="Modification" onClick="if(confirm('Vous allez modifier la demande choisie'))
+						{	
+							submit();
+							
+						}
+						else
+   							 return false;
+						" /></a></td>		
 			</tr>
 <?php
 		}
