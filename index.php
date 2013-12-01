@@ -34,6 +34,10 @@
 							<span class="byline">Hyperspace Engineer</span>
 			</div>	
 			<div class="top">
+			</br>
+			</br>
+			</br>
+			</br>
 			    <nav id="nav">
 				    <ul>
 				    	<li><a href="/Vlyon/Pages/listefiche.php" ><span class="fa fa-home">liste demande</span></a></li>
@@ -43,9 +47,10 @@
 				    </ul>
 				    </nav>
 			</div>
-    	</div>
-    </body>	
-    <?php
+			</div>
+			<?php
+    require_once("mdl/menu.php") ;				
+    		echo 'vous etes connectes';
 
 		switch($_GET['page'])
 		{
@@ -74,8 +79,7 @@
 				break;
 		}
 
-	require_once("mdl/menu.php") ;				
-    		echo 'vous etes connectes';
+	
     	
 
 
@@ -84,3 +88,6 @@
 		include($fichier);
 	
 ?>
+    	
+    </body>	
+    
