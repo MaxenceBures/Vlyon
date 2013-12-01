@@ -2,7 +2,6 @@
 	session_start();
 		include('../include/functions.php');
 		
-  //listedemandeint();
 ?>
 	<b>Demande d'intervention </b>
 	<table border = 1 width="100%" >
@@ -31,7 +30,7 @@ $demande = listedemandeint() ;
 				<td><?php echo $demandes["DemI_Date"] ; ?></td>
 				<td><?php echo $demandes["DemI_Motif"] ; ?></td>
 				<td><?php echo $demandes["DemI_Traite"] ;?></td>
-				<td><a href="suppression.php?variable=<?php print($demandes["DemI_Num"]) ?>"><input type="button" value="supprimer" onClick="if(confirm('Vous allez supprimer la demande choisie'))
+				<td><a href="FicheSuppression.php?variable=<?php print($demandes["DemI_Num"]) ?>"><input type="button" value="supprimer" onClick="if(confirm('Vous allez supprimer la demande choisie'))
 						{	
 							submit();
 							

@@ -48,6 +48,7 @@
     ?>	
     	</br><a href="/Vlyon/Pages/listefiche.php">liste demande</a>
     	</br><a href="/Vlyon/Pages/listeficheAdmin.php">liste demande Admin</a>
+    	</br><a href="/Vlyon/Pages/Modiffiche.php">Modif demande </a>
     	</br><a href="/Vlyon/Pages/ficheajout.php">Ajout demande</a>
     	</br><a href="/Vlyon/Pages/deconnexion.php">Se deconnecter</a>
     		

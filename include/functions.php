@@ -1,6 +1,5 @@
 <?php
-//session_start();
- try
+try
 {
   
   function connect(){
@@ -42,8 +41,7 @@ catch(Exception $e)
  
                         session_start();
                         $_SESSION['id'] = $user->Tec_Matricule;
-                        //$_SESSION['login'] = $user->login;
-                          header('Location: ../index.php');
+                        header('Location: ../index.php');
  
                     }
                     else {
@@ -68,18 +66,16 @@ catch(Exception $e)
         session_start();
         unset($_SESSION);
         session_destroy();
-       // header ('Location:../index.php');
         ?>
-             	<script language="Javascript">
-			alert("Vous êtes deconnecté");
-			window.location.replace("../index.php")
-			</script>
+         	<script language="Javascript">
+		      	alert("Vous êtes deconnecté");
+			      window.location.replace("../index.php")
+    			</script>
 		<?php
     }
    
     function ListeDeroulanteStation()
     {       
-     //   $oSql= connect() ;        
         $sReq = " SELECT Sta_Code, Sta_Nom 
                   FROM Station ";
         $rstPdt = mysql_query($sReq) ;
@@ -92,95 +88,98 @@ catch(Exception $e)
         }
         return ($oStation) ;
     }
-/*function listedemandeint(){
-	
- 	
-			
-	$query = mysql_query("SELECT DemI_Num, DemI_Velo, DemI_Date, DemI_Motif, DemI_Traite FROM DEMANDEINTER WHERE DemI_Technicien='".$id."'") or die (mysql_error());
-             var_dump($query);
-	}		*/
-	function listedemandeint()
-	{		
-		
-        $id = $_SESSION['id'];
-		//$oSql=  mysql_connect("localhost", "Vlyon", "mpvlyon");	
-		$sReq = " SELECT DemI_Num, DemI_Velo, DemI_Attache, DemI_Station, DemI_Date, DemI_Motif, DemI_Traite  FROM DEMANDEINTER WHERE DemI_Technicien='".$id."' ";
-		$rstPdt = mysql_query($sReq) ;
-		$iNb = 0 ;
-		$demande = array() ;		
-		while ($demande2 = mysql_fetch_assoc($rstPdt) )
-		{
-			$iNb = $iNb + 1 ;
-			$demande[$iNb] =  $demande2 ;
-		}
-		return ($demande) ;
+
+	  function listedemandeint()
+	  {		
+		    $id = $_SESSION['id'];
+		    $sReq = " SELECT DemI_Num, DemI_Velo, DemI_Attache, DemI_Station, DemI_Date, DemI_Motif, DemI_Traite  FROM DEMANDEINTER WHERE DemI_Technicien='".$id."' AND DemI_Valide=1 ";
+	     	$rstPdt = mysql_query($sReq) ;
+		    $iNb = 0 ;
+		    $demande = array() ;		
+		      while ($demande2 = mysql_fetch_assoc($rstPdt) )
+		         {
+			         $iNb = $iNb + 1 ;
+			         $demande[$iNb] =  $demande2 ;
+		         }
+		  return ($demande) ;
 	}
 
     function listedemandeintAdmin()
     {       
         $id = $_SESSION['id'];
-     //   $oSql=  mysql_connect("localhost", "Vlyon", "mpvlyon"); 
-        $sReq = "SELECT DemI_Num, DemI_Velo, DemI_Attache, DemI_Station, DemI_Date, DemI_Motif, DemI_Traite, DemI_Technicien FROM DEMANDEINTER ";
+        $sReq = "SELECT DemI_Num, DemI_Velo, DemI_Attache, DemI_Station, DemI_Date, DemI_Motif, DemI_Traite, DemI_Technicien, DemI_Valide FROM DEMANDEINTER ";
         $rstPdt = mysql_query($sReq) ;
         $iNb = 0 ;
         $demande = array() ;        
-        while ($demande2 = mysql_fetch_assoc($rstPdt) )
-        {
-            $iNb = $iNb + 1 ;
-            $demande[$iNb] =  $demande2 ;
-        }
-        return ($demande) ;
+          while ($demande2 = mysql_fetch_assoc($rstPdt) )
+            {
+              $iNb = $iNb + 1 ;
+              $demande[$iNb] =  $demande2 ;
+            }
+          return ($demande) ;
     }	
-
-    function SuppDem()
-    {
-         if (isset($_POST['go_SuppDem'])) 
-         {
-             $id = $_POST['code'];
-                echo ($id);
-                var_dump($id);            
-              // $query = mysql_query("DELETE * FROM DEMANDEINTER WHERE DemI_Num ='".$id."'") or die (mysql_error());
-            //var_dump($query);
-         }
-    }
 
 	function createdemandeint(){
 		 if (isset($_POST['go_createint'])) 
 		 {
-			// connect();
 			 $date = date("Y-m-d");
 			 $id = $_SESSION['id'];
 			 $velo = $_POST['velo'];
 			 $motif = $_POST['motif'];
-             $attache = $_POST['attache'];
-             $station = $_POST['station'];
-            // Si les deux champs ne sont pas vides
-            if( !empty($_POST['velo']) && !empty($_POST['motif'])) 
-            {
-            	$motif = $_POST['motif'];
-				//echo($_POST['velo']);
-				//echo($_POST['motif']);
-				if (empty($_POST['traite']))
-				{
-					$traite = 0;
-				}
-				else
-				{
-					$traite = 1;
-				}
-				echo($traite);
-				
+       $attache = $_POST['attache'];
+       $station = $_POST['station'];
+       $motif = $_POST['motif'];
+			  	if (empty($_POST['traite']))
+			     {
+				      	$traite = 0;
+			     }
+				  else
+				   {
+					      $traite = 1;
+				   }
 				$count = mysql_fetch_row(mysql_query("SELECT max(DemI_Num) from DEMANDEINTER"));
 				$test = $count[0] + 1;
-				$query = mysql_query("INSERT INTO DEMANDEINTER(DemI_Num, DemI_Velo, DemI_Date, DemI_Technicien, DemI_Motif, DemI_Traite, DemI_Attache, DemI_Station) VALUES('".$test."', '".$velo."','".$date."', '".$id."', '".$motif."', '".$traite."','".$attache."','".$station."')") or die (mysql_error());
-             var_dump($query);
+				$query = mysql_query("INSERT INTO DEMANDEINTER(DemI_Num, DemI_Velo, DemI_Date, DemI_Technicien, DemI_Motif, DemI_Traite, DemI_Attache, DemI_Station, DemI_Valide) VALUES('".$test."', '".$velo."','".$date."', '".$id."', '".$motif."', '".$traite."','".$attache."','".$station."', '1')") or die (mysql_error());
 		?>
              	<script language="Javascript">
 			alert("Demande enregistré");
 			window.location.replace("../index.php")
 			</script>
-		<?php
-			 }
+		<?php 
+	 }
 	}
-	}
+
+  function modifdemandeint()
+    {
+  
+     if (isset($_POST['go_modifint'])) 
+     {
+ 
+       $id = $_POST['id'];
+       $motif = $_POST['motif'];
+       $attache = $_POST['attache'];
+       $station = $_POST['station'];
+        if (empty($_POST['traite']))
+        {
+          $traite = 0;
+        }
+        else
+        {
+          $traite = 1;
+        }
+        echo($traite);
+        
+        
+        $query = mysql_query("UPDATE demandeinter SET DemI_Motif='".$motif."', DemI_Attache='".$attache."', DemI_Station='".$station."', DemI_Traite='".$traite."'  Where DemI_Num='".$id."'") or die (mysql_error());
+             var_dump($query);
+         ?>
+              <script language="Javascript">
+                alert("Modification enregistré");
+                window.location.replace("../index.php")
+              </script>
+          <?php
+       
+      }
+    }
+
 ?>

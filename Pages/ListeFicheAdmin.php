@@ -15,6 +15,7 @@
 			<th width="13%">Motif</th>
 			<th width="20%">Traite</th>
 			<th width="13%">Technicien</th>
+			<th width="13%">Valide</th>
 		</tr>
 <?php
 	
@@ -32,6 +33,7 @@ $demande = listedemandeintAdmin() ;
 				<td><?php echo $demandes["DemI_Motif"] ; ?></td>
 				<td><?php echo $demandes["DemI_Traite"] ;?></td>
 				<td><?php echo $demandes["DemI_Technicien"] ;?></td>
+				<td><?php echo $demandes["DemI_Valide"] ;?></td>
 			</tr>
 <?php
 		}
