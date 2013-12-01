@@ -26,7 +26,7 @@ if(isset($_SESSION['id'])) {
 					<label for="Station">Station : </label>
 					</td>
 					<td>
-					<select id="station" name="station">
+					<select id="station" required="" name="station">
 				<?php
 				$oStation = ListeDeroulanteStation() ;
 				foreach ($oStation as $Station)
@@ -45,7 +45,7 @@ if(isset($_SESSION['id'])) {
 						<label for="attache">N° Attache : </label>
 					</td>
 					<td>
-						<input type="text" id="attache" value="<?php echo($enreg['DemI_Attache']) ?>" name="attache"/>
+						<input type="text" required="" id="attache" value="<?php echo($enreg['DemI_Attache']) ?>" name="attache"/>
 					</td>
 				</tr>
 				</br>
