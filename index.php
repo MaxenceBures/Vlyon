@@ -13,6 +13,40 @@
    }
    else
    {
+   ?>	
+<html>
+	<head>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+	</head>
+	<body>
+		<div id="header" class="skel-panels-fixed">
+			<div id="logo">
+							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+							<h1 id="title"><?php echo($_SESSION['id']) ?></h1>
+							<span class="byline">Hyperspace Engineer</span>
+			</div>	
+			<div class="top">
+			    <nav id="nav">
+				    <ul>
+				    	<li><a href="/Vlyon/Pages/listefiche.php" ><span class="fa fa-home">liste demande</span></a></li>
+				    	<li><a href="/Vlyon/Pages/listeficheAdmin.php"><span class="fa fa-th">liste demande Admin</span></a></li>
+				    	<li><a href="/Vlyon/Pages/ficheajout.php"><span class="fa fa-user">Ajout demande</span></a></li>
+				    	<li><a href="/Vlyon/Pages/deconnexion.php"><span class="fa fa-envelope">Se deconnecter</span></a></li>
+				    </ul>
+				    </nav>
+			</div>
+    	</div>
+    </body>	
+    <?php
+
 		switch($_GET['page'])
 		{
 			case "afficherStation":
@@ -45,13 +79,7 @@
     	
 
 
-    ?>	
-    	</br><a href="/Vlyon/Pages/listefiche.php">liste demande</a>
-    	</br><a href="/Vlyon/Pages/listeficheAdmin.php">liste demande Admin</a>
-    	</br><a href="/Vlyon/Pages/ficheajout.php">Ajout demande</a>
-    	</br><a href="/Vlyon/Pages/deconnexion.php">Se deconnecter</a>
-    		
-		<?php 
+
 		}
 		include($fichier);
 	
