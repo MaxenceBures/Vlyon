@@ -88,6 +88,21 @@ catch(Exception $e)
         }
         return ($oStation) ;
     }
+function utilisateur()
+    {   
+    $id = $_SESSION['id'];
+    //var_dump($id);
+        $sReq = " SELECT Tec_Nom, Tec_Prenom FROM TECHNICIEN Where Tec_Matricule='".$id."'";
+        $rstPdt = mysql_query($sReq) ;
+        $iNb = 0 ;
+        $oUtilisateur = array() ;        
+        $Utilisateur = mysql_fetch_assoc($rstPdt);
+            
+        $oUtilisateur[1] =  $Utilisateur ;
+        
+        return ($oUtilisateur) ;
+    }
+
 
 	  function listedemandeint()
 	  {		
