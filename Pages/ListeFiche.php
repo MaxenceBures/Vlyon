@@ -8,6 +8,7 @@ $id = $_GET['variable'];
 <html>
 	<head></head>
 	<body>
+		<a href="../index.php"><img src="../css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
 		<b>Demande d'intervention </b>
 			<table border = 1 width="100%" >
 				<tr>

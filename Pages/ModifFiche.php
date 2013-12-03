@@ -9,6 +9,7 @@ if(isset($_SESSION['id'])) {
 	$enreg = mysql_fetch_assoc(mysql_query($requete));
 	?>
 	<html><body>
+	<a href="../index.php"><img src="../css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
 	<form id="modif_form" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 	<input type='hidden' name="id" id="id" value='<?php echo($id); ?>'/>
 			<table>
