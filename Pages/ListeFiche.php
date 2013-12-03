@@ -2,7 +2,8 @@
 session_start();
 if(isset($_SESSION['id'])) {
 include('../include/functions.php');
-		
+$id = $_GET['variable'];
+
 ?>
 <html>
 	<head></head>
@@ -20,7 +21,8 @@ include('../include/functions.php');
 				</tr>
 					<form  action="<?php $_SERVER['PHP_SELF']; ?>" name="SuppDem" method="POST">
 		<?php
-			$demande = listedemandeint() ;
+			$demande = listedemande2int($id);
+			var_dump($id);
 			foreach ($demande as $demandes)			
 				{
 		?>

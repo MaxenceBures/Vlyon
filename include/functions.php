@@ -40,6 +40,7 @@ catch(Exception $e)
                         // On lance donc la session
  
                         session_start();
+                        $_SESSION['Resp'] = $user->Tec_Responsable;
                         $_SESSION['id'] = $user->Tec_Matricule;
                         header('Location: ../index.php');
  
@@ -92,7 +93,7 @@ function utilisateur()
     {   
     $id = $_SESSION['id'];
     //var_dump($id);
-        $sReq = " SELECT Tec_Nom, Tec_Prenom FROM TECHNICIEN Where Tec_Matricule='".$id."'";
+        $sReq = " SELECT Tec_Nom, Tec_Prenom, Tec_Responsable FROM TECHNICIEN Where Tec_Matricule='".$id."'";
         $rstPdt = mysql_query($sReq) ;
         $iNb = 0 ;
         $oUtilisateur = array() ;        
@@ -118,6 +119,21 @@ function utilisateur()
 		         }
 		  return ($demande) ;
 	}
+
+  function listedemande2int($id)
+    {   
+        
+        $sReq = " SELECT DemI_Num, DemI_Velo, DemI_Attache, DemI_Station, DemI_Date, DemI_Motif, DemI_Traite  FROM DEMANDEINTER WHERE DemI_Num='".$id."' AND DemI_Valide=1 ";
+        $rstPdt = mysql_query($sReq) ;
+        $iNb = 0 ;
+        $demande = array() ;    
+          while ($demande2 = mysql_fetch_assoc($rstPdt) )
+             {
+               $iNb = $iNb + 1 ;
+               $demande[$iNb] =  $demande2 ;
+             }
+      return ($demande) ;
+  }
 
     function listedemandeintAdmin()
     {       

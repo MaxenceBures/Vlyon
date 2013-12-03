@@ -84,6 +84,8 @@
 		echo strtoupper($utilisateurs["Tec_Nom"]); 
 		echo" - ";
 		echo strtoupper($utilisateurs["Tec_Prenom"]);
+		$resp = $utilisateurs["Tec_Responsable"];
+		
 	}
 
 
@@ -91,9 +93,12 @@
 		 ?>
 	</div>
 	<nav id="nav"><ul>
-    	<li><a href="/Vlyon/Pages/listefiche.php">liste demande</a></li>
-    	<li><a href="/Vlyon/Pages/listeficheAdmin.php">liste demande Admin</a></li>
-    	<li><a href="/Vlyon/Pages/ficheajout.php">Ajout demande</a></li>
+	<?php if($resp == '1') { ?>
+		<li><a href="/Vlyon/Pages/listeficheAdmin.php">Liste Demande</a></li>		
+	<?php } else { ?>	
+    	<li><a href="/Vlyon/Pages/liste.php">Liste Demande</a></li>
+    <?php }  ?>	
+    	<li><a href="/Vlyon/Pages/ficheajout.php">Ajout Demande</a></li>
     	<li><a href="/Vlyon/Pages/deconnexion.php">Se deconnecter</a></li>
     </ul>
     </nav>
