@@ -94,7 +94,8 @@
 	</div>
 	<nav id="nav"><ul>
 	<?php if($resp == '1') { ?>
-		<li><a href="/Vlyon/Pages/listeficheAdmin.php">Liste Demande</a></li>		
+		<li><a href="/Vlyon/Pages/listeficheAdmin.php">Liste Demande</a></li>
+		<li><a href="/Vlyon/Pages/listeIntervention.php">Liste Intervention</a></li>		
 	<?php } else { ?>	
     	<li><a href="/Vlyon/Pages/liste.php">Liste Demande</a></li>
     <?php }  ?>	

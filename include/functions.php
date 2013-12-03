@@ -120,6 +120,21 @@ function utilisateur()
 		  return ($demande) ;
 	}
 
+     function listeint()
+    {   
+        $id = $_SESSION['id'];
+        $sReq = " SELECT BI_Num, BI_Velo, BI_DatDebut, BI_DatFin, BI_Reparable, BI_Demande, BI_SurPlace, BI_Duree, BI_CpteRendu, BI_Technicien  FROM boninterv";
+        $rstPdt = mysql_query($sReq) ;
+        $iNb = 0 ;
+        $intevention = array() ;    
+          while ($intevention2 = mysql_fetch_assoc($rstPdt) )
+             {
+               $iNb = $iNb + 1 ;
+               $intevention[$iNb] =  $intevention2 ;
+             }
+      return ($intevention) ;
+  }
+
   function listedemande2int($id)
     {   
         
