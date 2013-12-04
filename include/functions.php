@@ -246,36 +246,36 @@ function utilisateur()
   
      if (isset($_POST['go_modifint'])) 
      {
- 
+       $id = $_POST['id'];  
        $df = $_POST['df'];
        $cr = $_POST['cr'];
        $dr = $_POST['dr'];
-        if (empty($_POST['de']))
-        {
-          $de = 0;
-        }
-        else
+        if (isset($_POST['de']))
         {
           $de = 1;
         }
-        if (empty($_POST['sp']))
-        {
-          $sp = 0;
-        }
         else
+        {
+          $de = 0;
+        }
+        if (isset($_POST['sp']))
         {
           $sp = 1;
         }
-         if (empty($_POST['rp']))
-        {
-          $rp = 0;
-        }
         else
+        {
+          $sp = 0;
+        }
+         if (isset($_POST['rp']))
         {
           $rp = 1;
         }
-        $query = mysql_query("UPDATE boninterv SET BI_CpteRendu='".$cr."', BI_DatFin='".$df."', BI_Duree ='".$dr."', BI_Demande='".$de."'  Where DemI_Num='".$id."'") or die (mysql_error());
-            
+        else
+        {
+          $rp = 0;
+        }
+        $query = mysql_query("UPDATE boninterv SET BI_CpteRendu='".$cr."', BI_DatFin='".$df."', BI_Duree ='".$dr."', BI_Demande='".$de."', BI_SurPlace='".$sp."', BI_Reparable='".$rp."'  Where BI_Num='".$id."'") or die (mysql_error());
+        var_dump($query);    
          ?>
               <script language="Javascript">
                 alert("Modification enregistré");

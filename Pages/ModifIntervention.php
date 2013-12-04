@@ -12,7 +12,7 @@ if(isset($_SESSION['id'])) {
 	<a href="../index.php"><img src="../css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
 	<form id="modif_form" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 	<input type='hidden' name="id" id="id" value='<?php echo($id); ?>'/>
-			<table>
+	<table>
 			<tr>
 					<td>
 						<label for="ni">Num Intervention : </label>
@@ -42,10 +42,10 @@ if(isset($_SESSION['id'])) {
 				</br>
 				<tr>
 					<td>
-						<label for="cp">Compte rendu : </label>
+						<label for="cr">Compte rendu : </label>
 					</td>
 					<td>
-						<textarea rows="4" cols="50"id="cp" name="cp"><?php echo($enreg['BI_CpteRendu']) ?></textarea>
+						<textarea rows="4" cols="50"id="cr" name="cr"><?php echo($enreg['BI_CpteRendu']) ?></textarea>
 					</td>
 				</tr>
 				
@@ -87,7 +87,7 @@ if(isset($_SESSION['id'])) {
 				</tr>
 			</table>
 			</br>
-						<input type="submit" name="go_modifinter" id="go_modifinter" value="Modifier"/>
+						<input type="submit" name="go_modifint" id="go_modifint" value="Modifier"/>
 		</form>
 	</body></html>
 <?php
