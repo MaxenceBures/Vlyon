@@ -70,7 +70,7 @@ catch(Exception $e)
         ?>
          	<script language="Javascript">
 		      	alert("Vous êtes deconnecté");
-			      window.location.replace("../index.php")
+			      window.location.replace("../../index.php")
     			</script>
 		<?php
     }
@@ -92,7 +92,6 @@ catch(Exception $e)
 function utilisateur()
     {   
     $id = $_SESSION['id'];
-    //var_dump($id);
         $sReq = " SELECT Tec_Nom, Tec_Prenom, Tec_Responsable FROM TECHNICIEN Where Tec_Matricule='".$id."'";
         $rstPdt = mysql_query($sReq) ;
         $iNb = 0 ;
@@ -189,7 +188,7 @@ function utilisateur()
 		?>
              	<script language="Javascript">
 			alert("Demande enregistré");
-			window.location.replace("../index.php")
+			window.location.replace("../../index.php")
 			</script>
 		<?php 
 	 }
@@ -235,7 +234,7 @@ function utilisateur()
     ?>                                                                                                                                                                                      
               <script language="Javascript">
       alert("intevention enregistré");
-      window.location.replace("../index.php")
+      window.location.replace("../../index.php")
       </script>
     <?php 
    }
@@ -275,11 +274,10 @@ function utilisateur()
           $rp = 0;
         }
         $query = mysql_query("UPDATE boninterv SET BI_CpteRendu='".$cr."', BI_DatFin='".$df."', BI_Duree ='".$dr."', BI_Demande='".$de."', BI_SurPlace='".$sp."', BI_Reparable='".$rp."'  Where BI_Num='".$id."'") or die (mysql_error());
-        var_dump($query);    
          ?>
               <script language="Javascript">
                 alert("Modification enregistré");
-                window.location.replace("../index.php")
+                window.location.replace("../../index.php")
               </script>
           <?php
        
@@ -309,7 +307,7 @@ function utilisateur()
          ?>
               <script language="Javascript">
                 alert("Modification enregistré");
-                window.location.replace("../index.php")
+                window.location.replace("../../index.php")
               </script>
           <?php
        

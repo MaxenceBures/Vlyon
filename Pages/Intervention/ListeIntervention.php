@@ -1,13 +1,13 @@
 <?php
 session_start();
 if(isset($_SESSION['id'])) {
-include('../include/functions.php');
+include('../../include/functions.php');
 
 ?>
 <html>
 	<head></head>
 	<body>
-		<a href="../index.php"><img src="../css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
+		<a href="../../index.php"><img src="../../css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
 		<b>Intervention </b>
 			<table border = 1 width="100%" >
 				<tr>

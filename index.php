@@ -94,13 +94,13 @@
 	</div>
 	<nav id="nav"><ul>
 	<?php if($resp == '1') { ?>
-		<li><a href="/Vlyon/Pages/listeficheAdmin.php">Liste Demande</a></li>
-		<li><a href="/Vlyon/Pages/listeIntervention.php">Liste Intervention</a></li>		
+		<li><a href="/Vlyon/Pages/Demande/listeficheAdmin.php">Liste Demande</a></li>
+		<li><a href="/Vlyon/Pages/Intervention/listeIntervention.php">Liste Intervention</a></li>		
 	<?php } else { ?>	
-    	<li><a href="/Vlyon/Pages/liste.php">Liste Demande</a></li>
+    	<li><a href="/Vlyon/Pages/Demande/liste.php">Liste Demande</a></li>
     <?php }  ?>	
-    	<li><a href="/Vlyon/Pages/ficheajout.php">Ajout Demande</a></li>
-    	<li><a href="/Vlyon/Pages/AjoutIntervention.php">Ajout Intervention</a></li>
+    	<li><a href="/Vlyon/Pages/Demande/ficheajout.php">Ajout Demande</a></li>
+    	<li><a href="/Vlyon/Pages/Intervention/AjoutIntervention.php">Ajout Intervention</a></li>
     	<li><a href="/Vlyon/Pages/deconnexion.php">Se deconnecter</a></li>
     </ul>
     </nav>
