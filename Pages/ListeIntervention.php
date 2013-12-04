@@ -40,6 +40,7 @@ include('../include/functions.php');
 					<td><?php echo $listes["BI_Technicien"] ;?></td>
 					<td><?php echo $listes["BI_SurPlace"] ;?></td>
 					<td><?php echo $listes["BI_Duree"] ;?></td>
+					<td><a href="ModifIntervention.php?variable=<?php print($listes["BI_Num"]) ?>"><input type="button" value="Affichage"  /></a></td>		
 						
 				</tr>
 		<?php

@@ -241,6 +241,51 @@ function utilisateur()
    }
   }
 
+  function modifinter()
+{
+  
+     if (isset($_POST['go_modifint'])) 
+     {
+ 
+       $df = $_POST['df'];
+       $cr = $_POST['cr'];
+       $dr = $_POST['dr'];
+        if (empty($_POST['de']))
+        {
+          $de = 0;
+        }
+        else
+        {
+          $de = 1;
+        }
+        if (empty($_POST['sp']))
+        {
+          $sp = 0;
+        }
+        else
+        {
+          $sp = 1;
+        }
+         if (empty($_POST['rp']))
+        {
+          $rp = 0;
+        }
+        else
+        {
+          $rp = 1;
+        }
+        $query = mysql_query("UPDATE boninterv SET BI_CpteRendu='".$cr."', BI_DatFin='".$df."', BI_Duree ='".$dr."', BI_Demande='".$de."'  Where DemI_Num='".$id."'") or die (mysql_error());
+            
+         ?>
+              <script language="Javascript">
+                alert("Modification enregistré");
+                window.location.replace("../index.php")
+              </script>
+          <?php
+       
+      }
+    }
+
   function modifdemandeint()
     {
   
