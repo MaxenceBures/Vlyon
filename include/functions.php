@@ -70,7 +70,7 @@ catch(Exception $e)
         ?>
          	<script language="Javascript">
 		      	alert("Vous êtes deconnecté");
-			      window.location.replace("../../index.php")
+			      window.location.replace("../index.php")
     			</script>
 		<?php
     }

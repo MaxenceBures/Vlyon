@@ -5,32 +5,33 @@ include('../../include/functions.php');
 ?>
 <html>
 	<head>
-    <script src="js/jquery.min.js"></script>
+	<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel-noscript.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-desktop.css" />
-			<link rel="stylesheet" href="css/style-wide.css" />
-		</noscript>
+		
+			
+			<link rel="stylesheet" href="../../css/style.css" />
+			<link rel="stylesheet" href="../../css/style-mobile.css" />
+			<link rel="stylesheet" href="../../css/style-desktop.css" />
+			<link rel="stylesheet" href="../../css/style-wide.css" />
+		
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
 		<!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
 
 	</head>
 	<body>
-	<a href="../../index.php"><img src="../../css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
+	<a href="../../index.php"><img src="../../css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 		<b>Demande d'intervention </b>
-			<div class="CSSTableGenerator" >
-			<table border = 1 width="100%"  >
+			
+			<table border = 1  >
 				<tr>
 					<th width="5%" >Code Dem</th>
-					<th width="13%">Code Velo</th>
-					<th width="13%">Station</th>
-					<th width="13%">Date</th>
-					<th width="13%">Test</th>
+					<th width="5%">Code Velo</th>
+					<th width="5%">Station</th>
+					<th width="5%">Date</th>
+					<th width="5%">Test</th>
 				</tr>	
 					<form  action="<?php $_SERVER['PHP_SELF']; ?>" name="AfficheDem" method="POST">
 		<?php
@@ -52,7 +53,7 @@ include('../../include/functions.php');
 		?>	
 					</form>
 			</table>
-			</div>
+			
 			</br><a href="/Vlyon/Pages/Demande/ficheajout.php">Ajout demande</a>
 			
 	</body>
