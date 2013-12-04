@@ -100,6 +100,7 @@
     	<li><a href="/Vlyon/Pages/liste.php">Liste Demande</a></li>
     <?php }  ?>	
     	<li><a href="/Vlyon/Pages/ficheajout.php">Ajout Demande</a></li>
+    	<li><a href="/Vlyon/Pages/AjoutIntervention.php">Ajout Intervention</a></li>
     	<li><a href="/Vlyon/Pages/deconnexion.php">Se deconnecter</a></li>
     </ul>
     </nav>

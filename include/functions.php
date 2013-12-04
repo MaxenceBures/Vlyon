@@ -195,6 +195,52 @@ function utilisateur()
 	 }
 	}
 
+  function createint(){
+     if (isset($_POST['go_createinter'])) 
+     {
+    //   $date = date("Y-m-d");
+       $id = $_SESSION['id'];
+       $velo = $_POST['velo'];
+       $db = $_POST['db'];
+       $df = $_POST['df'];
+       $cr = $_POST['cr'];
+       $dr = $_POST['dr'];
+        if (empty($_POST['de']))
+        {
+          $de = 0;
+        }
+        else
+        {
+          $de = 1;
+        }
+        if (empty($_POST['sp']))
+        {
+          $sp = 0;
+        }
+        else
+        {
+          $sp = 1;
+        }
+         if (empty($_POST['rp']))
+        {
+          $rp = 0;
+        }
+        else
+        {
+          $rp = 1;
+        }
+        $count = mysql_fetch_row(mysql_query("SELECT max(BI_Num) from boninterv"));
+        $test = $count[0] + 1;
+        $query = mysql_query("INSERT INTO boninterv(BI_Num, BI_Velo, BI_DatDebut, BI_DatFin,BI_CpteRendu, BI_Reparable, BI_Demande, BI_SurPlace, BI_Duree, BI_Technicien) VALUES('".$test."', '".$velo."','".$db."', '".$df."', '".$cr."', '".$rp."','".$de."','".$dr."', '".$sp."', '".$id."')") or die (mysql_error());
+    ?>                                                                                                                                                                                      
+              <script language="Javascript">
+      alert("intevention enregistré");
+      window.location.replace("../index.php")
+      </script>
+    <?php 
+   }
+  }
+
   function modifdemandeint()
     {
   
