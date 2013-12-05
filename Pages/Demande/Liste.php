@@ -9,12 +9,22 @@ include('../../include/functions.php');
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
-		
-			
+		<script language="JavaScript">
+
+
+if (screen.width > 1000){
+	
+	<link rel="stylesheet" href="../../css/style-desktop.css" />
+}
+if (screen.width < 1000){
+	
+	<link rel="stylesheet" href="../../css/style-mobile.css" />
+}
+</script>
 			<link rel="stylesheet" href="../../css/style.css" />
-			<link rel="stylesheet" href="../../css/style-mobile.css" />
-			<link rel="stylesheet" href="../../css/style-desktop.css" />
-			<link rel="stylesheet" href="../../css/style-wide.css" />
+			<!--<link rel="stylesheet" href="../../css/style-mobile.css" />
+			
+			<!--<link rel="stylesheet" href="../../css/style-wide.css" />-->
 		
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->

@@ -107,7 +107,7 @@ create table DEMANDEINTER
 -- ============================================================
 --   Table : QUARTIER                                    
 -- ============================================================
-CREATE TABLE QUARTER (
+CREATE TABLE QUARTIER (
  	Qua_Id varchar(15) NOT NULL,
     Qua_lib varchar(100) NOT NULL,
   PRIMARY KEY (`Qua_id`)
