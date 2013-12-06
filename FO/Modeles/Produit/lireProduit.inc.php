@@ -1,7 +1,7 @@
 <?php
 	function connecter()
 	{
-		require_once("classe/clstBaseMysql.classe.php") ;	
+		require_once("../../../classe/clstBaseMysql.classe.php") ;	
 		$oSql = new clstBaseMysql("localhost", "Vlyon", "mpvlyon", "vlyon") ;
 		return ($oSql) ;
 	}	
@@ -27,8 +27,10 @@
 		$oSql = connecter();
 		$sReq = "SELECT Com_Code, Com_Date, Com_Qte, Com_Produit, Com_Valide, Pdt_Libelle
 				 FROM COMMANDE, PRODUIT
-				 WHERE COMMANDE.Com_Produit = PRODUIT.Pdt_Code";
+				 WHERE COMMANDE.Com_Produit = PRODUIT.Pdt_Code";		 
+		//echo ($sReq) ; die; 
 		$rstCde = $oSql->query($sReq);
+		//var_dump($rstCde); die ;
 		$iNb = 0;
 		$lesCommandes = array();
 		while ($uneLigne = $oSql->tabAssoc($rstCde))
@@ -37,5 +39,19 @@
 			$lesCommandes[$iNb] = $uneLigne;
 		}
 		return ($lesCommandes);
+	}
+	
+	FUNCTION getUneCommande($code)
+	{
+		$oSql = connecter();
+		$sReq = "SELECT *
+				 FROM COMMANDE
+				 WHERE Com_Code = '".$code."'";
+		$rstCde = $oSql->query($sReq);
+		
+		if($uneLigne = $oSql->tabAssoc($rstCde))
+		{
+			return($uneLigne);
+		}
 	}
 ?>

@@ -8,8 +8,8 @@
 	$sReq = "SELECT MAX(Com_Code) 
 		     FROM COMMANDE" ;
 	$oSql= mysql_connect("localhost","Vlyon","mpvlyon");
-	$iNumCde = mysql_result(mysql_query($sReq),0);
-//	$iNumCde  = $oSql->getNombre($sReq) ;
+	$iNumCde = mysql_result(mysql_query($sReq), 0);
+	//$iNumCde  = $oSql->getNombre($sReq) ;
 	$iNumCde = $iNumCde  +  1 ;	
 	
 	//insertion des données dans la base
@@ -19,5 +19,5 @@
 ?>
 	<script language="Javascript">
 		alert("Commande enregistrée");
-		window.location.replace("?page=listeCommande")
+		window.location.replace("/Vlyon/FO/VUES/Produit/fo_listeCommandePdt.php")
 	</script>

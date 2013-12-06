@@ -93,14 +93,20 @@
 		 ?>
 	</div>
 	<nav id="nav"><ul>
-	<?php if($resp == '1') { ?>
+<?php 
+	if($resp == '1') { 
+?>
 		<li><a href="/Vlyon/Pages/Demande/listeficheAdmin.php">Liste Demande</a></li>
 		<li><a href="/Vlyon/Pages/Intervention/listeIntervention.php">Liste Intervention</a></li>		
-	<?php } else { ?>	
+	<?php 
+	} else { 
+?>	
     	<li><a href="/Vlyon/Pages/Demande/liste.php">Liste Demande</a></li>
     <?php }  ?>	
     	<li><a href="/Vlyon/Pages/Demande/ficheajout.php">Ajout Demande</a></li>
     	<li><a href="/Vlyon/Pages/Intervention/AjoutIntervention.php">Ajout Intervention</a></li>
+		<li><a href="/Vlyon/FO/VUES/Produit/fo_commanderProduit.php">Commander Produit</a></li>
+		<li><a href="/Vlyon/FO/VUES/Produit/fo_listeCommandePdt.php">Liste Commande</a></li>
     	<li><a href="/Vlyon/Pages/deconnexion.php">Se deconnecter</a></li>
     </ul>
     </nav>

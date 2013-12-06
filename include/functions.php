@@ -313,5 +313,33 @@ function utilisateur()
        
       }
     }
+	
+	function modifcommande()
+    {
+  
+     if (isset($_POST['go_modifcde'])) 
+     {
+ 
+       $code = $_POST['code'];
+       $qte = $_POST['txt_qte'];
+        if (empty($_POST['valide']))
+        {
+          $valide = 0;
+        }
+        else
+        {
+          $valide = 1;
+        }
+        $query = mysql_query("UPDATE commande SET Com_Qte='".$qte."', Com_Valide='".$valide."' Where Com_Code='".$code."'") or die (mysql_error());
+            
+         ?>
+              <script language="Javascript">
+                alert("Modification enregistré");
+                window.location.replace("../../../index.php")
+              </script>
+          <?php
+       
+      }
+    }
 
 ?>
