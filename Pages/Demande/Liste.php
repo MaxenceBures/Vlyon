@@ -1,7 +1,8 @@
 <?php
 session_start();
 if(isset($_SESSION['id'])) {
-include('../../include/functions.php');		
+require_once('../../include/functions.php');		
+// Bures Maxence
 ?>
 <html>
 	<head>
@@ -14,11 +15,11 @@ include('../../include/functions.php');
 
 if (screen.width > 1000){
 	
-	<link rel="stylesheet" href="../../css/style-desktop.css" />
+	//<link rel="stylesheet" href="../../css/style-desktop.css" />
 }
 if (screen.width < 1000){
 	
-	<link rel="stylesheet" href="../../css/style-mobile.css" />
+	//<link rel="stylesheet" href="../../css/style-mobile.css" />
 }
 </script>
 			<link rel="stylesheet" href="../../css/style.css" />

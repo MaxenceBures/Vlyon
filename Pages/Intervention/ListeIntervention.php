@@ -1,8 +1,8 @@
 <?php
 session_start();
 if(isset($_SESSION['id'])) {
-include('../../include/functions.php');
-
+require_once('../../include/functions.php');
+//Bures Maxence
 ?>
 <html>
 	<head>

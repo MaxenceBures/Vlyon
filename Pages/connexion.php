@@ -1,7 +1,7 @@
 <?php
-	//session_start();
-    include('../include/functions.php');
+	include('../include/functions.php');
     login();
+    //Bures Maxence
 ?>
 <html>
 <head>

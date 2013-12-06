@@ -1,8 +1,9 @@
 <?php
 session_start();
 if(isset($_SESSION['id'])) {
-	include('../../include/functions.php');
+	require_once('../../include/functions.php');
 	connect();
+	//Bures Maxence
 	$id = $_GET['variable'];
 	$query = mysql_query("UPDATE DEMANDEINTER SET DemI_Valide='0' WHERE DemI_Num ='".$id."'") or die (mysql_error());
 	header('Location: Liste.php');

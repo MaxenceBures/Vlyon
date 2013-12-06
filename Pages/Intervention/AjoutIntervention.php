@@ -1,11 +1,9 @@
 <?php
 session_start();
 if(isset($_SESSION['id'])) {
-		include('../../include/functions.php');
+		require_once('../../include/functions.php');
 	    createint();
-	  //  ListeDeroulanteStation();
-	    
-	   // phpinfo();
+	 //Bures Maxence
 	?>
 	<html>
 		<head>

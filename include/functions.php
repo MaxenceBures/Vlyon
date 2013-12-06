@@ -14,6 +14,7 @@ catch(Exception $e)
         die('Erreur : '.$e->getMessage());
         echo"connexion non fonctionnel";
 }
+// Bures Maxence
      connect();
     function login() {
  
@@ -149,7 +150,15 @@ function utilisateur()
       return ($demande) ;
   }
 
-    function listedemandeintAdmin()
+  function cmd_Inf()
+  {
+    if(isset($_POST['cmd_Inf']))
+      {
+        header('Location: ../VUES/fo_InformationStation.php');
+      }
+  }
+
+  function listedemandeintAdmin()
     {       
         $id = $_SESSION['id'];
         $sReq = "SELECT DemI_Num, DemI_Velo, DemI_Attache, DemI_Station, DemI_Date, DemI_Motif, DemI_Traite, DemI_Technicien, DemI_Valide FROM DEMANDEINTER ";

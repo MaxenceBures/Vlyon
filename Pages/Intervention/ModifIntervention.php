@@ -1,8 +1,9 @@
 <?php
 session_start();
 if(isset($_SESSION['id'])) {
-	include('../../include/functions.php');
+	require_once('../../include/functions.php');
 	connect();
+	//Bures Maxence
 	$id = $_GET['variable'];
 	modifinter();
 	$requete = "SELECT * FROM boninterv where BI_NUM= '".$id."'";                

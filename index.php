@@ -40,36 +40,35 @@
    	<?php
 		switch($_GET['page'])
 		{
-			case "afficherStation":
-				$fichier = "FO/Vues/Station/fo_AfficherStation.php" ;
-				$titre   = "CréeStation";
-				break ;	
-			case "commanderProduit":
-				$fichier = "FO/Vues/Produit/fo_commanderProduit.php";
-				$titre   = "Commander un produit";
-				break;
-			case "cdeProduit":
-				$fichier = "FO/Modeles/Produit/ajouterCommande.inc.php";
-				break;
-			case "listeCommande":
-				$fichier = "FO/Vues/Produit/fo_listeCommandePdt.php";
-				$titre   = "Liste des commandes";
-				break;
-			case "ajouterInterv":
-				$fichier = "FO/Vues/Intervention/fo_ajouterInterv.php";
-				$titre   = "Ajouter une intervention";
-				break;
 			default :
 				$fichier = "Pages/accueil.php" ;
 				$titre   = "Accueil";
 				break;
+			case "enregistrer_Modif":
+				$fichier = "FO/Modeles/Station/fo_EnregistrerModif.inc.php";
+				$titre   = "Enregistrer une modification";
+				break;
+			case "AfficherModif":
+				$fichier = "FO/Vues/Station/fo_ModifierVelo.php";
+				$titre   = "Modifer un velo";
+				break;
+			case "AfficherInfo":
+				$fichier = "FO/VUES/Station/fo_InformationStation.php" ;
+				$titre   = "InfoStation";
+				break ;	
+			case "afficherStation":
+				$fichier = "FO/VUES/Station/fo_AfficherStation.php" ;
+				$titre   = "CréeStation";
+				break ;	
+	
+			
 		}
 
 	require_once("mdl/menu.php") ;				
     		echo 'vous etes connectes';
     	
 
-
+include($fichier);
     ?>	
 </article>
 </div>
@@ -108,6 +107,7 @@
 		<li><a href="/Vlyon/FO/VUES/Produit/fo_commanderProduit.php">Commander Produit</a></li>
 		<li><a href="/Vlyon/FO/VUES/Produit/fo_listeCommandePdt.php">Liste Commande</a></li>
     	<li><a href="/Vlyon/Pages/deconnexion.php">Se deconnecter</a></li>
+    	<li><a href="/Vlyon/FO/VUES/Station/fo_AfficherStation.php">Test</a></li>
     </ul>
     </nav>
     </div>	
