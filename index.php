@@ -102,12 +102,13 @@ include($fichier);
 ?>	
     	<li><a href="/Vlyon/Pages/Demande/liste.php">Liste Demande</a></li>
     <?php }  ?>	
+    	<li><a href="/Vlyon/FO/VUES/Station/fo_AfficherStation.php">Afficher les Stations</a></li>
     	<li><a href="/Vlyon/Pages/Demande/ficheajout.php">Ajout Demande</a></li>
     	<li><a href="/Vlyon/Pages/Intervention/AjoutIntervention.php">Ajout Intervention</a></li>
 		<li><a href="/Vlyon/FO/VUES/Produit/fo_commanderProduit.php">Commander Produit</a></li>
 		<li><a href="/Vlyon/FO/VUES/Produit/fo_listeCommandePdt.php">Liste Commande</a></li>
     	<li><a href="/Vlyon/Pages/deconnexion.php">Se deconnecter</a></li>
-    	<li><a href="/Vlyon/FO/VUES/Station/fo_AfficherStation.php">Test</a></li>
+    	
     </ul>
     </nav>
     </div>	
