@@ -5,7 +5,7 @@ if(isset($_SESSION['id'])) {
 	connect();
 	//Bures Maxence
 	$id = $_GET['variable'];
-	$query = mysql_query("UPDATE DEMANDEINTER SET DemI_Valide='0' WHERE DemI_Num ='".$id."'") or die (mysql_error());
+	$query = mysql_query("UPDATE DEMANDEINTER SET DEMI_VALIDE='0' WHERE DEMI_NUM ='".$id."'") or die (mysql_error());
 	header('Location: Liste.php');
 }
 else{

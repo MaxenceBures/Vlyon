@@ -78,8 +78,8 @@ catch(Exception $e)
    
     function ListeDeroulanteStation()
     {       
-        $sReq = " SELECT Sta_Code, Sta_Nom 
-                  FROM Station ";
+        $sReq = " SELECT STA_CODE, STA_NOM 
+                  FROM STATION ";
         $rstPdt = mysql_query($sReq) ;
         $iNb = 0 ;
         $oStation = array() ;        
@@ -93,7 +93,7 @@ catch(Exception $e)
 function utilisateur()
     {   
     $id = $_SESSION['id'];
-        $sReq = " SELECT Tec_Nom, Tec_Prenom, Tec_Responsable FROM TECHNICIEN Where Tec_Matricule='".$id."'";
+        $sReq = " SELECT TEC_NOM, TEC_PRENOM, TEC_RESPONSABLE FROM TECHNICIEN Where TEC_MATRICULE='".$id."'";
         $rstPdt = mysql_query($sReq) ;
         $iNb = 0 ;
         $oUtilisateur = array() ;        
@@ -108,7 +108,7 @@ function utilisateur()
 	  function listedemandeint()
 	  {		
 		    $id = $_SESSION['id'];
-		    $sReq = " SELECT DemI_Num, DemI_Velo, DemI_Attache, DemI_Station, DemI_Date, DemI_Motif, DemI_Traite  FROM DEMANDEINTER WHERE DemI_Technicien='".$id."' AND DemI_Valide=1 ";
+		    $sReq = " SELECT DEMI_NUM, DEMI_VELO, DEMI_ATTACHE, DEMI_STATION, DEMI_DATE, DEMI_MOTIF, DEMI_TRAITE  FROM DEMANDEINTER WHERE DEMI_TECHNICIEN='".$id."' AND DEMI_VALIDE=1 ";
 	     	$rstPdt = mysql_query($sReq) ;
 		    $iNb = 0 ;
 		    $demande = array() ;		
@@ -123,7 +123,7 @@ function utilisateur()
      function listeint()
     {   
         $id = $_SESSION['id'];
-        $sReq = " SELECT BI_Num, BI_Velo, BI_DatDebut, BI_DatFin, BI_Reparable, BI_Demande, BI_SurPlace, BI_Duree, BI_CpteRendu, BI_Technicien  FROM boninterv";
+        $sReq = " SELECT BI_NUM, BI_VELO, BI_DATEDEBUT, BI_DATFIN, BI_REPARABLE, BI_DEMANDE, BI_SURPLACE, BI_DUREE, BI_CPTERENDU, BI_TECHNICIEN  FROM BONINTERV";
         $rstPdt = mysql_query($sReq) ;
         $iNb = 0 ;
         $intevention = array() ;    
@@ -138,7 +138,7 @@ function utilisateur()
   function listedemande2int($id)
     {   
         
-        $sReq = " SELECT DemI_Num, DemI_Velo, DemI_Attache, DemI_Station, DemI_Date, DemI_Motif, DemI_Traite  FROM DEMANDEINTER WHERE DemI_Num='".$id."' AND DemI_Valide=1 ";
+        $sReq = " SELECT DEMI_NUM, DEMI_VELO, DEMI_ATTACHE, DEMI_STATION, DEMI_DATE, DEMI_MOTIF, DEMI_TRAITE FROM DEMANDEINTER WHERE DEMI_NUM='".$id."' AND DEMI_VALIDE=1 ";
         $rstPdt = mysql_query($sReq) ;
         $iNb = 0 ;
         $demande = array() ;    
@@ -161,7 +161,7 @@ function utilisateur()
   function listedemandeintAdmin()
     {       
         $id = $_SESSION['id'];
-        $sReq = "SELECT DemI_Num, DemI_Velo, DemI_Attache, DemI_Station, DemI_Date, DemI_Motif, DemI_Traite, DemI_Technicien, DemI_Valide FROM DEMANDEINTER ";
+        $sReq = "SELECT DEMI_NUM, DEMI_VELO, DEMI_ATTACHE, DEMI_STATION, DEMI_DATE, DEMI_MOTIF, DEMI_TRAITE, DEMI_TECHNICIEN, DEMI_VALIDE FROM DEMANDEINTER ";
         $rstPdt = mysql_query($sReq) ;
         $iNb = 0 ;
         $demande = array() ;        
@@ -193,7 +193,7 @@ function utilisateur()
 				   }
 				$count = mysql_fetch_row(mysql_query("SELECT max(DemI_Num) from DEMANDEINTER"));
 				$test = $count[0] + 1;
-				$query = mysql_query("INSERT INTO DEMANDEINTER(DemI_Num, DemI_Velo, DemI_Date, DemI_Technicien, DemI_Motif, DemI_Traite, DemI_Attache, DemI_Station, DemI_Valide) VALUES('".$test."', '".$velo."','".$date."', '".$id."', '".$motif."', '".$traite."','".$attache."','".$station."', '1')") or die (mysql_error());
+				$query = mysql_query("INSERT INTO DEMANDEINTER(DEMI_NUM, DEMI_VELO, DEMI_DATE, DEMI_TECHNICIEN, DEMI_MOTIF, DEMI_TRAITE, DEMI_ATTACHE, DEMI_STATION, DEMI_VALIDE) VALUES('".$test."', '".$velo."','".$date."', '".$id."', '".$motif."', '".$traite."','".$attache."','".$station."', '1')") or die (mysql_error());
 		?>
              	<script language="Javascript">
 			alert("Demande enregistré");
@@ -237,9 +237,9 @@ function utilisateur()
         {
           $rp = 1;
         }
-        $count = mysql_fetch_row(mysql_query("SELECT max(BI_Num) from boninterv"));
+        $count = mysql_fetch_row(mysql_query("SELECT max(BI_NUM) from BONINTERV"));
         $test = $count[0] + 1;
-        $query = mysql_query("INSERT INTO boninterv(BI_Num, BI_Velo, BI_DatDebut, BI_DatFin,BI_CpteRendu, BI_Reparable, BI_Demande, BI_SurPlace, BI_Duree, BI_Technicien) VALUES('".$test."', '".$velo."','".$db."', '".$df."', '".$cr."', '".$rp."','".$de."','".$dr."', '".$sp."', '".$id."')") or die (mysql_error());
+        $query = mysql_query("INSERT INTO BONINTERV(BI_NUM, BI_VELO, BI_DATEDEBUT, BI_DATFIN,BI_CPTERENDU, BI_REPARABLE, BI_DEMANDE, BI_SURPLACE, BI_DUREE, BI_TECHNICIEN) VALUES('".$test."', '".$velo."','".$db."', '".$df."', '".$cr."', '".$rp."','".$de."','".$dr."', '".$sp."', '".$id."')") or die (mysql_error());
     ?>                                                                                                                                                                                      
               <script language="Javascript">
       alert("intevention enregistré");
@@ -282,7 +282,7 @@ function utilisateur()
         {
           $rp = 0;
         }
-        $query = mysql_query("UPDATE boninterv SET BI_CpteRendu='".$cr."', BI_DatFin='".$df."', BI_Duree ='".$dr."', BI_Demande='".$de."', BI_SurPlace='".$sp."', BI_Reparable='".$rp."'  Where BI_Num='".$id."'") or die (mysql_error());
+        $query = mysql_query("UPDATE BONINTERV SET BI_CPTERENDU='".$cr."', BI_DATFIN='".$df."', BI_DUREE ='".$dr."', BI_DEMANDE='".$de."', BI_SURPLACE='".$sp."', BI_REPARABLE='".$rp."'  Where BI_NUM='".$id."'") or die (mysql_error());
          ?>
               <script language="Javascript">
                 alert("Modification enregistré");
@@ -311,7 +311,7 @@ function utilisateur()
         {
           $traite = 1;
         }
-        $query = mysql_query("UPDATE demandeinter SET DemI_Motif='".$motif."', DemI_Attache='".$attache."', DemI_Station='".$station."', DemI_Traite='".$traite."'  Where DemI_Num='".$id."'") or die (mysql_error());
+        $query = mysql_query("UPDATE DEMANDEINTER SET DEMI_MOTIF='".$motif."', DEMI_ATTACHE='".$attache."', DEMI_STATION='".$station."', DEMI_TRAITE='".$traite."'  Where DEMI_NUM='".$id."'") or die (mysql_error());
             
          ?>
               <script language="Javascript">
@@ -339,7 +339,7 @@ function utilisateur()
         {
           $valide = 1;
         }
-        $query = mysql_query("UPDATE commande SET Com_Qte='".$qte."', Com_Valide='".$valide."' Where Com_Code='".$code."'") or die (mysql_error());
+        $query = mysql_query("UPDATE COMMANDE SET COM_QTE='".$qte."', COM_VALIDE='".$valide."' Where COM_CODE='".$code."'") or die (mysql_error());
             
          ?>
               <script language="Javascript">
