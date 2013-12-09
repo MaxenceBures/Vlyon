@@ -7,9 +7,9 @@
     // Si la variable de session n'existe pas
     if(!isset($_SESSION['id'])) {
         // On redirige l'utilisateur vers une page de login
-        header('Location:/Vlyon/Pages/connexion.php');
+        header('Location:Pages/connexion.php');
 		die;
-    
+
    }
    else
    {
@@ -33,7 +33,7 @@
 	<body class="left-sidebar">
 	<div id="content">
 						<div id="content-inner">
-					
+
 							<!-- Post -->
 								<article class="is-post is-post-excerpt">
 
@@ -55,36 +55,36 @@
 			case "AfficherInfo":
 				$fichier = "FO/VUES/Station/fo_InformationStation.php" ;
 				$titre   = "InfoStation";
-				break ;	
+				break ;
 			case "afficherStation":
 				$fichier = "FO/VUES/Station/fo_AfficherStation.php" ;
 				$titre   = "CréeStation";
-				break ;	
-	
-			
+				break ;
+
+
 		}
 
-	require_once("mdl/menu.php") ;				
+	require_once("mdl/menu.php") ;
     		echo 'vous etes connectes';
-    	
+
 
 include($fichier);
-    ?>	
+    ?>
 </article>
 </div>
 </div>
-	
+
 	<div id="sidebar">
 	<div id="logo">
-		<?php  
+		<?php
 		$utilisateur =utilisateur();
-		foreach ($utilisateur as $utilisateurs)			
+		foreach ($utilisateur as $utilisateurs)
 				{
-		echo strtoupper($utilisateurs["Tec_Nom"]); 
+		echo strtoupper($utilisateurs["Tec_Nom"]);
 		echo" - ";
 		echo strtoupper($utilisateurs["Tec_Prenom"]);
 		$resp = $utilisateurs["Tec_Responsable"];
-		
+
 	}
 
 
@@ -92,29 +92,29 @@ include($fichier);
 		 ?>
 	</div>
 	<nav id="nav"><ul>
-<?php 
-	if($resp == '1') { 
+<?php
+	if($resp == '1') {
 ?>
 		<li><a href="/Vlyon/Pages/Demande/listeficheAdmin.php">Liste Demande</a></li>
-		<li><a href="/Vlyon/Pages/Intervention/listeIntervention.php">Liste Intervention</a></li>		
-	<?php 
-	} else { 
-?>	
+		<li><a href="/Vlyon/Pages/Intervention/listeIntervention.php">Liste Intervention</a></li>
+	<?php
+	} else {
+?>
     	<li><a href="/Vlyon/Pages/Demande/liste.php">Liste Demande</a></li>
-    <?php }  ?>	
+    <?php }  ?>
     	<li><a href="/Vlyon/FO/VUES/Station/fo_AfficherStation.php">Afficher les Stations</a></li>
     	<li><a href="/Vlyon/Pages/Demande/ficheajout.php">Ajout Demande</a></li>
     	<li><a href="/Vlyon/Pages/Intervention/AjoutIntervention.php">Ajout Intervention</a></li>
 		<li><a href="/Vlyon/FO/VUES/Produit/fo_commanderProduit.php">Commander Produit</a></li>
 		<li><a href="/Vlyon/FO/VUES/Produit/fo_listeCommandePdt.php">Liste Commande</a></li>
     	<li><a href="/Vlyon/Pages/deconnexion.php">Se deconnecter</a></li>
-    	
+
     </ul>
     </nav>
-    </div>	
-    </body>		
-		<?php 
+    </div>
+    </body>
+		<?php
 		}
 		include($fichier);
-	
+
 ?>
