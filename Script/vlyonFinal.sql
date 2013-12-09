@@ -17,62 +17,62 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données: `vlyon`
+-- Base de données: `VLYON`
 --
-CREATE DATABASE IF NOT EXISTS `vlyon` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `vlyon`;
+CREATE DATABASE IF NOT EXISTS `VLYON` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `VLYON`;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `boninterv`
+-- Structure de la table `BONINTERV`
 --
 
-CREATE TABLE IF NOT EXISTS `boninterv` (
-  `BI_Num` int(10) NOT NULL,
-  `BI_Velo` char(5) NOT NULL,
-  `BI_DatDebut` date DEFAULT NULL,
-  `BI_DatFin` date DEFAULT NULL,
-  `BI_CpteRendu` varchar(100) DEFAULT NULL,
-  `BI_Reparable` char(1) DEFAULT NULL,
-  `BI_Demande` char(5) DEFAULT NULL,
-  `BI_Technicien` char(5) NOT NULL,
-  `BI_SurPlace` char(1) DEFAULT NULL,
-  `BI_Duree` int(5) DEFAULT NULL,
-  PRIMARY KEY (`BI_Num`),
-  KEY `CONCERNER_FK` (`BI_Velo`),
-  KEY `EXECUTER_FK2` (`BI_Demande`),
-  KEY `REALISER_FK` (`BI_Technicien`)
+CREATE TABLE IF NOT EXISTS `BONINTERV` (
+  `BI_NUM` int(10) NOT NULL,
+  `BI_VELO` char(5) NOT NULL,
+  `BI_DATDEBUT` date DEFAULT NULL,
+  `BI_DATFIN` date DEFAULT NULL,
+  `BI_CPTERENDU` varchar(100) DEFAULT NULL,
+  `BI_REPARABLE` char(1) DEFAULT NULL,
+  `BI_DEMANDE` char(5) DEFAULT NULL,
+  `BI_TECHNICIEN` char(5) NOT NULL,
+  `BI_SURPLACE` char(1) DEFAULT NULL,
+  `BI_DUREE` int(5) DEFAULT NULL,
+  PRIMARY KEY (`BI_NUM`),
+  KEY `CONCERNER_FK` (`BI_VELO`),
+  KEY `EXECUTER_FK2` (`BI_DEMANDE`),
+  KEY `REALISER_FK` (`BI_TECHNICIEN`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `boninterv`
+-- Contenu de la table `BONINTERV`
 --
 
-INSERT INTO `boninterv` (`BI_Num`, `BI_Velo`, `BI_DatDebut`, `BI_DatFin`, `BI_CpteRendu`, `BI_Reparable`, `BI_Demande`, `BI_Technicien`, `BI_SurPlace`, `BI_Duree`) VALUES
+INSERT INTO `BONINTERV` (`BI_NUM`, `BI_VELO`, `BI_DATDEBUT`, `BI_DATFIN`, `BI_CPTERENDU`, `BI_REPARABLE`, `BI_DEMANDE`, `BI_TECHNICIEN`, `BI_SURPLACE`, `BI_DUREE`) VALUES
 (1, '1', '2013-12-05', '2013-12-13', 'test2', '0', '0', '1', '0', 11),
 (2, '3', '2013-12-05', '2013-12-19', '4', '0', '1', '1', '0', 1);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `commande`
+-- Structure de la table `COMMANDE`
 --
 
-CREATE TABLE IF NOT EXISTS `commande` (
-  `Com_Code` char(5) NOT NULL,
-  `Com_Date` date DEFAULT NULL,
-  `Com_Qte` int(2) DEFAULT NULL,
-  `Com_Valide` tinyint(1) DEFAULT NULL,
-  `Com_Produit` char(6) NOT NULL,
-  PRIMARY KEY (`Com_Code`)
+CREATE TABLE IF NOT EXISTS `COMMANDE` (
+  `COM_CODE` char(5) NOT NULL,
+  `COM_DATE` date DEFAULT NULL,
+  `COM_QTE` int(2) DEFAULT NULL,
+  `COM_VALIDE` tinyint(1) DEFAULT NULL,
+  `COM_PRODUIT` char(6) NOT NULL,
+  PRIMARY KEY (`COM_CODE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `commande`
+-- Contenu de la table `COMMANDE`
 --
 
-INSERT INTO `commande` (`Com_Code`, `Com_Date`, `Com_Qte`, `Com_Valide`, `Com_Produit`) VALUES
+INSERT INTO `COMMANDE` (`COM_CODE`, `COM_DATE`, `COM_QTE`, `COM_VALIDE`, `COM_PRODUIT`) VALUES
 ('1', '2013-12-07', 3, 1, '1'),
 ('2', '2013-12-06', 2, 0, '2'),
 ('3', '2013-12-06', 3, 0, '2');
@@ -80,29 +80,29 @@ INSERT INTO `commande` (`Com_Code`, `Com_Date`, `Com_Qte`, `Com_Valide`, `Com_Pr
 -- --------------------------------------------------------
 
 --
--- Structure de la table `demandeinter`
+-- Structure de la table `DEMANDEINTER`
 --
 
-CREATE TABLE IF NOT EXISTS `demandeinter` (
-  `DemI_Num` int(5) NOT NULL,
-  `DemI_Velo` char(5) NOT NULL,
-  `DemI_Date` date DEFAULT NULL,
-  `DemI_Technicien` char(5) NOT NULL,
-  `DemI_Motif` varchar(50) DEFAULT NULL,
-  `DemI_Traite` char(1) DEFAULT NULL,
-  `DemI_Station` varchar(10) NOT NULL,
-  `DemI_Attache` varchar(3) NOT NULL,
-  `DemI_Valide` tinyint(1) NOT NULL,
-  PRIMARY KEY (`DemI_Num`),
-  KEY `CORRESPONDRE_FK` (`DemI_Velo`),
-  KEY `REDIGER_FK` (`DemI_Technicien`)
+CREATE TABLE IF NOT EXISTS `DEMANDEINTER` (
+  `DEMI_NUM` int(5) NOT NULL,
+  `DEMI_VELO` char(5) NOT NULL,
+  `DEMI_DATE` date DEFAULT NULL,
+  `DEMI_TECHNICIEN` char(5) NOT NULL,
+  `DEMI_MOTIF` varchar(50) DEFAULT NULL,
+  `DEMI_TRAITE` char(1) DEFAULT NULL,
+  `DEMI_STATION` varchar(10) NOT NULL,
+  `DEMI_ATTACHE` varchar(3) NOT NULL,
+  `DEMI_VALIDE` tinyint(1) NOT NULL,
+  PRIMARY KEY (`DEMI_NUM`),
+  KEY `CORRESPONDRE_FK` (`DEMI_VELO`),
+  KEY `REDIGER_FK` (`DEMI_TECHNICIEN`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `demandeinter`
+-- Contenu de la table `DEMANDEINTER`
 --
 
-INSERT INTO `demandeinter` (`DemI_Num`, `DemI_Velo`, `DemI_Date`, `DemI_Technicien`, `DemI_Motif`, `DemI_Traite`, `DemI_Station`, `DemI_Attache`, `DemI_Valide`) VALUES
+INSERT INTO `DEMANDEINTER` (`DEMI_NUM`, `DEMI_VELO`, `DEMI_DATE`, `DEMI_TECHNICIEN`, `DEMI_MOTIF`, `DEMI_TRAITE`, `DEMI_STATION`, `DEMI_ATTACHE`, `DEMI_VALIDE`) VALUES
 (1, '1', '2013-12-03', '1', '', '0', '', '', 0),
 (2, '1', '2013-12-03', '1', 'test', '0', '1', '6', 0),
 (3, '1', '2013-12-03', '1', 'test2\r\n', '0', '1', '5', 1),
@@ -111,117 +111,117 @@ INSERT INTO `demandeinter` (`DemI_Num`, `DemI_Velo`, `DemI_Date`, `DemI_Technici
 -- --------------------------------------------------------
 
 --
--- Structure de la table `etat`
+-- Structure de la table `ETAT`
 --
 
-CREATE TABLE IF NOT EXISTS `etat` (
-  `Eta_Code` char(10) NOT NULL,
-  `Eta_Libelle` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`Eta_Code`)
+CREATE TABLE IF NOT EXISTS `ETAT` (
+  `ETA_CODE` char(10) NOT NULL,
+  `ETA_LIBELLE` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`ETA_CODE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `etat`
+-- Contenu de la table `ETAT`
 --
 
-INSERT INTO `etat` (`Eta_Code`, `Eta_Libelle`) VALUES
+INSERT INTO `ETAT` (`ETA_CODE`, `ETA_LIBELLE`) VALUES
 ('1', 'Hs'),
 ('2', 'Fonctionnel');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `produit`
+-- Structure de la table `PRODUIT`
 --
 
-CREATE TABLE IF NOT EXISTS `produit` (
-  `Pdt_Code` char(6) NOT NULL,
-  `Pdt_Libelle` varchar(30) DEFAULT NULL,
-  `Pdt_Poids` int(10) DEFAULT NULL,
-  `Pdt_PxCMUP` float(6,2) DEFAULT NULL,
-  `Pdt_QteStk` int(10) DEFAULT NULL,
-  `Pdt_NbVols` int(5) DEFAULT NULL,
-  `Pdt_NbCasses` int(5) DEFAULT NULL,
-  PRIMARY KEY (`Pdt_Code`)
+CREATE TABLE IF NOT EXISTS `PRODUIT` (
+  `PDT_CODE` char(6) NOT NULL,
+  `PDT_LIBELLE` varchar(30) DEFAULT NULL,
+  `PDT_POIDS` int(10) DEFAULT NULL,
+  `PDT_PXCMUP` float(6,2) DEFAULT NULL,
+  `PDT_QTESTK` int(10) DEFAULT NULL,
+  `PDT_NBVOLS` int(5) DEFAULT NULL,
+  `PDT_NBCASSES` int(5) DEFAULT NULL,
+  PRIMARY KEY (`PDT_CODE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `produit`
+-- Contenu de la table `PRODUIT`
 --
 
-INSERT INTO `produit` (`Pdt_Code`, `Pdt_Libelle`, `Pdt_Poids`, `Pdt_PxCMUP`, `Pdt_QteStk`, `Pdt_NbVols`, `Pdt_NbCasses`) VALUES
+INSERT INTO `PRODUIT` (`PDT_CODE`, `PDT_LIBELLE`, `PDT_POIDS`, `PDT_PXCMUP`, `PDT_QTESTK`, `PDT_NBVOLS`, `PDT_NBCASSES`) VALUES
 ('1', 'Selle', 2, 10.00, 2, 0, 0),
 ('2', 'Guidon', 5, 50.00, 1, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `quartier`
+-- Structure de la table `QUARTIER`
 --
 
-CREATE TABLE IF NOT EXISTS `quartier` (
-  `Qua_Id` varchar(15) NOT NULL,
-  `Qua_lib` varchar(100) NOT NULL,
-  PRIMARY KEY (`Qua_Id`)
+CREATE TABLE IF NOT EXISTS `QUARTIER` (
+  `QUA_ID` varchar(15) NOT NULL,
+  `QUA_LIB` varchar(100) NOT NULL,
+  PRIMARY KEY (`QUA_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `quartier`
+-- Contenu de la table `QUARTIER`
 --
 
-INSERT INTO `quartier` (`Qua_Id`, `Qua_lib`) VALUES
+INSERT INTO `QUARTIER` (`QUA_ID`, `QUA_LIB`) VALUES
 ('1', 'Test'),
 ('2', 'Champs de Mars');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `station`
+-- Structure de la table `STATION`
 --
 
-CREATE TABLE IF NOT EXISTS `station` (
-  `Sta_Code` char(5) NOT NULL,
-  `Sta_Nom` varchar(30) DEFAULT NULL,
-  `Sta_Rue` varchar(50) DEFAULT NULL,
-  `Sta_NbAttaches` int(2) DEFAULT NULL,
-  `Sta_NbVelos` int(2) DEFAULT NULL,
-  `Sta_NbAttacDispo` int(2) DEFAULT NULL,
-  `Sta_NbTotLoc` int(10) DEFAULT NULL,
-  `Sta_NbVols` int(5) DEFAULT NULL,
-  `Sta_NbDegrad` int(5) DEFAULT NULL,
-  `Sta_Quartier` varchar(15) NOT NULL,
-  PRIMARY KEY (`Sta_Code`),
-  KEY `Sta_Quartier` (`Sta_Quartier`)
+CREATE TABLE IF NOT EXISTS `STATION` (
+  `STA_CODE` char(5) NOT NULL,
+  `STA_NOM` varchar(30) DEFAULT NULL,
+  `STA_RUE` varchar(50) DEFAULT NULL,
+  `STA_NBATTACHES` int(2) DEFAULT NULL,
+  `STA_NBVELOS` int(2) DEFAULT NULL,
+  `STA_NBATTACDISPO` int(2) DEFAULT NULL,
+  `STA_NBTOTLOC` int(10) DEFAULT NULL,
+  `STA_NBVOLS` int(5) DEFAULT NULL,
+  `STA_NBDEGRAD` int(5) DEFAULT NULL,
+  `STA_QUARTIER` varchar(15) NOT NULL,
+  PRIMARY KEY (`STA_CODE`),
+  KEY `STA_QUARTIER` (`STA_QUARTIER`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `station`
+-- Contenu de la table `STATION`
 --
 
-INSERT INTO `station` (`Sta_Code`, `Sta_Nom`, `Sta_Rue`, `Sta_NbAttaches`, `Sta_NbVelos`, `Sta_NbAttacDispo`, `Sta_NbTotLoc`, `Sta_NbVols`, `Sta_NbDegrad`, `Sta_Quartier`) VALUES
+INSERT INTO `STATION` (`STA_CODE`, `STA_NOM`, `STA_RUE`, `STA_NBATTACHES`, `STA_NBVELOS`, `STA_NBATTACDISPO`, `STA_NBTOTLOC`, `STA_NBVOLS`, `STA_NBDEGRAD`, `STA_QUARTIER`) VALUES
 ('1', 'Paradis', '34 rue de', 10, 5, 5, 10, 1, 1, '1'),
 ('2', 'Test', '34 rue de', 10, 5, 5, 10, 1, 1, '2');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `technicien`
+-- Structure de la table `TECHNICIEN`
 --
 
-CREATE TABLE IF NOT EXISTS `technicien` (
-  `Tec_Matricule` char(5) NOT NULL,
-  `Tec_Nom` varchar(35) DEFAULT NULL,
-  `Tec_Prenom` varchar(35) DEFAULT NULL,
-  `Tec_Pwd` varchar(40) NOT NULL,
-  `Tec_Responsable` tinyint(1) NOT NULL,
-  PRIMARY KEY (`Tec_Matricule`)
+CREATE TABLE IF NOT EXISTS `TECHNICIEN` (
+  `TEC_MATRICULE` char(5) NOT NULL,
+  `TEC_NOM` varchar(35) DEFAULT NULL,
+  `TEC_PRENOM` varchar(35) DEFAULT NULL,
+  `TEC_PWD` varchar(40) NOT NULL,
+  `TEC_RESPONSABLE` tinyint(1) NOT NULL,
+  PRIMARY KEY (`TEC_MATRICULE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `technicien`
+-- Contenu de la table `TECHNICIEN`
 --
 
-INSERT INTO `technicien` (`Tec_Matricule`, `Tec_Nom`, `Tec_Prenom`, `Tec_Pwd`, `Tec_Responsable`) VALUES
+INSERT INTO `TECHNICIEN` (`TEC_MATRICULE`, `TEC_NOM`, `TEC_PRENOM`, `TEC_PWD`, `TEC_RESPONSABLE`) VALUES
 ('1', 'test', 'test', '356a192b7913b04c54574d18c28d46e6395428ab', 0),
 ('2', 'test', 'test', '356a192b7913b04c54574d18c28d46e6395428ab', 1),
 ('test', 'test', 'test', '098f6bcd4621d373cade4e832627b4f6', 1);
@@ -229,27 +229,27 @@ INSERT INTO `technicien` (`Tec_Matricule`, `Tec_Nom`, `Tec_Prenom`, `Tec_Pwd`, `
 -- --------------------------------------------------------
 
 --
--- Structure de la table `velo`
+-- Structure de la table `VELO`
 --
 
-CREATE TABLE IF NOT EXISTS `velo` (
-  `Vel_Num` char(5) NOT NULL,
-  `Vel_Station` char(5) DEFAULT NULL,
-  `Vel_Etat` char(10) NOT NULL,
-  `Vel_Type` char(6) NOT NULL,
-  `Vel_Accessoire` varchar(20) DEFAULT NULL,
-  `Vel_Casse` char(1) DEFAULT NULL,
-  PRIMARY KEY (`Vel_Num`),
-  KEY `POSITIONNER_FK` (`Vel_Station`),
-  KEY `AVOIR_FK` (`Vel_Etat`),
-  KEY `APPARTENIR_FK` (`Vel_Type`)
+CREATE TABLE IF NOT EXISTS `VELO` (
+  `VEL_NUM` char(5) NOT NULL,
+  `VEL_STATION` char(5) DEFAULT NULL,
+  `VEL_ETAT` char(10) NOT NULL,
+  `VEL_TYPE` char(6) NOT NULL,
+  `VEL_ACCESSOIRE` varchar(20) DEFAULT NULL,
+  `VEL_CASSE` char(1) DEFAULT NULL,
+  PRIMARY KEY (`VEL_NUM`),
+  KEY `POSITIONNER_FK` (`VEL_STATION`),
+  KEY `AVOIR_FK` (`VEL_ETAT`),
+  KEY `APPARTENIR_FK` (`VEL_TYPE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `velo`
+-- Contenu de la table `VELO`
 --
 
-INSERT INTO `velo` (`Vel_Num`, `Vel_Station`, `Vel_Etat`, `Vel_Type`, `Vel_Accessoire`, `Vel_Casse`) VALUES
+INSERT INTO `VELO` (`VEL_NUM`, `VEL_STATION`, `VEL_ETAT`, `VEL_TYPE`, `VEL_ACCESSOIRE`, `VEL_CASSE`) VALUES
 ('1', '1', '1', '1', NULL, '0'),
 ('2', '1', '2', '1', NULL, '0');
 
@@ -258,10 +258,10 @@ INSERT INTO `velo` (`Vel_Num`, `Vel_Station`, `Vel_Etat`, `Vel_Type`, `Vel_Acces
 --
 
 --
--- Contraintes pour la table `quartier`
+-- Contraintes pour la table `QUARTIER`
 --
-ALTER TABLE `quartier`
-  ADD CONSTRAINT `FK_STA_QUA` FOREIGN KEY (`Qua_Id`) REFERENCES `station` (`Sta_Quartier`);
+ALTER TABLE `QUARTIER`
+  ADD CONSTRAINT `FK_STA_QUA` FOREIGN KEY (`QUA_ID`) REFERENCES `STATION` (`STA_QUARTIER`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
