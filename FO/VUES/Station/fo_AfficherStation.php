@@ -2,7 +2,7 @@
 			
 	<br/>
 <?php
-require_once ("FO/Modeles/Station/AfficherStation.inc.php") ;
+require_once ("../../../FO/Modeles/Station/AfficherStation.inc.php") ;
 ?>
 
 	<fieldset>
@@ -25,7 +25,7 @@ require_once ("FO/Modeles/Station/AfficherStation.inc.php") ;
 	</head>
 		<legend> Suivi des stations </legend>
 		<br/>
-		<form  >
+		
 		<table border =1 width="100%" >
 			<tr>
 				<th width="55%" >Quartier</th>
@@ -57,7 +57,7 @@ require_once ("FO/Modeles/Station/AfficherStation.inc.php") ;
 			}
 ?>
 
-		</form>
+	
 		</table>		
 	</fieldset>
 	<br/><br/>
