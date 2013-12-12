@@ -1,6 +1,3 @@
-
-
-	<br/>
 <?php
 require_once ("FO/Modeles/Station/AfficherStation.inc.php") ;
 ?>
@@ -60,4 +57,4 @@ require_once ("FO/Modeles/Station/AfficherStation.inc.php") ;
 
 		</table>
 	</fieldset>
-	<br/><br/>
+	

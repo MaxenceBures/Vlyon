@@ -41,9 +41,12 @@
    	<?php
    	if(!isset($_GET['page']))
    		$_GET['page'] = null;
-
 		switch($_GET['page'])
 		{
+			
+			case "ListeDemande":
+				$fichier = "Pages/Demande/Liste.php";
+				$titre   =  "Liste";
 			case "enregistrer_Modif":
 				$fichier = "FO/Modeles/Station/fo_EnregistrerModif.inc.php";
 				$titre   = "Enregistrer une modification";
@@ -68,11 +71,12 @@
 
 		}
 
-	require_once("mdl/menu.php") ;
-    		echo 'vous etes connectes';
-
+	//require_once("mdl/menu.php") ;
+    	//echo 'vous etes connectes';
+		
 
 include($fichier);
+
     ?>
 </article>
 </div>
@@ -107,7 +111,7 @@ include($fichier);
 	<?php
 	} else {
 ?>
-    	<li><a href="Pages/Demande/Liste.php">Liste Demande</a></li>
+    	<li><a href="?page=ListeDemande">Liste Demande</a></li>
     <?php }  ?>
     	<li><a href="?page=afficherStation">Afficher les Stations</a></li>
     	<li><a href="Pages/Demande/ficheajout.php">Ajout Demande</a></li>
@@ -122,6 +126,6 @@ include($fichier);
     </body>
 		<?php
 		}
-		include($fichier);
+	//	include($fichier);
 
 ?>
