@@ -3,7 +3,7 @@ try
 {
 
   function connect(){
-     mysql_connect('localhost', 'root', 'tioneb'); // Votre serveur (ex : 'localhost'), login serveur (ex : 'root'), mot de passe (ex : '')
+     mysql_connect('localhost', 'vlyon', 'vlyon'); // Votre serveur (ex : 'localhost'), login serveur (ex : 'root'), mot de passe (ex : '')
      mysql_select_db('vlyon'); // Nom de votre base de données
   }
 

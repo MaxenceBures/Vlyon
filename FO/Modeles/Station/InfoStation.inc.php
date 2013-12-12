@@ -3,7 +3,7 @@
 	{
 		require_once("classe/clstBaseMysql.classe.php") ;
 
-		$oSql = new clstBaseMysql("localhost", "root", "tioneb", "VLYON") ;
+		$oSql = new clstBaseMysql("localhost", "vlyon", "vlyon", "VLYON") ;
 		return ($oSql) ;
 	}
 

@@ -98,6 +98,9 @@ include($fichier);
 	<nav id="nav"><ul>
 <?php
 	if($resp == '1') {
+		/**
+		 * @todo virer les xxx/xxx/xxx.zz et utiliser des ?page=action
+		 */
 ?>
 		<li><a href="Pages/Demande/listeficheAdmin.php">Liste Demande</a></li>
 		<li><a href="Pages/Intervention/listeIntervention.php">Liste Intervention</a></li>
@@ -106,9 +109,9 @@ include($fichier);
 ?>
     	<li><a href="Pages/Demande/Liste.php">Liste Demande</a></li>
     <?php }  ?>
-    	<li><a href="FO/VUES/Station/fo_AfficherStation.php">Afficher les Stations</a></li>
+    	<li><a href="?page=afficherStation">Afficher les Stations</a></li>
     	<li><a href="Pages/Demande/ficheajout.php">Ajout Demande</a></li>
-    	<li><a href="Pages/Intervention/AjoutIntervention.php">Ajout Intervention</a></li>
+    	<li><a href="?page=ajouterInterv">Ajout Intervention</a></li>
 		<li><a href="FO/VUES/Produit/fo_commanderProduit.php">Commander Produit</a></li>
 		<li><a href="FO/VUES/Produit/fo_listeCommandePdt.php">Liste Commande</a></li>
     	<li><a href="Pages/deconnexion.php">Se deconnecter</a></li>
