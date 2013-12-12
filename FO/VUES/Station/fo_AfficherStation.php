@@ -34,17 +34,17 @@ require_once ("../../../FO/Modeles/Station/AfficherStation.inc.php") ;
 			$lesStations  = getAllStation() ;
 			foreach($lesStations as $uneStation)
 			{
-$id = $uneStation["Sta_Code"];
+$id = $uneStation["STA_CODE"];
 ?>	
 					<tr>
 					
 						<input type="hidden" name="idStation" id="idStation" value='<?php echo $id; ?>'/>
-						<td><?php echo $uneStation["Qua_lib"] ; var_dump($id);  ?></td>
-						<td><?php echo $uneStation["Sta_Code"]; ?></td>
+						<td><?php echo $uneStation["QUA_LIB"] ;  ?></td>
+						<td><?php echo $uneStation["STA_CODE"]; ?></td>
 						<td><a href="fo_informationStation.php?variable=<?php print($id) ?>"><input type="button" value="Affichage"  /></a></td>	
 				<!--		<td colspan="1" >
 							<form action="fo_informationStation" method="POST"> 
-								<input type="hidden" name="idStation" value="<?php echo $uneStation["Sta_Code"]; ?>"/>
+								<input type="hidden" name="idStation" value="<?php echo $uneStation["STA_CODE"]; ?>"/>
 								<a href="fo_informationStation"><input type="submit" name="cmd_Inf" id="cmd_Inf" value="Information" onClick="
 									if(confirm('Vous allez consulter les informations concernant les stations'))
 									{	

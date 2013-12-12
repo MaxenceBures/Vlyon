@@ -5,7 +5,7 @@ if(isset($_SESSION['id'])) {
 	connect();
 	$code = $_GET['variable'];
 	modifcommande();
-	$requete = "SELECT * FROM commande where Com_Code= '".$code."'";                
+	$requete = "SELECT * FROM COMMANDE where COM_CODE= '".$code."'";                
 	$enreg = mysql_fetch_assoc(mysql_query($requete));
 	?>
 	<html>
@@ -34,7 +34,7 @@ if(isset($_SESSION['id'])) {
 						<label for="codePdt">Code Produit : </label>
 					</td>
 					<td>
-						<input type="text" id="code" name="code" disabled="" value="<?php echo($enreg["Com_Produit"]); ?>"/>
+						<input type="text" id="code" name="code" disabled="" value="<?php echo($enreg["COM_PRODUIT"]); ?>"/>
 					</td>
 				</tr>
 				</br>
@@ -43,14 +43,14 @@ if(isset($_SESSION['id'])) {
 					<label for="libellePdt">Quantité : </label>
 					</td>
 					<td>
-						<input type="text" id="txt_qte" name="txt_qte" value="<?php echo($enreg["Com_Qte"]);?>"/>
+						<input type="text" id="txt_qte" name="txt_qte" value="<?php echo($enreg["COM_QTE"]);?>"/>
 				</br>
 				<tr>
 					<td>
 						<label for="dtae_Commande">Date Commande : </label>
 					</td>
 					<td>
-						<input type="text" id="txt_date" name="txt_date" disabled="" value="<?php echo($enreg["Com_Date"]); ?>"/>
+						<input type="text" id="txt_date" name="txt_date" disabled="" value="<?php echo($enreg["COM_DATE"]); ?>"/>
 					</td>
 				</tr>
 				</br>

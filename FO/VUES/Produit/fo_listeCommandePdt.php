@@ -38,13 +38,13 @@
 			?>
 			
 			<tr>
-				<td><?php echo $demandes["Com_Code"] ; $code = $demandes["Com_Code"] ;?><input type="hidden"  value="<?= $code ?>" id="code" name="code"/></td>
-				<td><?php echo $demandes["Com_Produit"] ;  ?></td>
-				<td><?php echo $demandes["Pdt_Libelle"]; ?></td>
-				<td><?php echo $demandes["Com_Qte"] ; ?></td>
-				<td><?php echo $demandes["Com_Date"] ; ?></td>
-				<td><?php echo $demandes["Com_Valide"] ;?></td>
-				<td><a href="ModifCommande.php?variable=<?php echo($demandes["Com_Code"]) ?>"><input type="button" value="Modification" onClick="if(confirm('Vous allez modifier la commande choisie ?'))
+				<td><?php echo $demandes["COM_CODE"] ; $code = $demandes["COM_CODE"] ;?><input type="hidden"  value="<?= $code ?>" id="code" name="code"/></td>
+				<td><?php echo $demandes["COM_PRODUIT"] ;  ?></td>
+				<td><?php echo $demandes["PDT_LIBELLE"]; ?></td>
+				<td><?php echo $demandes["COM_QTE"] ; ?></td>
+				<td><?php echo $demandes["COM_DATE"] ; ?></td>
+				<td><?php echo $demandes["COM_VALIDE"] ;?></td>
+				<td><a href="ModifCommande.php?variable=<?php echo($demandes["COM_CODE"]) ?>"><input type="button" value="Modification" onClick="if(confirm('Vous allez modifier la commande choisie ?'))
 					{	
 						submit();		
 					}

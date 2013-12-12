@@ -27,13 +27,13 @@ if (isset($_POST['go_modifint']))
 	$dDate=date("y-m-d");
 	// selectionner la demande max de l'intervention
 
-	$count = mysql_fetch_row(mysql_query("SELECT MAX(demI_Num) FROM demandeinter "));
+	$count = mysql_fetch_row(mysql_query("SELECT MAX(DEMI_NUM) FROM DEMANDINTER "));
 	$test = $count[0] + 1;
 
 	//Changer l'etat de velo
-	$sReq = "UPDATE velo
-			SET Vel_Etat='". $sEtatVelo ."'
-			WHERE Vel_Num='". $sNumVelo ."'";
+	$sReq = "UPDATE VELO
+			SET VEL_ETAT='". $sEtatVelo ."'
+			WHERE VEL_NUM='". $sNumVelo ."'";
 	$sReqExe=mysql_query($sReq);
 	?>
 

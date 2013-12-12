@@ -27,9 +27,9 @@
 			
 ?>	
 				<tr>
-					<td><?php echo $uneInfo["Vel_Num"] ; $code1=$uneInfo["Vel_Num"];  ?></td>
-					<td><?php echo $uneInfo["Vel_Etat"]; ?></td>
-					<td><?php echo $uneInfo["DemI_Motif"]; ?></td>
+					<td><?php echo $uneInfo["VEL_NUM"] ; $code1=$uneInfo["VEL_NUM"];  ?></td>
+					<td><?php echo $uneInfo["VEL_ETAT"]; ?></td>
+					<td><?php echo $uneInfo["DEMI_MOTIF"]; ?></td>
 					<td colspan="1" >
 						<!-- action="?page=AfficherModif" -->
 							<input type="text" disabled="" name="idModif" id="idModif" value="<?php echo $code1; ?>"/>
@@ -58,8 +58,8 @@
 			{
 ?>	
 				<tr>
-					<td><?php echo $uneInfoE["Vel_num"] ; $code=$uneInfoE["Vel_num"] ?></td>
-					<td><?php echo $uneInfoE["Vel_etat"]; ?></td>
+					<td><?php echo $uneInfoE["VEL_NUM"] ; $code=$uneInfoE["VEL_NUM"] ?></td>
+					<td><?php echo $uneInfoE["VEL_ETAT"]; ?></td>
 					<td colspan="1" >
 							<form action="?page=AfficherModif" method="POST">
 								<input type="text" disabled="" name="idModif" value="<?php echo $code; ?>"/>

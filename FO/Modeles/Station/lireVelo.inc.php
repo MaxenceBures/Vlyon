@@ -12,8 +12,8 @@
 		$lesEtats = array() ;
 		$oSql= connecter() ;
 		
-		$sReq = " SELECT Eta_Code, Eta_Libelle
-				FROM etat";
+		$sReq = " SELECT ETAT_CODE, ETA_LIBELLE
+				FROM ETAT";
 		$sReqExe = $oSql->query($sReq);
 				
 		while ($uneLigne = $oSql->tabAssoc($sReqExe) ){

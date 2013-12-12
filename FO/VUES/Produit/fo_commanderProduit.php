@@ -27,7 +27,7 @@
 				foreach ($lesProduits as $unProduit)
 				{
 	?>
-					<option value="<?php echo $unProduit['Pdt_Code']; ?>"><?php echo $unProduit["Pdt_Libelle"] ?> </option>
+					<option value="<?php echo $unProduit['PDT_CODE']; ?>"><?php echo $unProduit["PDT_LIBELLE"] ?> </option>
 	<?php	
 				}
 	?>

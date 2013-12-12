@@ -7,13 +7,13 @@
 	$sQtePdt    = $_POST["txt_qte"];
 	
 	//génération d'un numéro d'intervention 
-	$sReq = "SELECT MAX(Com_Code) FROM COMMANDE" ;
+	$sReq = "SELECT MAX(COM_CODE) FROM COMMANDE" ;
 	$iNumCde = mysql_fetch_row(mysql_query($sReq));
 	//$iNumCde  = $oSql->getNombre($sReq) ;
 	$iNumCde = $iNumCde[0]  +  1 ;	
 	
 	//insertion des données dans la base
-	$sReq = "INSERT INTO COMMANDE(Com_Code, Com_Date, Com_Qte, Com_Valide, Com_Produit)
+	$sReq = "INSERT INTO COMMANDE(COM_CODE, COM_DATE, COM_QTE, COM_VALIDE, COM_PRODUIT)
 		     VALUES (".$iNumCde.",'".$dDateCde."',".$sQtePdt .",'Non', '" .$sCodePdt."')";
 	$oSql= mysql_query($sReq);	
 ?>

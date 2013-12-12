@@ -9,7 +9,7 @@
 	FUNCTION getAllProduits()
 	{		
 		$oSql= connecter() ;		
-		$sReq = " SELECT Pdt_Code, Pdt_Libelle 
+		$sReq = " SELECT PDT_CODE, PDT_LIBELLE 
 				  FROM PRODUIT ";
 		$rstPdt = $oSql->query($sReq) ;
 		$iNb = 0 ;
@@ -25,9 +25,9 @@
 	FUNCTION getAllCommandes()
 	{
 		$oSql = connecter();
-		$sReq = "SELECT Com_Code, Com_Date, Com_Qte, Com_Produit, Com_Valide, Pdt_Libelle
+		$sReq = "SELECT COM_CODE, COM_DATE, COM_QTE, COM_PRODUIT, COM_VALIDE, PDT_LIBELLE
 				 FROM COMMANDE, PRODUIT
-				 WHERE COMMANDE.Com_Produit = PRODUIT.Pdt_Code";		 
+				 WHERE COMMANDE.COM_PRODUIT = PRODUIT.PDT_CODE";		 
 		//echo ($sReq) ; die; 
 		$rstCde = $oSql->query($sReq);
 		//var_dump($rstCde); die ;
@@ -46,7 +46,7 @@
 		$oSql = connecter();
 		$sReq = "SELECT *
 				 FROM COMMANDE
-				 WHERE Com_Code = '".$code."'";
+				 WHERE COM_CODE = '".$code."'";
 		$rstCde = $oSql->query($sReq);
 		
 		if($uneLigne = $oSql->tabAssoc($rstCde))

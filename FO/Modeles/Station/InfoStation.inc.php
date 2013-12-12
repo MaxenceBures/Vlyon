@@ -11,10 +11,10 @@
 		$lesInfos = array() ;
 		$oSql= connecter() ;
 		$i=1;
-		$sReq = " SELECT Vel_Num, Vel_Etat, DemI_Motif
-				FROM velo, demandeinter
-				WHERE Vel_Num = DemI_Velo
-				AND Vel_Station='". $pInfo ."'";
+		$sReq = " SELECT VEL_NUM, VEL_ETAT, DEMI_MOTIF
+				FROM VELO, DEMANDEINTER
+				WHERE VEL_NUM = DEMI_VELO
+				AND VEL_STATION='". $pInfo ."'";
 		$sReqExe = $oSql->query($sReq);
 				
 		while ($uneLigne = $oSql->tabAssoc($sReqExe) ){
@@ -29,15 +29,15 @@
 		$lesInfosE = array() ;
 		$oSql= connecter() ;
 		$i=1;
-		$sReq = " SELECT Vel_num, Vel_etat
-				FROM velo
-				WHERE vel_num NOT
+		$sReq = " SELECT VEL_NUM, VEL_ETAT
+				FROM VELO
+				WHERE VEL_NUM NOT
 				IN (
 
-				SELECT demI_velo
-				FROM demandeinter
+				SELECT DEMI_VELO
+				FROM DEMANDEINTER
 				)
-				AND Vel_Station='". $pInfo ."'";
+				AND VEL_STATION='". $pInfo ."'";
 		$sReqExe = $oSql->query($sReq);
 				
 		while ($uneLigne = $oSql->tabAssoc($sReqExe) ){

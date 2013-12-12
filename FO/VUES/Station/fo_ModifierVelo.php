@@ -28,7 +28,7 @@ $sVelo = $_GET['variable'];
 
 							{
 ?>
-								<option value="<?php echo $unEtat["Eta_Code"] ; ?>"> <?php echo $unEtat["Eta_Libelle"] ; ?> </option> 
+								<option value="<?php echo $unEtat["ETA_CODE"] ; ?>"> <?php echo $unEtat["ETA_LIBELLE"] ; ?> </option> 
 <?php					
 							}	
 ?>
