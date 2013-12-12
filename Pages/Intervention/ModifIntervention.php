@@ -1,16 +1,16 @@
 <?php
 session_start();
 if(isset($_SESSION['id'])) {
-	require_once('../../include/functions.php');
+	require_once('include/functions.php');
 	connect();
 	//Bures Maxence
 	$id = $_GET['variable'];
 	modifinter();
-	$requete = "SELECT * FROM boninterv where BI_NUM= '".$id."'";                
+	$requete = "SELECT * FROM boninterv where BI_NUM= '".$id."'";
 	$enreg = mysql_fetch_assoc(mysql_query($requete));
 	?>
 	<html><body>
-	<a href="../../index.php"><img src="../../css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
+	<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 	<form id="modif_form" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 	<input type='hidden' name="id" id="id" value='<?php echo($id); ?>'/>
 	<table>
@@ -22,7 +22,7 @@ if(isset($_SESSION['id'])) {
 						<input type="text" id="ni" name="ni" disabled="" value="<?php echo($enreg["BI_Num"]); ?>"/>
 					</td>
 				</tr>
-				
+
 				<tr>
 					<td>
 						<label for="velo">Velo : </label>
@@ -49,7 +49,7 @@ if(isset($_SESSION['id'])) {
 						<textarea rows="4" cols="50"id="cr" name="cr"><?php echo($enreg['BI_CpteRendu']) ?></textarea>
 					</td>
 				</tr>
-				
+
 				</br>
 				<tr>
 					<td>
@@ -92,7 +92,7 @@ if(isset($_SESSION['id'])) {
 		</form>
 	</body></html>
 <?php
-}	
+}
 else
 {
 header('Location:/Vlyon/Pages/connexion.php');

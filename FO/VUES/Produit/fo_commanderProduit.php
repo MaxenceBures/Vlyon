@@ -1,5 +1,5 @@
 <?php
-	require_once ("../../../FO/Modeles/Produit/lireProduit.inc.php") ;
+	require_once ("FO/Modeles/Produit/lireProduit.inc.php") ;
 ?>
 <html>
 	<head>
@@ -19,7 +19,7 @@
 
 	</head>
 	<body>
-		<a href="../../../index.php"><img src="../../../css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
+		<a href="index.php"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
 		<form name="frm_cdeProduit" id="frm_cdeProduit" method="POST" action="/Vlyon/FO/Modeles/Produit/ajouterCommande.inc.php">
 			<select id="lst_produit" name="lst_produit">
 	<?php
@@ -28,7 +28,7 @@
 				{
 	?>
 					<option value="<?php echo $unProduit['PDT_CODE']; ?>"><?php echo $unProduit["PDT_LIBELLE"] ?> </option>
-	<?php	
+	<?php
 				}
 	?>
 			</select>

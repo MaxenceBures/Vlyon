@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['id'])) {
-require_once('../../include/functions.php');
+require_once('include/functions.php');
 $id = $_GET['variable'];
 
 ?>
@@ -11,20 +11,20 @@ $id = $_GET['variable'];
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
-		
-			
-			<link rel="stylesheet" href="../../css/style.css" />
-			<link rel="stylesheet" href="../../css/style-mobile.css" />
-			<link rel="stylesheet" href="../../css/style-desktop.css" />
-			<link rel="stylesheet" href="../../css/style-wide.css" />
-		
+
+
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-mobile.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
 		<!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
 
 	</head>
 	<body>
-		<a href="../../index.php"><img src="../../css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
+		<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 		<b>Demande d'intervention </b>
 			<table border = 1 width="100%" >
 				<tr>
@@ -39,7 +39,7 @@ $id = $_GET['variable'];
 					<form  action="<?php $_SERVER['PHP_SELF']; ?>" name="SuppDem" method="POST">
 		<?php
 			$demande = listedemande2int($id);
-			foreach ($demande as $demandes)			
+			foreach ($demande as $demandes)
 				{
 		?>
 				<tr>
@@ -52,7 +52,7 @@ $id = $_GET['variable'];
 					<td><?php echo $demandes["DEMI_TRAITE"] ;?></td>
 					<td><a href="FicheSuppression.php?variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="supprimer" onClick="if(confirm('Vous allez supprimer la demande choisie'))
 							{
-								submit();				
+								submit();
 							}
 							else
 	   						{
@@ -60,22 +60,22 @@ $id = $_GET['variable'];
 	   						}
 							" /></a></td>
 					<td><a href="ModifFiche.php?variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="Modification" onClick="if(confirm('Vous allez modifier la demande choisie'))
-							{	
+							{
 								submit();
-								
+
 							}
 							else
 	   						{
 	   							 return false;
 							}
-							" /></a></td>		
+							" /></a></td>
 				</tr>
 		<?php
 				}
-		?>	
+		?>
 					</form>
 			</table>
-	
+
 	</body>
 </html>
 <?php

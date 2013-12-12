@@ -1,9 +1,9 @@
 <?php
-	include("../../Modeles/Produit/lireProduit.inc.php");
+	include("Modeles/Produit/lireProduit.inc.php");
 ?>
 <html>
 	<head>
-	
+
     <script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
@@ -20,7 +20,7 @@
 
 	</head>
 	<body>
-		<a href="../../../index.php"><img src="../../../css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
+		<a href="index.php"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
 		<table border = 1 width="100%" >
 			<tr>
 				<th width="5%" >Numéro Commande</th>
@@ -32,11 +32,11 @@
 			</tr>
 			<?php
 			$uneCommande = getAllCommandes();
-			foreach ($uneCommande as $demandes)			
+			foreach ($uneCommande as $demandes)
 				{
-			
+
 			?>
-			
+
 			<tr>
 				<td><?php echo $demandes["COM_CODE"] ; $code = $demandes["COM_CODE"] ;?><input type="hidden"  value="<?= $code ?>" id="code" name="code"/></td>
 				<td><?php echo $demandes["COM_PRODUIT"] ;  ?></td>
@@ -45,8 +45,8 @@
 				<td><?php echo $demandes["COM_DATE"] ; ?></td>
 				<td><?php echo $demandes["COM_VALIDE"] ;?></td>
 				<td><a href="ModifCommande.php?variable=<?php echo($demandes["COM_CODE"]) ?>"><input type="button" value="Modification" onClick="if(confirm('Vous allez modifier la commande choisie ?'))
-					{	
-						submit();		
+					{
+						submit();
 					}
 					else
 					{
@@ -56,7 +56,7 @@
 			</tr>
 			<?php
 			}
-			
+
 			?>
 		</table>
 	</body>

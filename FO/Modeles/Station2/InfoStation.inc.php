@@ -1,11 +1,11 @@
 <?php
 	function connecter()
 	{
-		require_once("../../../classe/clstBaseMysql.classe.php") ;	
+		require_once("classe/clstBaseMysql.classe.php") ;
 		$oSql = new clstBaseMysql("localhost", "Vlyon", "mpvlyon", "vlyon") ;
 		return ($oSql) ;
-	}	
-	
+	}
+
 	FUNCTION getAllInfo($pInfo)
 	{
 		$lesInfos = array() ;
@@ -16,12 +16,12 @@
 				WHERE VEL_NUM = DEMI_VELO
 				AND VEL_STATION='". $pInfo ."'";
 		$sReqExe = $oSql->query($sReq);
-				
+
 		while ($uneLigne = $oSql->tabAssoc($sReqExe) ){
 			$lesInfos[$i] =  $uneLigne ;
 			$i=$i+1;
 		}
-		
+
 		return $lesInfos ;
 	}
 		FUNCTION getAllInfoE($pInfo)
@@ -39,13 +39,13 @@
 				)
 				AND VEL_STATION='". $pInfo ."'";
 		$sReqExe = $oSql->query($sReq);
-				
+
 		while ($uneLigne = $oSql->tabAssoc($sReqExe) ){
 			$lesInfosE[$i] =  $uneLigne ;
 			$i=$i+1;
 		}
-		
+
 		return $lesInfosE ;
 	}
-				
+
 ?>

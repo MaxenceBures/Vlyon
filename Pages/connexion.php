@@ -1,11 +1,12 @@
 <?php
-	include('../include/functions.php');
+	// include('include/functions.php');
+	// include('include/functions.php');
     login();
     //Bures Maxence
 ?>
 <html>
 <head>
-	
+
 </head>
 <body>
 	<form id="connexion_form" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">

@@ -1,15 +1,15 @@
 
 <?php
-	require_once ("../../../FO/Modeles/Station/InfoStation.inc.php") ;
+	require_once ("FO/Modeles/Station/InfoStation.inc.php") ;
 	$sStation = $_GET['variable'];
-?>	
+?>
 	<fieldset>
 		<legend> Suivi des stations </legend>
 		<br/>
 		<table border =1 width="100%" >
-		
+
 				tableau des velos ayant besoin d'une intervention
-		
+
 			<tr>
 				<th width="33%" >Code Velo</th>
 				<th width="33%">Etat du Velo</th>
@@ -17,15 +17,15 @@
 				<th width="25%">Modification</th>
 			</tr>
 			<form  action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
-<?php			
+<?php
 			$lesInfos  = getAllInfo($sStation) ;
 			 //var_dump($lesInfos);die;
 			foreach($lesInfos as $uneInfo)
 			{
-			
-			
-			
-?>	
+
+
+
+?>
 				<tr>
 					<td><?php echo $uneInfo["VEL_NUM"] ; $code1=$uneInfo["VEL_NUM"];  ?></td>
 					<td><?php echo $uneInfo["VEL_ETAT"]; ?></td>
@@ -43,20 +43,20 @@
 ?>
 		</table>
 		<table border =1 width="100%" >
-		
+
 		tableau des velos en etat
-		
+
 		<tr>
 			<th width="48%" >Code Velo</th>
 			<th width="48%">Etat du Velo</th>
 			<th width="4%">Modification</th>
 			</tr>
-<?php			
+<?php
 			$lesInfosE  = getAllInfoE($sStation) ;
 			// var_dump($lesInfosE);die;
 			foreach($lesInfosE as $uneInfoE)
 			{
-?>	
+?>
 				<tr>
 					<td><?php echo $uneInfoE["VEL_NUM"] ; $code=$uneInfoE["VEL_NUM"] ?></td>
 					<td><?php echo $uneInfoE["VEL_ETAT"]; ?></td>

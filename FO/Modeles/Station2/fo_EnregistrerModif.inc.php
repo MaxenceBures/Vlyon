@@ -1,19 +1,19 @@
 <?php
 //session_start();
 
-//require_once ("../../../FO/Vues/Station/fo_ModifierVelo.php");
-require_once ("../../../include/functions.php");
+//require_once ("FO/Vues/Station/fo_ModifierVelo.php");
+require_once ("include/functions.php");
 
 	/*function connecter()
 	{
-		require_once("classe/clstBaseMysql.classe.php") ;		
+		require_once("classe/clstBaseMysql.classe.php") ;
 		$oSql = new clstBaseMysql("localhost", "root", "", "Vlyon") ;
 		return ($oSql) ;
 	}	*/
 
 	//recuperer tout les variables que l'on as besoin
-function test(){	
-if (isset($_POST['go_modifint'])) 
+function test(){
+if (isset($_POST['go_modifint']))
 {
 	connecter();
 	$id = $_SESSION['id'];
@@ -41,7 +41,7 @@ if (isset($_POST['go_modifint']))
 
 	<?php
 	//var_dump($sReq);
-/*	
+/*
 	//Ajouter une demande
 	$sReq = "Insert Into demandeinter (demi_num, demi_velo, demi_date, demi_technicien, demi_modif, demi_traite)
 			values (demi_num='". $test ."',
@@ -51,8 +51,8 @@ if (isset($_POST['go_modifint']))
 					demi_motif='". $sMotif ."',
 					demi_traite='0')";
 	$reqExe=mysql_query($sReq);*/
-?>		
-		
+?>
+
 
 <?php
 }
