@@ -1,8 +1,8 @@
 
 <?php
-	require_once ("FO/Modeles/Station/InfoStation.inc.php") ;
-	$sStation = $_POST['idStation'];
-?>
+	require_once ("../../../FO/Modeles/Station/InfoStation.inc.php") ;
+	$sStation = $_GET['variable'];
+?>	
 	<fieldset>
 		<legend> Suivi des stations </legend>
 		<br/>
@@ -16,6 +16,7 @@
 				<th width="34%">Intervention</th>
 				<th width="25%">Modification</th>
 			</tr>
+			<form  action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
 <?php			
 			$lesInfos  = getAllInfo($sStation) ;
 			 //var_dump($lesInfos);die;
@@ -26,16 +27,17 @@
 			
 ?>	
 				<tr>
-					<td><?php echo $uneInfo["VEL_NUM"] ; $code1=$uneInfo["VEL_NUM"]  ?></td>
+					<td><?php echo $uneInfo["VEL_NUM"] ; $code1=$uneInfo["VEL_NUM"];  ?></td>
 					<td><?php echo $uneInfo["VEL_ETAT"]; ?></td>
 					<td><?php echo $uneInfo["DEMI_MOTIF"]; ?></td>
 					<td colspan="1" >
-						<form action="?page=AfficherModif" method="POST">
-							<input type="hidden" name="idModif" id="idModif" value="<?php echo $code1; ?>"/>
-							<input type="submit" name="cmd_Modif" id="cmd_Modif" value="Modifier" onClick="submit" 	/>
-						</form>
+						<!-- action="?page=AfficherModif" -->
+							<input type="text" disabled="" name="idModif" id="idModif" value="<?php echo $code1; ?>"/>
+							<a href="fo_modifierVelo.php?variable=<?php print($code1); ?>"><input type="submit" name="cmd_Modif" id="cmd_Modif" value="Modifier" onClick="submit" 	/>
+						</a>
 					</td>
 				</tr>
+				</form>
 <?php
 			}
 ?>
@@ -60,7 +62,7 @@
 					<td><?php echo $uneInfoE["VEL_ETAT"]; ?></td>
 					<td colspan="1" >
 							<form action="?page=AfficherModif" method="POST">
-								<input type="hidden" name="idModif" value="<?php echo $code; ?>"/>
+								<input type="text" disabled="" name="idModif" value="<?php echo $code; ?>"/>
 								<input type="submit" name="cmd_Modif" id="cmd_Modif" value="Modifier" onClick="submit"	/>
 							</form>
 					</td>

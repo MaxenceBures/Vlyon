@@ -1,8 +1,8 @@
 <?php
 	function connecter()
 	{
-		require_once("classe/clstBaseMysql.classe.php") ;	
-		$oSql = new clstBaseMysql("localhost", "root", "", "Vlyon") ;
+		require_once("../classe/clstBaseMysql.classe.php") ;	
+		$oSql = new clstBaseMysql("localhost", "Vlyon", "mpvlyon", "vlyon") ;
 		return ($oSql) ;
 	}	
 	

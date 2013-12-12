@@ -2,15 +2,19 @@
 session_start();
 $id = $_SESSION['id'];
 
-require_once("FO/Modeles/Station/lireVelo.inc.php");
+require_once("../../../FO/Modeles/Station/lireVelo.inc.php");
+require_once("../../../FO/Modeles/Station/fo_EnregistrerModif.inc.php");
+test();
 		$lesEtats = getEtats() ;
 		//var_dump($lesEtats);die;
-$sVelo = $_POST["idModif"];
+$sVelo = $_GET['variable'];
+//$sVelo = $_POST["idModif"];
 //var_dump($sVelo);
 ?>
 <center>
 	<br/>
 	
+	<input type="hidden" id="sVelo" name="sVelo" value="<?php echo($sVelo); ?>" />
 	<table border=1 cellspacing=0 cellpadding=7  >
 		
 			<tr>
@@ -34,6 +38,7 @@ $sVelo = $_POST["idModif"];
 				</td>
 				</th>
 			</tr>
+			<form name="frm_SelecModif" method="POST" action="../../../FO/Modeles/Station/fo_EnregistrerModif.inc.php" >
 			<tr>
 				<td>Intervention?</td>
 				<td colspan="3">
@@ -43,8 +48,9 @@ $sVelo = $_POST["idModif"];
 				<td>Motif: <input type="text" id="motif_Intervention" name="motif_Intervention"/>
 			</tr>
 			<tr>
-			
-		<form name="frm_SelecModif" method="POST" action="?page=enregistrer_Modif">
+			<td><a href="../../../FO/Modeles/Station/fo_EnregistrerModif.inc.php"><input type="button" value="Affichage"  name="go_modifint" id="go_modifint"  /></a></td>		
+
+
 				<td colspan="5" class="titre">
 					<center><input type="image" src="images/valider.png" name="cmd_valider" value="Valider" onClick="
 					if(confirm('êtes vous sur de vouloir effectuer cette modification?'))
@@ -60,5 +66,5 @@ $sVelo = $_POST["idModif"];
 		</form>
 	</table>
 <?php
-
+//<action="?page=enregistrer_Modif">
 ?>
