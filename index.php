@@ -80,10 +80,10 @@ include($fichier);
 		$utilisateur =utilisateur();
 		foreach ($utilisateur as $utilisateurs)			
 				{
-		echo strtoupper($utilisateurs["Tec_Nom"]); 
+		echo strtoupper($utilisateurs["TEC_NOM"]); 
 		echo" - ";
-		echo strtoupper($utilisateurs["Tec_Prenom"]);
-		$resp = $utilisateurs["Tec_Responsable"];
+		echo strtoupper($utilisateurs["TEC_PRENOM"]);
+		$resp = $utilisateurs["TEC_RESPONSABLE"];
 		
 	}
 

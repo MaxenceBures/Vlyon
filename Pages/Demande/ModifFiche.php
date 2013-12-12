@@ -6,7 +6,7 @@ if(isset($_SESSION['id'])) {
 	//Bures Maxence
 	$id = $_GET['variable'];
 	modifdemandeint();
-	$requete = "SELECT * FROM demandeinter where DemI_NUM= '".$id."'";                
+	$requete = "SELECT * FROM DEMANDEINTER where DEMI_NUM= '".$id."'";                
 	$enreg = mysql_fetch_assoc(mysql_query($requete));
 	?>
 	<html><body>
@@ -19,7 +19,7 @@ if(isset($_SESSION['id'])) {
 						<label for="velo">Velo : </label>
 					</td>
 					<td>
-						<input type="text" id="velo" name="velo" disabled="" value="<?php echo($enreg["DemI_Velo"]); ?>"/>
+						<input type="text" id="velo" name="velo" disabled="" value="<?php echo($enreg["DEMI_VELO"]); ?>"/>
 					</td>
 				</tr>
 				</br>
@@ -34,7 +34,7 @@ if(isset($_SESSION['id'])) {
 				foreach ($oStation as $Station)
 				{
 	?>
-					<option value="<?php echo $Station['Sta_Code']; ?>"><?php echo $Station["Sta_Nom"] ?> </option>
+					<option value="<?php echo $Station['STA_CODE']; ?>"><?php echo $Station["STA_NOM"] ?> </option>
 	<?php	
 				}
 	?>
@@ -47,7 +47,7 @@ if(isset($_SESSION['id'])) {
 						<label for="attache">N° Attache : </label>
 					</td>
 					<td>
-						<input type="text" required="" id="attache" value="<?php echo($enreg['DemI_Attache']) ?>" name="attache"/>
+						<input type="text" required="" id="attache" value="<?php echo($enreg['DEMI_ATTACHE']) ?>" name="attache"/>
 					</td>
 				</tr>
 				</br>
@@ -56,7 +56,7 @@ if(isset($_SESSION['id'])) {
 						<label for="motif">Motif : </label>
 					</td>
 					<td>
-						<textarea rows="4" cols="50"id="motif" name="motif"><?php echo($enreg['DemI_Motif']) ?></textarea>
+						<textarea rows="4" cols="50"id="motif" name="motif"><?php echo($enreg['DEMI_MOTIF']) ?></textarea>
 					</td>
 				</tr>
 				</br>

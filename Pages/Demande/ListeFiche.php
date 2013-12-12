@@ -43,14 +43,14 @@ $id = $_GET['variable'];
 				{
 		?>
 				<tr>
-					<td><?php echo $demandes["DemI_Num"] ; $code = $demandes["DemI_Num"] ;?><input type="hidden"  value="<?= $code ?>" id="code" name="code"/></td>
-					<td><?php echo $demandes["DemI_Velo"]; ?></td>
-					<td><?php echo $demandes["DemI_Station"]; ?></td>
-					<td><?php echo $demandes["DemI_Attache"] ; ?></td>
-					<td><?php echo $demandes["DemI_Date"] ; ?></td>
-					<td><?php echo $demandes["DemI_Motif"] ; ?></td>
-					<td><?php echo $demandes["DemI_Traite"] ;?></td>
-					<td><a href="FicheSuppression.php?variable=<?php print($demandes["DemI_Num"]) ?>"><input type="button" value="supprimer" onClick="if(confirm('Vous allez supprimer la demande choisie'))
+					<td><?php echo $demandes["DEMI_NUM"] ; $code = $demandes["DEMI_NUM"] ;?><input type="hidden"  value="<?= $code ?>" id="code" name="code"/></td>
+					<td><?php echo $demandes["DEMI_VELO"]; ?></td>
+					<td><?php echo $demandes["DEMI_STATION"]; ?></td>
+					<td><?php echo $demandes["DEMI_ATTACHE"] ; ?></td>
+					<td><?php echo $demandes["DEMI_DATE"] ; ?></td>
+					<td><?php echo $demandes["DEMI_MOTIF"] ; ?></td>
+					<td><?php echo $demandes["DEMI_TRAITE"] ;?></td>
+					<td><a href="FicheSuppression.php?variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="supprimer" onClick="if(confirm('Vous allez supprimer la demande choisie'))
 							{
 								submit();				
 							}
@@ -59,7 +59,7 @@ $id = $_GET['variable'];
 	   							return false;
 	   						}
 							" /></a></td>
-					<td><a href="ModifFiche.php?variable=<?php print($demandes["DemI_Num"]) ?>"><input type="button" value="Modification" onClick="if(confirm('Vous allez modifier la demande choisie'))
+					<td><a href="ModifFiche.php?variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="Modification" onClick="if(confirm('Vous allez modifier la demande choisie'))
 							{	
 								submit();
 								

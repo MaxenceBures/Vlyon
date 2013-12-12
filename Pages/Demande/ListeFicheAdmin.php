@@ -45,15 +45,15 @@ if(isset($_SESSION['id'])) {
 			{
 	?>
 				<tr>
-					<td><?php echo $demandes["DemI_Num"] ;  ?></td>
-					<td><?php echo $demandes["DemI_Velo"]; ?></td>
-					<td><?php echo $demandes["DemI_Station"]; ?></td>
-					<td><?php echo $demandes["DemI_Attache"] ; ?></td>
-					<td><?php echo $demandes["DemI_Date"] ; ?></td>
-					<td><?php echo $demandes["DemI_Motif"] ; ?></td>
-					<td><?php echo $demandes["DemI_Traite"] ;?></td>
-					<td><?php echo $demandes["DemI_Technicien"] ;?></td>
-					<td><?php echo $demandes["DemI_Valide"] ;?></td>
+					<td><?php echo $demandes["DEMI_NUM"] ;  ?></td>
+					<td><?php echo $demandes["DEMI_VELO"]; ?></td>
+					<td><?php echo $demandes["DEMI_STATION"]; ?></td>
+					<td><?php echo $demandes["DEMI_ATTACHE"] ; ?></td>
+					<td><?php echo $demandes["DEMI_DATE"] ; ?></td>
+					<td><?php echo $demandes["DEMI_MOTIF"] ; ?></td>
+					<td><?php echo $demandes["DEMI_TRAIRE"] ;?></td>
+					<td><?php echo $demandes["DEMI_TECHNICIEN"] ;?></td>
+					<td><?php echo $demandes["DEMI_VALIDE"] ;?></td>
 				</tr>
 	<?php
 			}

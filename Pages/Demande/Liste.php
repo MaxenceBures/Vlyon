@@ -52,11 +52,11 @@ if (screen.width < 1000){
 		?>
 				
 				<tr >
-					<td><?php echo $demandes["DemI_Num"] ; $code = $demandes["DemI_Num"] ;?><input type="hidden"  value="<?= $code ?>" id="code" name="code"/></td>
-					<td><?php echo $demandes["DemI_Velo"]; ?></td>
-					<td><?php echo $demandes["DemI_Station"]; ?></td>
-					<td><?php echo $demandes["DemI_Date"]; ?></td>
-					<td><a href="ListeFiche.php?variable=<?php print($demandes["DemI_Num"]) ?>"><input type="button" value="Affichage"  /></a></td>		
+					<td><?php echo $demandes["DEMI_NUM"] ; $code = $demandes["DEMI_NUM"] ;?><input type="hidden"  value="<?= $code ?>" id="code" name="code"/></td>
+					<td><?php echo $demandes["DEMI_VELO"]; ?></td>
+					<td><?php echo $demandes["DEMI_STATION"]; ?></td>
+					<td><?php echo $demandes["DEMI_DATE"]; ?></td>
+					<td><a href="ListeFiche.php?variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="Affichage"  /></a></td>		
 				</tr>
 				
 		<?php

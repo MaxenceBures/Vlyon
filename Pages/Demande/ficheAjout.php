@@ -32,7 +32,7 @@ if(isset($_SESSION['id'])) {
 				foreach ($oStation as $Station)
 				{
 	?>
-					<option value="<?php echo $Station['Sta_Code']; ?>"><?php echo $Station["Sta_Nom"] ?> </option>
+					<option value="<?php echo $Station['STA_CODE']; ?>"><?php echo $Station["STA_NOM"] ?> </option>
 	<?php	
 				}
 	?>
