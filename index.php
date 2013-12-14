@@ -1,5 +1,10 @@
 <?php
  	session_start();
+ 	/**
+ 	 * @todo mettre ici un include
+ 	 *       du fichier function connexion bdd
+ 	 *       et virer les autres dans le code
+ 	 */
 	include('./include/functions.php');
 	login();
 
@@ -7,8 +12,7 @@
 	if(!isset($_SESSION['id'])) {
 		// On affiche une page de login
 		include_once('Pages/connexion.php');
-		die();
-		// on stop le chargement de la page
+		die();// on stop le chargement de la page
    }
 ?>
 <html>
