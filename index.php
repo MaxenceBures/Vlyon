@@ -1,22 +1,19 @@
 <?php
- session_start();
-    include('./include/functions.php');
-    login();
-    
-    // Si la variable de session n'existe pas
-    if(!isset($_SESSION['id'])) {
-        // On redirige l'utilisateur vers une page de login
-        // header('Location:Pages/connexion.php');
-        include_once('Pages/connexion.php');
-		die;
+ 	session_start();
+	include('./include/functions.php');
+	login();
 
+	// Si la variable de session n'existe pas
+	if(!isset($_SESSION['id'])) {
+		// On affiche une page de login
+		include_once('Pages/connexion.php');
+		die();
+		// on stop le chargement de la page
    }
-   else
-   {
-
-   	?>
-    <head>
-    <script src="js/jquery.min.js"></script>
+?>
+<html>
+	<head>
+		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
@@ -31,116 +28,106 @@
 		<!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
 	</head>
 	<body class="left-sidebar">
-	<div id="content">
-						<div id="content-inner">
+		<div id="content">
+			<div id="content-inner">
+				<!-- Post -->
+				<article class="is-post is-post-excerpt">
+					<?php
+					if(!isset($_GET['page']))
+						$_GET['page'] = null;
 
-							<!-- Post -->
-								<article class="is-post is-post-excerpt">
+					switch($_GET['page'])
+					{
 
-   	<?php
-   	if(!isset($_GET['page']))
-   		$_GET['page'] = null;
-		switch($_GET['page'])
-		{
-			
-			case "ListeDemande":
-				$fichier = "Pages/Demande/Liste.php";
-				$titre   =  "Liste";
-			case "listeIntervention":
-				$fichier = "Pages/Intervention/listeIntervention.php";
-				$titre   =  "listeIntervention";	
-			case "ListeDemandeAdmin":
-				$fichier = "Pages/Demande/listeficheAdmin.php";
-				$titre   =  "ListeAdmin";	
-			case "FicheAjout":
-				$fichier = "Pages/Demande/ficheajout.php";
-				$titre   =  "FicheAjout";
-			case "CommandeProd":
-				$fichier = "FO/VUES/Produit/fo_commanderProduit.php";
-				$titre   =  "CommandeProd";
-			case "CommandeListe":
-				$fichier = "FO/VUES/Produit/fo_listeCommandePdt.php";
-				$titre   =  "CommandeListe";					
-			case "enregistrer_Modif":
-				$fichier = "FO/Modeles/Station/fo_EnregistrerModif.inc.php";
-				$titre   = "Enregistrer une modification";
-				break;
-			case "AfficherModif":
-				$fichier = "FO/Vues/Station/fo_ModifierVelo.php";
-				$titre   = "Modifer un velo";
-				break;
-			case "AfficherInfo":
-				$fichier = "FO/VUES/Station/fo_InformationStation.php" ;
-				$titre   = "InfoStation";
-				break ;
-			case "afficherStation":
-				$fichier = "FO/VUES/Station/fo_AfficherStation.php" ;
-				$titre   = "CréeStation";
-				break ;
-			default :
-				$fichier = "Pages/accueil.php" ;
-				$titre   = "Accueil";
-				break;
+						case "ListeDemande":
+							$fichier = "Pages/Demande/Liste.php";
+							$titre   =  "Liste";
+						case "listeIntervention":
+							$fichier = "Pages/Intervention/listeIntervention.php";
+							$titre   =  "listeIntervention";
+						case "ListeDemandeAdmin":
+							$fichier = "Pages/Demande/listeficheAdmin.php";
+							$titre   =  "ListeAdmin";
+						case "FicheAjout":
+							$fichier = "Pages/Demande/ficheajout.php";
+							$titre   =  "FicheAjout";
+						case "CommandeProd":
+							$fichier = "FO/VUES/Produit/fo_commanderProduit.php";
+							$titre   =  "CommandeProd";
+						case "CommandeListe":
+							$fichier = "FO/VUES/Produit/fo_listeCommandePdt.php";
+							$titre   =  "CommandeListe";
+						case "enregistrer_Modif":
+							$fichier = "FO/Modeles/Station/fo_EnregistrerModif.inc.php";
+							$titre   = "Enregistrer une modification";
+							break;
+						case "AfficherModif":
+							$fichier = "FO/Vues/Station/fo_ModifierVelo.php";
+							$titre   = "Modifer un velo";
+							break;
+						case "AfficherInfo":
+							$fichier = "FO/VUES/Station/fo_InformationStation.php" ;
+							$titre   = "InfoStation";
+							break ;
+						case "afficherStation":
+							$fichier = "FO/VUES/Station/fo_AfficherStation.php" ;
+							$titre   = "CréeStation";
+							break ;
+						default :
+							$fichier = "Pages/accueil.php" ;
+							$titre   = "Accueil";
+							break;
+					}
 
-
-		}
-
-	//require_once("mdl/menu.php") ;
-    	//echo 'vous etes connectes';
-		
-
-include($fichier);
-
-    ?>
-</article>
-</div>
-</div>
-
-	<div id="sidebar">
-	<div id="logo">
-		<?php
-		$utilisateur =utilisateur();
-		foreach ($utilisateur as $utilisateurs)
+						//require_once("mdl/menu.php") ;
+						//echo 'vous etes connectes';
+						include($fichier);
+					?>
+				</article>
+			</div>
+		</div>
+		<div id="sidebar">
+			<div id="logo">
+				<?php
+				$utilisateur =utilisateur();
+				foreach ($utilisateur as $utilisateurs)
 				{
-		echo strtoupper($utilisateurs["TEC_NOM"]);
-		echo" - ";
-		echo strtoupper($utilisateurs["TEC_PRENOM"]);
-		$resp = $utilisateurs["TEC_RESPONSABLE"];
-
-	}
-
-
-
-		 ?>
-	</div>
-	<nav id="nav"><ul>
-<?php
-	if($resp == '1') {
-		/**
-		 * @todo virer les xxx/xxx/xxx.zz et utiliser des ?page=action
-		 */
-?>
-		<li><a href="?page=ListeDemandeAdmin">Liste Demande</a></li>
-		<li><a href="?page=listeIntervention">Liste Intervention</a></li>
-	<?php
-	} else {
-?>
-    	<li><a href="?page=ListeDemande">Liste Demande</a></li>
-    <?php }  ?>
-    	<li><a href="?page=afficherStation">Afficher les Stations</a></li>
-    	<li><a href="?page=FicheAjout">Ajout Demande</a></li>
-    	<li><a href="?page=ajouterInterv">Ajout Intervention</a></li>
-		<li><a href="?page=CommandeProd">Commander Produit</a></li>
-		<li><a href="?page=CommandeListe">Liste Commande</a></li>
-    	<li><a href="Pages/deconnexion.php">Se deconnecter</a></li>
-    	<li><a href="Pages/Demande/Liste.php">Liste Demande</a></li>
-
-    </ul>
-    </nav>
-    </div>
-    </body>
-		<?php
-		}
-	//	include($fichier);
-
-?>
+					echo strtoupper($utilisateurs["TEC_NOM"]);
+					echo" - ";
+					echo strtoupper($utilisateurs["TEC_PRENOM"]);
+					$resp = $utilisateurs["TEC_RESPONSABLE"];
+				}
+				?>
+			</div>
+			<nav id="nav">
+				<ul>
+					<?php
+					if($resp == '1')
+					{
+						/**
+						 * @todo virer les xxx/xxx/xxx.zz et utiliser des ?page=action
+						 */
+						?>
+						<li><a href="?page=ListeDemandeAdmin">Liste Demande</a></li>
+						<li><a href="?page=listeIntervention">Liste Intervention</a></li>
+						<?php
+					}
+					else
+					{
+						?>
+						<li><a href="?page=ListeDemande">Liste Demande</a></li>
+						<?php
+					}
+					?>
+					<li><a href="?page=afficherStation">Afficher les Stations</a></li>
+					<li><a href="?page=FicheAjout">Ajout Demande</a></li>
+					<li><a href="?page=ajouterInterv">Ajout Intervention</a></li>
+					<li><a href="?page=CommandeProd">Commander Produit</a></li>
+					<li><a href="?page=CommandeListe">Liste Commande</a></li>
+					<li><a href="Pages/deconnexion.php">Se deconnecter</a></li>
+					<li><a href="Pages/Demande/Liste.php">Liste Demande</a></li>
+				</ul>
+			</nav>
+		</div>
+	</body>
+</html>
