@@ -5,7 +5,15 @@
  	 *       du fichier function connexion bdd
  	 *       et virer les autres dans le code
  	 */
-	include('./include/functions.php');
+
+	require_once('classe/clstBaseMysql.classe.php') ;
+	require_once('include/connexion.inc.php');
+	require_once('include/functions.inc.php');
+
+	/**
+	 * @todo ce truc la est un peu bof,
+	 *       faut le passer dans connexion.inc
+	 */
 	login();
 
 	// Si la variable de session n'existe pas
