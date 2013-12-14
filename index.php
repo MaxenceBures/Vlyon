@@ -2,8 +2,7 @@
  session_start();
     include('./include/functions.php');
     login();
-
-
+    
     // Si la variable de session n'existe pas
     if(!isset($_SESSION['id'])) {
         // On redirige l'utilisateur vers une page de login
@@ -47,6 +46,21 @@
 			case "ListeDemande":
 				$fichier = "Pages/Demande/Liste.php";
 				$titre   =  "Liste";
+			case "listeIntervention":
+				$fichier = "Pages/Intervention/listeIntervention.php";
+				$titre   =  "listeIntervention";	
+			case "ListeDemandeAdmin":
+				$fichier = "Pages/Demande/listeficheAdmin.php";
+				$titre   =  "ListeAdmin";	
+			case "FicheAjout":
+				$fichier = "Pages/Demande/ficheajout.php";
+				$titre   =  "FicheAjout";
+			case "CommandeProd":
+				$fichier = "FO/VUES/Produit/fo_commanderProduit.php";
+				$titre   =  "CommandeProd";
+			case "CommandeListe":
+				$fichier = "FO/VUES/Produit/fo_listeCommandePdt.php";
+				$titre   =  "CommandeListe";					
 			case "enregistrer_Modif":
 				$fichier = "FO/Modeles/Station/fo_EnregistrerModif.inc.php";
 				$titre   = "Enregistrer une modification";
@@ -106,19 +120,20 @@ include($fichier);
 		 * @todo virer les xxx/xxx/xxx.zz et utiliser des ?page=action
 		 */
 ?>
-		<li><a href="Pages/Demande/listeficheAdmin.php">Liste Demande</a></li>
-		<li><a href="Pages/Intervention/listeIntervention.php">Liste Intervention</a></li>
+		<li><a href="?page=ListeDemandeAdmin">Liste Demande</a></li>
+		<li><a href="?page=listeIntervention">Liste Intervention</a></li>
 	<?php
 	} else {
 ?>
     	<li><a href="?page=ListeDemande">Liste Demande</a></li>
     <?php }  ?>
     	<li><a href="?page=afficherStation">Afficher les Stations</a></li>
-    	<li><a href="Pages/Demande/ficheajout.php">Ajout Demande</a></li>
+    	<li><a href="?page=FicheAjout">Ajout Demande</a></li>
     	<li><a href="?page=ajouterInterv">Ajout Intervention</a></li>
-		<li><a href="FO/VUES/Produit/fo_commanderProduit.php">Commander Produit</a></li>
-		<li><a href="FO/VUES/Produit/fo_listeCommandePdt.php">Liste Commande</a></li>
+		<li><a href="?page=CommandeProd">Commander Produit</a></li>
+		<li><a href="?page=CommandeListe">Liste Commande</a></li>
     	<li><a href="Pages/deconnexion.php">Se deconnecter</a></li>
+    	<li><a href="Pages/Demande/Liste.php">Liste Demande</a></li>
 
     </ul>
     </nav>

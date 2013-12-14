@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 $id = $_SESSION['id'];
 require_once ("FO/Vues/Station/fo_ModifierVelo.php");
 	/*function connecter()

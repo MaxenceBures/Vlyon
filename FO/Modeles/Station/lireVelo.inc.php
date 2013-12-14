@@ -2,12 +2,14 @@
 
 	function connecter()
 	{
-		require_once("classe/clstBaseMysql.classe.php") ;	
+		require_once('/classe/clstBaseMysql.classe.php') ;	
 		$oSql = new clstBaseMysql("localhost", "root", "", "VLYON") ;
+		
 		return ($oSql) ;
+
 	}	
 	
-	FUNCTION getEtats()
+	function getEtats()
 	{
 		$lesEtats = array() ;
 		$oSql= connecter() ;
@@ -22,5 +24,3 @@
 		
 		return $lesEtats ;
 	}
-				
-?>

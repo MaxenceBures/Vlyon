@@ -1,8 +1,8 @@
 <?php
-session_start();
+//session_start();
 $id = $_SESSION['id'];
 
-require_once("FO/Modeles/Station/lireVelo.inc.php");
+require_once('FO/Modeles/Station/lireVelo.inc.php');
 		$lesEtats = getEtats() ;
 		//var_dump($lesEtats);die;
 $sVelo = $_POST["idModif"];

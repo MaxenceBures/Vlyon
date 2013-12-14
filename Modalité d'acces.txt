@@ -1,7 +1,0 @@
-Pour que la l'application se connecte à mysql, il faut avoir une base nommée vlyon(Le script de creation de base se trouve dans le dossier script).
-Il faut egalement un utilisateur nommé vlyon ayant pour mot de passe mpvlyon.
-
-Pour acceder à l'application, il faut se connecter avec l'identifiant test et test comme mot de passes pour acceder à l'espace du site reserver au responsable.
-Pour y acceder en tant que simple technicien, il faut utiliser le l'id 1 et le mdp 1
-
-Toutes les pages fonctionnent, mise part la modification de l'etat d'un velo. Le probleme sera corriger dans les jours suivants. L'optimisation de l'application pour le format mobile sera bientot disponible

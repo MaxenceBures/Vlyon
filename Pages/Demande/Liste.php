@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['id'])) {
-require_once('include/functions.php');
+require_once(DOSSIER_BIBLIOTHEQUE.'include/functions.php');
 // Bures Maxence
 ?>
 <html>
