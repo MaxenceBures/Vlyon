@@ -48,11 +48,11 @@ function logout() {
   //  session_start();
     unset($_SESSION);
     session_destroy();
-   /*  header('Location: ../index.php');
-    echo '<script language="Javascript">';
-	echo 'alert("Vous êtes deconnecté")';
-	echo 'window.location.replace("index.php")';
-	echo '</script>';*/
+   //  header('Location: ../index.php');
+    echo '<script language="Javascript">'.
+       'alert("Vous êtes deconnecté");'.
+       'window.location.replace("../index.php")'.
+       '</script>';
 }
 
 function ListeDeroulanteStation()
