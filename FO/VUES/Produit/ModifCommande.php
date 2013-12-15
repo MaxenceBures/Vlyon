@@ -1,8 +1,8 @@
 <?php
-session_start();
+//session_start();
 if(isset($_SESSION['id'])) {
-	include('include/functions.php');
-	connect();
+	//include('include/functions.php');
+	//connect();
 	$code = $_GET['variable'];
 	modifcommande();
 	$requete = "SELECT * FROM COMMANDE where COM_CODE= '".$code."'";

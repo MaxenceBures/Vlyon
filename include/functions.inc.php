@@ -335,7 +335,7 @@ function createint(){
 
       }
     }
-    FUNCTION getAllProduits()
+    function getAllProduits()
     {
         $oSql= connecter() ;
         $sReq = " SELECT PDT_CODE, PDT_LIBELLE
@@ -351,7 +351,7 @@ function createint(){
         return ($lesProduits) ;
     }
 
-    FUNCTION getAllCommandes()
+    function getAllCommandes()
     {
         $oSql = connecter();
         $sReq = "SELECT COM_CODE, COM_DATE, COM_QTE, COM_PRODUIT, COM_VALIDE, PDT_LIBELLE
@@ -370,7 +370,7 @@ function createint(){
         return ($lesCommandes);
     }
 
-    FUNCTION getUneCommande($code)
+    function getUneCommande($code)
     {
         $oSql = connecter();
         $sReq = "SELECT *
@@ -382,4 +382,31 @@ function createint(){
         {
             return($uneLigne);
         }
+    }
+
+    function ajoutCommande(){
+     if (isset($_POST['go_ajoutcde']))
+     {    
+    $dDateCde = date("Y-m-d");
+    //réception des valeurs saisies
+    $sCodePdt   = $_POST["lst_produit"];
+    $sQtePdt    = $_POST["txt_qte"];
+
+    //génération d'un numéro d'intervention
+    $sReq = "SELECT MAX(COM_CODE) FROM COMMANDE" ;
+    $iNumCde = mysql_fetch_row(mysql_query($sReq));
+    //$iNumCde  = $oSql->getNombre($sReq) ;
+    $iNumCde = $iNumCde[0]  +  1 ;
+
+    //insertion des données dans la base
+    $sReq = "INSERT INTO COMMANDE(COM_CODE, COM_DATE, COM_QTE, COM_VALIDE, COM_PRODUIT)
+             VALUES (".$iNumCde.",'".$dDateCde."',".$sQtePdt .",'Non', '" .$sCodePdt."')";
+    $oSql= mysql_query($sReq);
+    ?>
+    <script language="Javascript">
+        alert("Commande enregistrée");
+        window.location.replace("index.php")
+    </script>
+    <?php
+}
     }

@@ -1,5 +1,5 @@
 <?php
-	include("Modeles/Produit/lireProduit.inc.php");
+	//include("Modeles/Produit/lireProduit.inc.php");
 ?>
 <html>
 	<head>
@@ -44,7 +44,7 @@
 				<td><?php echo $demandes["COM_QTE"] ; ?></td>
 				<td><?php echo $demandes["COM_DATE"] ; ?></td>
 				<td><?php echo $demandes["COM_VALIDE"] ;?></td>
-				<td><a href="ModifCommande.php?variable=<?php echo($demandes["COM_CODE"]) ?>"><input type="button" value="Modification" onClick="if(confirm('Vous allez modifier la commande choisie ?'))
+				<td><a href="?page=CommandeModif&variable=<?php echo($demandes["COM_CODE"]) ?>"><input type="button" value="Modification" onClick="if(confirm('Vous allez modifier la commande choisie ?'))
 					{
 						submit();
 					}

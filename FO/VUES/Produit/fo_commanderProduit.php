@@ -1,5 +1,6 @@
 <?php
-	require_once ("FO/Modeles/Produit/lireProduit.inc.php") ;
+	//require_once ("FO/Modeles/Produit/lireProduit.inc.php") ;
+ajoutCommande();
 ?>
 <html>
 	<head>
@@ -20,7 +21,7 @@
 	</head>
 	<body>
 		<a href="index.php"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
-		<form name="frm_cdeProduit" id="frm_cdeProduit" method="POST" action="/Vlyon/FO/Modeles/Produit/ajouterCommande.inc.php">
+		<form name="frm_cdeProduit" id="frm_cdeProduit" method="POST" action="">
 			<select id="lst_produit" name="lst_produit">
 	<?php
 				$lesProduits = getAllProduits() ;
@@ -33,7 +34,7 @@
 	?>
 			</select>
 			<input type="text" id="txt_qte" name="txt_qte" placeholder="Quantite"/>
-			<input type="submit" id="cmd_valider" name="cmd_valider" value="Valider">
+			<input type="submit" name="go_ajoutcde" id="go_ajoutcde" value="Valider">
 		</form>
 	</body>
 </html>
