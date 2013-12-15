@@ -30,7 +30,7 @@ function login() {
                     session_start();
                     $_SESSION['Resp'] = $user->TEC_RESPONSABLE;
                     $_SESSION['id'] = $user->TEC_MATRICULE;
-                    header('Location: ../index.php');
+                    header('Location: index.php');
 
                 }
                 else
@@ -48,7 +48,7 @@ function logout() {
   //  session_start();
     unset($_SESSION);
     session_destroy();
-
+     header('Location: ../index.php');
     echo '<script language="Javascript">';
 	echo 'alert("Vous êtes deconnecté")';
 	echo 'window.location.replace("index.php")';

@@ -20,8 +20,9 @@
 	if(!isset($_SESSION['id'])) {
 		// On affiche une page de login
 		include_once('Pages/connexion.php');
-		die();// on stop le chargement de la page
+		//die();// on stop le chargement de la page
    }
+   else{
 ?>
 <html>
 	<head>
@@ -111,6 +112,10 @@
 							$fichier = "FO/VUES/Station/fo_AfficherStation.php" ;
 							$titre   = "CréeStation";
 							break ;
+						case "Deconnexion":
+							$fichier = "Pages/deconnexion.php" ;
+							$titre   = "Deconnexion";
+							break ;	
 						default :
 							$fichier = "Pages/accueil.php" ;
 							$titre   = "Accueil";
@@ -164,9 +169,12 @@
 					<li><a href="?page=CommandeProd">Commander Produit</a></li>
 					<li><a href="?page=CommandeListe">Liste Commande</a></li>
 					<li><a href="Pages/deconnexion.php">Se deconnecter</a></li>
-					<li><a href="Pages/Demande/Liste.php">Liste Demande</a></li>
-				</ul>
+					</ul>
 			</nav>
 		</div>
 	</body>
 </html>
+<?php
+
+}
+?>

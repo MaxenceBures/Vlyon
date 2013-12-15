@@ -1,7 +1,7 @@
 <?php
-session_start();
+//session_start();
 if(isset($_SESSION['id'])) {
-		require_once('include/functions.php');
+//		require_once('include/functions.php');
 		//Bures Maxence
 ?>
 	<html>
@@ -51,7 +51,7 @@ if(isset($_SESSION['id'])) {
 					<td><?php echo $demandes["DEMI_ATTACHE"] ; ?></td>
 					<td><?php echo $demandes["DEMI_DATE"] ; ?></td>
 					<td><?php echo $demandes["DEMI_MOTIF"] ; ?></td>
-					<td><?php echo $demandes["DEMI_TRAIRE"] ;?></td>
+					<td><?php echo $demandes["DEMI_TRAITE"] ;?></td>
 					<td><?php echo $demandes["DEMI_TECHNICIEN"] ;?></td>
 					<td><?php echo $demandes["DEMI_VALIDE"] ;?></td>
 				</tr>
