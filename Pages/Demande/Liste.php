@@ -65,7 +65,7 @@ if (screen.width < 1000){
 					</form>
 			</table>
 
-			</br><a href="/Vlyon/Pages/Demande/ficheajout.php">Ajout demande</a>
+			</br><a href="?page=listeAjout">Ajout demande</a>
 
 	</body>
 </html>

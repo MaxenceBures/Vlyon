@@ -50,7 +50,7 @@ $id = $_GET['variable'];
 					<td><?php echo $demandes["DEMI_DATE"] ; ?></td>
 					<td><?php echo $demandes["DEMI_MOTIF"] ; ?></td>
 					<td><?php echo $demandes["DEMI_TRAITE"] ;?></td>
-					<td><a href="FicheSuppression.php?variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="supprimer" onClick="if(confirm('Vous allez supprimer la demande choisie'))
+					<td><a href="?page=listeDemandeSupp&variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="supprimer" onClick="if(confirm('Vous allez supprimer la demande choisie'))
 							{
 								submit();
 							}

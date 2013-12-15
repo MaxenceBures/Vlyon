@@ -55,6 +55,10 @@
 							$fichier = "Pages/Demande/Liste.php";
 							$titre   =  "Liste";
 							break ;
+						case "listeAjout":
+							$fichier = "Pages/Demande/FicheAjout.php";
+							$titre   =  "ListeAjout";
+							break ;	
 						case "listeDemandeFiche":
 							$fichier = "Pages/Demande/ListeFiche.php";
 							$titre   =  "ListeFiche";
@@ -62,7 +66,11 @@
 						case "listeDemandeModif":
 							$fichier = "Pages/Demande/ModifFiche.php";
 							$titre   =  "ListeModif";
-							break ;		
+							break ;
+						case "listeDemandeSupp":
+							$fichier = "Pages/Demande/FicheSuppression.php";
+							$titre   =  "ListeSuppresion";
+							break ;			
 						case "listeIntervention":
 							$fichier = "Pages/Intervention/listeIntervention.php";
 							$titre   =  "listeIntervention";
@@ -83,6 +91,10 @@
 							$fichier = "FO/VUES/Produit/fo_listeCommandePdt.php";
 							$titre   =  "CommandeListe";
 							break ;
+						case "CommandeModif":
+							$fichier = "FO/VUES/Produit/ModifCommande.php";
+							$titre   =  "CommandeModif";
+							break ;	
 						case "enregistrer_Modif":
 							$fichier = "FO/Modeles/Station/fo_EnregistrerModif.inc.php";
 							$titre   = "Enregistrer une modification";
