@@ -59,7 +59,7 @@ $id = $_GET['variable'];
 	   							return false;
 	   						}
 							" /></a></td>
-					<td><a href="ModifFiche.php?variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="Modification" onClick="if(confirm('Vous allez modifier la demande choisie'))
+					<td><a href="?page=listeDemandeModif&variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="Modification" onClick="if(confirm('Vous allez modifier la demande choisie'))
 							{
 								submit();
 

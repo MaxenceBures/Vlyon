@@ -58,7 +58,11 @@
 						case "listeDemandeFiche":
 							$fichier = "Pages/Demande/ListeFiche.php";
 							$titre   =  "ListeFiche";
-							break ;	
+							break ;
+						case "listeDemandeModif":
+							$fichier = "Pages/Demande/ModifFiche.php";
+							$titre   =  "ListeModif";
+							break ;		
 						case "listeIntervention":
 							$fichier = "Pages/Intervention/listeIntervention.php";
 							$titre   =  "listeIntervention";
