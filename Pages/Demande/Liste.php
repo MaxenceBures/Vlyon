@@ -56,7 +56,7 @@ if (screen.width < 1000){
 					<td><?php echo $demandes["DEMI_VELO"]; ?></td>
 					<td><?php echo $demandes["DEMI_STATION"]; ?></td>
 					<td><?php echo $demandes["DEMI_DATE"]; ?></td>
-					<td><a href="?page=listeDemandeFiche?variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="Affichage"  /></a></td>
+					<td><a href="?page=listeDemandeFiche&variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="Affichage"  /></a></td>
 				</tr>
 
 		<?php
