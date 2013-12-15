@@ -1,7 +1,7 @@
 <?php
-session_start();
+//session_start();
 if(isset($_SESSION['id'])) {
-require_once('include/functions.php');
+//require_once('include/functions.php');
 //Bures Maxence
 ?>
 <html>
@@ -47,17 +47,17 @@ require_once('include/functions.php');
 				{
 		?>
 				<tr>
-					<td><?php echo $listes["BI_Num"]; ?></td>
-					<td><?php echo $listes["BI_Velo"]; ?></td>
-					<td><?php echo $listes["BI_DatDebut"]; ?></td>
-					<td><?php echo $listes["BI_DatFin"] ; ?></td>
-					<td><?php echo $listes["BI_Duree"] ;?></td>
-					<td><?php echo $listes["BI_CpteRendu"] ; ?></td>
-					<td><?php echo $listes["BI_Reparable"] ; ?></td>
-					<td><?php echo $listes["BI_Demande"] ;?></td>
-					<td><?php echo $listes["BI_Technicien"] ;?></td>
-					<td><?php echo $listes["BI_SurPlace"] ;?></td>
-					<td><a href="ModifIntervention.php?variable=<?php print($listes["BI_Num"]) ?>"><input type="button" value="Modifier"  /></a></td>
+					<td><?php echo $listes["BI_NUM"]; ?></td>
+					<td><?php echo $listes["BI_VELO"]; ?></td>
+					<td><?php echo $listes["BI_DATDEBUT"]; ?></td>
+					<td><?php echo $listes["BI_DATFIN"] ; ?></td>
+					<td><?php echo $listes["BI_DUREE"] ;?></td>
+					<td><?php echo $listes["BI_CPTERENDU"] ; ?></td>
+					<td><?php echo $listes["BI_REPARABLE"] ; ?></td>
+					<td><?php echo $listes["BI_DEMANDE"] ;?></td>
+					<td><?php echo $listes["BI_TECHNICIEN"] ;?></td>
+					<td><?php echo $listes["BI_SURPLACE"] ;?></td>
+					<td><a href="?page=ModifInter&variable=<?php print($listes["BI_NUM"]); ?>"><input type="button" value="Modifier"  /></a></td>
 
 				</tr>
 		<?php

@@ -48,11 +48,11 @@ function logout() {
   //  session_start();
     unset($_SESSION);
     session_destroy();
-     header('Location: ../index.php');
+   /*  header('Location: ../index.php');
     echo '<script language="Javascript">';
 	echo 'alert("Vous êtes deconnecté")';
 	echo 'window.location.replace("index.php")';
-	echo '</script>';
+	echo '</script>';*/
 }
 
 function ListeDeroulanteStation()
@@ -107,7 +107,7 @@ function listeint()
     /**
      * @todo a ce tarif la fait un select *
      */
-    $sReq = "SELECT BI_NUM, BI_VELO, BI_DATEDEBUT, BI_DATFIN, BI_REPARABLE, BI_DEMANDE, BI_SURPLACE, BI_DUREE, BI_CPTERENDU, BI_TECHNICIEN
+    $sReq = "SELECT BI_NUM, BI_VELO, BI_DATDEBUT, BI_DATFIN, BI_REPARABLE, BI_DEMANDE, BI_SURPLACE, BI_DUREE, BI_CPTERENDU, BI_TECHNICIEN
                 FROM BONINTERV";
     $rstPdt = mysql_query($sReq) ;
     $iNb = 0 ;
@@ -227,7 +227,7 @@ function createint(){
 
     $count = mysql_fetch_row(mysql_query("SELECT max(BI_NUM) from BONINTERV"));
     $test = $count[0] + 1;
-    $query = mysql_query("INSERT INTO BONINTERV(BI_NUM, BI_VELO, BI_DATEDEBUT, BI_DATFIN,BI_CPTERENDU, BI_REPARABLE, BI_DEMANDE, BI_SURPLACE, BI_DUREE, BI_TECHNICIEN) VALUES('".$test."', '".$velo."','".$db."', '".$df."', '".$cr."', '".$rp."','".$de."','".$dr."', '".$sp."', '".$id."')") or die (mysql_error());
+    $query = mysql_query("INSERT INTO BONINTERV(BI_NUM, BI_VELO, BI_DATDEBUT, BI_DATFIN,BI_CPTERENDU, BI_REPARABLE, BI_DEMANDE, BI_SURPLACE, BI_DUREE, BI_TECHNICIEN) VALUES('".$test."', '".$velo."','".$db."', '".$df."', '".$cr."', '".$rp."','".$de."','".$dr."', '".$sp."', '".$id."')") or die (mysql_error());
     echo '<script language="Javascript">
             alert("intevention enregistré");
             window.location.replace("index.php")
