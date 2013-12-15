@@ -1,5 +1,7 @@
 <?php
 //session_start();
+//connect();
+include('connexion.inc.php');
 connect();
 function login() {
     // Si on a soumit le formulaire (si on a cliqué sur "Se connecter")

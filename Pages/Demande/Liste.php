@@ -1,7 +1,7 @@
 <?php
-session_start();
+//session_start();
 if(isset($_SESSION['id'])) {
-require_once('include/functions.php');
+require_once('include/functions.inc.php');
 // Bures Maxence
 ?>
 <html>
@@ -56,7 +56,7 @@ if (screen.width < 1000){
 					<td><?php echo $demandes["DEMI_VELO"]; ?></td>
 					<td><?php echo $demandes["DEMI_STATION"]; ?></td>
 					<td><?php echo $demandes["DEMI_DATE"]; ?></td>
-					<td><a href="ListeFiche.php?variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="Affichage"  /></a></td>
+					<td><a href="?page=listeDemandeFiche?variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="Affichage"  /></a></td>
 				</tr>
 
 		<?php

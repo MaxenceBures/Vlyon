@@ -6,8 +6,8 @@
  	 *       et virer les autres dans le code
  	 */
 
-	require_once('classe/clstBaseMysql.classe.php') ;
-	require_once('include/connexion.inc.php');
+	include_once('classe/clstBaseMysql.classe2.php') ;
+	//require_once('include/connexion.inc.php');
 	require_once('include/functions.inc.php');
 
 	/**
@@ -51,24 +51,34 @@
 					switch($_GET['page'])
 					{
 
-						case "ListeDemande":
+						case "listeDemande":
 							$fichier = "Pages/Demande/Liste.php";
 							$titre   =  "Liste";
+							break ;
+						case "listeDemandeFiche":
+							$fichier = "Pages/Demande/ListeFiche.php";
+							$titre   =  "ListeFiche";
+							break ;	
 						case "listeIntervention":
 							$fichier = "Pages/Intervention/listeIntervention.php";
 							$titre   =  "listeIntervention";
+							break ;
 						case "ListeDemandeAdmin":
 							$fichier = "Pages/Demande/listeficheAdmin.php";
 							$titre   =  "ListeAdmin";
+							break ;
 						case "FicheAjout":
 							$fichier = "Pages/Demande/ficheajout.php";
 							$titre   =  "FicheAjout";
+							break ;
 						case "CommandeProd":
 							$fichier = "FO/VUES/Produit/fo_commanderProduit.php";
 							$titre   =  "CommandeProd";
+							break ;
 						case "CommandeListe":
 							$fichier = "FO/VUES/Produit/fo_listeCommandePdt.php";
 							$titre   =  "CommandeListe";
+							break ;
 						case "enregistrer_Modif":
 							$fichier = "FO/Modeles/Station/fo_EnregistrerModif.inc.php";
 							$titre   = "Enregistrer une modification";
@@ -128,7 +138,7 @@
 					else
 					{
 						?>
-						<li><a href="?page=ListeDemande">Liste Demande</a></li>
+						<li><a href="?page=listeDemande">Liste Demande</a></li>
 						<?php
 					}
 					?>

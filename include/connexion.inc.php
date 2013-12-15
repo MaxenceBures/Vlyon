@@ -1,7 +1,7 @@
 <?php
 function connect(){
     try{
-        mysql_connect('localhost', 'root', ''); // Votre serveur (ex : 'localhost'), login serveur (ex : 'root'), mot de passe (ex : '')
+        mysql_connect('localhost', 'Vlyon', 'vlyon'); // Votre serveur (ex : 'localhost'), login serveur (ex : 'root'), mot de passe (ex : '')
         mysql_select_db('VLYON'); // Nom de votre base de données
     }
     catch(Exception $e){
@@ -12,6 +12,6 @@ function connect(){
 }
 	function connecter()
 	{
-		$oSql = new clstBaseMysql("localhost", "Vlyon", "root", "VLYON") ;
+		$oSql = new clstBaseMysql("localhost", "Vlyon", "vlyon", "VLYON") ;
 		return ($oSql) ;
 	}
