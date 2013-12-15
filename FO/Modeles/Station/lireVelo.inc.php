@@ -1,12 +1,12 @@
 <?php
 
-	function connecter()
+	/*function connecter()
 	{
 		$oSql = new clstBaseMysql("localhost", "root", "", "VLYON") ;
 
 		return ($oSql) ;
 
-	}
+	}*/
 
 	function getEtats()
 	{

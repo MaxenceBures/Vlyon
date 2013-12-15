@@ -1,4 +1,6 @@
 <?php
+//session_start();
+connect();
 function login() {
     // Si on a soumit le formulaire (si on a cliqué sur "Se connecter")
     if(isset($_POST['go_login']))
@@ -26,7 +28,7 @@ function login() {
                     session_start();
                     $_SESSION['Resp'] = $user->TEC_RESPONSABLE;
                     $_SESSION['id'] = $user->TEC_MATRICULE;
-                    header('Location: index.php');
+                    header('Location: ../index.php');
 
                 }
                 else
@@ -41,7 +43,7 @@ function login() {
 }
 
 function logout() {
-    session_start();
+  //  session_start();
     unset($_SESSION);
     session_destroy();
 
@@ -73,10 +75,8 @@ function utilisateur()
                 FROM TECHNICIEN
                 WHERE TEC_MATRICULE='".$id."'";
     $rstPdt = mysql_query($sReq) ;
-    $iNb = 0 ;
     $oUtilisateur = array() ;
     $Utilisateur = mysql_fetch_assoc($rstPdt);
-
     $oUtilisateur[1] =  $Utilisateur ;
 
     return ($oUtilisateur) ;

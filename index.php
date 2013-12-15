@@ -91,8 +91,6 @@
 							break;
 					}
 
-						//require_once("mdl/menu.php") ;
-						//echo 'vous etes connectes';
 						include($fichier);
 					?>
 				</article>
@@ -102,7 +100,7 @@
 			<div id="logo">
 				<?php
 				$utilisateur =utilisateur();
-				foreach ($utilisateur as $utilisateurs)
+					foreach ($utilisateur as $utilisateurs)
 				{
 					echo strtoupper($utilisateurs["TEC_NOM"]);
 					echo" - ";
@@ -110,6 +108,9 @@
 					$resp = $utilisateurs["TEC_RESPONSABLE"];
 				}
 				?>
+
+
+
 			</div>
 			<nav id="nav">
 				<ul>

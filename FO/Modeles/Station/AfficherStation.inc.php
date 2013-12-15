@@ -1,10 +1,10 @@
 <?php
-	function connecter()
+	/*function connecter()
 	{
 		$oSql = new clstBaseMysql("localhost", "Vlyon", "mpvlyon", "VLYON") ;
 		return ($oSql) ;
 	}
-
+*/
 	FUNCTION getAllStation()
 	{
 		$lesStations = array() ;
