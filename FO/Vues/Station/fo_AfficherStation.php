@@ -1,6 +1,6 @@
 <?php
-require_once ("FO/Modeles/Station/AfficherStation.inc.php") ;
-require_once("../../../include/connexion.inc.php");
+//require_once ("FO/Modeles/Station/AfficherStation.inc.php") ;
+//require_once("../../../include/connexion.inc.php");
 //connecter();
 ?>
 
