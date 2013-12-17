@@ -1,5 +1,5 @@
 <?php
-	include('../include/functions.inc.php');
+	//include('include/functions.inc.php');
     login();
     //Bures Maxence
 ?>

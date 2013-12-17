@@ -1,7 +1,8 @@
 
 <?php
-	require_once ("FO/Modeles/Station/InfoStation.inc.php") ;
+	//require_once ("FO/Modeles/Station/InfoStation.inc.php") ;
 	$sStation = $_POST['idStation'];
+	var_dump($sStation);
 ?>
 	<fieldset>
 		<legend> Suivi des stations </legend>
