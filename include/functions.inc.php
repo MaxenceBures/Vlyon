@@ -27,7 +27,7 @@ function login() {
                     // Si on arrive jusque ici c'est que le couple login / mot de passe est résolu
                     // On lance donc la session
 
-                    session_start();
+                   // session_start();
                     $_SESSION['Resp'] = $user->TEC_RESPONSABLE;
                     $_SESSION['id'] = $user->TEC_MATRICULE;
                     header('Location: index.php');
@@ -48,11 +48,11 @@ function logout() {
   //  session_start();
     unset($_SESSION);
     session_destroy();
-   //  header('Location: ../index.php');
-    echo '<script language="Javascript">'.
+     header('Location: ../index.php');
+   /* echo '<script language="Javascript">'.
        'alert("Vous êtes deconnecté");'.
        'window.location.replace("../index.php")'.
-       '</script>';
+       '</script>';*/
 }
 
 function ListeDeroulanteStation()
