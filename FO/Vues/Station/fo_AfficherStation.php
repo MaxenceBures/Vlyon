@@ -42,7 +42,7 @@
 						<td><?php echo $uneStation["STA_CODE"]; ?></td>
 						<td colspan="1" >
 							<form action="?page=AfficherInfo" method="POST">
-								<input type="hidden" name="idStation" value="<?php echo $uneStation["Sta_Code"]; ?>"/>
+								<input type="hidden" name="idStation" value="<?php echo $uneStation["STA_CODE"]; ?>"/>
 								<input type="submit" name="cmd_Inf" id="cmd_Inf" value="Information" onClick="
 									if(confirm('Vous allez consulter les informations concernant les stations'))
 									{
