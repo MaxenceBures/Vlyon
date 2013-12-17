@@ -1,13 +1,16 @@
 <?php
 //session_start();
-if(isset($_SESSION['id'])) {
-//		require_once('include/functions.php');
+
+		require_once('include/functions.inc.php');
 	    createdemandeint();
 	//Bures Maxence
 	?>
 	<html>
 		<head>
-		
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 		</head>
 	<body>
 		<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
@@ -74,10 +77,3 @@ if(isset($_SESSION['id'])) {
 
 	</body>
 	</html>
-
-<?php
-}
-else{
-header('Location:/Vlyon/Pages/connexion.php');
-}
-?>

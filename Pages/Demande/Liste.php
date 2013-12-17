@@ -38,8 +38,8 @@ if (screen.width < 1000){
 
 			<table border = 1  >
 				<tr>
-					<th width="5%" >Code Dem</th>
-					<th width="5%">Code Velo</th>
+					<th width="5%">Dem</th>
+					<th width="5%">Velo</th>
 					<th width="5%">Station</th>
 					<th width="5%">Date</th>
 					<th width="5%">Test</th>
@@ -55,7 +55,7 @@ if (screen.width < 1000){
 					<td><?php echo $demandes["DEMI_NUM"] ; $code = $demandes["DEMI_NUM"] ;?><input type="hidden"  value="<?= $code ?>" id="code" name="code"/></td>
 					<td><?php echo $demandes["DEMI_VELO"]; ?></td>
 					<td><?php echo $demandes["DEMI_STATION"]; ?></td>
-					<td><?php echo $demandes["DEMI_DATE"]; ?></td>
+					<td><?php echo substr($demandes["DEMI_DATE"], 5); ?></td>
 					<td><a href="?page=listeDemandeFiche&variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="Affichage"  /></a></td>
 				</tr>
 
@@ -65,7 +65,8 @@ if (screen.width < 1000){
 					</form>
 			</table>
 
-			</br><a href="?page=listeAjout">Ajout demande</a>
+			</br><a href="?page=listeAjout">Ajout demande</a></br>
+		
 
 	</body>
 </html>
