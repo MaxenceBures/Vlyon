@@ -444,6 +444,78 @@ function getAllStation()
         return $lesInfosE ;
     }
 
+    function getEtats()
+    {
+        $lesEtats = array() ;
+        $oSql= connecter() ;
+
+        $sReq = " SELECT ETA_CODE, ETA_LIBELLE
+                FROM ETAT";
+        $sReqExe = $oSql->query($sReq);
+
+        while ($uneLigne = $oSql->tabAssoc($sReqExe) ){
+            $lesEtats[] =  $uneLigne ;
+        }
+
+        return $lesEtats ;
+    }
+
+    function enregistrerBO(){
+        if (isset($_POST['go_enregistrer']))
+     {$sNumVelo = $_POST['idVelModif'];
+var_dump($sNumVelo);
+$id = $_SESSION['id'];
+getEtats();
+//require_once ("FO/Vues/Station/fo_ModifierVelo.php");
+    /*function connecter()
+    {
+        require_once("classe/clstBaseMysql.classe.php") ;       
+        $oSql = new clstBaseMysql("localhost", "root", "", "Vlyon") ;
+        return ($oSql) ;
+    }   */
+
+    //recuperer tout les variables que l'on as besoin
+    
+    //var_dump($sNumVelo);die;
+    $sMotif = $_POST["motif_Intervention"];
+    //Verifier les caractères spéciaux pour le motif
+    //var_dump($sMotif);die;
+    $sEtatVelo= $_POST["lst_Modif"];
+    $sRadIntervention= $_POST["rad_Intervention"];
+    var_dump($sRadIntervention);
+    $dDate=date("y-m-d");
+    // selectionner la demande max de l'intervention
+    //var_dump($_POST);die;
+
+    $count = mysql_fetch_row(mysql_query("SELECT MAX(DEMI_NUM) FROM DEMANDEINTER "));
+                $test = $count[0] + 1;
+
+    //Changer l'etat de velo
+    $sReq = "UPDATE VELO
+            SET VEL_ETAT='". $sEtatVelo ."'
+            WHERE VEL_NUM='". $sNumVelo ."'";
+    $sReqExe=mysql_query($sReq);
+    //var_dump($sReq);
+    
+    //Ajouter une demande
+    if ($RadIntervention='1')
+    {
+        $sReq = "INSERT INTO DEMANDEINTER (DEMI_NUM, DEMI_VELO, DEMI_DATE, DEMI_TECHNICIEN, DEMI_MOTIF, DEMI_TRAITE)
+                VALUES ('". $test ."',
+                        '". $sNumVelo ."',
+                        '". $dDate ."',
+                        '". $id ."',
+                        '". $sMotif ."',
+                        '0')";
+    //echo $sReq;
+        $reqExe=mysql_query($sReq);
+    }
+/*?>
+    <script language="Javascript">alert("les enreistrements ont ete effectué avec succès");
+       window.location.replace("index.php")
+    </script>
+    <?php*/ }}
+
     function ajoutCommande(){
      if (isset($_POST['go_ajoutcde']))
      {    

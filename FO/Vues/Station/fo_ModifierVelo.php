@@ -1,9 +1,10 @@
 <?php
 //session_start();
 $id = $_SESSION['id'];
-
-require_once('FO/Modeles/Station/lireVelo.inc.php');
-		$lesEtats = getEtats() ;
+//enregistrerBO();
+//require_once('FO/Modeles/Station/lireVelo.inc.php');
+$lesEtats = getEtats() ;
+enregistrerBO();		
 		//var_dump($lesEtats);die;
 $sVelo = $_POST["idModif"];
 //var_dump($sVelo);
@@ -44,9 +45,10 @@ $sVelo = $_POST["idModif"];
 			</tr>
 			<tr>
 			
-		<form name="frm_SelecModif" method="POST" action="?page=enregistrer_Modif">
+		<form name="frm_SelecModif" method="POST" action="<?php $_SERVER['PHP_SELF']; ?>" > <!--action="?page=enregistrer_Modif"-->
 				<td colspan="5" class="titre">
-					<center><input type="image" src="images/valider.png" name="cmd_valider" value="Valider" onClick="
+				<input type="submit" src="images/valider.png" name="go_enregistrer" id="go_enregistrer" value="test" >
+					<!--<center><input type="image" src="images/valider.png" name="go_enregistrer" id="go_enregistrer" value="test" onClick="
 					if(confirm('êtes vous sur de vouloir effectuer cette modification?'))
 									{	
 										submit();
@@ -54,7 +56,7 @@ $sVelo = $_POST["idModif"];
 									else{
 									return false;
 									}
-									" /> </center>
+									" /> </center>-->
 				</td>
 			</tr>
 		</form>
