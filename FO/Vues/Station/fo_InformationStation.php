@@ -1,7 +1,7 @@
 
 <?php
 	//require_once ("FO/Modeles/Station/InfoStation.inc.php") ;
-	$sStation = $_POST['idStation'];
+	$sStation = $_GET['idStation'];
 	var_dump($sStation);
 ?>
 	<fieldset>
@@ -27,12 +27,12 @@
 			
 ?>	
 				<tr>
-					<td><?php echo $uneInfo["VEL_NUM"] ; $code1=$uneInfo["VEL_NUM"]  ?></td>
+					<td><?php echo $uneInfo["VEL_NUM"] ;?></td>
 					<td><?php echo $uneInfo["VEL_ETAT"]; ?></td>
 					<td><?php echo $uneInfo["DEMI_MOTIF"]; ?></td>
 					<td colspan="1" >
 						<form action="?page=AfficherModif" method="POST">
-							<input type="hidden" name="idModif" id="idModif" value="<?php echo $code1; ?>"/>
+							<input type="hidden" name="idVelModif" id="idVelModif" value="<?php echo $uneInfo["VEL_NUM"]; ?>"/>
 							<input type="submit" name="cmd_Modif" id="cmd_Modif" value="Modifier" onClick="submit" 	/>
 						</form>
 					</td>
@@ -57,11 +57,11 @@
 			{
 ?>	
 				<tr>
-					<td><?php echo $uneInfoE["VEL_NUM"] ; $code=$uneInfoE["VEL_NUM"] ?></td>
+					<td><?php echo $uneInfoE["VEL_NUM"]; ?></td>
 					<td><?php echo $uneInfoE["VEL_ETAT"]; ?></td>
 					<td colspan="1" >
 							<form action="?page=AfficherModif" method="POST">
-								<input type="hidden" name="idModif" value="<?php echo $code; ?>"/>
+								<input type="hidden" name="idVelModif" value="<?php echo $uneInfoE["VEL_NUM"]; ?>"/>
 								<input type="submit" name="cmd_Modif" id="cmd_Modif" value="Modifier" onClick="submit"	/>
 							</form>
 					</td>

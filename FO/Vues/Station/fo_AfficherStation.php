@@ -41,8 +41,8 @@
 						<td><?php echo $uneStation["QUA_LIB"] ;  ?></td>
 						<td><?php echo $uneStation["STA_CODE"]; ?></td>
 						<td colspan="1" >
-							<form action="?page=AfficherInfo" method="POST">
-								<input type="hidden" name="idStation" value="<?php echo $uneStation["STA_CODE"]; ?>"/>
+							<form action="?page=AfficherInfo&amp;idStation=<?php echo $uneStation["STA_CODE"]; ?>" method="POST">
+								<input type="hidden" name="idStation" value="<?php// echo $uneStation["STA_CODE"]; ?>"/>
 								<input type="submit" name="cmd_Inf" id="cmd_Inf" value="Information" onClick="
 									if(confirm('Vous allez consulter les informations concernant les stations'))
 									{

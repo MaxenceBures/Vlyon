@@ -444,9 +444,68 @@ function getAllStation()
         return $lesInfosE ;
     }
 
+    function getEtats()
+    {
+        $lesEtats = array() ;
+        $oSql= connecter() ;
+
+        $sReq = " SELECT ETA_CODE, ETA_LIBELLE
+                FROM ETAT";
+        $sReqExe = $oSql->query($sReq);
+
+        while ($uneLigne = $oSql->tabAssoc($sReqExe) ){
+            $lesEtats[] =  $uneLigne ;
+        }
+
+        return $lesEtats ;
+    }
+
+    function ajoutdem(){
+         if (isset($_POST['go_ajout']))
+     {
+        getEtats();
+        $sNumVelo = $_POST['idVelModif'];
+        $id = $_SESSION['id'];
+
+    $sMotif = $_POST["motif_Intervention"];
+    $sEtatVelo= $_POST["lst_Modif"];
+    if (empty($_POST['rad_Intervention'])){
+        $sRadIntervention= '1';
+    }
+    else
+        $sRadIntervention='0';
+    $dDate=date("y-m-d");
+
+    $count = mysql_fetch_row(mysql_query("SELECT MAX(DEMI_NUM) FROM DEMANDEINTER "));
+                $test = $count[0] + 1;
+
+    $sReq = "UPDATE VELO
+            SET VEL_ETAT='". $sEtatVelo ."'
+            WHERE VEL_NUM='". $sNumVelo ."'";
+    $sReqExe=mysql_query($sReq);
+    if ($RadIntervention='1')
+    {
+        $sReq = "INSERT INTO DEMANDEINTER (DEMI_NUM, DEMI_VELO, DEMI_DATE, DEMI_TECHNICIEN, DEMI_MOTIF, DEMI_TRAITE)
+                VALUES ('". $test ."',
+                        '". $sNumVelo ."',
+                        '". $dDate ."',
+                        '". $id ."',
+                        '". $sMotif ."',
+                        '0')";
+        $reqExe=mysql_query($sReq);
+    }
+?>
+    <script language="Javascript">alert("les enreistrements ont ete effectué avec succès");
+       window.location.replace("index.php")
+    </script>
+
+<?php
+    }
+
     function ajoutCommande(){
+
      if (isset($_POST['go_ajoutcde']))
-     {    
+        {    
     $dDateCde = date("Y-m-d");
     //réception des valeurs saisies
     $sCodePdt   = $_POST["lst_produit"];
@@ -468,7 +527,6 @@ function getAllStation()
         window.location.replace("index.php")
     </script>
     <?php
-}
+        }
     }
-
-
+}
