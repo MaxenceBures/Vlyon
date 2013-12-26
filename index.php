@@ -54,6 +54,14 @@
 					switch($_GET['page'])
 					{
 
+						case "formulaire":
+							$fichier = "Test/formulaire.php";
+							$titre   =  "test";
+							break ;
+						case "tableau":
+							$fichier = "Test/tableau.php";
+							$titre   =  "test";
+							break ;	
 						case "listeDemande":
 							$fichier = "Pages/Demande/Liste.php";
 							$titre   =  "Liste";
@@ -179,6 +187,8 @@
 					<li><a href="?page=CommandeProd">Commander Produit</a></li>
 					<li><a href="?page=CommandeListe">Liste Commande</a></li>
 					<li><a href="Pages/deconnexion.php">Se deconnecter</a></li>
+					<li><a href="?page=formulaire">Formulaire</a></li>
+					<li><a href="?page=tableau">Tableau</a></li>
 					</ul>
 			</nav>
 		</div>

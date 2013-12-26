@@ -1,7 +1,7 @@
 <?php
 //session_start();
 
-		require_once('include/functions.inc.php');
+		//require_once('../include/functions.inc.php');
 	    createdemandeint();
 	//Bures Maxence
 	?>
