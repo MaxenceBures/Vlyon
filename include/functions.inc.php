@@ -1,8 +1,7 @@
 <?php
-//session_start();
-//connect();
 include('connexion.inc.php');
 connect();
+
 function login() {
     // Si on a soumit le formulaire (si on a cliqué sur "Se connecter")
     if(isset($_POST['go_login']))
@@ -48,7 +47,7 @@ function logout() {
   //  session_start();
     unset($_SESSION);
     session_destroy();
-     header('Location: ../index.php');
+    header('Location: ../index.php');
    /* echo '<script language="Javascript">'.
        'alert("Vous êtes deconnecté");'.
        'window.location.replace("../index.php")'.
@@ -460,6 +459,34 @@ function getAllStation()
         return $lesEtats ;
     }
 
+     function ajoutCommande(){
+
+     if (isset($_POST['go_ajoutcde']))
+        {    
+    $dDateCde = date("Y-m-d");
+    //réception des valeurs saisies
+    $sCodePdt   = $_POST["lst_produit"];
+    $sQtePdt    = $_POST["txt_qte"];
+
+    //génération d'un numéro d'intervention
+    $sReq = "SELECT MAX(COM_CODE) FROM COMMANDE" ;
+    $iNumCde = mysql_fetch_row(mysql_query($sReq));
+    //$iNumCde  = $oSql->getNombre($sReq) ;
+    $iNumCde = $iNumCde[0]  +  1 ;
+
+    //insertion des données dans la base
+    $sReq = "INSERT INTO COMMANDE(COM_CODE, COM_DATE, COM_QTE, COM_VALIDE, COM_PRODUIT)
+             VALUES (".$iNumCde.",'".$dDateCde."',".$sQtePdt .",'Non', '" .$sCodePdt."')";
+    $oSql= mysql_query($sReq);
+    ?>
+    <script language="Javascript">
+        alert("Commande enregistrée");
+        window.location.replace("index.php")
+    </script>
+    <?php
+        }
+    }
+
     function ajoutdem(){
          if (isset($_POST['go_ajout']))
      {
@@ -502,31 +529,5 @@ function getAllStation()
 <?php
     }
 
-    function ajoutCommande(){
-
-     if (isset($_POST['go_ajoutcde']))
-        {    
-    $dDateCde = date("Y-m-d");
-    //réception des valeurs saisies
-    $sCodePdt   = $_POST["lst_produit"];
-    $sQtePdt    = $_POST["txt_qte"];
-
-    //génération d'un numéro d'intervention
-    $sReq = "SELECT MAX(COM_CODE) FROM COMMANDE" ;
-    $iNumCde = mysql_fetch_row(mysql_query($sReq));
-    //$iNumCde  = $oSql->getNombre($sReq) ;
-    $iNumCde = $iNumCde[0]  +  1 ;
-
-    //insertion des données dans la base
-    $sReq = "INSERT INTO COMMANDE(COM_CODE, COM_DATE, COM_QTE, COM_VALIDE, COM_PRODUIT)
-             VALUES (".$iNumCde.",'".$dDateCde."',".$sQtePdt .",'Non', '" .$sCodePdt."')";
-    $oSql= mysql_query($sReq);
-    ?>
-    <script language="Javascript">
-        alert("Commande enregistrée");
-        window.location.replace("index.php")
-    </script>
-    <?php
-        }
-    }
+   
 }

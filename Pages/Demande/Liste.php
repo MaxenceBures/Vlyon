@@ -6,7 +6,7 @@ require_once('include/functions.inc.php');
 ?>
 <html>
 	<head>
-	<script src="js/jquery.min.js"></script>
+	<!--<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
@@ -21,8 +21,8 @@ if (screen.width < 1000){
 
 	//<link rel="stylesheet" href="css/style-mobile.css" />
 }
-</script>
-			<link rel="stylesheet" href="css/style.css" />
+</script> -->
+			
 			<!--<link rel="stylesheet" href="css/style-mobile.css" />
 
 			<!--<link rel="stylesheet" href="css/style-wide.css" />-->
