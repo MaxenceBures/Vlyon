@@ -159,11 +159,11 @@ function createdemandeint(){
 
     $date = date("Y-m-d");
     $id = $_SESSION['id'];
-    $velo = $_POST['velo'];
-    $motif = $_POST['motif'];
-    $attache = $_POST['attache'];
-    $station = $_POST['station'];
-    $motif = $_POST['motif'];
+    $velo = mysql_real_escape_string($_POST['velo']);
+    $motif = mysql_real_escape_string($_POST['motif']);
+    $attache = mysql_real_escape_string($_POST['attache']);
+    $station = mysql_real_escape_string($_POST['station']);
+    $motif = mysql_real_escape_string($_POST['motif']);
 
     if (empty($_POST['traite']))
         $traite = 0;
@@ -186,11 +186,11 @@ function createint(){
 
     //   $date = date("Y-m-d");
     $id = $_SESSION['id'];
-    $velo = $_POST['velo'];
-    $db = $_POST['db'];
-    $df = $_POST['df'];
-    $cr = $_POST['cr'];
-    $dr = $_POST['dr'];
+    $velo = mysql_real_escape_string($_POST['velo']);
+    $db = mysql_real_escape_string($_POST['db']);
+    $df = mysql_real_escape_string($_POST['df']);
+    $cr = mysql_real_escape_string($_POST['cr']);
+    $dr = mysql_real_escape_string($_POST['dr']);
 
     if (empty($_POST['de']))
     {
@@ -231,10 +231,10 @@ function createint(){
 
      if (isset($_POST['go_modifint']))
      {
-       $id = $_POST['id'];
-       $df = $_POST['df'];
-       $cr = $_POST['cr'];
-       $dr = $_POST['dr'];
+       $id = mysql_real_escape_string($_POST['id']);
+       $df = mysql_real_escape_string($_POST['df']);
+       $cr = mysql_real_escape_string($_POST['cr']);
+       $dr = mysql_real_escape_string($_POST['dr']);
         if (isset($_POST['de']))
         {
           $de = 1;
@@ -276,10 +276,10 @@ function createint(){
      if (isset($_POST['go_modifint']))
      {
 
-       $id = $_POST['id'];
-       $motif = $_POST['motif'];
-       $attache = $_POST['attache'];
-       $station = $_POST['station'];
+       $id = mysql_real_escape_string($_POST['id']);
+       $motif = mysql_real_escape_string($_POST['motif']);
+       $attache = mysql_real_escape_string($_POST['attache']);
+       $station = mysql_real_escape_string($_POST['station']);
         if (empty($_POST['traite']))
         {
           $traite = 0;
@@ -306,8 +306,8 @@ function createint(){
      if (isset($_POST['go_modifcde']))
      {
 
-       $code = $_POST['code'];
-       $qte = $_POST['txt_qte'];
+       $code = mysql_real_escape_string($_POST['code']);
+       $qte = mysql_real_escape_string($_POST['txt_qte']);
         if (empty($_POST['valide']))
         {
           $valide = 0;
@@ -458,8 +458,8 @@ function getAllStation()
         {    
     $dDateCde = date("Y-m-d");
     //réception des valeurs saisies
-    $sCodePdt   = $_POST["lst_produit"];
-    $sQtePdt    = $_POST["txt_qte"];
+    $sCodePdt   = mysql_real_escape_string($_POST["lst_produit"]);
+    $sQtePdt    = mysql_real_escape_string($_POST["txt_qte"]);
 
     //génération d'un numéro d'intervention
     $sReq = "SELECT MAX(COM_CODE) FROM COMMANDE" ;
@@ -484,11 +484,11 @@ function getAllStation()
          if (isset($_POST['go_ajout']))
      {
         getEtats();
-        $sNumVelo = $_POST['idVelModif'];
+        $sNumVelo = mysql_real_escape_string($_POST['idVelModif']);
         $id = $_SESSION['id'];
 
-    $sMotif = $_POST["motif_Intervention"];
-    $sEtatVelo= $_POST["lst_Modif"];
+    $sMotif = mysql_real_escape_string($_POST["motif_Intervention"]);
+    $sEtatVelo= mysql_real_escape_string($_POST["lst_Modif"]);
     if (empty($_POST['rad_Intervention'])){
         $sRadIntervention= '1';
     }

@@ -33,7 +33,7 @@ ajoutCommande();
 				}
 	?>
 			</select>
-			<input type="text" id="txt_qte" name="txt_qte" placeholder="Quantite"/>
+			<input type="number" id="txt_qte" name="txt_qte" placeholder="Quantite"/>
 			<input type="submit" name="go_ajoutcde" id="go_ajoutcde" value="Valider">
 		</form>
 	</body>

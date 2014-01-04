@@ -43,7 +43,7 @@ if(isset($_SESSION['id'])) {
 					<label for="libellePdt">Quantité : </label>
 					</td>
 					<td>
-						<input type="text" id="txt_qte" name="txt_qte" value="<?php echo($enreg["COM_QTE"]);?>"/>
+						<input type="number" id="txt_qte" name="txt_qte" value="<?php echo($enreg["COM_QTE"]);?>"/>
 				</br>
 				<tr>
 					<td>
