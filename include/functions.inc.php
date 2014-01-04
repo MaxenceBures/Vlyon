@@ -6,31 +6,24 @@ function login() {
     // Si on a soumit le formulaire (si on a cliqué sur "Se connecter")
     if(isset($_POST['go_login']))
     {
-
         // Si les deux champs ne sont pas vides
         if(!empty($_POST['login']) && !empty($_POST['password']))
         {
-
             // On éxécute une requête pour détecter si le login entré existe dans la base
-            $query = mysql_query("SELECT * FROM TECHNICIEN WHERE TEC_MATRICULE = '".$_POST['login']."'");
-
+            $query = mysql_query("SELECT * FROM TECHNICIEN WHERE TEC_MATRICULE = '". mysql_real_escape_string($_POST['login'])."'");
             // Si on a un résultat => il existe
             if (mysql_num_rows($query) == 1)
             {
                 $user = mysql_fetch_object($query);
-
                 // On vérifie la concordance des mots de passe (en md5)
                 if(sha1($_POST['password']) == $user->TEC_PWD)
                 {
-
                     // Si on arrive jusque ici c'est que le couple login / mot de passe est résolu
                     // On lance donc la session
-
                    // session_start();
                     $_SESSION['Resp'] = $user->TEC_RESPONSABLE;
                     $_SESSION['id'] = $user->TEC_MATRICULE;
                     header('Location: index.php');
-
                 }
                 else
                     echo 'Mauvais mot de passe pour cet utilisateur.';
