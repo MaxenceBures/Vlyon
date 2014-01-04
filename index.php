@@ -26,27 +26,23 @@
 ?>
 <html>
 	<head>
-	
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>-->
+
 		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery182.js"></script>
+		<!--<script src="js/jquery.min.js"></script>-->
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
-
-		<noscript>
+		<link rel="stylesheet" href="css/style.css" />
+		<!--	<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
 			<link rel="stylesheet" href="css/style-wide.css" />
-		</noscript>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		</noscript>-->
 
-		<!--<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
-	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
-		<!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
+
 	</head>
 	<body class="left-sidebar">
 		<div id="content">
@@ -195,6 +191,7 @@
 					<li><a href="Pages/deconnexion.php">Se deconnecter</a></li>
 					<li><a href="?page=formulaire">Formulaire</a></li>
 					<li><a href="?page=tableau">Tableau</a></li>
+					<li><a href="Test/test.php">Test</a></li>
 					</ul>
 			</nav>
 		</div>
