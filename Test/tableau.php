@@ -6,7 +6,7 @@ if(isset($_SESSION['id'])) {
 ?>
 <html>
 	<head>
-	<!--<script src="js/jquery.min.js"></script>-->
+	<!--<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
@@ -20,10 +20,10 @@ if(isset($_SESSION['id'])) {
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
 	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
-		</head>
+	-->	</head>
 	<body>
 	<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
-		<b>Demande d'intervention </b>
+		<b>Demande d'intervention - Test Tableau JQ </b>
 
 			<table border = 1  >
 				<tr>

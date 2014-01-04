@@ -5,15 +5,20 @@
 ?>
 <html>
 <head>
-
+<link rel="stylesheet" href="css/login.css" />
 </head>
 <body>
-	<form id="connexion_form" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
-		<label for="login">Matricule : </label>
-		<input type="text" required="" id="login" name="login"/></br>
-		<label for="password">Mot de passe : </label>
-		<input type="password" required="" id="password" name="password"/></br>
-		<input type="submit" name="go_login" id="go_login" value="Se connecter"/>
-		</form>
+	<div id="login-form">
+	<h3>Login</h3>
+		<fieldset>
+			<form id="connexion_form" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+				<label for="login">Matricule : </label></br>
+				<input type="text" required=""  id="login" name="login"/></br>
+				<label for="password">Mot de passe : </label>
+				<input type="password" required="" id="password" name="password"/></br>
+				<input type="submit" name="go_login" id="go_login" value="Se connecter"/>
+			</form>
+		</fieldset>
+	</div>		
 </body>
 </html>

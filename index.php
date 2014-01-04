@@ -38,6 +38,12 @@
 			<link rel="stylesheet" href="css/style-desktop.css" />
 			<link rel="stylesheet" href="css/style-wide.css" />
 		</noscript>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
 		<!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
