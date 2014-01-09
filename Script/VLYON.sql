@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Jeu 12 Décembre 2013 à 15:33
+-- Généré le: Mer 01 Janvier 2014 à 22:23
 -- Version du serveur: 5.5.33
 -- Version de PHP: 5.4.19
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données: `VLYON`
 --
+CREATE DATABASE IF NOT EXISTS `VLYON` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `VLYON`;
 
 -- --------------------------------------------------------
 
@@ -26,7 +28,8 @@ SET time_zone = "+00:00";
 -- Structure de la table `BONINTERV`
 --
 
-CREATE TABLE `BONINTERV` (
+DROP TABLE IF EXISTS `BONINTERV`;
+CREATE TABLE IF NOT EXISTS `BONINTERV` (
   `BI_NUM` int(10) NOT NULL,
   `BI_VELO` char(5) NOT NULL,
   `BI_DATDEBUT` date DEFAULT NULL,
@@ -57,7 +60,8 @@ INSERT INTO `BONINTERV` (`BI_NUM`, `BI_VELO`, `BI_DATDEBUT`, `BI_DATFIN`, `BI_CP
 -- Structure de la table `COMMANDE`
 --
 
-CREATE TABLE `COMMANDE` (
+DROP TABLE IF EXISTS `COMMANDE`;
+CREATE TABLE IF NOT EXISTS `COMMANDE` (
   `COM_CODE` char(5) NOT NULL,
   `COM_DATE` date DEFAULT NULL,
   `COM_QTE` int(2) DEFAULT NULL,
@@ -74,7 +78,8 @@ INSERT INTO `COMMANDE` (`COM_CODE`, `COM_DATE`, `COM_QTE`, `COM_VALIDE`, `COM_PR
 ('1', '2013-12-07', 32, 0, '1'),
 ('2', '2013-12-06', 2, 0, '2'),
 ('3', '2013-12-06', 3, 0, '2'),
-('4', '2013-12-12', 23, 0, '2');
+('4', '2013-12-12', 23, 0, '2'),
+('5', '2013-12-16', 1000, 0, '2');
 
 -- --------------------------------------------------------
 
@@ -82,7 +87,8 @@ INSERT INTO `COMMANDE` (`COM_CODE`, `COM_DATE`, `COM_QTE`, `COM_VALIDE`, `COM_PR
 -- Structure de la table `DEMANDEINTER`
 --
 
-CREATE TABLE `DEMANDEINTER` (
+DROP TABLE IF EXISTS `DEMANDEINTER`;
+CREATE TABLE IF NOT EXISTS `DEMANDEINTER` (
   `DEMI_NUM` int(5) NOT NULL,
   `DEMI_VELO` char(5) NOT NULL,
   `DEMI_DATE` date DEFAULT NULL,
@@ -102,11 +108,21 @@ CREATE TABLE `DEMANDEINTER` (
 --
 
 INSERT INTO `DEMANDEINTER` (`DEMI_NUM`, `DEMI_VELO`, `DEMI_DATE`, `DEMI_TECHNICIEN`, `DEMI_MOTIF`, `DEMI_TRAITE`, `DEMI_STATION`, `DEMI_ATTACHE`, `DEMI_VALIDE`) VALUES
+(0, '1', NULL, '0', NULL, NULL, '', '', 0),
 (1, '1', '2013-12-03', '1', '', '0', '', '', 0),
 (2, '1', '2013-12-03', '1', 'test', '0', '1', '6', 0),
 (3, '1', '2013-12-03', '1', 'test2\r\n', '0', '1', '5', 1),
 (4, '5', '2013-12-04', '1', 'test', '0', '1', '9', 0),
-(5, '2', '2013-12-12', '1', '2E', '1', '2', '2', 1);
+(5, '2', '2013-12-12', '1', '2E', '1', '2', '2', 1),
+(6, '', '2013-12-19', '1', '', '0', '', '', 0),
+(7, '', '2013-12-19', '1', '', '0', '', '', 0),
+(8, '', '2013-12-19', '1', '', '0', '', '', 0),
+(9, '', '2013-12-19', '1', '', '0', '', '', 0),
+(10, '', '2013-12-19', '1', '', '0', '', '', 0),
+(11, '', '2013-12-19', '1', '', '0', '', '', 0),
+(12, '', '2013-12-19', '1', '', '0', '', '', 0),
+(13, '', '2013-12-19', '1', '', '0', '', '', 0),
+(14, '1', '2013-12-24', '1', 'Test1', '0', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -114,7 +130,8 @@ INSERT INTO `DEMANDEINTER` (`DEMI_NUM`, `DEMI_VELO`, `DEMI_DATE`, `DEMI_TECHNICI
 -- Structure de la table `ETAT`
 --
 
-CREATE TABLE `ETAT` (
+DROP TABLE IF EXISTS `ETAT`;
+CREATE TABLE IF NOT EXISTS `ETAT` (
   `ETA_CODE` char(10) NOT NULL,
   `ETA_LIBELLE` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`ETA_CODE`)
@@ -134,7 +151,8 @@ INSERT INTO `ETAT` (`ETA_CODE`, `ETA_LIBELLE`) VALUES
 -- Structure de la table `PRODUIT`
 --
 
-CREATE TABLE `PRODUIT` (
+DROP TABLE IF EXISTS `PRODUIT`;
+CREATE TABLE IF NOT EXISTS `PRODUIT` (
   `PDT_CODE` char(6) NOT NULL,
   `PDT_LIBELLE` varchar(30) DEFAULT NULL,
   `PDT_POIDS` int(10) DEFAULT NULL,
@@ -159,7 +177,8 @@ INSERT INTO `PRODUIT` (`PDT_CODE`, `PDT_LIBELLE`, `PDT_POIDS`, `PDT_PXCMUP`, `PD
 -- Structure de la table `QUARTIER`
 --
 
-CREATE TABLE `QUARTIER` (
+DROP TABLE IF EXISTS `QUARTIER`;
+CREATE TABLE IF NOT EXISTS `QUARTIER` (
   `QUA_ID` varchar(15) NOT NULL,
   `QUA_LIB` varchar(100) NOT NULL,
   PRIMARY KEY (`QUA_ID`)
@@ -179,7 +198,8 @@ INSERT INTO `QUARTIER` (`QUA_ID`, `QUA_LIB`) VALUES
 -- Structure de la table `STATION`
 --
 
-CREATE TABLE `STATION` (
+DROP TABLE IF EXISTS `STATION`;
+CREATE TABLE IF NOT EXISTS `STATION` (
   `STA_CODE` char(5) NOT NULL,
   `STA_NOM` varchar(30) DEFAULT NULL,
   `STA_RUE` varchar(50) DEFAULT NULL,
@@ -208,7 +228,8 @@ INSERT INTO `STATION` (`STA_CODE`, `STA_NOM`, `STA_RUE`, `STA_NBATTACHES`, `STA_
 -- Structure de la table `TECHNICIEN`
 --
 
-CREATE TABLE `TECHNICIEN` (
+DROP TABLE IF EXISTS `TECHNICIEN`;
+CREATE TABLE IF NOT EXISTS `TECHNICIEN` (
   `TEC_MATRICULE` char(5) NOT NULL,
   `TEC_NOM` varchar(35) DEFAULT NULL,
   `TEC_PRENOM` varchar(35) DEFAULT NULL,
@@ -232,7 +253,8 @@ INSERT INTO `TECHNICIEN` (`TEC_MATRICULE`, `TEC_NOM`, `TEC_PRENOM`, `TEC_PWD`, `
 -- Structure de la table `VELO`
 --
 
-CREATE TABLE `VELO` (
+DROP TABLE IF EXISTS `VELO`;
+CREATE TABLE IF NOT EXISTS `VELO` (
   `VEL_NUM` char(5) NOT NULL,
   `VEL_STATION` char(5) DEFAULT NULL,
   `VEL_ETAT` char(10) NOT NULL,
@@ -250,7 +272,7 @@ CREATE TABLE `VELO` (
 --
 
 INSERT INTO `VELO` (`VEL_NUM`, `VEL_STATION`, `VEL_ETAT`, `VEL_TYPE`, `VEL_ACCESSOIRE`, `VEL_CASSE`) VALUES
-('1', '1', '1', '1', NULL, '0'),
+('1', '1', '2', '1', NULL, '0'),
 ('2', '1', '2', '1', NULL, '0');
 
 --
