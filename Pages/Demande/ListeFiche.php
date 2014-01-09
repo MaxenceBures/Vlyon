@@ -13,7 +13,7 @@ $id = $_GET['variable'];
 	<body>
 		<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 		<b>Demande d'intervention </b>
-			<table border = 1 width="100%" >
+			<table class="style1" >
 				<tr>
 					<th width="5%" >Code Dem</th>
 					<th width="13%">Code Velo</th>

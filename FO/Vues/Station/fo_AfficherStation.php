@@ -25,7 +25,7 @@
 		<legend> Suivi des stations </legend>
 		<br/>
 
-		<table border =1 width="100%" >
+		<table class="style1">
 			<tr>
 				<th width="55%" >Quartier</th>
 				<th width="40%">Station</th>
@@ -47,6 +47,9 @@
 									if(confirm('Vous allez consulter les informations concernant les stations'))
 									{
 										submit()
+									}
+									else{
+									return false;
 									}
 									"/>
 							</form>

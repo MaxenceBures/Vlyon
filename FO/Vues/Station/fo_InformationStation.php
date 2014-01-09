@@ -2,12 +2,12 @@
 <?php
 	//require_once ("FO/Modeles/Station/InfoStation.inc.php") ;
 	$sStation = $_GET['idStation'];
-	var_dump($sStation);
+	//var_dump($sStation);
 ?>
 	<fieldset>
 		<legend> Suivi des stations </legend>
 		<br/>
-		<table border =1 width="100%" >
+		<table class="style1">
 		
 				tableau des velos ayant besoin d'une intervention
 		
@@ -41,7 +41,7 @@
 			}
 ?>
 		</table>
-		<table border =1 width="100%" >
+		<table class="style1">
 		
 		tableau des velos en etat
 		

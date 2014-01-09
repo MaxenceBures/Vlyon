@@ -36,7 +36,8 @@ if (screen.width < 1000){
 	<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 		<b>Demande d'intervention </b>
 
-			<table border = 1  >
+			<table  class="style1">
+ >
 				<tr>
 					<th width="5%">Dem</th>
 					<th width="5%">Velo</th>

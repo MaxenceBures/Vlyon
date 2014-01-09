@@ -6,6 +6,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="css/login.css" />
+<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width,user-scalable=no" />
 </head>
 <body>
 	<div id="login-form">

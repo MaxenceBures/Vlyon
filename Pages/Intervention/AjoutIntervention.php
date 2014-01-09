@@ -11,7 +11,7 @@ if(isset($_SESSION['id'])) {
 	<body>
 		<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 		<form id="ajout_inter" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
-			<table>
+			<table class="style1">
 				<tr>
 					<td>
 						<label for="velo">Velo : </label>

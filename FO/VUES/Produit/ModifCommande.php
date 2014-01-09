@@ -28,7 +28,7 @@ if(isset($_SESSION['id'])) {
 	<a href="index.php"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
 	<form id="modif_form" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 	<input type='hidden' name="code" id="code" value='<?php echo($code); ?>'/>
-			<table>
+			<table class="style1">
 				<tr>
 					<td>
 						<label for="codePdt">Code Produit : </label>

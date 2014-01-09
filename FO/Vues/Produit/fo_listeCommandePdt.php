@@ -21,7 +21,7 @@
 	</head>
 	<body>
 		<a href="index.php"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
-		<table border = 1 width="100%" >
+		<table class="style1">
 			<tr>
 				<th width="5%" >Numéro Commande</th>
 				<th width="5%" >Code Produit</th>

@@ -6,13 +6,13 @@ ajoutdem();
 		$lesEtats = getEtats() ;
 		//var_dump($lesEtats);die;
 $sVelo = $_POST["idVelModif"];
-var_dump($_POST['idVelModif']);
+//var_dump($_POST['idVelModif']);
 //var_dump($sVelo);
 ?>
 <center>
 	<br/>
 <form name="frm_SelecModif" method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
-	<table border=1 cellspacing=0 cellpadding=7  >
+	<table class="style1">
 		
 			<tr>
 				<th colspan="4" class="titre">Selectionnez l'etat du velo

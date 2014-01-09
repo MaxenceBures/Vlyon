@@ -7,6 +7,9 @@
 	?>
 	<html>
 		<head>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" /> <!-- Ne gene pas l'execution de la sidebar-->
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script> 
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 		<!--	<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
