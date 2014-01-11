@@ -19,7 +19,8 @@ ajoutCommande();
 		<!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]--> 
 
 	</head>
-	<body>
+	<!--<body>-->
+	<div data-role="page">
 		<a href="index.php"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
 		<form name="frm_cdeProduit" id="frm_cdeProduit" method="POST" action="">
 			<select id="lst_produit" name="lst_produit">
@@ -36,5 +37,6 @@ ajoutCommande();
 			<input type="number" id="txt_qte" name="txt_qte" placeholder="Quantite"/>
 			<input type="submit" name="go_ajoutcde" id="go_ajoutcde" value="Valider">
 		</form>
-	</body>
+		</div>
+	<!--</body>-->
 </html>

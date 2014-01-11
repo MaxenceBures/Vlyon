@@ -10,7 +10,8 @@ $id = $_GET['variable'];
 
 
 	</head>
-	<body>
+	<div data-role="page">
+<!--	<body>-->
 		<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 		<b>Demande d'intervention </b>
 			<table class="style1" >
@@ -62,8 +63,8 @@ $id = $_GET['variable'];
 		?>
 					</form>
 			</table>
-
-	</body>
+</div>
+<!--	</body>-->
 </html>
 <?php
 }

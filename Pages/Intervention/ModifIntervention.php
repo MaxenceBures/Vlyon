@@ -9,7 +9,9 @@ if(isset($_SESSION['id'])) {
 	$requete = "SELECT * FROM boninterv where BI_NUM= '".$id."'";
 	$enreg = mysql_fetch_assoc(mysql_query($requete));
 	?>
-	<html><body>
+	<html>
+	<!--<body>-->
+	<div data-role="page">
 	<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 	<form id="modif_form" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 	<input type='hidden' name="id" id="id" value='<?php echo($id); ?>'/>
@@ -90,7 +92,9 @@ if(isset($_SESSION['id'])) {
 			</br>
 						<input type="submit" name="go_modifint" id="go_modifint" value="Modifier"/>
 		</form>
-	</body></html>
+	<!--</body>-->
+	</div>
+	</html>
 <?php
 }
 else

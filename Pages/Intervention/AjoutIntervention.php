@@ -8,7 +8,8 @@ if(isset($_SESSION['id'])) {
 	<html>
 		<head>
 		</head>
-	<body>
+		<div data-role="page">
+	<!--<body>-->
 		<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 		<form id="ajout_inter" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 			<table class="style1">
@@ -86,7 +87,8 @@ if(isset($_SESSION['id'])) {
 			</br>
 						<input type="submit" name="go_createinter" id="go_createinter" value="Creer"/>
 		</form>
-	</body>
+		<div data-role="page">
+<!--	</body>-->
 	</html>
 <?php
 }

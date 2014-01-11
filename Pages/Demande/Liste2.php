@@ -7,7 +7,8 @@ require_once('../../include/functions.php');
 <html>
 	<head>
 	</head>
-	<body>
+	<div data-role="page">
+	<!--<body>-->
 	<a href="../../index.php"><img src="../../css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 		<b>Demande d'intervention </b>
 			
@@ -42,7 +43,8 @@ require_once('../../include/functions.php');
 			
 			</br><a href="/Vlyon/Pages/Demande/ficheajout.php">Ajout demande</a>
 			
-	</body>
+	<!--</body>-->
+	</div>
 </html>
 <?php
 }

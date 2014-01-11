@@ -10,7 +10,7 @@ if(isset($_SESSION['id'])) {
 	?>
 	<html>
 	<head>
-		<script src="js/jquery.min.js"></script>
+		<!--<script src="js/jquery.min.js"></script>
 			<script src="js/skel.min.js"></script>
 			<script src="js/skel-panels.min.js"></script>
 			<script src="js/init.js"></script>
@@ -19,12 +19,13 @@ if(isset($_SESSION['id'])) {
 				<link rel="stylesheet" href="css/style.css" />
 				<link rel="stylesheet" href="css/style-desktop.css" />
 				<link rel="stylesheet" href="css/style-wide.css" />
-			</noscript>
+			</noscript>-->
 			<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
 			<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
 			<!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
 	</head>
-	<body>
+<!--	<body>-->
+<div data-role="page">
 	<a href="index.php"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
 	<form id="modif_form" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 	<input type='hidden' name="code" id="code" value='<?php echo($code); ?>'/>
@@ -66,7 +67,9 @@ if(isset($_SESSION['id'])) {
 			</br>
 						<input type="submit" name="go_modifcde" id="go_modifcde" value="Modifier"/>
 		</form>
-	</body></html>
+		</div>
+	<!--</body>-->
+	</html>
 <?php
 }
 else

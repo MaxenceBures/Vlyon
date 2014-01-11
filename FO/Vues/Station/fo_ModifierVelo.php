@@ -9,6 +9,7 @@ $sVelo = $_POST["idVelModif"];
 //var_dump($_POST['idVelModif']);
 //var_dump($sVelo);
 ?>
+<div data-role="page">
 <center>
 	<br/>
 <form name="frm_SelecModif" method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
@@ -60,6 +61,7 @@ $sVelo = $_POST["idVelModif"];
 			</tr>
 	</table>
 </form>
+</div>
 <?php
 
 ?>
