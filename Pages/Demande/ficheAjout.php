@@ -12,7 +12,7 @@ if(isset($_SESSION['id'])) {
 		<div data-role="page">
 <!--	<body>-->
 		<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
-		<form id="ajout_form" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+		<form id="ajout_form" data-ajax="false" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 			<table class="style1">
 				<tr>
 					<td>

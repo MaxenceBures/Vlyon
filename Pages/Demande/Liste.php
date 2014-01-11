@@ -32,7 +32,8 @@ if (screen.width < 1000){
 		<!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
 
 	</head>
-	<div data-role="page">
+	<!--<div data-role="page">-->
+	<body>
 	<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 		<b>Demande d'intervention </b>
 
@@ -69,7 +70,8 @@ if (screen.width < 1000){
 			</br><a href="?page=listeAjout">Ajout demande</a></br>
 		
 
-</div>
+<!--</div>-->
+</body>
 </html>
 <?php
 }

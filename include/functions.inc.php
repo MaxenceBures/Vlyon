@@ -154,8 +154,8 @@ function listedemandeintAdmin()
 }
 
 function createdemandeint(){
-    if (!isset($_POST['go_createint']))
-        return false;
+    if (isset($_POST['go_createint']))
+ {       
 
     $date = date("Y-m-d");
     $id = $_SESSION['id'];
@@ -179,11 +179,11 @@ function createdemandeint(){
         'window.location.replace("index.php")'.
         '</script>';
 }
+}
 
 function createint(){
-    if (!isset($_POST['go_createinter']))
-        return false;
-
+    if (isset($_POST['go_createinter']))
+{        
     //   $date = date("Y-m-d");
     $id = $_SESSION['id'];
     $velo = mysql_real_escape_string($_POST['velo']);
@@ -224,7 +224,7 @@ function createint(){
             alert("intevention enregistré");
             window.location.replace("index.php")
             </script>';
-}
+}}
 
   function modifinter()
 {

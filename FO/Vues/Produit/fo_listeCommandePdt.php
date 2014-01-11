@@ -20,7 +20,7 @@
 
 </head>
 	<!--<body>-->
-	<div data-role="page">
+	<!--<div data-role="page">-->
 		<a href="index.php"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
 		<table class="style1">
 			<tr>
@@ -60,6 +60,6 @@
 
 			?>
 		</table>
-		</div>
+	<!--	</div>-->
 	<!--</body>-->
 </html>

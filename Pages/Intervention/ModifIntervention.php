@@ -13,7 +13,7 @@ if(isset($_SESSION['id'])) {
 	<!--<body>-->
 	<div data-role="page">
 	<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
-	<form id="modif_form" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+	<form id="modif_form" data-ajax="false" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 	<input type='hidden' name="id" id="id" value='<?php echo($id); ?>'/>
 	<table class="style1">
 			<tr>

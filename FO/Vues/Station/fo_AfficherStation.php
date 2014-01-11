@@ -22,7 +22,8 @@
 		<!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
 
 	</head>
-	<div data-role="page">
+	<body>
+	<!--<div data-role="page">-->
 		<legend> Suivi des stations </legend>
 		<br/>
 
@@ -63,5 +64,6 @@
 
 		</table>
 	</fieldset>
-	</div>
+	</body>
+<!--	</div>-->
 	
