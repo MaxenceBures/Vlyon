@@ -24,7 +24,7 @@
 	</head>
 	<body>
 	<div data-role="page">
-	<a href="index.php"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
+	<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
 		
 		<legend> Suivi des stations </legend>
 		<br/>

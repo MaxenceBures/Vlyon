@@ -10,7 +10,7 @@ require_once('../../include/functions.php');
 	<body>
 	<div data-role="page">
 	<!--<body>-->
-	<a href="../../index.php"><img src="../../css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
+	<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 		<b>Demande d'intervention </b>
 			
 			<table class="style1" >

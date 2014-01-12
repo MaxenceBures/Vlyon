@@ -10,7 +10,7 @@ if(isset($_SESSION['id'])) {
 	<body>
 	<!--	<body>-->
 	<div data-role="page">
-		<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
+		<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 		<b>Demande d'intervention </b>
 		<table class="style1" >
 			<tr>

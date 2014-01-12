@@ -25,7 +25,7 @@
 	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>-->
 		</head>
 	<body>
-		<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
+		<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 		<form id="ajout_form" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 			<table>
 				<tr>

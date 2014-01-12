@@ -13,7 +13,7 @@ if(isset($_SESSION['id'])) {
 
 		</head>
 	<body>
-	<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
+	<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 		<b>Demande d'intervention - Test Tableau JQ </b>
 
 			<table border = 1  >

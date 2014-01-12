@@ -21,7 +21,7 @@ ajoutCommande();
 	</head>
 	<body>
 	<div data-role="page">
-		<a href="index.php"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
+		<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
 		<form name="frm_cdeProduit" data-ajax="false" id="frm_cdeProduit" method="POST" action="">
 			<select id="lst_produit" name="lst_produit">
 	<?php

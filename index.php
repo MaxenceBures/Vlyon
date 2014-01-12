@@ -26,22 +26,17 @@
 ?>
 <html>
 	<head>
-	<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
 
-		<link rel="stylesheet" href="Test/jquery.css" />
-    <script src="Test/jquery.js"></script>
-    <script src="Test/jquery-mobile.js"></script>
-    	
-		<script src="js/jquery.min.js"></script>
-		<script src="js/jquery182.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-panels.min.js"></script>
-		<script src="js/init.js"></script>
-		<link rel="stylesheet" href="css/style.css" />
-	</head>
-<!--<script src="js/skel.min.js"></script>
+	<link rel="stylesheet" href="css/jquery.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-mobile.js"></script>
+    <script src="js/jquery.min.js"></script>
+	<script src="js/skel.min.js"></script>
 	<script src="js/skel-panels.min.js"></script>
-	<script src="js/init.js"></script>-->
+	<script src="js/init.js"></script>
+	<link rel="stylesheet" href="css/style.css" />
+	</head>
+
 	
 	<body class="left-sidebar">
 		<div id="content">
@@ -134,7 +129,11 @@
 						case "Deconnexion":
 							$fichier = "Pages/deconnexion.php" ;
 							$titre   = "Deconnexion";
-							break ;	
+							break ;
+						case "Accueil":
+							$fichier = "Pages/accueil.php" ;
+							$titre   = "Deconnexion";
+							break ;		
 						default :
 							$fichier = "Pages/accueil.php" ;
 							$titre   = "Accueil";

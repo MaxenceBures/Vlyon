@@ -26,7 +26,7 @@ if(isset($_SESSION['id'])) {
 	</head>
 	<body>
 <div data-role="page">
-	<a href="index.php"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
+	<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
 	<form id="modif_form" data-ajax="false" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 	<input type='hidden' name="code" id="code" value='<?php echo($code); ?>'/>
 			<table class="style1">
