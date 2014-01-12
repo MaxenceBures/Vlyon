@@ -24,7 +24,7 @@ if(isset($_SESSION['id'])) {
 			<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
 			<!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
 	</head>
-<!--	<body>-->
+	<body>
 <div data-role="page">
 	<a href="index.php"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
 	<form id="modif_form" data-ajax="false" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
@@ -68,7 +68,7 @@ if(isset($_SESSION['id'])) {
 						<input type="submit" name="go_modifcde" id="go_modifcde" value="Modifier"/>
 		</form>
 		</div>
-	<!--</body>-->
+	</body>
 	</html>
 <?php
 }

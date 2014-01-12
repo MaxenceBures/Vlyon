@@ -19,8 +19,8 @@
 		<!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
 
 </head>
-	<!--<body>-->
-	<!--<div data-role="page">-->
+	<body>
+	<div data-role="page">
 		<a href="index.php"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
 		<table class="style1">
 			<tr>

@@ -7,6 +7,7 @@ if(isset($_SESSION['id'])) {
 	<!--<html>-->
 	<head>
 	</head>
+	<body>
 	<!--	<body>-->
 	<div data-role="page">
 		<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
@@ -46,6 +47,8 @@ if(isset($_SESSION['id'])) {
 	?>
 		</table>
 		</div>
+		</body>
+		
 	<!--</body>-->
 <?php
 }

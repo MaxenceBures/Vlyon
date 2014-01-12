@@ -3,7 +3,9 @@
 	//require_once ("FO/Modeles/Station/InfoStation.inc.php") ;
 	$sStation = $_GET['idStation'];
 	//var_dump($sStation);
-?><div data-role="page">
+?>
+<body>
+<div data-role="page">
 	<fieldset>
 		<legend> Suivi des stations </legend>
 		<br/>
@@ -73,3 +75,4 @@
 
 	</fieldset>
 	</div>
+	</body>

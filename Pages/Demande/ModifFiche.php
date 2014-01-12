@@ -10,6 +10,7 @@ if(isset($_SESSION['id'])) {
 	$enreg = mysql_fetch_assoc(mysql_query($requete));
 	?>
 	<html>
+	<body>
 	<div data-role="page">
 	<!--<body>-->
 	<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
@@ -76,6 +77,7 @@ if(isset($_SESSION['id'])) {
 		</form>
 	<!--</body>-->
 	</div>
+	</body>
 	</html>
 <?php
 }

@@ -11,6 +11,7 @@ if(isset($_SESSION['id'])) {
 	?>
 	<html>
 	<!--<body>-->
+	<body>
 	<div data-role="page">
 	<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 	<form id="modif_form" data-ajax="false" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
@@ -94,6 +95,7 @@ if(isset($_SESSION['id'])) {
 		</form>
 	<!--</body>-->
 	</div>
+	</body>
 	</html>
 <?php
 }

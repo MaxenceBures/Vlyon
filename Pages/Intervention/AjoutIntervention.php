@@ -10,6 +10,7 @@ if(isset($_SESSION['id'])) {
 		</head>
 		<!--<div data-role="page">-->
 	<body>
+	<div data-role="page">
 		<a href="index.php"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 		<form id="ajout_inter" data-ajax="false" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 			<table class="style1">
@@ -88,6 +89,7 @@ if(isset($_SESSION['id'])) {
 						<input type="submit" name="go_createinter" id="go_createinter" value="Creer"/>
 		</form>
 		<!--	<div data-role="page">-->
+		</div>
 </body>
 	</html>
 <?php
