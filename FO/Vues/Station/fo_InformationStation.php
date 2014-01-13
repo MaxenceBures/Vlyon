@@ -7,7 +7,7 @@
 <body>
 <div data-role="page">
 	<fieldset>
-		<legend> Suivi des stations </legend>
+		<h1> Suivi des stations </h1>
 		<br/>
 		<table class="style1">
 		

@@ -187,10 +187,7 @@
 					<li><a href="?page=CommandeProd">Commander Produit</a></li>
 					<li><a href="?page=CommandeListe">Liste Commande</a></li>
 					<li><a href="Pages/deconnexion.php">Se deconnecter</a></li>
-					<li><a href="?page=formulaire">Formulaire</a></li>
-					<li><a href="?page=tableau">Tableau</a></li>
-					<li><a href="Test/test.php">Test</a></li>
-					</ul>
+				</ul>
 			</nav>
 		</div>
 	</body>

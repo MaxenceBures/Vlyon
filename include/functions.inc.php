@@ -348,7 +348,8 @@ function createint(){
         $oSql = connecter();
         $sReq = "SELECT COM_CODE, COM_DATE, COM_QTE, COM_PRODUIT, COM_VALIDE, PDT_LIBELLE
                  FROM COMMANDE, PRODUIT
-                 WHERE COMMANDE.COM_PRODUIT = PRODUIT.PDT_CODE";
+                 WHERE COMMANDE.COM_PRODUIT = PRODUIT.PDT_CODE
+                 Order By COM_CODE Asc";
         //echo ($sReq) ; die;
         $rstCde = $oSql->query($sReq);
         //var_dump($rstCde); die ;
