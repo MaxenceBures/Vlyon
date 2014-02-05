@@ -38,9 +38,15 @@ function login() {
 
 function logout() {
   //  session_start();
-    unset($_SESSION);
+    $_SESSION = null;
+    //unset($_SESSION);
     session_destroy();
-    header('Location: ../index.php');
+  // echo "test";
+  /* echo '<script language="Javascript">'.
+       'alert("Vous êtes deconnecté");'.
+       'window.location.replace("../index.php")'.
+       '</script>';*/
+     header('Location: index.php');
    /* echo '<script language="Javascript">'.
        'alert("Vous êtes deconnecté");'.
        'window.location.replace("../index.php")'.

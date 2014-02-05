@@ -1,7 +1,7 @@
 <?php
-session_start();
-   include('../include/functions.inc.php');
+//session_start();
     logout();
-  //  header(string)
+    die();
+    //header()
     //Bures Maxence
-?>
+

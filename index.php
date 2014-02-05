@@ -23,29 +23,15 @@
 		//die();// on stop le chargement de la page
    }
    else{
-?>
-<html>
-	<head>
-
-	<link rel="stylesheet" href="css/jquery.css" />
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery-mobile.js"></script>
-    <script src="js/jquery.min.js"></script>
-	<script src="js/skel.min.js"></script>
-	<script src="js/skel-panels.min.js"></script>
-	<script src="js/init.js"></script>
-	<link rel="stylesheet" href="css/style.css" />
-	</head>
-
-	
-	<body class="left-sidebar">
-		<div id="content">
-			<div id="content-inner">
-				<!-- Post -->
-				<article class="is-post is-post-excerpt">
-					<?php
 					if(!isset($_GET['page']))
 						$_GET['page'] = null;
+
+
+					if($_GET['page'] == "Deconnexion"){
+							logout();
+							header('Location: index.php');
+						    die();
+					}
 
 					switch($_GET['page'])
 					{
@@ -126,75 +112,21 @@
 							$fichier = "Pages/Intervention/ModifIntervention.php" ;
 							$titre   = "ModifInter";
 							break ;	
-						case "Deconnexion":
-							$fichier = "Pages/deconnexion.php" ;
-							$titre   = "Deconnexion";
-							break ;
 						case "Accueil":
 							$fichier = "Pages/accueil.php" ;
 							$titre   = "Deconnexion";
-							break ;		
+							break ;
+
 						default :
 							$fichier = "Pages/accueil.php" ;
 							$titre   = "Accueil";
 							break;
 					}
-
+						include 'html/header.php';
 						include($fichier);
+						include 'html/footer.php';
 					?>
-				</article>
-			</div>
-		</div>
-		<div id="sidebar">
-			<div id="logo">
-				<?php
-				$utilisateur =utilisateur();
-					foreach ($utilisateur as $utilisateurs)
-				{
-					echo strtoupper($utilisateurs["TEC_NOM"]);
-					echo" - ";
-					echo strtoupper($utilisateurs["TEC_PRENOM"]);
-					$resp = $utilisateurs["TEC_RESPONSABLE"];
-				}
-				?>
 
-
-
-			</div>
-			<nav id="nav">
-				<ul>
-					<?php
-					if($resp == '1')
-					{
-						/**
-						 * @todo virer les xxx/xxx/xxx.zz et utiliser des ?page=action
-						 */
-						?>
-						<li><a href="?page=ListeDemandeAdmin">Liste Demande</a></li>
-						<li><a href="?page=listeIntervention">Liste Intervention</a></li>
-						<?php
-					}
-					else
-					{
-						?>
-						<li><a href="?page=listeDemande">Liste Demande</a></li>
-						<?php
-					}
-					?>
-					<li><a href="?page=afficherStation">Afficher les Stations</a></li>
-					<li><a href="?page=FicheAjout">Ajout Demande</a></li>
-					<li><a href="?page=InterventionAjout">Ajout Intervention</a></li>
-					<li><a href="?page=CommandeProd">Commander Produit</a></li>
-					<li><a href="?page=CommandeListe">Liste Commande</a></li>
-					<li><a href="Pages/deconnexion.php">Se deconnecter</a></li>
-					<li><a href="?page=formulaire">Formulaire</a></li>
-					<li><a href="?page=tableau">Tableau</a></li>
-					<li><a href="Test/test.php">Test</a></li>
-					</ul>
-			</nav>
-		</div>
-	</body>
-</html>
 <?php
 
 }
