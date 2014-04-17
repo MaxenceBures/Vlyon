@@ -1,7 +1,7 @@
 <?php
 //session_start();
 if(isset($_SESSION['id'])) {
-require_once('include/functions.inc.php');
+//require_once('include/functions.inc.php');
 // Bures Maxence
 ?>
 <html>

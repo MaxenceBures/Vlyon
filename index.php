@@ -23,27 +23,7 @@
 		//die();// on stop le chargement de la page
    }
    else{
-?>
-<html>
-	<head>
 
-	<link rel="stylesheet" href="css/jquery.css" />
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery-mobile.js"></script>
-    <script src="js/jquery.min.js"></script>
-	<script src="js/skel.min.js"></script>
-	<script src="js/skel-panels.min.js"></script>
-	<script src="js/init.js"></script>
-	<link rel="stylesheet" href="css/style.css" />
-	</head>
-
-	
-	<body class="left-sidebar">
-		<div id="content">
-			<div id="content-inner">
-				<!-- Post -->
-				<article class="is-post is-post-excerpt">
-					<?php
 					if(!isset($_GET['page']))
 						$_GET['page'] = null;
 
@@ -59,39 +39,39 @@
 							$titre   =  "test";
 							break ;	
 						case "listeDemande":
-							$fichier = "Pages/Demande/Liste.php";
+							$fichier = "FO/VUES/Demande/Liste.php";
 							$titre   =  "Liste";
 							break ;
 						case "listeAjout":
-							$fichier = "Pages/Demande/FicheAjout.php";
+							$fichier = "FO/VUES/Demande/FicheAjout.php";
 							$titre   =  "ListeAjout";
 							break ;	
 						case "listeDemandeFiche":
-							$fichier = "Pages/Demande/ListeFiche.php";
+							$fichier = "FO/VUES/Demande/ListeFiche.php";
 							$titre   =  "ListeFiche";
 							break ;
 						case "listeDemandeModif":
-							$fichier = "Pages/Demande/ModifFiche.php";
+							$fichier = "FO/VUES/Demande/ModifFiche.php";
 							$titre   =  "ListeModif";
 							break ;
 						case "listeDemandeSupp":
-							$fichier = "Pages/Demande/FicheSuppression.php";
+							$fichier = "FO/VUES/Demande/FicheSuppression.php";
 							$titre   =  "ListeSuppresion";
 							break ;			
 						case "listeIntervention":
-							$fichier = "Pages/Intervention/listeIntervention.php";
+							$fichier = "FO/VUES//Intervention/listeIntervention.php";
 							$titre   =  "listeIntervention";
 							break ;
 						case "InterventionAjout":
-							$fichier = "Pages/Intervention/AjoutIntervention.php";
+							$fichier = "FO/VUES/Intervention/AjoutIntervention.php";
 							$titre   =  "InterventionAjout";
 							break ;	
 						case "ListeDemandeAdmin":
-							$fichier = "Pages/Demande/listeficheAdmin.php";
+							$fichier = "FO/VUES/Demande/listeficheAdmin.php";
 							$titre   =  "ListeAdmin";
 							break ;
 						case "FicheAjout":
-							$fichier = "Pages/Demande/ficheajout.php";
+							$fichier = "FO/VUES/Demande/ficheajout.php";
 							$titre   =  "FicheAjout";
 							break ;
 						case "CommandeProd":
@@ -123,7 +103,7 @@
 							$titre   = "CréeStation";
 							break ;
 						case "ModifInter":
-							$fichier = "Pages/Intervention/ModifIntervention.php" ;
+							$fichier = "FO/VUES/Intervention/ModifIntervention.php" ;
 							$titre   = "ModifInter";
 							break ;	
 						case "Deconnexion":
@@ -139,60 +119,10 @@
 							$titre   = "Accueil";
 							break;
 					}
-
+						include 'html/header.php';
 						include($fichier);
-					?>
-				</article>
-			</div>
-		</div>
-		<div id="sidebar">
-			<div id="logo">
-				<?php
-				$utilisateur =utilisateur();
-					foreach ($utilisateur as $utilisateurs)
-				{
-					echo strtoupper($utilisateurs["TEC_NOM"]);
-					echo" - ";
-					echo strtoupper($utilisateurs["TEC_PRENOM"]);
-					$resp = $utilisateurs["TEC_RESPONSABLE"];
-				}
-				?>
-
-
-
-			</div>
-			<nav id="nav">
-				<ul>
-					<?php
-					if($resp == '1')
-					{
-						/**
-						 * @todo virer les xxx/xxx/xxx.zz et utiliser des ?page=action
-						 */
-						?>
-						<li><a href="?page=ListeDemandeAdmin">Liste Demande</a></li>
-						<li><a href="?page=listeIntervention">Liste Intervention</a></li>
-						<?php
-					}
-					else
-					{
-						?>
-						<li><a href="?page=listeDemande">Liste Demande</a></li>
-						<?php
-					}
-					?>
-					<li><a href="?page=afficherStation">Afficher les Stations</a></li>
-					<li><a href="?page=FicheAjout">Ajout Demande</a></li>
-					<li><a href="?page=InterventionAjout">Ajout Intervention</a></li>
-					<li><a href="?page=CommandeProd">Commander Produit</a></li>
-					<li><a href="?page=CommandeListe">Liste Commande</a></li>
-					<li><a href="Pages/deconnexion.php">Se deconnecter</a></li>
-				</ul>
-			</nav>
-		</div>
-	</body>
-</html>
-<?php
+						include 'html/footer.php';
+					
 
 }
 ?>
