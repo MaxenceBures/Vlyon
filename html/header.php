@@ -9,7 +9,7 @@
 	<script src="js/skel.min.js"></script>
 	<script src="js/skel-panels.min.js"></script>
 	<script src="js/init.js"></script>
-	<!--<link rel="stylesheet" href="css/style.css" />-->
+	<link rel="stylesheet" href="css/style.css" />
 	</head>
 
 	
@@ -19,4 +19,5 @@
 			<div id="content-inner">
 				<!-- Post -->
 				<article class="is-post is-post-excerpt">
+				
 					

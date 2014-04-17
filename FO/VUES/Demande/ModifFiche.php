@@ -9,8 +9,7 @@ if(isset($_SESSION['id'])) {
 	$requete = "SELECT * FROM DEMANDEINTER where DEMI_NUM= '".$id."'";
 	$enreg = mysql_fetch_assoc(mysql_query($requete));
 	?>
-	<html>
-	<body>
+
 	<div data-role="page">
 	<!--<body>-->
 	<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
@@ -77,8 +76,7 @@ if(isset($_SESSION['id'])) {
 		</form>
 	<!--</body>-->
 	</div>
-	</body>
-	</html>
+
 <?php
 }
 else

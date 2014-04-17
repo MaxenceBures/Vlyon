@@ -4,11 +4,7 @@
 //connecter();
 ?>
 
-	
-		<head>
 
-	</head>
-	<body>
 	<fieldset>
 	<div data-role="page">
 	<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
@@ -54,6 +50,6 @@
 		</table>
 	</fieldset>
 	</div>
-	</body>
+
 <!--	</div>-->
 	

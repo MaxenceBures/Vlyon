@@ -4,10 +4,7 @@ if(isset($_SESSION['id'])) {
 require_once('../../include/functions.php');		
 // Bures Maxence
 ?>
-<html>
-	<head>
-	</head>
-	<body>
+
 	<div data-role="page">
 	<!--<body>-->
 	<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
@@ -46,8 +43,7 @@ require_once('../../include/functions.php');
 			
 	<!--</body>-->
 	</div>
-	</body>
-</html>
+
 <?php
 }
 else{

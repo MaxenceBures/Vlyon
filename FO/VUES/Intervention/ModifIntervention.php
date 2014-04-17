@@ -9,9 +9,7 @@ if(isset($_SESSION['id'])) {
 	$requete = "SELECT * FROM boninterv where BI_NUM= '".$id."'";
 	$enreg = mysql_fetch_assoc(mysql_query($requete));
 	?>
-	<html>
-	<!--<body>-->
-	<body>
+
 	<div data-role="page">
 	<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 	<form id="modif_form" data-ajax="false" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
@@ -95,8 +93,7 @@ if(isset($_SESSION['id'])) {
 		</form>
 	<!--</body>-->
 	</div>
-	</body>
-	</html>
+
 <?php
 }
 else

@@ -5,12 +5,7 @@ if(isset($_SESSION['id'])) {
 $id = $_GET['variable'];
 
 ?>
-<html>
-	<head>
 
-
-	</head>
-	<body>
 	<div data-role="page">
 <!--	<body>-->
 		<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
@@ -66,8 +61,7 @@ $id = $_GET['variable'];
 			</table>
 </div>
 <!--	</body>-->
-</body>
-</html>
+
 <?php
 }
 else{

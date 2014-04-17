@@ -4,7 +4,6 @@ if(isset($_SESSION['id'])) {
 //require_once('include/functions.inc.php');
 // Bures Maxence
 ?>
-	<body>
 	<div data-role="page">
 	<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 		<b>Demande d'intervention </b>
@@ -44,8 +43,7 @@ if(isset($_SESSION['id'])) {
 
 <!--</div>-->
 </div>
-</body>
-</html>
+
 <?php
 }
 else{

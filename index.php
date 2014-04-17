@@ -121,7 +121,7 @@
 					}
 						include 'html/header.php';
 						include($fichier);
-						//include 'html/footer.php';
+						include 'html/footer.php';
 					
 
 }

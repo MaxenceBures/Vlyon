@@ -4,7 +4,7 @@
 	$sStation = $_GET['idStation'];
 	//var_dump($sStation);
 ?>
-<body>
+
 <div data-role="page">
 	<fieldset>
 		<h1> Suivi des stations </h1>
@@ -75,4 +75,3 @@
 
 	</fieldset>
 	</div>
-	</body>

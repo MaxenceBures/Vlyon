@@ -5,11 +5,7 @@ if(isset($_SESSION['id'])) {
 	    createdemandeint();
 	//Bures Maxence
 	?>
-	<html>
-		<head>
-		
-		</head>
-		<body>
+	
 		<div data-role="page">
 <!--	<body>-->
 		<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
@@ -76,8 +72,7 @@ if(isset($_SESSION['id'])) {
 
 	<!--</body>-->
 	</div>
-	</body>
-	</html>
+	
 
 <?php
 }
