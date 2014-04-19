@@ -39,23 +39,23 @@
 							$titre   =  "test";
 							break ;	
 						case "listeDemande":
-							$fichier = "FO/VUES/Demande/Liste.php";
+							$fichier = "FO/VUES/Demande/DmdListe.php";
 							$titre   =  "Liste";
 							break ;
 						case "listeAjout":
-							$fichier = "FO/VUES/Demande/FicheAjout.php";
+							$fichier = "FO/VUES/Demande/DmdFicheAjout.php";
 							$titre   =  "ListeAjout";
 							break ;	
 						case "listeDemandeFiche":
-							$fichier = "FO/VUES/Demande/ListeFiche.php";
+							$fichier = "FO/VUES/Demande/DmdListeFiche.php";
 							$titre   =  "ListeFiche";
 							break ;
 						case "listeDemandeModif":
-							$fichier = "FO/VUES/Demande/ModifFiche.php";
+							$fichier = "FO/VUES/Demande/DmdModifFiche.php";
 							$titre   =  "ListeModif";
 							break ;
 						case "listeDemandeSupp":
-							$fichier = "FO/VUES/Demande/FicheSuppression.php";
+							$fichier = "FO/VUES/Demande/DmdFicheSuppression.php";
 							$titre   =  "ListeSuppresion";
 							break ;			
 						case "listeIntervention":
@@ -67,13 +67,13 @@
 							$titre   =  "InterventionAjout";
 							break ;	
 						case "ListeDemandeAdmin":
-							$fichier = "FO/VUES/Demande/listeficheAdmin.php";
+							$fichier = "FO/VUES/Demande/DmdlisteficheAdmin.php";
 							$titre   =  "ListeAdmin";
 							break ;
-						case "FicheAjout":
+						/*case "FicheAjout":
 							$fichier = "FO/VUES/Demande/ficheajout.php";
 							$titre   =  "FicheAjout";
-							break ;
+							break ;*/
 						case "CommandeProd":
 							$fichier = "FO/VUES/Produit/fo_commanderProduit.php";
 							$titre   =  "CommandeProd";
