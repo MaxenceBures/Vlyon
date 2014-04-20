@@ -32,7 +32,7 @@ if(isset($_SESSION['id'])) {
 				</br>
 				<tr>
 					<td>
-						<label for="dtae_Commande">Date Commande : </label>
+						<label for="date_Commande">Date Commande : </label>
 					</td>
 					<td>
 						<input type="text" id="txt_date" name="txt_date" disabled="" value="<?php echo($enreg["COM_DATE"]); ?>"/>

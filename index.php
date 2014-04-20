@@ -6,7 +6,7 @@
  	 *       et virer les autres dans le code
  	 */
 
-	include_once('classe/clstBaseMysql.classe2.php') ;
+	include_once('classe/clstBaseMysql.classe.php') ;
 	//require_once('include/connexion.inc.php');
 	require_once('include/functions.inc.php');
 
