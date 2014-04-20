@@ -88,7 +88,7 @@ cursor: pointer;
 	function Display_Load()
 	{
 	    $("#loading").fadeIn(900,0);
-		$("#loading").html("<img src='bigLoader.gif' />");
+		$("#loading").html("<img src='FO/VUES/PRODUIT/bigLoader.gif' />");
 	}
 	//Hide Loading Image
 	function Hide_Load()
@@ -103,7 +103,7 @@ cursor: pointer;
 	
 	Display_Load();
 	
-	$("#content2").load("pagination_data.php?page=1", Hide_Load());
+	$("#content2").load("FO/VUES/PRODUIT/pagination_data.php?page=1", Hide_Load());
 
 
 
