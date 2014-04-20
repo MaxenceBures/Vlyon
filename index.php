@@ -70,10 +70,10 @@
 							$fichier = "FO/VUES/Demande/DmdlisteficheAdmin.php";
 							$titre   =  "ListeAdmin";
 							break ;
-						/*case "FicheAjout":
-							$fichier = "FO/VUES/Demande/ficheajout.php";
+						case "FicheAjout":
+							$fichier = "FO/VUES/Demande/Dmdficheajout.php";
 							$titre   =  "FicheAjout";
-							break ;*/
+							break ;
 						case "CommandeProd":
 							$fichier = "FO/VUES/Produit/fo_commanderProduit.php";
 							$titre   =  "CommandeProd";

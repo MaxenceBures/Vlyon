@@ -2,7 +2,7 @@
 
 include('config.php');
 
-$per_page = 3;
+$per_page = 5;
 
 if($_GET)
 {
@@ -18,8 +18,11 @@ $rsd = mysql_query($sql);
 ?>
 <!--<div data-role="page">
 <a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>-->
-
-	<table width="800px">
+<link rel="stylesheet" href="../../../css/jquery.css" />
+<link rel="stylesheet" href="../../../css/style.css" />
+ <script src="../../../js/jquery.js"></script>
+    <script src="../../../js/jquery-mobile.js"></script>
+	<table width="800px" class="style1">
 <tr>
 <th width="5%" >Numéro Commande</th>
 <th width="5%" >Code Produit</th>

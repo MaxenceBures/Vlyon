@@ -1,6 +1,6 @@
 <?php
 	//include("Modeles/Produit/lireProduit.inc.php");
-$per_page = 3;
+$per_page = 5;
 
 //getting number of rows and calculating no of pages
 $sql = "select * from COMMANDE";
