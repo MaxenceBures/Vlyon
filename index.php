@@ -39,23 +39,23 @@
 							$titre   =  "test";
 							break ;	
 						case "listeDemande":
-							$fichier = "FO/VUES/Demande/DmdListe.php";
+							$fichier = "FO/VUES/Demande/fo_ListeDemande.php";
 							$titre   =  "Liste";
 							break ;
 						case "listeAjout":
-							$fichier = "FO/VUES/Demande/DmdFicheAjout.php";
+							$fichier = "FO/VUES/Demande/fo_AjoutDemande.php";
 							$titre   =  "ListeAjout";
 							break ;	
 						case "listeDemandeFiche":
-							$fichier = "FO/VUES/Demande/DmdListeFiche.php";
+							$fichier = "FO/VUES/Demande/fo_ListeFicheDemande.php";
 							$titre   =  "ListeFiche";
 							break ;
 						case "listeDemandeModif":
-							$fichier = "FO/VUES/Demande/DmdModifFiche.php";
+							$fichier = "FO/VUES/Demande/fo_ModifFicheDemande.php";
 							$titre   =  "ListeModif";
 							break ;
 						case "listeDemandeSupp":
-							$fichier = "FO/VUES/Demande/DmdFicheSuppression.php";
+							$fichier = "FO/VUES/Demande/fo_SuppFicheDemande.php";
 							$titre   =  "ListeSuppresion";
 							break ;			
 						case "listeIntervention":
@@ -67,7 +67,7 @@
 							$titre   =  "InterventionAjout";
 							break ;	
 						case "ListeDemandeAdmin":
-							$fichier = "FO/VUES/Demande/DmdlisteficheAdmin.php";
+							$fichier = "FO/VUES/Demande/fo_ListeFicheAdminDemande.php";
 							$titre   =  "ListeAdmin";
 							break ;
 						case "FicheAjout":
