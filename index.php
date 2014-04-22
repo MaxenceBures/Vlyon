@@ -59,11 +59,11 @@
 							$titre   =  "ListeSuppresion";
 							break ;			
 						case "listeIntervention":
-							$fichier = "FO/VUES//Intervention/listeIntervention.php";
+							$fichier = "FO/VUES/Intervention/fo_ListeIntervention.php";
 							$titre   =  "listeIntervention";
 							break ;
 						case "InterventionAjout":
-							$fichier = "FO/VUES/Intervention/AjoutIntervention.php";
+							$fichier = "FO/VUES/Intervention/fo_AjoutIntervention.php";
 							$titre   =  "InterventionAjout";
 							break ;	
 						case "ListeDemandeAdmin":
@@ -71,7 +71,7 @@
 							$titre   =  "ListeAdmin";
 							break ;
 						case "FicheAjout":
-							$fichier = "FO/VUES/Demande/Dmdficheajout.php";
+							$fichier = "FO/VUES/Demande/fo_AjoutDemande.php";
 							$titre   =  "FicheAjout";
 							break ;
 						case "CommandeProd":
@@ -103,7 +103,7 @@
 							$titre   = "CréeStation";
 							break ;
 						case "ModifInter":
-							$fichier = "FO/VUES/Intervention/ModifIntervention.php" ;
+							$fichier = "FO/VUES/Intervention/fo_ModifIntervention.php" ;
 							$titre   = "ModifInter";
 							break ;	
 						case "Deconnexion":
