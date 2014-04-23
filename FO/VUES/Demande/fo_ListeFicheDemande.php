@@ -13,12 +13,12 @@ $id = $_GET['variable'];
 			<table class="style1" >
 				<tr>
 					<th width="5%" >Code Dem</th>
-					<th width="13%">Code Velo</th>
-					<th width="13%">Station</th>
-					<th width="13%">Attache</th>
+					<th width="8%">Code Velo</th>
+					<th width="8%">Station</th>
+					<th width="8%">Attache</th>
 					<th width="13%">Date</th>
 					<th width="13%">Motif</th>
-					<th width="20%">Traite</th>
+					<th width="8%">Traite</th>
 				</tr>
 					<form  action="<?php $_SERVER['PHP_SELF']; ?>" name="SuppDem" method="POST">
 		<?php
