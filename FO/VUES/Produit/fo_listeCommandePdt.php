@@ -1,58 +1,9 @@
 <?php
 	//include("Modeles/Produit/lireProduit.inc.php");
-$per_page = 5;
-
-//getting number of rows and calculating no of pages
-$sql = "select * from COMMANDE";
-$rsd = mysql_query($sql);
-$count = mysql_num_rows($rsd);
-$pages = ceil($count/$per_page)
+$pages = paginationCommande();
 ?>
-
 	
-<!--<style>
-body { margin: 0; padding: 0; font-family:Verdana; font-size:15px }
-a
-{
-text-decoration:none;
-color:#B2b2b2;
 
-}
-
-a:hover
-{
-
-color:#DF3D82;
-text-decoration:underline;
-
-}
-#loading { 
-width: 100%; 
-position: absolute;
-}
-
-#pagination
-{
-text-align:center;
-margin-left:120px;
-
-}
-#test li{	
-list-style: none; 
-float: left; 
-margin-right: 16px; 
-padding:5px; 
-border:solid 1px #dddddd;
-color:#0063DC; 
-}
-#test li:hover
-{ 
-color:#FF0084; 
-cursor: pointer; 
-}
-
-
-</style>-->
 
 	<div data-role="page">
 		<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
@@ -88,7 +39,7 @@ cursor: pointer;
 	function Display_Load()
 	{
 	    $("#loading").fadeIn(900,0);
-		$("#loading").html("<img src='FO/VUES/PRODUIT/bigLoader.gif' />");
+		
 	}
 	//Hide Loading Image
 	function Hide_Load()

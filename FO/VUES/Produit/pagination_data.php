@@ -1,7 +1,7 @@
 <?php
 
-include('config.php');
-
+include('../../../include/connexion.inc.php');
+connect();
 $per_page = 5;
 
 if($_GET)

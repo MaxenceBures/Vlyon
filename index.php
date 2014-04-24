@@ -83,7 +83,7 @@
 							$titre   =  "CommandeListe";
 							break ;
 						case "CommandeModif":
-							$fichier = "FO/VUES/Produit/ModifCommande.php";
+							$fichier = "FO/VUES/Produit/fo_modifCommande.php";
 							$titre   =  "CommandeModif";
 							break ;	
 						case "enregistrer_Modif":
