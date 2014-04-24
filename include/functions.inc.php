@@ -491,7 +491,19 @@ $count = mysql_num_rows($rsd);
 $pages = ceil($count/$per_page);
 return($pages);
     }
-    
+        function paginationIntervention(){
+        $per_page = 5;
+
+//getting number of rows and calculating no of pages
+$sql = "   SELECT BI_NUM, BI_VELO, BI_DATDEBUT, BI_DATFIN, BI_REPARABLE, BI_DEMANDE, BI_SURPLACE, BI_DUREE, BI_CPTERENDU, BI_TECHNICIEN
+                FROM BONINTERV";
+$rsd = mysql_query($sql);
+$count = mysql_num_rows($rsd);
+$pages = ceil($count/$per_page);
+return($pages);
+    }
+
+
     function ajoutdem(){
          if (isset($_POST['go_ajout']))
      {

@@ -18,10 +18,7 @@ $rsd = mysql_query($sql);
 ?>
 <!--<div data-role="page">
 <a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>-->
-<link rel="stylesheet" href="../../../css/jquery.css" />
-<link rel="stylesheet" href="../../../css/style.css" />
- <script src="../../../js/jquery.js"></script>
-    <script src="../../../js/jquery-mobile.js"></script>
+
 	<table width="800px" class="style1">
 <tr>
 <th width="5%" >Numéro Commande</th>

@@ -54,7 +54,7 @@ $pages = paginationCommande();
 	
 	Display_Load();
 	
-	$("#content2").load("FO/VUES/PRODUIT/pagination_data.php?page=1", Hide_Load());
+	$("#content2").load("FO/VUES/PRODUIT/pagination_Produit.php?page=1", Hide_Load());
 
 
 
@@ -75,7 +75,7 @@ $pages = paginationCommande();
 		//Loading Data
 		var pageNum = this.id;
 		
-		$("#content2").load("FO/VUES/PRODUIT/pagination_data.php?page=" + pageNum, Hide_Load());
+		$("#content2").load("FO/VUES/PRODUIT/pagination_Produit.php?page=" + pageNum, Hide_Load());
 	});
 	
 	
