@@ -25,15 +25,15 @@ $rsd = mysql_query($sql);
 			<table class="style1">
 				<tr>
 					<th width="5%" >Numero</th>
-					<th width="13%">Code Velo</th>
-					<th width="13%">Date Debut</th>
-					<th width="13%">Date Fin</th>
-					<th width="13%">Durée</th>
-					<th width="25%">Compte Rendu</th>
-					<th width="10%">Reparable</th>
-					<th width="10%">Demande</th>
-					<th width="10%">Technicien</th>
-					<th width="10%">Sur Place</th>
+					<th width="5%">Code Velo</th>
+					<th width="8%">Date Debut</th>
+					<th width="8%">Date Fin</th>
+					<th width="5%">Durée</th>
+					<th width="15%">Compte Rendu</th>
+					<th width="5%">Reparable</th>
+					<th width="5%">Demande</th>
+					<th width="5%">Technicien</th>
+					<th width="5%">Sur Place</th>
 
 
 				</tr>
