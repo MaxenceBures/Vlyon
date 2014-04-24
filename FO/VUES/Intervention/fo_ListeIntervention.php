@@ -54,7 +54,7 @@ $pages = paginationIntervention();
 	
 	Display_Load();
 	
-	$("#content2").load("FO/VUES/INTERVENTION/pagination_Intervention.php?page=1", Hide_Load());
+	$("#content2").load("FO/VUES/Intervention/pagination_Intervention.php?page=1", Hide_Load());
 
 
 
@@ -75,7 +75,7 @@ $pages = paginationIntervention();
 		//Loading Data
 		var pageNum = this.id;
 		
-		$("#content2").load("FO/VUES/PRODUIT/pagination_Intervention.php?page=" + pageNum, Hide_Load());
+		$("#content2").load("FO/VUES/Intervention/pagination_Intervention.php?page=" + pageNum, Hide_Load());
 	});
 	
 	
