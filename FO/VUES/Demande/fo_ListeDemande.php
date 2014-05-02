@@ -29,7 +29,7 @@ if(isset($_SESSION['id'])) {
 					<td><?php echo $demandes["DEMI_VELO"]; ?></td>
 					<td><?php echo $demandes["DEMI_STATION"]; ?></td>
 					<td><?php echo substr($demandes["DEMI_DATE"], 5); ?></td>
-					<td><a href="?page=listeDemandeFiche&variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="Affichage"  /></a></td>
+					<td><a href="?page=listeDemandeFiche&variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="Voir"  /></a></td>
 				</tr>
 
 		<?php

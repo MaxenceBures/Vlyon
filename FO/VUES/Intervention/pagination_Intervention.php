@@ -54,7 +54,7 @@ $rsd = mysql_query($sql);
 					<td><?php echo $listes["BI_DEMANDE"] ;?></td>
 					<td><?php echo $listes["BI_TECHNICIEN"] ;?></td>
 					<td><?php echo $listes["BI_SURPLACE"] ;?></td>
-					<td><a href="?page=ModifInter&variable=<?php print($listes["BI_NUM"]); ?>"><input type="button" value="Modifier"  /></a></td>
+					<td><a href="?page=ModifInter&variable=<?php print($listes["BI_NUM"]); ?>"><input type="button" value="Voir"  /></a></td>
 
 				</tr>
 		<?php
