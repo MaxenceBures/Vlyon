@@ -46,15 +46,15 @@ $rsd = mysql_query($sql);
 				<tr>
 					<td><?php echo $listes["BI_NUM"]; ?></td>
 					<td><?php echo $listes["BI_VELO"]; ?></td>
-					<td><?php echo $listes["BI_DATDEBUT"]; ?></td>
-					<td><?php echo $listes["BI_DATFIN"] ; ?></td>
+					<td><?php echo substr($listes["BI_DATDEBUT"], 5); ?></td>
+					<td><?php echo substr($listes["BI_DATFIN"], 5) ; ?></td>
 					<td><?php echo $listes["BI_DUREE"] ;?></td>
 					<td><?php echo $listes["BI_CPTERENDU"] ; ?></td>
 					<td><?php echo $listes["BI_REPARABLE"] ; ?></td>
 					<td><?php echo $listes["BI_DEMANDE"] ;?></td>
 					<td><?php echo $listes["BI_TECHNICIEN"] ;?></td>
 					<td><?php echo $listes["BI_SURPLACE"] ;?></td>
-					<td><a href="?page=ModifInter&variable=<?php print($listes["BI_NUM"]); ?>"><input type="button" value="Voir"  /></a></td>
+					<td><a href="?page=ModifInter&variable=<?php print($listes["BI_NUM"]); ?>"><input type="image" src="./images/para.png" value="Voir" width="30" height="30"></a></td><!--<input type="button" value="Voir"  />-->
 
 				</tr>
 		<?php

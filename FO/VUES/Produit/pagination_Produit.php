@@ -45,7 +45,7 @@ $rsd = mysql_query($sql);
 <td><?php echo $demandes["COM_QTE"] ; ?></td>
 <td><?php echo substr($demandes["COM_DATE"],5) ; ?></td>
 <td><?php echo $demandes["COM_VALIDE"] ;?></td>
-<td><a href="?page=CommandeModif&variable=<?php echo($demandes["COM_CODE"]) ?>"><input type="button" value="Voir" onClick="if(confirm('Vous allez modifier la commande choisie ?'))
+<td><a href="?page=CommandeModif&variable=<?php echo($demandes["COM_CODE"]) ?>"><input type="image" src="./images/modif.png" height="30" width="30" value="Voir" onClick="if(confirm('Vous allez modifier la commande choisie ?'))
 {
     submit();
 }

@@ -13,11 +13,11 @@ $id = $_GET['variable'];
 			<table class="style1" >
 				<tr>
 					<th width="5%" >Code Dem</th>
-					<th width="8%">Code Velo</th>
-					<th width="8%">Station</th>
-					<th width="8%">Attache</th>
-					<th width="13%">Date</th>
-					<th width="13%">Motif</th>
+					<th width="5%">Velo</th>
+					<th width="5%">Station</th>
+					<th width="5%">Attache</th>
+					<th width="8%">Date</th>
+					<th width="40%">Motif</th>
 					<th width="8%">Traite</th>
 				</tr>
 					<form  action="<?php $_SERVER['PHP_SELF']; ?>" name="SuppDem" method="POST">
@@ -31,10 +31,10 @@ $id = $_GET['variable'];
 					<td><?php echo $demandes["DEMI_VELO"]; ?></td>
 					<td><?php echo $demandes["DEMI_STATION"]; ?></td>
 					<td><?php echo $demandes["DEMI_ATTACHE"] ; ?></td>
-					<td><?php echo $demandes["DEMI_DATE"] ; ?></td>
+					<td><?php echo substr($demandes["DEMI_DATE"], 5) ; ?></td>
 					<td><?php echo $demandes["DEMI_MOTIF"] ; ?></td>
 					<td><?php echo $demandes["DEMI_TRAITE"] ;?></td>
-					<td><a href="?page=listeDemandeSupp&variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="supprimer" onClick="if(confirm('Vous allez supprimer la demande choisie'))
+					<td><a href="?page=listeDemandeSupp&variable=<?php print($demandes["DEMI_NUM"]) ?>"><img width="30" height="30" src="images/supp.png"><input type="button" value="supprimer" onClick="if(confirm('Vous allez supprimer la demande choisie'))
 							{
 								submit();
 							}
@@ -42,8 +42,8 @@ $id = $_GET['variable'];
 	   						{
 	   							return false;
 	   						}
-							" /></a></td>
-					<td><a href="?page=listeDemandeModif&variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="Modification" onClick="if(confirm('Vous allez modifier la demande choisie'))
+							" /></img></a></td>
+					<td><a href="?page=listeDemandeModif&variable=<?php print($demandes["DEMI_NUM"]) ?>"><img width="30" height="30" src="images/modif.png"><input type="button" value="Modification" onClick="if(confirm('Vous allez modifier la demande choisie'))
 							{
 								submit();
 
@@ -52,7 +52,7 @@ $id = $_GET['variable'];
 	   						{
 	   							 return false;
 							}
-							" /></a></td>
+							" /></img></a></td>
 				</tr>
 		<?php
 				}

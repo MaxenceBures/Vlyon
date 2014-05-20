@@ -9,7 +9,7 @@ if(isset($_SESSION['id'])) {
 		<b>Demande d'intervention </b>
 
 			<table  class="style1">
- 
+
 				<tr>
 					<th width="5%">Dem</th>
 					<th width="5%">Velo</th>
@@ -29,7 +29,7 @@ if(isset($_SESSION['id'])) {
 					<td><?php echo $demandes["DEMI_VELO"]; ?></td>
 					<td><?php echo $demandes["DEMI_STATION"]; ?></td>
 					<td><?php echo substr($demandes["DEMI_DATE"], 5); ?></td>
-					<td><a href="?page=listeDemandeFiche&variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="Voir"  /></a></td>
+					<td><a href="?page=listeDemandeFiche&variable=<?php print($demandes["DEMI_NUM"]) ?>"><img width="30" height="30" src="images/modif.png"><input type="button" value="Voir"  /></img></a></td>
 				</tr>
 
 		<?php
@@ -39,7 +39,7 @@ if(isset($_SESSION['id'])) {
 			</table>
 
 			</br><a href="?page=listeAjout">Ajout demande</a></br>
-		
+
 
 <!--</div>-->
 </div>
@@ -48,5 +48,6 @@ if(isset($_SESSION['id'])) {
 }
 else{
 header('Location:/Vlyon/Pages/connexion.php');
+
 }
 ?>

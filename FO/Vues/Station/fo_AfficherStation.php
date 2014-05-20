@@ -30,7 +30,7 @@
 						<td colspan="1" >
 							<form action="?page=AfficherInfo&amp;idStation=<?php echo $uneStation["STA_CODE"]; ?>" method="POST">
 								
-								<input type="submit" name="cmd_Inf" id="cmd_Inf" value="Information" onClick="
+								<input type="image" src="./images/modif.png" name="cmd_Inf" id="cmd_Inf" value="Voir" onClick="
 									if(confirm('Vous allez consulter les informations concernant les stations'))
 									{
 										submit()
