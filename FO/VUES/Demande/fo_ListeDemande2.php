@@ -1,52 +1,56 @@
 <?php
-session_start();
+//session_start();
 if(isset($_SESSION['id'])) {
-require_once('../../include/functions.php');		
+//require_once('include/functions.inc.php');
 // Bures Maxence
 ?>
-
+<script type="text/javascript">
+	$('.button-example').prop('disabled', true).addClass('ui-disabled');
+</script>
 	<div data-role="page">
-	<!--<body>-->
 	<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 		<b>Demande d'intervention </b>
-			
-			<table class="style1" >
+
+			<table  class="style1">
+
 				<tr>
-					<th width="5%" >Code Dem</th>
-					<th width="5%">Code Velo</th>
+					<th width="5%">Dem</th>
+					<th width="5%">Velo</th>
 					<th width="5%">Station</th>
 					<th width="5%">Date</th>
 					<th width="5%">Test</th>
-				</tr>	
+				</tr>
 					<form  action="<?php $_SERVER['PHP_SELF']; ?>" name="AfficheDem" method="POST">
 		<?php
 			$demande = listedemandeint() ;
-			foreach ($demande as $demandes)			
+			foreach ($demande as $demandes)
 				{
 		?>
-				
+
 				<tr >
 					<td><?php echo $demandes["DEMI_NUM"] ; $code = $demandes["DEMI_NUM"] ;?><input type="hidden"  value="<?= $code ?>" id="code" name="code"/></td>
 					<td><?php echo $demandes["DEMI_VELO"]; ?></td>
 					<td><?php echo $demandes["DEMI_STATION"]; ?></td>
-					<td><?php echo $demandes["DEMI_DATE"]; ?></td>
-					<td><a href="ListeFiche.php?variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="button" value="Affichage"  /></a></td>		
+					<td><?php echo substr($demandes["DEMI_DATE"], 5); ?></td>
+					<td><a href="?page=listeDemandeFiche&variable=<?php print($demandes["DEMI_NUM"]) ?>"><img width="30" height="30" src="images/vue.png"><input type="button" value="Voir" data-role="button" data-icon="search" data-iconpos="notext" data-theme="c" data-inline="true"/></img></a></td>
 				</tr>
-				
+
 		<?php
 				}
-		?>	
+		?>
 					</form>
 			</table>
-			
-			</br><a href="/Vlyon/Pages/Demande/ficheajout.php">Ajout demande</a>
-			
-	<!--</body>-->
-	</div>
+
+			</br><a href="?page=listeAjout">Ajout demande</a></br>
+
+
+<!--</div>-->
+</div>
 
 <?php
 }
 else{
 header('Location:/Vlyon/Pages/connexion.php');
+
 }
 ?>

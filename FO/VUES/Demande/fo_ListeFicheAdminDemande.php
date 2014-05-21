@@ -12,15 +12,15 @@ if(isset($_SESSION['id'])) {
 		<b>Demande d'intervention </b>
 		<table class="style1" >
 			<tr>
-				<th width="5%" >Code Dem</th>
-				<th width="13%">Code Velo</th>
-				<th width="13%">Station</th>
-				<th width="13%">Attache</th>
-				<th width="13%">Date</th>
-				<th width="13%">Motif</th>
-				<th width="20%">Traite</th>
-				<th width="13%">Technicien</th>
-				<th width="13%">Valide</th>
+				<th width="5%">Dem</th>
+				<th width="5%">Velo</th>
+				<th width="5%">Station</th>
+				<th width="5%">Attache</th>
+				<th width="10%">Date</th>
+				<th width="40%">Motif</th>
+				<th width="5%">Traite</th>
+				<th width="5%">Techn</th>
+				<th width="5%">Valide</th>
 			</tr>
 	<?php
 
@@ -34,7 +34,7 @@ if(isset($_SESSION['id'])) {
 					<td><?php echo $demandes["DEMI_VELO"]; ?></td>
 					<td><?php echo $demandes["DEMI_STATION"]; ?></td>
 					<td><?php echo $demandes["DEMI_ATTACHE"] ; ?></td>
-					<td><?php echo $demandes["DEMI_DATE"] ; ?></td>
+					<td><?php echo substr($demandes["DEMI_DATE"], 2) ; ?></td>
 					<td><?php echo $demandes["DEMI_MOTIF"] ; ?></td>
 					<td><?php echo $demandes["DEMI_TRAITE"] ;?></td>
 					<td><?php echo $demandes["DEMI_TECHNICIEN"] ;?></td>

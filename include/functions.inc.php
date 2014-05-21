@@ -485,7 +485,7 @@ function getAllStation()
         $per_page = 5;
 
 //getting number of rows and calculating no of pages
-$sql = "select * from COMMANDE";
+$sql = "SELECT * FROM COMMANDE";
 $rsd = mysql_query($sql);
 $count = mysql_num_rows($rsd);
 $pages = ceil($count/$per_page);
@@ -495,8 +495,20 @@ return($pages);
         $per_page = 5;
 
 //getting number of rows and calculating no of pages
-$sql = "   SELECT BI_NUM, BI_VELO, BI_DATDEBUT, BI_DATFIN, BI_REPARABLE, BI_DEMANDE, BI_SURPLACE, BI_DUREE, BI_CPTERENDU, BI_TECHNICIEN
+$sql = "   SELECT *
                 FROM BONINTERV";
+$rsd = mysql_query($sql);
+$count = mysql_num_rows($rsd);
+$pages = ceil($count/$per_page);
+return($pages);
+    }
+
+   function paginationDemande(){
+        $per_page = 5;
+
+//getting number of rows and calculating no of pages
+$sql = "   SELECT *
+                FROM DEMANDEINTER WHERE DEMI_VALIDE = 1";
 $rsd = mysql_query($sql);
 $count = mysql_num_rows($rsd);
 $pages = ceil($count/$per_page);
