@@ -44,7 +44,7 @@ $rsd = mysql_query($sql);
 					<td><?php echo $demandes["DEMI_VELO"]; ?></td>
 					<td><?php echo $demandes["DEMI_STATION"]; ?></td>
 					<td><?php echo substr($demandes["DEMI_DATE"], 5); ?></td>
-					<td><a href="?page=listeDemandeFiche&variable=<?php print($demandes["DEMI_NUM"]) ?>"><img width="30" height="30" src="images/vue.png"><input type="button" value="Voir" data-role="button" data-icon="search" data-iconpos="notext" data-theme="c" data-inline="true"/></img></a></td>
+					<td><a href="?page=listeDemandeFiche&variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="image" value="Voir" width="30" height="30" src="images/vue.png"/></a></td>
 				</tr>
 
 		<?php

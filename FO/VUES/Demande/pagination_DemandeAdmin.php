@@ -1,15 +1,27 @@
 <?php
-//session_start();
-if(isset($_SESSION['id'])) {
-//require_once('include/functions.inc.php');
-// Bures Maxence
+session_start();
+//include('../../../include/connexion.inc.php');
+include('../../../include/functions.inc.php');
+//connect();
+$per_page = 5;
+
+if($_GET)
+{
+$page=$_GET['page'];
+}
+
+
+
+//get table contents
+$start = ($page-1)*$per_page;
+$sql = "    SELECT *
+                FROM DEMANDEINTER WHERE DEMI_VALIDE = 1  limit $start,$per_page";//order by demi_num
+$rsd = mysql_query($sql);
 ?>
-<script type="text/javascript">
-	$('.button-example').prop('disabled', true).addClass('ui-disabled');
-</script>
-	<div data-role="page">
-	<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
-		<b>Demande d'intervention </b>
+<!--<div data-role="page">
+<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>-->
+
+<b>Demande d'intervention </b>
 
 			<table  class="style1">
 
@@ -41,16 +53,3 @@ if(isset($_SESSION['id'])) {
 					</form>
 			</table>
 
-			</br><a href="?page=listeAjout">Ajout demande</a></br>
-
-
-<!--</div>-->
-</div>
-
-<?php
-}
-else{
-header('Location:/Vlyon/Pages/connexion.php');
-
-}
-?>
