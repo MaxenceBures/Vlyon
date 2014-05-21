@@ -1,7 +1,7 @@
 <?php
 session_start();
-//include('../../../include/connexion.inc.php');
 include('../../../include/functions.inc.php');
+//include('../../../include/connexion.inc.php');
 //connect();
 $per_page = 5;
 
@@ -14,42 +14,45 @@ $page=$_GET['page'];
 
 //get table contents
 $start = ($page-1)*$per_page;
-$sql = "    SELECT *
-                FROM DEMANDEINTER WHERE DEMI_VALIDE = 1  limit $start,$per_page";//order by demi_num
+$sql = "select * from DEMANDEINTER limit $start,$per_page";//order by demi_num
 $rsd = mysql_query($sql);
 ?>
 <!--<div data-role="page">
 <a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>-->
 
-<b>Demande d'intervention </b>
-
-			<table  class="style1">
-
-				<tr>
-					<th width="5%">Dem</th>
-					<th width="5%">Velo</th>
-					<th width="5%">Station</th>
-					<th width="5%">Date</th>
-					<th width="5%">Test</th>
-				</tr>
-					<form  action="<?php $_SERVER['PHP_SELF']; ?>" name="AfficheDem" method="POST">
+	<b>Demande d'intervention </b>
+		<table class="style1" >
+			<tr>
+				<th width="5%">Dem</th>
+				<th width="5%">Velo</th>
+				<th width="5%">Station</th>
+				<th width="5%">Attache</th>
+				<th width="10%">Date</th>
+				<th width="40%">Motif</th>
+				<th width="5%">Traite</th>
+				<th width="5%">Techn</th>
+				<th width="5%">Valide</th>
+			</tr>
 		<?php
-			$demande = listedemandeint() ;
-			foreach ($demande as $demandes)
-				{
-		?>
 
-				<tr >
-					<td><?php echo $demandes["DEMI_NUM"] ; $code = $demandes["DEMI_NUM"] ;?><input type="hidden"  value="<?= $code ?>" id="code" name="code"/></td>
+
+	$demande =  mysql_fetch_array($rsd); //listedemandeintAdmin()
+			foreach ($demande as $demandes)
+			{
+	?>
+				<tr>
+					<td><?php echo $demandes["DEMI_NUM"] ;  ?></td>
 					<td><?php echo $demandes["DEMI_VELO"]; ?></td>
 					<td><?php echo $demandes["DEMI_STATION"]; ?></td>
-					<td><?php echo substr($demandes["DEMI_DATE"], 5); ?></td>
-					<td><a href="?page=listeDemandeFiche&variable=<?php print($demandes["DEMI_NUM"]) ?>"><img width="30" height="30" src="images/vue.png"><input type="button" value="Voir" data-role="button" data-icon="search" data-iconpos="notext" data-theme="c" data-inline="true"/></img></a></td>
+					<td><?php echo $demandes["DEMI_ATTACHE"] ; ?></td>
+					<td><?php echo substr($demandes["DEMI_DATE"], 2) ; ?></td>
+					<td><?php echo $demandes["DEMI_MOTIF"] ; ?></td>
+					<td><?php echo $demandes["DEMI_TRAITE"] ;?></td>
+					<td><?php echo $demandes["DEMI_TECHNICIEN"] ;?></td>
+					<td><?php echo $demandes["DEMI_VALIDE"] ;?></td>
 				</tr>
-
-		<?php
-				}
-		?>
-					</form>
-			</table>
+	<?php
+			}
+	?>
+		</table>
 

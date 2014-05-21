@@ -515,6 +515,18 @@ $pages = ceil($count/$per_page);
 return($pages);
     }
 
+function paginationDemandeAdmin(){
+        $per_page = 5;
+
+//getting number of rows and calculating no of pages
+$sql = "   SELECT *
+                FROM DEMANDEINTER ";
+$rsd = mysql_query($sql);
+$count = mysql_num_rows($rsd);
+$pages = ceil($count/$per_page);
+return($pages);
+    }
+
 
     function ajoutdem(){
          if (isset($_POST['go_ajout']))

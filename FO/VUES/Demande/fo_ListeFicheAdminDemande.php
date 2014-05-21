@@ -1,56 +1,83 @@
 <?php
-//session_start();
-if(isset($_SESSION['id'])) {
-//		require_once('include/functions.php');
-		//Bures Maxence
+	//include("Modeles/Produit/lireProduit.inc.php");
+$pages = paginationDemandeAdmin();
 ?>
-	<!--<html>-->
+	
 
-	<!--	<body>-->
+
 	<div data-role="page">
-		<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
-		<b>Demande d'intervention </b>
-		<table class="style1" >
-			<tr>
-				<th width="5%">Dem</th>
-				<th width="5%">Velo</th>
-				<th width="5%">Station</th>
-				<th width="5%">Attache</th>
-				<th width="10%">Date</th>
-				<th width="40%">Motif</th>
-				<th width="5%">Traite</th>
-				<th width="5%">Techn</th>
-				<th width="5%">Valide</th>
-			</tr>
-	<?php
-
-
-	$demande = listedemandeintAdmin() ;
-			foreach ($demande as $demandes)
-			{
-	?>
-				<tr>
-					<td><?php echo $demandes["DEMI_NUM"] ;  ?></td>
-					<td><?php echo $demandes["DEMI_VELO"]; ?></td>
-					<td><?php echo $demandes["DEMI_STATION"]; ?></td>
-					<td><?php echo $demandes["DEMI_ATTACHE"] ; ?></td>
-					<td><?php echo substr($demandes["DEMI_DATE"], 2) ; ?></td>
-					<td><?php echo $demandes["DEMI_MOTIF"] ; ?></td>
-					<td><?php echo $demandes["DEMI_TRAITE"] ;?></td>
-					<td><?php echo $demandes["DEMI_TECHNICIEN"] ;?></td>
-					<td><?php echo $demandes["DEMI_VALIDE"] ;?></td>
-				</tr>
-	<?php
-			}
-	?>
-		</table>
-		</div>
-
+		<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
 		
-	<!--</body>-->
-<?php
-}
-else{
-header('Location:/Vlyon/Pages/connexion.php');
-}
-?>
+	<div align="center">
+		
+				
+	
+	<div id="content2" ></div>
+	
+				
+
+	<table  class="style1">
+	<tr><Td>
+			<ul id="pagination">
+			
+				<?php
+				//Show page links
+				for($i=1; $i<=$pages; $i++)
+				{
+					echo '<li style="list-style: none;float: left;margin-right: 16px;padding:5px;border:solid 1px #dddddd;color:#0063DC;" id="'.$i.'">'.$i.'</li>';
+				}
+				?>
+
+	</ul>	
+	</Td></tr></table></div>
+
+	<script type="text/javascript">
+	
+	$(document).ready(function(){
+		
+	//Display Loading Image
+	function Display_Load()
+	{
+	    $("#loading").fadeIn(900,0);
+		
+	}
+	//Hide Loading Image
+	function Hide_Load()
+	{
+		$("#loading").fadeOut('slow');
+	};
+	
+
+   //Default Starting Page Results
+   
+	$("#pagination li:first").css({'color' : '#FF0084'}).css({'border' : 'none'});
+	
+	Display_Load();
+	
+	$("#content2").load("FO/VUES/Demande/pagination_DemandeAdmin.php?page=1", Hide_Load());
+
+
+
+	//Pagination Click
+	$("#pagination li").click(function(){
+			
+		Display_Load();
+		
+		//CSS Styles
+		$("#pagination li")
+		.css({'border' : 'solid #dddddd 1px'})
+		.css({'color' : '#0063DC'});
+		
+		$(this)
+		.css({'color' : '#FF0084'})
+		.css({'border' : 'none'});
+
+		//Loading Data
+		var pageNum = this.id;
+		
+		$("#content2").load("FO/VUES/Intervention/pagination_DemandeAdmin.php?page=" + pageNum, Hide_Load());
+	});
+	
+	
+});
+	</script>
