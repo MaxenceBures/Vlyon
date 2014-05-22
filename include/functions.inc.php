@@ -527,6 +527,13 @@ $pages = ceil($count/$per_page);
 return($pages);
     }
 
+function pagination_ProduitListe($page){
+$per_page = 5;
+$start = ($page-1)*$per_page;
+$sql = "select * from COMMANDE, PRODUIT WHERE COM_PRODUIT = PDT_CODE ORDER BY COM_CODE ASC limit $start,$per_page";//order by demi_num
+$rsd = mysql_query($sql);
+return($rsd);
+}
 
     function ajoutdem(){
          if (isset($_POST['go_ajout']))
