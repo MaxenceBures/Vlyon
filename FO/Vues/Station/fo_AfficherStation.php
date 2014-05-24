@@ -28,7 +28,7 @@
 						<td><?php echo $uneStation["QUA_LIB"] ;  ?></td>
 						<td><?php echo $uneStation["STA_CODE"]; ?></td>
 						<td colspan="1" >
-							<form action="?page=AfficherInfo&amp;idStation=<?php echo $uneStation["STA_CODE"]; ?>" method="POST">
+							<form action="?page=AfficherInfo&idStation=<?php echo $uneStation["STA_CODE"]; ?>" method="POST">
 								
 								<input type="image" src="./images/modif.png" name="cmd_Inf" id="cmd_Inf" value="Voir" onClick="
 									if(confirm('Vous allez consulter les informations concernant les stations'))

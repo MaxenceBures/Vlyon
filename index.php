@@ -30,14 +30,14 @@
 					switch($_GET['page'])
 					{
 
-						case "formulaire":
+						/*case "formulaire":
 							$fichier = "Test/formulaire.php";
 							$titre   =  "test";
 							break ;
 						case "tableau":
 							$fichier = "Test/tableau.php";
 							$titre   =  "test";
-							break ;	
+							break ;	*/
 						case "listeDemande":
 							$fichier = "FO/VUES/Demande/fo_ListeDemande.php";
 							$titre   =  "Liste";

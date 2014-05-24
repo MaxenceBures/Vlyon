@@ -34,7 +34,7 @@ $id = $_GET['variable'];
 					<td><?php echo substr($demandes["DEMI_DATE"], 5) ; ?></td>
 					<td><?php echo $demandes["DEMI_MOTIF"] ; ?></td>
 					<td><?php echo $demandes["DEMI_TRAITE"] ;?></td>
-					<td><a href="?page=listeDemandeSupp&variable=<?php print($demandes["DEMI_NUM"]) ?>"><img width="30" height="30" src="images/supp.png"><input type="button"  value="supprimer" onClick="if(confirm('Vous allez supprimer la demande choisie'))
+					<td><a href="?page=listeDemandeSupp&variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="image" width="30" height="30" src="images/supp.png" value="supprimer" onClick="if(confirm('Vous allez supprimer la demande choisie'))
 							{
 								submit();
 							}
@@ -42,8 +42,8 @@ $id = $_GET['variable'];
 	   						{
 	   							return false;
 	   						}
-							" /></img></a></td>
-					<td><a href="?page=listeDemandeModif&variable=<?php print($demandes["DEMI_NUM"]) ?>"><img width="30" height="30" src="images/modif.png"><input type="button" value="Modification" onClick="if(confirm('Vous allez modifier la demande choisie'))
+							" /></a></td>
+					<td><a href="?page=listeDemandeModif&variable=<?php print($demandes["DEMI_NUM"]) ?>"><input type="image" width="30" height="30" src="images/modif.png" value="Modification" onClick="if(confirm('Vous allez modifier la demande choisie'))
 							{
 								submit();
 
@@ -52,7 +52,7 @@ $id = $_GET['variable'];
 	   						{
 	   							 return false;
 							}
-							" /></img></a></td>
+							" /></a></td>
 				</tr>
 		<?php
 				}

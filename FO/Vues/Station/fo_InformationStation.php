@@ -35,7 +35,7 @@
 					<td colspan="1" >
 						<form action="?page=AfficherModif" method="POST">
 							<input type="hidden" name="idVelModif" id="idVelModif" value="<?php echo $uneInfo["VEL_NUM"]; ?>"/>
-							<input type="image" src="./images/modif.png" name="cmd_Modif" id="cmd_Modif" value="Modifier" onClick="submit" 	/>
+							<input type="image" src="./images/modif.png" name="cmd_Modif" id="cmd_Modif" value="Modifier" height="40" width="40" onClick="submit" 	/>
 						</form>
 					</td>
 				</tr>
