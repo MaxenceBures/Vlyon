@@ -21,9 +21,9 @@ $rsd = mysql_query($sql);*/
 
 	<table width="800px" class="style1">
 <tr>
-<th width="5%" >Numéro Commande</th>
-<th width="5%" >Code Produit</th>
-<th width="13%">Libelle Produit</th>
+<th width="5%" >Num Comm</th>
+<th width="5%" >Prod</th>
+<th width="13%">Libel</th>
 <th width="13%">Quantité</th>
 <th width="13%">Date Commande</th>
 <th width="20%">Validé</th>
@@ -46,7 +46,7 @@ $rsd = pagination_ProduitListe($page);
 <td><?php echo $demandes["PDT_LIBELLE"]; ?></td>
 <td><?php echo $demandes["COM_QTE"] ; ?></td>
 <td><?php echo substr($demandes["COM_DATE"],5) ; ?></td>
-<td><?php echo $demandes["COM_VALIDE"] ;?></td>
+<td><?php  if($demandes["COM_VALIDE"] == 0){echo "non";}else{echo"oui";} ;?></td>
 <td><a href="?page=CommandeModif&variable=<?php echo($demandes["COM_CODE"]) ?>"><input type="image" src="./images/modif.png" height="30" width="30" value="Voir" onClick="if(confirm('Vous allez modifier la commande choisie ?'))
 {
     submit();
