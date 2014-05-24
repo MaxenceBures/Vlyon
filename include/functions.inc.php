@@ -504,7 +504,7 @@ return($pages);
     }
 
    function paginationDemande(){
-        $per_page = 5;
+$per_page = 5;
 
 //getting number of rows and calculating no of pages
 $sql = "   SELECT *
@@ -516,7 +516,7 @@ return($pages);
     }
 
 function paginationDemandeAdmin(){
-        $per_page = 5;
+$per_page = 5;
 
 //getting number of rows and calculating no of pages
 $sql = "   SELECT *
@@ -535,8 +535,17 @@ $rsd = mysql_query($sql);
 return($rsd);
 }
 
-    function ajoutdem(){
-         if (isset($_POST['go_ajout']))
+function pagination_DemandeAdminListe($page){
+$per_page = 5;
+$start = ($page-1)*$per_page;
+$sql = "select * from DEMANDEINTER ORDER BY DEMI_NUM ASC limit $start,$per_page";//order by demi_num
+$rsd = mysql_query($sql);
+return($rsd);
+}
+
+
+function ajoutdem(){
+if (isset($_POST['go_ajout']))
      {
         getEtats();
         $sNumVelo = mysql_real_escape_string($_POST['idVelModif']);

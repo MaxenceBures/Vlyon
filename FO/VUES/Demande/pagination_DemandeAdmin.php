@@ -1,9 +1,9 @@
 <?php
-session_start();
+//session_start();
 include('../../../include/functions.inc.php');
 //include('../../../include/connexion.inc.php');
 //connect();
-$per_page = 5;
+//$per_page = 5;
 
 if($_GET)
 {
@@ -13,9 +13,9 @@ $page=$_GET['page'];
 
 
 //get table contents
-$start = ($page-1)*$per_page;
+/*$start = ($page-1)*$per_page;
 $sql = "select * from DEMANDEINTER limit $start,$per_page";//order by demi_num
-$rsd = mysql_query($sql);
+$rsd = mysql_query($sql);*/
 ?>
 <!--<div data-role="page">
 <a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>-->
@@ -36,8 +36,8 @@ $rsd = mysql_query($sql);
 		<?php
 
 
-	$demande =  mysql_fetch_array($rsd); //listedemandeintAdmin()
-			foreach ($demande as $demandes)
+$rsd = pagination_DemandeAdminListe($page);
+		while($demandes = mysql_fetch_array($rsd))
 			{
 	?>
 				<tr>

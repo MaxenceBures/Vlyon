@@ -1,7 +1,7 @@
 <?php
 
 include('../../../include/functions.inc.php');
-connect();
+//connect();
 //$per_page = 5;
 
 if($_GET)
@@ -36,8 +36,8 @@ $rsd = pagination_ProduitListe($page);
 		while($demandes = mysql_fetch_array($rsd))
 		{
 			
-			$id=$demandes['COM_CODE'];
-            $msg=$demandes['COM_PRODUIT'];
+			$id=$demandes["COM_CODE"];
+            $msg=$demandes["COM_PRODUIT"];
 
 		?>
 <tr>

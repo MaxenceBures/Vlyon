@@ -75,7 +75,7 @@ $pages = paginationDemandeAdmin();
 		//Loading Data
 		var pageNum = this.id;
 		
-		$("#content2").load("FO/VUES/Intervention/pagination_DemandeAdmin.php?page=" + pageNum, Hide_Load());
+		$("#content2").load("FO/VUES/Demande/pagination_DemandeAdmin.php?page=" + pageNum, Hide_Load());
 	});
 	
 	
