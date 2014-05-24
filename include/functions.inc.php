@@ -544,6 +544,22 @@ return($rsd);
 }
 
 
+function pagination_InterventionListe($page){
+$per_page = 5;
+$start = ($page-1)*$per_page;
+$sql = "SELECT BI_NUM, BI_VELO, BI_DATDEBUT, BI_DATFIN, BI_REPARABLE, BI_DEMANDE, BI_SURPLACE, BI_DUREE, BI_CPTERENDU, BI_TECHNICIEN FROM BONINTERV  limit $start,$per_page";//order by demi_num
+$rsd = mysql_query($sql);
+return($rsd);
+}
+
+function pagination_DemandeListe($page){
+$per_page = 5;
+$start = ($page-1)*$per_page;
+$sql = "select * from DEMANDEINTER where DEMI_VALIDE = 1 ORDER BY DEMI_NUM ASC limit $start,$per_page";//order by demi_num
+$rsd = mysql_query($sql);
+return($rsd);
+}
+
 function ajoutdem(){
 if (isset($_POST['go_ajout']))
      {
