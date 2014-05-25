@@ -112,7 +112,7 @@ function listeint()
     return ($intevention) ;
 }
 
-function listedemande2int($id)
+function listedemandeNumint($id)
 {
     $sReq = " SELECT DEMI_NUM, DEMI_VELO, DEMI_ATTACHE, DEMI_STATION, DEMI_DATE, DEMI_MOTIF, DEMI_TRAITE
                 FROM DEMANDEINTER

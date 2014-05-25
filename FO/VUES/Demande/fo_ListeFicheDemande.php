@@ -1,7 +1,7 @@
 <?php
-//session_start();
+
 if(isset($_SESSION['id'])) {
-//require_once('include/functions.php');
+
 $id = $_GET['variable'];
 
 ?>
@@ -22,7 +22,7 @@ $id = $_GET['variable'];
 				</tr>
 					<form  action="<?php $_SERVER['PHP_SELF']; ?>" name="SuppDem" method="POST">
 		<?php
-			$demande = listedemande2int($id);
+			$demande = listedemandeNumint($id);
 			foreach ($demande as $demandes)
 				{
 		?>

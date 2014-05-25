@@ -1,5 +1,5 @@
 <?php
-	//include("Modeles/Produit/lireProduit.inc.php");
+
 $pages = paginationDemandeAdmin();
 ?>
 	

@@ -6,8 +6,8 @@ if(isset($_SESSION['id'])) {
 	//Bures Maxence
 	$id = $_GET['variable'];
 	modifdemandeint();
-	//$requete = "SELECT * FROM DEMANDEINTER where DEMI_NUM= '".$id."'";
-	$enreg = mysql_fetch_assoc(test($id));
+	
+	$enreg = mysql_fetch_assoc(infosDemande($id));
 	?>
 
 	<div data-role="page">
