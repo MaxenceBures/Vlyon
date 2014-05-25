@@ -48,7 +48,7 @@ $rsd = pagination_InterventionListe($page);
 					<td><?php echo $listes["BI_DEMANDE"] ;?></td>
 					<td><?php echo $listes["BI_TECHNICIEN"] ;?></td>
 					<td><?php echo $listes["BI_SURPLACE"] ;?></td>
-					<td><a href="?page=ModifInter&variable=<?php print($listes["BI_NUM"]); ?>"><input type="image" src="./images/para.png" value="Voir" width="30" height="30"></a></td><!--<input type="button" value="Voir"  />-->
+					<td><a href="?page=ModifInter&variable=<?php print($listes["BI_NUM"]); ?>"><input type="image" src="./images/modif.png" value="Voir" width="30" height="30"></a></td><!--<input type="button" value="Voir"  />-->
 
 				</tr>
 		<?php

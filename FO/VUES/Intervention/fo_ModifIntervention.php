@@ -83,7 +83,7 @@ if(isset($_SESSION['id'])) {
 						<label for="duree">Durée </label>
 					</td>
 					<td>
-						<input type="text"  value="<?php echo($enreg['BI_DUREE'])?>" id="duree" name="duree"/>
+						<input type="text" required="" value="<?php echo($enreg['BI_DUREE'])?>" id="duree" name="duree"/>
 					</td>
 				</tr>
 			</table>

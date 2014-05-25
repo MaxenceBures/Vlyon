@@ -3,6 +3,7 @@
 if(isset($_SESSION['id'])) {
 
 	    createdemandeint();
+	    
 	//Bures Maxence
 	?>
 	
@@ -13,10 +14,20 @@ if(isset($_SESSION['id'])) {
 			<table class="style1">
 				<tr>
 					<td>
-						<label for="velo">Velo : </label>
+					<label for="Velo">Velo : </label>
 					</td>
 					<td>
-						<input type="text" required="" id="velo" name="velo"/>
+					<select id="velo" required="" name="velo">
+				<?php
+				$oVelo = getAllVelo() ;
+				foreach ($oVelo as $Velo)
+				{
+	?>
+					<option value="<?php echo $Velo['VEL_NUM']; ?>"><?php echo $Velo["VEL_NUM"] ?> </option>
+	<?php
+				}
+	?>
+					</select>
 					</td>
 				</tr>
 				</br>

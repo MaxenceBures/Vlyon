@@ -414,6 +414,24 @@ function getAllStation()
 
         return $lesInfos ;
     }
+
+    function getAllVelo()
+    {
+        $lesInfos = array() ;
+        $oSql= connecter() ;
+        $i=1;
+        $sReq = " SELECT VEL_NUM
+                FROM VELO
+                ORDER BY VEL_NUM ASC";
+        $sReqExe = $oSql->query($sReq);
+
+        while ($uneLigne = $oSql->tabAssoc($sReqExe) ){
+            $lesInfos[$i] =  $uneLigne ;
+            $i=$i+1;
+        }
+
+        return $lesInfos ;
+    }
         function getAllInfoE($pInfo)
     {
         $lesInfosE = array() ;
