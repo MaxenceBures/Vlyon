@@ -38,12 +38,12 @@ $rsd = pagination_DemandeAdminListe($page);
 				<tr>
 					<td><?php echo $demandes["DEMI_NUM"] ;  ?></td>
 					<td><?php echo $demandes["DEMI_VELO"]; ?></td>
-					<td><?php echo $demandes["DEMI_STATION"]; ?></td>
+					<td><?php echo $demandes["STA_NOM"]; ?></td>
 					<td><?php echo $demandes["DEMI_ATTACHE"] ; ?></td>
 					<td><?php echo substr($demandes["DEMI_DATE"], 2) ; ?></td>
 					<td><?php echo $demandes["DEMI_MOTIF"] ; ?></td>
-					<td><?php echo $demandes["DEMI_TRAITE"] ;?></td>
-					<td><?php echo $demandes["DEMI_TECHNICIEN"] ;?></td>
+					<td><?php if($demandes["DEMI_TRAITE"] == 0){echo "non";}else{echo"oui";} ;?></td>
+					<td><?php echo $demandes["TEC_NOM"] ;?></td>
 					<td><?php if($demandes["DEMI_VALIDE"] == 0){echo "non";}else{echo"oui";} ;?></td>
 				</tr>
 	<?php

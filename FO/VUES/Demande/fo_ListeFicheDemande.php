@@ -29,7 +29,7 @@ $id = $_GET['variable'];
 				<tr>
 					<td><?php echo $demandes["DEMI_NUM"] ; $code = $demandes["DEMI_NUM"] ;?><input type="hidden"  value="<?= $code ?>" id="code" name="code"/></td>
 					<td><?php echo $demandes["DEMI_VELO"]; ?></td>
-					<td><?php echo $demandes["DEMI_STATION"]; ?></td>
+					<td><?php echo $demandes["STA_NOM"]; ?></td>
 					<td><?php echo $demandes["DEMI_ATTACHE"] ; ?></td>
 					<td><?php echo substr($demandes["DEMI_DATE"], 5) ; ?></td>
 					<td><?php echo $demandes["DEMI_MOTIF"] ; ?></td>

@@ -114,9 +114,9 @@ function listeint()
 
 function listedemandeNumint($id)
 {
-    $sReq = " SELECT DEMI_NUM, DEMI_VELO, DEMI_ATTACHE, DEMI_STATION, DEMI_DATE, DEMI_MOTIF, DEMI_TRAITE
-                FROM DEMANDEINTER
-                WHERE DEMI_NUM='".$id."' AND DEMI_VALIDE=1 ";
+    $sReq = " SELECT DEMI_NUM, DEMI_VELO, DEMI_ATTACHE, DEMI_STATION, DEMI_DATE, DEMI_MOTIF, DEMI_TRAITE, STA_NOM
+                FROM DEMANDEINTER, STATION
+                WHERE DEMI_NUM='".$id."' AND DEMI_VALIDE=1 AND DEMI_STATION = STA_CODE ";
     $rstPdt = mysql_query($sReq) ;
     $iNb = 0 ;
     $demande = array() ;
@@ -557,7 +557,7 @@ return($rsd);
 function pagination_DemandeAdminListe($page){
 $per_page = 5;
 $start = ($page-1)*$per_page;
-$sql = "select * from DEMANDEINTER ORDER BY DEMI_NUM ASC limit $start,$per_page";//order by demi_num
+$sql = "select * from DEMANDEINTER, STATION, TECHNICIEN WHERE DEMI_STATION = STA_CODE AND DEMI_TECHNICIEN = TEC_MATRICULE ORDER BY DEMI_NUM ASC limit $start,$per_page";//order by demi_num
 $rsd = mysql_query($sql);
 return($rsd);
 }
@@ -574,7 +574,7 @@ return($rsd);
 function pagination_DemandeListe($page){
 $per_page = 5;
 $start = ($page-1)*$per_page;
-$sql = "select * from DEMANDEINTER where DEMI_VALIDE = 1 ORDER BY DEMI_NUM ASC limit $start,$per_page";//order by demi_num
+$sql = "select * from DEMANDEINTER, STATION where DEMI_VALIDE = 1 AND DEMI_STATION = STA_CODE ORDER BY DEMI_NUM ASC limit $start,$per_page";//order by demi_num
 $rsd = mysql_query($sql);
 return($rsd);
 }
