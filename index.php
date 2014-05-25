@@ -96,6 +96,10 @@
 							$fichier = "FO/Vues/Station/fo_ModifierVelo.php";
 							$titre   = "Modifer un velo";
 							break;
+						case "AfficherVelo":
+							$fichier = "FO/Vues/Station/fo_ModifierVeloFonct.php";
+							$titre   = "Modifer un velo";
+							break;	
 						case "AfficherInfo":
 							$fichier = "FO/VUES/Station/fo_InformationStation.php" ;
 							$titre   = "InfoStation";

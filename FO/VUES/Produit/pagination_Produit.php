@@ -1,8 +1,7 @@
 <?php
 
 include('../../../include/functions.inc.php');
-//connect();
-//$per_page = 5;
+
 
 if($_GET)
 {
@@ -11,10 +10,7 @@ $page=$_GET['page'];
 
 
 
-//get table contents
-/*$start = ($page-1)*$per_page;
-$sql = "select * from COMMANDE, PRODUIT WHERE COM_PRODUIT = PDT_CODE  limit $start,$per_page";//order by demi_num
-$rsd = mysql_query($sql);*/
+
 ?>
 <!--<div data-role="page">
 <a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>-->

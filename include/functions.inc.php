@@ -403,7 +403,8 @@ function getAllStation()
         $sReq = " SELECT VEL_NUM, VEL_ETAT, DEMI_MOTIF, DEMI_NUM
                 FROM VELO, DEMANDEINTER
                 WHERE VEL_NUM = DEMI_VELO
-                AND DEMI_STATION='". $pInfo ."'";
+                AND DEMI_STATION='". $pInfo ."'
+                ORDER BY DEMI_NUM ASC";
         $sReqExe = $oSql->query($sReq);
 
         while ($uneLigne = $oSql->tabAssoc($sReqExe) ){
@@ -577,6 +578,7 @@ return($enreg);
 function modifDemanInter(){
     if (isset($_POST['go_modif']))
     {
+        
         $id = mysql_real_escape_string($_POST["idVelModif"]);
         $etat =  mysql_real_escape_string($_POST["lst_Modif"]);
         $motif =  mysql_real_escape_string($_POST["motif_Intervention"]);
@@ -592,12 +594,42 @@ function modifDemanInter(){
 $sReq = mysql_query("UPDATE DEMANDEINTER SET DEMI_MOTIF = '".$motif."', DEMI_TRAITE = '".$sRadIntervention."' WHERE DEMI_NUM = '".$id."'");
 $sReq2 = mysql_query("UPDATE VELO SET VEL_ETAT ='".$etat."' WHERE VEL_NUM = '".$velo."'");
     }
-else
-     {
-        
- 
+      
+
 }
+
+function ajoutDemanInter(){
+    if (isset($_POST['go_modif']))
+    {
+        $station = mysql_real_escape_string($_POST["idStation"]);
+        $attache = mysql_real_escape_string($_POST["Attache"]);
+        //$id = mysql_real_escape_string($_POST["idVelModif"]);
+        $etat =  mysql_real_escape_string($_POST["lst_Modif"]);
+        $motif =  mysql_real_escape_string($_POST["motif_Intervention"]);
+       // $etat = mysql_real_escape_string($_POST["rad_Intervention"]);
+        $velo = mysql_real_escape_string($_POST["idVelCode"]);
+        if (empty($_POST['rad_Intervention'])){
+        $sRadIntervention= '1';
+        }
+     else{
+        $sRadIntervention='0';
+        }
+$nb= mysql_fetch_row(mysql_query("SELECT max(DEMI_NUM) from DEMANDEINTER"));
+$max = $nb[0] + 1;
+$sReq = mysql_query("INSERT INTO DEMANDEINTER (DEMI_NUM,DEMI_VELO,DEMI_DATE,DEMI_TECHNICIEN,DEMI_MOTIF, DEMI_TRAITE, DEMI_STATION, DEMI_ATTACHE) VALUES('".$max."', '".$velo."','".date("Y-m-d")."' ,'".$_SESSION['id']."','".$motif."', '".$sRadIntervention."','".$station."','".$attache."')") or mysql_error();
+var_dump($sReq);
+//$sReq2 = mysql_query("UPDATE VELO SET VEL_ETAT ='".$etat."' WHERE VEL_NUM = '".$velo."'");
+    ?>
+    <script language="Javascript">
+        alert("enregistrée");
+        window.location.replace("index.php")
+    </script>
+    <?php
+    }
+      
+
 }
+
 /*function modifcommande()
     {
 

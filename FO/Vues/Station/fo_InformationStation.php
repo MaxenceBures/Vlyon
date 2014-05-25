@@ -64,8 +64,8 @@
 					<td><?php echo $uneInfoE["VEL_NUM"]; ?></td>
 					<td><?php echo $uneInfoE["VEL_ETAT"]; ?></td>
 					<td colspan="1" >
-							<form action="?page=AfficherModif" method="POST">
-								<input type="hidden" name="idVelModif" value="<?php echo $uneInfoE["VEL_NUM"]; ?>"/>
+							<form action="?page=AfficherVelo" method="POST">
+								<input type="hidden" name="idVelModif" id="idVelModif" value="<?php echo $uneInfoE["VEL_NUM"]; ?>"/>
 								<input type="submit" name="cmd_Modif" id="cmd_Modif" value="Modifier" onClick="submit"	/>
 							</form>
 					</td>

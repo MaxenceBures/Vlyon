@@ -1,5 +1,5 @@
 <?php
-	//require_once ("FO/Modeles/Produit/lireProduit.inc.php") ;
+
 ajoutCommande();
 ?>
 	<div data-role="page">
