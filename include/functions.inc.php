@@ -572,7 +572,8 @@ function modifDemanInter(){
     if (isset($_POST['go_modif']))
     {
         $id = mysql_real_escape_string($_POST["idVelModif"]);
-        $motif =  mysql_real_escape_string($_POST["lst_Modif"]);
+        $etat =  mysql_real_escape_string($_POST["lst_Modif"]);
+        $motif =  mysql_real_escape_string($_POST["motif_Intervention"]);
        // $etat = mysql_real_escape_string($_POST["rad_Intervention"]);
         $velo = mysql_real_escape_string($_POST["idVelCode"]);
         if (empty($_POST['rad_Intervention'])){
