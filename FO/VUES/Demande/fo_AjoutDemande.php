@@ -3,6 +3,7 @@
 if(isset($_SESSION['id'])) {
 
 	    createdemandeint();
+	    $lesVelos = getAllvelo();
 	//Bures Maxence
 	?>
 	
@@ -11,13 +12,23 @@ if(isset($_SESSION['id'])) {
 		<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
 		<form id="ajout_form" data-ajax="false" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 			<table class="style1">
-				<tr>
-					<td>
-						<label for="velo">Velo : </label>
-					</td>
-					<td>
-						<input type="text" required="" id="velo" name="velo"/>
-					</td>
+				<tr><td><label>Velo</label></td><td>
+					<select name="velo" size = "1">
+			
+<?php		
+				
+						foreach ($lesVelos as $unVelo) 
+
+							{
+?>
+								<option value="<?php echo $unEtat["VEL_NUM"] ; ?>"> <?php echo $unVelo["VEL_NUM"] ; ?> </option> 
+<?php					
+							}	
+?>
+
+
+					</select>
+				</td>
 				</tr>
 				</br>
 				<tr>
