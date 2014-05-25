@@ -155,7 +155,7 @@ function listedemandeintAdmin()
 
 function createdemandeint(){
     if (isset($_POST['go_createint']))
- {       
+    {       
 
     $date = date("Y-m-d");
     $id = $_SESSION['id'];
@@ -170,15 +170,17 @@ function createdemandeint(){
     else
         $traite = 1;
 
-    $count = mysql_fetch_row(mysql_query("SELECT max(DEMI_NUM) from DEMANDEINTER"));
-    $test = $count[0] + 1;
-    $query = mysql_query("INSERT INTO DEMANDEINTER(DEMI_NUM, DEMI_VELO, DEMI_DATE, DEMI_TECHNICIEN, DEMI_MOTIF, DEMI_TRAITE, DEMI_ATTACHE, DEMI_STATION, DEMI_VALIDE)
-                        VALUES('".$test."', '".$velo."','".$date."', '".$id."', '".$motif."', '".$traite."','".$attache."','".$station."', '1')") or die (mysql_error());
-    echo '<script language="Javascript">'.
+    $nb = mysql_fetch_row(mysql_query("SELECT max(DEMI_NUM) from DEMANDEINTER"));
+    $max = $nb[0] + 1;
+
+    $query = mysql_query("INSERT INTO DEMANDEINTER (DEMI_NUM, DEMI_VELO, DEMI_DATE, DEMI_TECHNICIEN, DEMI_MOTIF, DEMI_TRAITE, DEMI_ATTACHE, DEMI_STATION, DEMI_VALIDE)
+                        VALUES('".$max."', '".$velo."','".$date."', '".$id."', '".$motif."', '".$traite."','".$attache."','".$station."', '1')") ;
+    var_dump($query);
+        echo '<script language="Javascript">'.
         'alert("Demande enregistré");'.
         'window.location.replace("index.php")'.
         '</script>';
-}
+    }
 }
 
 function createint(){

@@ -13,7 +13,7 @@ if(isset($_SESSION['id'])) {
 		<form id="ajout_form" data-ajax="false" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 			<table class="style1">
 				<tr><td><label>Velo</label></td><td>
-					<select name="velo" size = "1">
+					<select name="velo" id="velo" size = "1">
 			
 <?php		
 				
