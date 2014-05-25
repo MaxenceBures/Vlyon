@@ -44,10 +44,10 @@ $rsd = pagination_InterventionListe($page);
 					<td><?php echo substr($listes["BI_DATFIN"], 5) ; ?></td>
 					<td><?php echo $listes["BI_DUREE"] ;?></td>
 					<td><?php echo $listes["BI_CPTERENDU"] ; ?></td>
-					<td><?php if($listes["BI_REPARABLE"] == 0){echo "non";}else{echo"oui";} ; ?></td>
-					<td><?php if($listes["BI_DEMANDE"] == 0){echo "non";}else{echo"oui";} ;?></td>
+					<td><?php echo $listes["BI_REPARABLE"] ; ?></td>
+					<td><?php echo $listes["BI_DEMANDE"] ;?></td>
 					<td><?php echo $listes["BI_TECHNICIEN"] ;?></td>
-					<td><?php if($listes["BI_SURPLACE"] == 0){echo "non";}else{echo"oui";} ;?></td>
+					<td><?php echo $listes["BI_SURPLACE"] ;?></td>
 					<td><a href="?page=ModifInter&variable=<?php print($listes["BI_NUM"]); ?>"><input type="image" src="./images/para.png" value="Voir" width="30" height="30"></a></td><!--<input type="button" value="Voir"  />-->
 
 				</tr>
