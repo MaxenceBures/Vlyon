@@ -29,12 +29,14 @@
 			
 ?>	
 				<tr>
+					
 					<td><?php echo $uneInfo["VEL_NUM"] ;?></td>
 					<td><?php echo $uneInfo["VEL_ETAT"]; ?></td>
 					<td><?php echo $uneInfo["DEMI_MOTIF"]; ?></td>
 					<td colspan="1" >
 						<form action="?page=AfficherModif" method="POST">
-							<input type="hidden" name="idVelModif" id="idVelModif" value="<?php echo $uneInfo["VEL_NUM"]; ?>"/>
+							<input type="hidden" name="idVelModif" id="idVelModif" value="<?php echo $uneInfo["DEMI_NUM"]; ?>"/>
+
 							<input type="image" src="./images/modif.png" name="cmd_Modif" id="cmd_Modif" value="Modifier" height="40" width="40" onClick="submit" 	/>
 						</form>
 					</td>

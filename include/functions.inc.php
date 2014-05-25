@@ -400,7 +400,7 @@ function getAllStation()
         $lesInfos = array() ;
         $oSql= connecter() ;
         $i=1;
-        $sReq = " SELECT VEL_NUM, VEL_ETAT, DEMI_MOTIF
+        $sReq = " SELECT VEL_NUM, VEL_ETAT, DEMI_MOTIF, DEMI_NUM
                 FROM VELO, DEMANDEINTER
                 WHERE VEL_NUM = DEMI_VELO
                 AND VEL_STATION='". $pInfo ."'";
@@ -560,10 +560,82 @@ $rsd = mysql_query($sql);
 return($rsd);
 }
 
-function ajoutdem(){
+function InterventionListe($demande){
+$per_page = 5;
+$start = ($page-1)*$per_page;
+$sql = "SELECT BI_NUM, BI_VELO, BI_DATDEBUT, BI_DATFIN, BI_REPARABLE, BI_DEMANDE, BI_SURPLACE, BI_DUREE, BI_CPTERENDU, BI_TECHNICIEN FROM BONINTERV  limit $start,$per_page";//order by demi_num
+$rsd = mysql_query($sql);
+return($rsd);
+}
+
+function modifDemanInter(){
+    if (isset($_POST['go_modif']))
+    {
+        $id = mysql_real_escape_string($_POST["idVelModif"]);
+        $motif =  mysql_real_escape_string($_POST["lst_Modif"]);
+       // $etat = mysql_real_escape_string($_POST["rad_Intervention"]);
+        $velo = mysql_real_escape_string($_POST["idVelCode"]);
+        if (empty($_POST['rad_Intervention'])){
+        $sRadIntervention= '1';
+        }
+     else{
+        $sRadIntervention='0';
+        }
+
+$sReq = mysql_query("UPDATE DEMANDEINTER SET DEMI_MOTIF = '".$motif."', DEMI_TRAITE = '".$sRadIntervention."' WHERE DEMI_NUM = '".$id."'");
+$sReq2 = mysql_query("UPDATE VELO SET VEL_ETAT ='".$etat."' WHERE VEL_NUM = '".$velo."'");
+    }
+else
+     {
+        
+ 
+}
+}
+/*function modifcommande()
+    {
+
+     if (isset($_POST['go_modifcde']))
+     {
+
+       $code = mysql_real_escape_string($_POST['code']);
+       $qte = mysql_real_escape_string($_POST['txt_qte']);
+        if (empty($_POST['valide']))
+        {
+          $valide = 0;
+        }
+        else
+        {
+          $valide = 1;
+        }
+        $query = mysql_query("UPDATE COMMANDE SET COM_QTE='".$qte."', COM_VALIDE='".$valide."' Where COM_CODE='".$code."'") or die (mysql_error());
+
+         ?>
+              <script language="Javascript">
+                alert("Modification enregistré");
+                window.location.replace("index.php")
+              </script>
+          <?php
+
+      }
+    }*/
+/*function modifdem(){
 if (isset($_POST['go_ajout']))
      {
-        getEtats();
+        $id = mysql_real_escape_string($_POST["idVelModif"]);
+        $motif =  mysql_real_escape_string($_POST["lst_Modif"]);
+        $etat = mysql_real_escape_string($_POST["rad_Intervention"]);
+        $velo = mysql_real_escape_string($_POST["idVelCode"]);
+        if (empty($_POST['rad_Intervention'])){
+        $sRadIntervention= '1';
+    }
+    else
+        $sRadIntervention='0';
+}
+
+$sReq = mysql_query("UPDATE DEMANDEINTER(DEMI_MOTIF) SET DEMI_MOTIF = '".$motif."', DEMI_TRAITE = '".$sRadIntervention."' WHERE DEMI_NUM = '".$id."'");
+$sReq2 = mysql_query("UPDATE VELO(VEL_ETAT) SET VEL_ETAT ='".$etat."' WHERE VEL_NUM = '".$velo."'");
+ 
+      getEtats();
         $sNumVelo = mysql_real_escape_string($_POST['idVelModif']);
         $id = $_SESSION['id'];
 
@@ -574,9 +646,9 @@ if (isset($_POST['go_ajout']))
     }
     else
         $sRadIntervention='0';
-    $dDate=date("y-m-d");
+   // $dDate=date("y-m-d");
 
-    $count = mysql_fetch_row(mysql_query("SELECT MAX(DEMI_NUM) FROM DEMANDEINTER "));
+   // $count = mysql_fetch_row(mysql_query("SELECT MAX(DEMI_NUM) FROM DEMANDEINTER "));
                 $test = $count[0] + 1;
 
     $sReq = "UPDATE VELO
@@ -600,7 +672,7 @@ if (isset($_POST['go_ajout']))
     </script>
 
 <?php
-    }
+    
 
    
-}
+}*/
