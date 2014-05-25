@@ -403,7 +403,7 @@ function getAllStation()
         $sReq = " SELECT VEL_NUM, VEL_ETAT, DEMI_MOTIF, DEMI_NUM
                 FROM VELO, DEMANDEINTER
                 WHERE VEL_NUM = DEMI_VELO
-                AND VEL_STATION='". $pInfo ."'";
+                AND DEMI_STATION='". $pInfo ."'";
         $sReqExe = $oSql->query($sReq);
 
         while ($uneLigne = $oSql->tabAssoc($sReqExe) ){
@@ -566,6 +566,12 @@ $start = ($page-1)*$per_page;
 $sql = "SELECT BI_NUM, BI_VELO, BI_DATDEBUT, BI_DATFIN, BI_REPARABLE, BI_DEMANDE, BI_SURPLACE, BI_DUREE, BI_CPTERENDU, BI_TECHNICIEN FROM BONINTERV  limit $start,$per_page";//order by demi_num
 $rsd = mysql_query($sql);
 return($rsd);
+}
+
+function infosDemande($id){
+$requete = "SELECT * FROM DEMANDEINTER where DEMI_NUM= '".$id."'";
+$enreg = mysql_query($requete);
+return($enreg);
 }
 
 function modifDemanInter(){

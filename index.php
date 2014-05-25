@@ -15,7 +15,9 @@
 	 *       faut le passer dans connexion.inc
 	 */
 	login();
-
+?>
+<meta charset="UTF-8">
+<?php
 	// Si la variable de session n'existe pas
 	if(!isset($_SESSION['id'])) {
 		// On affiche une page de login
