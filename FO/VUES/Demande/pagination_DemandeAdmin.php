@@ -1,9 +1,7 @@
 <?php
-//session_start();
+
 include('../../../include/functions.inc.php');
-//include('../../../include/connexion.inc.php');
-//connect();
-//$per_page = 5;
+
 
 if($_GET)
 {
@@ -12,10 +10,7 @@ $page=$_GET['page'];
 
 
 
-//get table contents
-/*$start = ($page-1)*$per_page;
-$sql = "select * from DEMANDEINTER limit $start,$per_page";//order by demi_num
-$rsd = mysql_query($sql);*/
+
 ?>
 <!--<div data-role="page">
 <a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>-->
@@ -49,7 +44,7 @@ $rsd = pagination_DemandeAdminListe($page);
 					<td><?php echo $demandes["DEMI_MOTIF"] ; ?></td>
 					<td><?php echo $demandes["DEMI_TRAITE"] ;?></td>
 					<td><?php echo $demandes["DEMI_TECHNICIEN"] ;?></td>
-					<td><?php echo $demandes["DEMI_VALIDE"] ;?></td>
+					<td><?php if($demandes["DEMI_VALIDE"] == 0){echo "non";}else{echo"oui";} ;?></td>
 				</tr>
 	<?php
 			}

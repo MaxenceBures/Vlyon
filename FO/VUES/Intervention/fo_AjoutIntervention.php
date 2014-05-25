@@ -1,7 +1,6 @@
 <?php
-//session_start();
 if(isset($_SESSION['id'])) {
-//		require_once('include/functions.php');
+//	
 	    createint();
 	 //Bures Maxence
 	?>
@@ -21,63 +20,63 @@ if(isset($_SESSION['id'])) {
 				</br>
 				<tr>
 				<td>
-					<label for="db">Date Debut : </label>
+					<label for="ddebut">Date Debut : </label>
 				</td>
 				<td>
-					<input type="date" id="db" name="db"/>
+					<input type="date" id="ddebut" name="ddebut"/>
 				</td>
 				</tr>
 				<tr>
 					<td>
-						<label for="df">Date Fin : </label>
+						<label for="dfin">Date Fin : </label>
 					</td>
 					<td>
-						<input type="date" id="df"  name="df"/>
-					</td>
-				</tr>
-				</br>
-				<tr>
-					<td>
-						<label for="cr">Compte Rendu : </label>
-					</td>
-					<td>
-						<textarea rows="4" cols="50"id="cr" name="cr"></textarea>
+						<input type="date" id="dfin"  name="dfin"/>
 					</td>
 				</tr>
 				</br>
 				<tr>
 					<td>
-						<label for="rp">Reparable </label>
+						<label for="compterendu">Compte Rendu : </label>
 					</td>
 					<td>
-						<input type="checkbox" id="rp" name="rp"/>
+						<textarea rows="4" cols="50"id="compterendu" name="compterendu"></textarea>
+					</td>
+				</tr>
+				</br>
+				<tr>
+					<td>
+						<label for="reparable">Reparable </label>
+					</td>
+					<td>
+						<input type="checkbox" id="reparable" name="reparable"/>
 					</td>
 				</tr>
 					</br>
 				<tr>
 					<td>
-						<label for="de">Demande </label>
+						<label for="demande">Demande </label>
 					</td>
 					<td>
-						<input type="checkbox" id="de" name="de"/>
-					</td>
-				</tr>
-					</br>
-				<tr>
-					<td>
-						<label for="sp">Sur Place </label>
-					</td>
-					<td>
-						<input type="checkbox" id="sp" name="sp"/>
+						<input type="checkbox" id="demande" name="demande"/>
 					</td>
 				</tr>
 					</br>
 				<tr>
 					<td>
-						<label for="dr">Durée </label>
+						<label for="surplace">Sur Place </label>
 					</td>
 					<td>
-						<input type="text" required="" id="dr" name="dr"/>
+						<input type="checkbox" id="surplace" name="surplace"/>
+					</td>
+				</tr>
+					</br>
+				<tr>
+					<td>
+						<label for="duree">Durée </label>
+					</td>
+					<td>
+						<input type="text" required="" id="duree" name="duree"/>
 					</td>
 				</tr>
 			</table>

@@ -187,39 +187,39 @@ function createint(){
     //   $date = date("Y-m-d");
     $id = $_SESSION['id'];
     $velo = mysql_real_escape_string($_POST['velo']);
-    $db = mysql_real_escape_string($_POST['db']);
-    $df = mysql_real_escape_string($_POST['df']);
-    $cr = mysql_real_escape_string($_POST['cr']);
-    $dr = mysql_real_escape_string($_POST['dr']);
+    $ddebut = mysql_real_escape_string($_POST['ddebut']);
+    $dfin = mysql_real_escape_string($_POST['dfin']);
+    $compterendu = mysql_real_escape_string($_POST['compterendu']);
+    $duree = mysql_real_escape_string($_POST['duree']);
 
-    if (empty($_POST['de']))
+    if (empty($_POST['demande']))
     {
-    $de = 0;
+    $demande = 0;
     }
     else
     {
-    $de = 1;
+    $demande = 1;
     }
-    if (empty($_POST['sp']))
+    if (empty($_POST['surplace']))
     {
-    $sp = 0;
-    }
-    else
-    {
-    $sp = 1;
-    }
-    if (empty($_POST['rp']))
-    {
-    $rp = 0;
+    $surplace = 0;
     }
     else
     {
-    $rp = 1;
+    $surplace = 1;
+    }
+    if (empty($_POST['reparable']))
+    {
+    $reparable = 0;
+    }
+    else
+    {
+    $reparable = 1;
     }
 
     $count = mysql_fetch_row(mysql_query("SELECT max(BI_NUM) from BONINTERV"));
     $test = $count[0] + 1;
-    $query = mysql_query("INSERT INTO BONINTERV(BI_NUM, BI_VELO, BI_DATDEBUT, BI_DATFIN,BI_CPTERENDU, BI_REPARABLE, BI_DEMANDE, BI_SURPLACE, BI_DUREE, BI_TECHNICIEN) VALUES('".$test."', '".$velo."','".$db."', '".$df."', '".$cr."', '".$rp."','".$de."','".$dr."', '".$sp."', '".$id."')") or die (mysql_error());
+    $query = mysql_query("INSERT INTO BONINTERV(BI_NUM, BI_VELO, BI_DATDEBUT, BI_DATFIN,BI_CPTERENDU, BI_REPARABLE, BI_DEMANDE, BI_SURPLACE, BI_DUREE, BI_TECHNICIEN) VALUES('".$test."', '".$velo."','".$ddebut."', '".$dfin."', '".$compterendu."', '".$reparable."','".$demande."','".$surplace."', '".$duree."', '".$id."')") or die (mysql_error());
     echo '<script language="Javascript">
             alert("intevention enregistré");
             window.location.replace("index.php")

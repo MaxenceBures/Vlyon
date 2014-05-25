@@ -1,8 +1,7 @@
 <?php
-//session_start();
 if(isset($_SESSION['id'])) {
-	//require_once('include/functions.php');
-	connect();
+
+	//connect();
 	//Bures Maxence
 	$id = $_GET['variable'];
 	modifdemandeint();

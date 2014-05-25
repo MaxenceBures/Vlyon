@@ -33,7 +33,7 @@ $id = $_GET['variable'];
 					<td><?php echo $demandes["DEMI_ATTACHE"] ; ?></td>
 					<td><?php echo substr($demandes["DEMI_DATE"], 5) ; ?></td>
 					<td><?php echo $demandes["DEMI_MOTIF"] ; ?></td>
-					<td><?php echo $demandes["DEMI_TRAITE"] ;?></td>
+					<td><?php if($demandes["DEMI_TRAITE"] == 0){echo "non";}else{echo"oui";} ;?></td>
 					<td><a href="?page=listeDemandeSupp&variable=<?php print($demandes["DEMI_NUM"]) ?>"><img width="30" height="30" src="images/supp.png"><input type="button"  value="supprimer" onClick="if(confirm('Vous allez supprimer la demande choisie'))
 							{
 								submit();
