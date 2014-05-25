@@ -18,8 +18,7 @@ $page=$_GET['page'];
 	<table width="800px" class="style1">
 <tr>
 <th width="5%" >Num Comm</th>
-<th width="5%" >Prod</th>
-<th width="13%">Libel</th>
+<th width="20%">Libel</th>
 <th width="13%">Quantité</th>
 <th width="13%">Date Commande</th>
 <th width="20%">Validé</th>
@@ -38,7 +37,6 @@ $rsd = pagination_ProduitListe($page);
 		?>
 <tr>
 <td><?php echo $demandes["COM_CODE"] ; $code = $demandes["COM_CODE"] ;?><input type="hidden"  value="<?= $code ?>" id="code" name="code"/></td>
-<td><?php echo $demandes["COM_PRODUIT"] ;  ?></td>
 <td><?php echo $demandes["PDT_LIBELLE"]; ?></td>
 <td><?php echo $demandes["COM_QTE"] ; ?></td>
 <td><?php echo substr($demandes["COM_DATE"],5) ; ?></td>

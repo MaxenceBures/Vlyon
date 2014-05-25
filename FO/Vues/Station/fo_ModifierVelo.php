@@ -7,7 +7,7 @@ $lesEtats = getEtats() ;
 		//var_dump($lesEtats);die;
 $sVelo = $_POST["idVelModif"];
 
-var_dump($_POST['idVelModif']);
+//var_dump($_POST['idVelModif']);
 //modifdemande();
 $requete = "SELECT * FROM DEMANDEINTER where DEMI_NUM= '".$sVelo."'";
 $enreg = mysql_fetch_assoc(mysql_query($requete));
