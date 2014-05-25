@@ -232,34 +232,34 @@ function createint(){
      if (isset($_POST['go_modifint']))
      {
        $id = mysql_real_escape_string($_POST['id']);
-       $df = mysql_real_escape_string($_POST['df']);
-       $cr = mysql_real_escape_string($_POST['cr']);
-       $dr = mysql_real_escape_string($_POST['dr']);
-        if (isset($_POST['de']))
+       $dfin = mysql_real_escape_string($_POST['dfin']);
+       $compterendu = mysql_real_escape_string($_POST['compterendu']);
+       $duree = mysql_real_escape_string($_POST['duree']);
+        if (isset($_POST['demande']))
         {
-          $de = 1;
+          $demande = 1;
         }
         else
         {
-          $de = 0;
+          $demande = 0;
         }
-        if (isset($_POST['sp']))
+        if (isset($_POST['surplace']))
         {
-          $sp = 1;
+          $surplace = 1;
         }
         else
         {
-          $sp = 0;
+          $surplace = 0;
         }
-         if (isset($_POST['rp']))
+         if (isset($_POST['reparable']))
         {
-          $rp = 1;
+          $reparable = 1;
         }
         else
         {
-          $rp = 0;
+          $reparable = 0;
         }
-        $query = mysql_query("UPDATE BONINTERV SET BI_CPTERENDU='".$cr."', BI_DATFIN='".$df."', BI_DUREE ='".$dr."', BI_DEMANDE='".$de."', BI_SURPLACE='".$sp."', BI_REPARABLE='".$rp."'  Where BI_NUM='".$id."'") or die (mysql_error());
+        $query = mysql_query("UPDATE BONINTERV SET BI_CPTERENDU='".$compterendu."', BI_DATFIN='".$dfin."', BI_DUREE ='".$duree."', BI_DEMANDE='".$demande."', BI_SURPLACE='".$surplace."', BI_REPARABLE='".$reparable."'  Where BI_NUM='".$id."'") or die (mysql_error());
          ?>
               <script language="Javascript">
                 alert("Modification enregistré");

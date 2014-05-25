@@ -83,7 +83,7 @@ if(isset($_SESSION['id'])) {
 			</br>
 						<input type="submit" name="go_createinter" id="go_createinter" value="Creer"/>
 		</form>
-		<!--	<div data-role="page">-->
+		
 		</div>
 
 <?php

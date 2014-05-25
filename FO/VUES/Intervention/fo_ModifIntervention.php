@@ -1,8 +1,7 @@
 <?php
-//session_start();
+
 if(isset($_SESSION['id'])) {
-//	require_once('include/functions.php');
-//	connect();
+
 	//Bures Maxence
 	$id = $_GET['variable'];
 	modifinter();
@@ -17,10 +16,10 @@ if(isset($_SESSION['id'])) {
 	<table class="style1">
 			<tr>
 					<td>
-						<label for="ni">Num Intervention : </label>
+						<label for="numinter">Num Intervention : </label>
 					</td>
 					<td>
-						<input type="text" id="ni" name="ni" disabled="" value="<?php echo($enreg["BI_NUM"]); ?>"/>
+						<input type="text" id="numinter" name="numinter" disabled="" value="<?php echo($enreg["BI_NUM"]); ?>"/>
 					</td>
 				</tr>
 
@@ -35,56 +34,56 @@ if(isset($_SESSION['id'])) {
 				</br>
 				<tr>
 					<td>
-						<label for="attache">Date Fin: </label>
+						<label for="dfin">Date Fin: </label>
 					</td>
 					<td>
-						<input type="date" id="df" value="<?php echo($enreg['BI_DATFIN']) ?>" name="df"/>
+						<input type="date" id="dfin" value="<?php echo($enreg['BI_DATFIN']) ?>" name="dfin"/>
 					</td>
 				</tr>
 				</br>
 				<tr>
 					<td>
-						<label for="cr">Compte rendu : </label>
+						<label for="compterendu">Compte rendu : </label>
 					</td>
 					<td>
-						<textarea rows="4" cols="50"id="cr" name="cr"><?php echo($enreg['BI_CPTERENDU']) ?></textarea>
+						<textarea rows="4" cols="50"id="compterendu" name="compterendu"><?php echo($enreg['BI_CPTERENDU']) ?></textarea>
 					</td>
 				</tr>
 
 				</br>
 				<tr>
 					<td>
-						<label for="rp">Reparable </label>
+						<label for="reparable">Reparable </label>
 					</td>
 					<td>
-						<input type="checkbox" id="rp"  value="<?php echo($enreg['BI_REPARABLE']) ?>"name="rp"/>
-					</td>
-				</tr>
-					</br>
-				<tr>
-					<td>
-						<label for="de">Demande </label>
-					</td>
-					<td>
-						<input type="checkbox" id="de"  value="<?php echo($enreg['BI_DEMANDE']) ?>" name="de"/>
+						<input type="checkbox" id="reparable"  value="<?php echo($enreg['BI_REPARABLE']) ?>"name="reparable"/>
 					</td>
 				</tr>
 					</br>
 				<tr>
 					<td>
-						<label for="sp">Sur Place </label>
+						<label for="demande">Demande </label>
 					</td>
 					<td>
-						<input type="checkbox" value="<?php echo($enreg['BI_SURPLACE'])?>" id="sp" name="sp"/>
+						<input type="checkbox" id="demande"  value="<?php echo($enreg['BI_DEMANDE']) ?>" name="demande"/>
 					</td>
 				</tr>
 					</br>
 				<tr>
 					<td>
-						<label for="dr">Durée </label>
+						<label for="surplace">Sur Place </label>
 					</td>
 					<td>
-						<input type="text"  value="<?php echo($enreg['BI_DUREE'])?>" id="dr" name="dr"/>
+						<input type="checkbox" value="<?php echo($enreg['BI_SURPLACE'])?>" id="surplace" name="surplace"/>
+					</td>
+				</tr>
+					</br>
+				<tr>
+					<td>
+						<label for="duree">Durée </label>
+					</td>
+					<td>
+						<input type="text"  value="<?php echo($enreg['BI_DUREE'])?>" id="duree" name="duree"/>
 					</td>
 				</tr>
 			</table>
