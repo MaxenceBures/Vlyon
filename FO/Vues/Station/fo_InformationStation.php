@@ -11,7 +11,7 @@
 		<br/>
 		<table class="style1">
 		
-				tableau des velos ayant besoin d'une intervention
+				tableau des velos faisant l'objet d'une demande d'intervention
 		
 			<tr>
 				<th width="33%" >Code Velo</th>
@@ -31,7 +31,7 @@
 				<tr>
 					
 					<td><?php echo $uneInfo["VEL_NUM"] ;?></td>
-					<td><?php echo $uneInfo["VEL_ETAT"]; ?></td>
+					<td><?php echo $uneInfo["ETA_LIBELLE"]; ?></td>
 					<td><?php echo $uneInfo["DEMI_MOTIF"]; ?></td>
 					<td colspan="1" >
 						<form action="?page=AfficherModif" method="POST">
@@ -47,7 +47,7 @@
 		</table>
 		<table class="style1">
 		
-		tableau des velos en etat
+		tableau des velos ne faisant pas l'objet d'une demande.
 		
 		<tr>
 			<th width="48%" >Code Velo</th>
@@ -62,7 +62,7 @@
 ?>	
 				<tr>
 					<td><?php echo $uneInfoE["VEL_NUM"]; ?></td>
-					<td><?php echo $uneInfoE["VEL_ETAT"]; ?></td>
+					<td><?php echo $uneInfoE["ETA_LIBELLE"]; ?></td>
 					<td colspan="1" >
 							<form action="?page=AfficherVelo" method="POST">
 								<input type="hidden" name="idVelModif" id="idVelModif" value="<?php echo $uneInfoE["VEL_NUM"]; ?>"/>

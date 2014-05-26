@@ -327,55 +327,55 @@ function createint(){
 
       }
     }
-  /*  function getAllProduits()
+    function getAllProduits()
     {
-        $oSql= connecter() ;
+        
         $sReq = " SELECT PDT_CODE, PDT_LIBELLE
                   FROM PRODUIT ";
-        $rstPdt = $oSql->query($sReq) ;
+        $rstPdt = mysql_query($sReq) ;
         $iNb = 0 ;
         $lesProduits = array() ;
-        while ($uneLigne = $oSql->tabAssoc($rstPdt) )
+        while ($uneLigne = mysql_fetch_assoc($rstPdt) )
         {
             $iNb = $iNb + 1 ;
             $lesProduits[$iNb] =  $uneLigne ;
         }
         return ($lesProduits) ;
-    } */
+    } 
 
-  /*  function getAllCommandes()
+    function getAllCommandes()
     {
-        $oSql = connecter();
+        
         $sReq = "SELECT COM_CODE, COM_DATE, COM_QTE, COM_PRODUIT, COM_VALIDE, PDT_LIBELLE
                  FROM COMMANDE, PRODUIT
                  WHERE COMMANDE.COM_PRODUIT = PRODUIT.PDT_CODE
                  Order By COM_CODE Asc";
         //echo ($sReq) ; die;
-        $rstCde = $oSql->query($sReq);
+        $rstCde = mysql_query($sReq);
         //var_dump($rstCde); die ;
         $iNb = 0;
         $lesCommandes = array();
-        while ($uneLigne = $oSql->tabAssoc($rstCde))
+        while ($uneLigne = mysql_fetch_assoc($rstCde))
         {
             $iNb = $iNb + 1;
             $lesCommandes[$iNb] = $uneLigne;
         }
         return ($lesCommandes);
-    }*/
+    }
 
-   /* function getUneCommande($code)
+    function getUneCommande($code)
     {
-        $oSql = connecter();
+       // $oSql = connecter();
         $sReq = "SELECT *
                  FROM COMMANDE
                  WHERE COM_CODE = '".$code."'";
-        $rstCde = $oSql->query($sReq);
+        $rstCde = mysql_query($sReq);
 
-        if($uneLigne = $oSql->tabAssoc($rstCde))
+        if($uneLigne = mysql_fetch_assoc($rstCde))
         {
             return($uneLigne);
         }
-    }*/
+    }
 
 function getAllStation()
     {
@@ -395,30 +395,31 @@ function getAllStation()
         return $lesStations ;
     }
 
-   /* function getAllInfo($pInfo)
+    function getAllInfo($pInfo)
     {
         $lesInfos = array() ;
-        $oSql= connecter() ;
+       
         $i=1;
-        $sReq = " SELECT VEL_NUM, VEL_ETAT, DEMI_MOTIF, DEMI_NUM
-                FROM VELO, DEMANDEINTER
+        $sReq = " SELECT VEL_NUM, VEL_ETAT, DEMI_MOTIF, DEMI_NUM, ETA_LIBELLE
+                FROM VELO, DEMANDEINTER, ETAT
                 WHERE VEL_NUM = DEMI_VELO
+                AND VEL_ETAT = ETA_CODE
                 AND DEMI_STATION='". $pInfo ."'
                 ORDER BY DEMI_NUM ASC";
-        $sReqExe = $oSql->query($sReq);
+        $sReqExe = mysql_query($sReq);
 
-        while ($uneLigne = $oSql->tabAssoc($sReqExe) ){
+        while ($uneLigne = mysql_fetch_assoc($sReqExe) ){
             $lesInfos[$i] =  $uneLigne ;
             $i=$i+1;
         }
 
         return $lesInfos ;
-    } */
+    } 
 
-   /* function getAllVelo()
+    function getAllVelo()
     {
         $lesInfos = array() ;
-        //$oSql= connecter() ;
+        
         $i=1;
         $sReq = " SELECT VEL_NUM
                 FROM VELO
@@ -431,46 +432,47 @@ function getAllStation()
         }
 
         return $lesInfos ;
-    }*/
-       /* function getAllInfoE($pInfo)
+    }
+        function getAllInfoE($pInfo)
     {
         $lesInfosE = array() ;
-        $oSql= connecter() ;
+   
         $i=1;
-        $sReq = " SELECT VEL_NUM, VEL_ETAT
-                FROM VELO
+        $sReq = " SELECT VEL_NUM, ETA_LIBELLE
+                FROM VELO, ETAT
                 WHERE VEL_NUM NOT
                 IN (
 
                 SELECT DEMI_VELO
                 FROM DEMANDEINTER
                 )
-                AND VEL_STATION='". $pInfo ."'";
-        $sReqExe = $oSql->query($sReq);
+                AND VEL_STATION='". $pInfo ."'
+                AND VEL_ETAT = ETA_CODE";
+        $sReqExe = mysql_query($sReq);
 
-        while ($uneLigne = $oSql->tabAssoc($sReqExe) ){
+        while ($uneLigne = mysql_fetch_assoc($sReqExe) ){
             $lesInfosE[$i] =  $uneLigne ;
             $i=$i+1;
         }
 
         return $lesInfosE ;
-    }*/
+    }
 
-   /* function getEtats()
+    function getEtats()
     {
         $lesEtats = array() ;
-        $oSql= connecter() ;
+       // $oSql= connecter() ;
 
         $sReq = " SELECT ETA_CODE, ETA_LIBELLE
                 FROM ETAT";
-        $sReqExe = $oSql->query($sReq);
+        $sReqExe = mysql_query($sReq);
 
-        while ($uneLigne = $oSql->tabAssoc($sReqExe) ){
+        while ($uneLigne = mysql_fetch_assoc($sReqExe) ){
             $lesEtats[] =  $uneLigne ;
         }
 
         return $lesEtats ;
-    }*/
+    }
 
      function ajoutCommande(){
 
@@ -611,6 +613,12 @@ function modifDemanInter(){
 
 $sReq = mysql_query("UPDATE DEMANDEINTER SET DEMI_MOTIF = '".$motif."', DEMI_TRAITE = '".$sRadIntervention."' WHERE DEMI_NUM = '".$id."'");
 $sReq2 = mysql_query("UPDATE VELO SET VEL_ETAT ='".$etat."' WHERE VEL_NUM = '".$velo."'");
+?>
+    <script language="Javascript">
+        alert("Enregistrée");
+        window.location.replace("index.php")
+    </script>
+    <?php
     }
       
 
@@ -634,12 +642,12 @@ function ajoutDemanInter(){
         }
 $nb= mysql_fetch_row(mysql_query("SELECT max(DEMI_NUM) from DEMANDEINTER"));
 $max = $nb[0] + 1;
-$sReq = mysql_query("INSERT INTO DEMANDEINTER (DEMI_NUM,DEMI_VELO,DEMI_DATE,DEMI_TECHNICIEN,DEMI_MOTIF, DEMI_TRAITE, DEMI_STATION, DEMI_ATTACHE) VALUES('".$max."', '".$velo."','".date("Y-m-d")."' ,'".$_SESSION['id']."','".$motif."', '".$sRadIntervention."','".$station."','".$attache."')") or mysql_error();
-var_dump($sReq);
+$sReq = mysql_query("INSERT INTO DEMANDEINTER (DEMI_NUM,DEMI_VELO,DEMI_DATE,DEMI_TECHNICIEN,DEMI_MOTIF, DEMI_TRAITE, DEMI_STATION, DEMI_ATTACHE, DEMI_VALIDE) VALUES('".$max."', '".$velo."','".date("Y-m-d")."' ,'".$_SESSION['id']."','".$motif."', '".$sRadIntervention."','".$station."','".$attache."',1)") or mysql_error();
+//var_dump($sReq);
 $sReq2 = mysql_query("UPDATE VELO SET VEL_ETAT ='".$etat."' WHERE VEL_NUM = '".$velo."'");
     ?>
     <script language="Javascript">
-        alert("enregistrée");
+        alert("Enregistrée");
         window.location.replace("index.php")
     </script>
     <?php

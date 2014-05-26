@@ -24,7 +24,7 @@ $page=$_GET['page'];
 					<th width="5%">Velo</th>
 					<th width="5%">Station</th>
 					<th width="5%">Date</th>
-					<th width="5%">Test</th>
+					<th width="5%"></th>
 				</tr>
 					<form  action="<?php $_SERVER['PHP_SELF']; ?>" name="AfficheDem" method="POST">
 		<?php

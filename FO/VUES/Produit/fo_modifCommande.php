@@ -4,10 +4,11 @@ if(isset($_SESSION['id'])) {
 
 	$code = $_GET['variable'];
 	modifcommande();
-	$requete = "SELECT * FROM COMMANDE where COM_CODE= '".$code."'";
-	$enreg = mysql_fetch_assoc(mysql_query($requete));
+	//$requete = "SELECT * FROM COMMANDE where COM_CODE= '".$code."'";
+	//$enreg = mysql_fetch_assoc(mysql_query($requete));
+	$enreg = getUneCommande($code);
 	?>
-
+<meta charset="UTF-8">
 <div data-role="page">
 	<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
 	<form id="modif_form" data-ajax="false" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
