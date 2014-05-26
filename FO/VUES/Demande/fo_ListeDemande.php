@@ -1,12 +1,9 @@
 <?php
-
 $pages = paginationDemande();
 ?>
-	
-
 
 	<div data-role="page">
-		<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
+	<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a>
 		
 	<div align="center">
 		
@@ -17,7 +14,8 @@ $pages = paginationDemande();
 				
 
 	<table  class="style1">
-	<tr><Td>
+	<tr>
+		<td>
 			<ul id="pagination">
 			
 				<?php
@@ -28,8 +26,12 @@ $pages = paginationDemande();
 				}
 				?>
 
-	</ul>	
-	</Td></tr></table></div>
+			</ul>	
+		</td>
+	</tr>
+	</table>
+
+	</div>
 
 	<script type="text/javascript">
 	

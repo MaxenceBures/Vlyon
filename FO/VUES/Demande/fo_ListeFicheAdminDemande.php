@@ -1,23 +1,18 @@
 <?php
-
 $pages = paginationDemandeAdmin();
 ?>
-	
-
-
 	<div data-role="page">
-		<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
+	<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a>
 		
 	<div align="center">
-		
-				
 	
 	<div id="content2" ></div>
 	
 				
 
 	<table  class="style1">
-	<tr><Td>
+	<tr>
+		<td>
 			<ul id="pagination">
 			
 				<?php
@@ -28,8 +23,12 @@ $pages = paginationDemandeAdmin();
 				}
 				?>
 
-	</ul>	
-	</Td></tr></table></div>
+			</ul>	
+		</td>
+	</tr>
+	</table>
+
+	</div>
 
 	<script type="text/javascript">
 	

@@ -4,6 +4,7 @@ ajoutCommande();
 ?>
 	<div data-role="page">
 		<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
+		<h1><b>Commande produit</b></h1>
 		<form name="frm_cdeProduit" data-ajax="false" id="frm_cdeProduit" method="POST" action="">
 			<select id="lst_produit" name="lst_produit">
 	<?php

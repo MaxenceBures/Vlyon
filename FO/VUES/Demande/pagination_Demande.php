@@ -37,7 +37,7 @@ $page=$_GET['page'];
 					<td><?php echo $demandes["DEMI_NUM"] ; $code = $demandes["DEMI_NUM"] ;?><input type="hidden"  value="<?= $code ?>" id="code" name="code"/></td>
 					<td><?php echo $demandes["DEMI_VELO"]; ?></td>
 					<td><?php echo $demandes["STA_NOM"]; ?></td>
-					<td><?php echo $date = substr($demandes["DEMI_DATE"], 8) ."-". substr($demandes["DEMI_DATE"], 5,2);  ?></td>
+					<td><?php echo datefr($demandes['DEMI_DATE']); ?></td>
 					<td><a href="?page=listeDemandeFiche&variable=<?php print($demandes["DEMI_NUM"]) ?>"><img value="Voir" width="30" height="30" src="images/vue.png"/></a></td>
 				</tr>
 

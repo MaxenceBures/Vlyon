@@ -377,6 +377,13 @@ function createint(){
         }
     }
 
+    function datefr($unedate){
+        $date = substr($unedate, 8) ."-". substr($unedate, 5,2);
+
+        return $date;
+
+    }
+
     function getUneDemande($code)
     {
        // $oSql = connecter();

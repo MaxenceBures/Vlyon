@@ -25,7 +25,7 @@ if(isset($_SESSION['id'])) {
 				</br>
 				<tr>
 					<td>
-					<label for="libellePdt">Quantité : </label>
+					<label for="libellePdt">Quantit&eacute; : </label>
 					</td>
 					<td>
 						<input type="number" required="" id="txt_qte" name="txt_qte" value="<?php echo($enreg["COM_QTE"]);?>"/>
@@ -41,7 +41,7 @@ if(isset($_SESSION['id'])) {
 				</br>
 				<tr>
 					<td>
-						<label for="valide">Commande Validé ? </label>
+						<label for="valide">Commande Valid&eacute; ? </label>
 					</td>
 					<td>
 						<input type="checkbox" id="valide" name="valide"/>
