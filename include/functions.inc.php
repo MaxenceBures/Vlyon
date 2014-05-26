@@ -61,8 +61,8 @@ function utilisateur()
 {
     $id = $_SESSION['id'];
     $sReq = " SELECT TEC_NOM, TEC_PRENOM, TEC_RESPONSABLE
-                FROM TECHNICIEN
-                WHERE TEC_MATRICULE='".$id."'";
+              FROM TECHNICIEN
+              WHERE TEC_MATRICULE='".$id."'";
     $rstPdt = mysql_query($sReq) ;
     $oUtilisateur = array() ;
     $Utilisateur = mysql_fetch_assoc($rstPdt);
@@ -75,8 +75,8 @@ function listedemandeint()
 {
     $id = $_SESSION['id'];
     $sReq = " SELECT DEMI_NUM, DEMI_VELO, DEMI_ATTACHE, DEMI_STATION, DEMI_DATE, DEMI_MOTIF, DEMI_TRAITE
-                FROM DEMANDEINTER
-                WHERE DEMI_TECHNICIEN='".$id."' AND DEMI_VALIDE=1 ";
+              FROM DEMANDEINTER
+              WHERE DEMI_TECHNICIEN='".$id."' AND DEMI_VALIDE=1 ";
  	$rstPdt = mysql_query($sReq) ;
     $iNb = 0 ;
     $demande = array() ;
@@ -107,8 +107,8 @@ function listeint()
 function listedemandeNumint($id)
 {
     $sReq = " SELECT DEMI_NUM, DEMI_VELO, DEMI_ATTACHE, DEMI_STATION, DEMI_DATE, DEMI_MOTIF, DEMI_TRAITE, STA_NOM
-                FROM DEMANDEINTER, STATION
-                WHERE DEMI_NUM='".$id."' AND DEMI_STATION = STA_CODE ";
+              FROM DEMANDEINTER, STATION
+              WHERE DEMI_NUM='".$id."' AND DEMI_STATION = STA_CODE ";
     $rstPdt = mysql_query($sReq) ;
     $iNb = 0 ;
     $demande = array() ;
@@ -124,7 +124,7 @@ function listedemandeintAdmin()
 {
     $id = $_SESSION['id'];
     $sReq = "SELECT DEMI_NUM, DEMI_VELO, DEMI_ATTACHE, DEMI_STATION, DEMI_DATE, DEMI_MOTIF, DEMI_TRAITE, DEMI_TECHNICIEN, DEMI_VALIDE
-                FROM DEMANDEINTER ";
+             FROM DEMANDEINTER ";
     $rstPdt = mysql_query($sReq) ;
     $iNb = 0 ;
     $demande = array() ;
@@ -156,7 +156,7 @@ function createdemandeint(){
     $count = mysql_fetch_row(mysql_query("SELECT max(DEMI_NUM) from DEMANDEINTER"));
     $test = $count[0] + 1;
     $query = mysql_query("INSERT INTO DEMANDEINTER(DEMI_NUM, DEMI_VELO, DEMI_DATE, DEMI_TECHNICIEN, DEMI_MOTIF, DEMI_TRAITE, DEMI_ATTACHE, DEMI_STATION, DEMI_VALIDE)
-                        VALUES('".$test."', '".$velo."','".$date."', '".$id."', '".$motif."', '".$traite."','".$attache."','".$station."', '1')") or die (mysql_error());
+                          VALUES('".$test."', '".$velo."','".$date."', '".$id."', '".$motif."', '".$traite."','".$attache."','".$station."', '1')") or die (mysql_error());
     echo '<script language="Javascript">'.
         'alert("Demande enregistré");'.
         'window.location.replace("index.php")'.
