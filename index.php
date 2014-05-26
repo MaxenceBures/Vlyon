@@ -16,7 +16,7 @@
 	 */
 	login();
 ?>
-<meta http-equiv= "content-type" content= "text/html; charset=iso-8859-1" >
+<meta http-equiv= "content-type" content= "text/html; charset=UTF-8" >
 <?php
 	// Si la variable de session n'existe pas
 	if(!isset($_SESSION['id'])) {
