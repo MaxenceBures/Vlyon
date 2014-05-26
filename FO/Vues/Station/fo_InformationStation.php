@@ -1,17 +1,15 @@
 
 <?php
-	//require_once ("FO/Modeles/Station/InfoStation.inc.php") ;
 	$sStation = $_GET['idStation'];
-	//var_dump($sStation);
 ?>
 
 <div data-role="page">
 	<fieldset>
-		<h1> Suivi des stations </h1>
+		<h1><b> Suivi des stations </b></h1>
 		<br/>
 		<table class="style1">
 		
-				tableau des velos faisant l'objet d'une demande d'intervention
+				<th colspan="4">Tableau des velos faisant l'objet d'une demande d'intervention</th>
 		
 			<tr>
 				<th width="33%" >Code Velo</th>
@@ -21,7 +19,6 @@
 			</tr>
 <?php			
 			$lesInfos  = getAllInfo($sStation) ;
-			 //var_dump($lesInfos);die;
 			foreach($lesInfos as $uneInfo)
 			{
 			
@@ -35,9 +32,9 @@
 					<td><?php echo $uneInfo["DEMI_MOTIF"]; ?></td>
 					<td colspan="1" >
 						<form action="?page=AfficherModif" method="POST">
-							<input type="hidden" name="idVelModif" id="idVelModif" value="<?php echo $uneInfo["DEMI_NUM"]; ?>"/>
+							<input type="hidden" name="idDem" id="idDem" value="<?php echo $uneInfo["DEMI_NUM"]; ?>"/>
 
-							<input type="image" src="./images/modif.png" name="cmd_Modif" id="cmd_Modif" value="Modifier" height="40" width="40" onClick="submit" 	/>
+							<input type="image" src="./images/modif.png" name="cmd_Modif" id="cmd_Modif" value="Modifier" style="width:40px;height:40px;" onClick="submit" 	/>
 						</form>
 					</td>
 				</tr>
@@ -45,9 +42,10 @@
 			}
 ?>
 		</table>
+		</br>
 		<table class="style1">
 		
-		tableau des velos ne faisant pas l'objet d'une demande.
+		<th colspan="4">Tableau des velos ne faisant pas l'objet d'une demande</th>
 		
 		<tr>
 			<th width="48%" >Code Velo</th>
@@ -56,7 +54,6 @@
 			</tr>
 <?php			
 			$lesInfosE  = getAllInfoE($sStation) ;
-			// var_dump($lesInfosE);die;
 			foreach($lesInfosE as $uneInfoE)
 			{
 ?>	
@@ -66,7 +63,7 @@
 					<td colspan="1" >
 							<form action="?page=AfficherVelo" method="POST">
 								<input type="hidden" name="idVelModif" id="idVelModif" value="<?php echo $uneInfoE["VEL_NUM"]; ?>"/>
-								<input type="submit" name="cmd_Modif" id="cmd_Modif" value="Modifier" onClick="submit"	/>
+								<input type="image" name="cmd_Modif" src="./images/modif.png" style="width:40px;height:40px;" id="cmd_Modif" value="Modifier" onClick="submit"	/>
 							</form>
 					</td>
 				</tr>

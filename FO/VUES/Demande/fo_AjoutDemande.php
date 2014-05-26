@@ -9,7 +9,7 @@ if(isset($_SESSION['id'])) {
 	
 		<div data-role="page">
 <!--	<body>-->
-		<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=60 height=60></img></a></br>
+		<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
 		<form id="ajout_form" data-ajax="false" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 			<table class="style1">
 				<tr>

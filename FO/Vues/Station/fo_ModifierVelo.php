@@ -1,29 +1,27 @@
 <?php
-//session_start();
 $id = $_SESSION['id'];
 modifDemanInter();
-//require_once('FO/Modeles/Station/lireVelo.inc.php');
-$lesEtats = getEtats() ;
-		//var_dump($lesEtats);die;
-$sVelo = $_POST["idVelModif"];
 
-//var_dump($_POST['idVelModif']);
-//modifdemande();
-$requete = "SELECT * FROM DEMANDEINTER where DEMI_NUM= '".$sVelo."'";
-$enreg = mysql_fetch_assoc(mysql_query($requete));
+$lesEtats = getEtats() ;
+
+$iddem = $_POST["idDem"];
+
+
+$enreg = getUneDemande($iddem);
 ?>
 
 <div data-role="page">
 <center>
-	<br/>
+<br/>
 <form name="frm_SelecModif" method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
+<input type="hidden" name="idVelModif" id="idVelModif" value="<?php echo $_POST['idVelModif']; ?>"/>
+<input type="hidden" name="idVelCode" id="idVelCode" value="<?php echo $sVelo; ?>"/>
 	<table class="style1">
-		
+		<th>Modifier une demande d'intervention</th>
 			<tr>
-				<th colspan="4" class="titre">Selectionnez l'etat du velo
+				<td>Selectionnez l'etat du velo</td>
 				<td>
-					<input type="hidden" name="idVelModif" id="idVelModif" value="<?php echo $_POST['idVelModif']; ?>"/>
-					<input type="hidden" name="idVelCode" id="idVelCode" value="<?php echo $sVelo; ?>"/>
+					
 					
 
 					<select name="lst_Modif" size = "1">
@@ -42,14 +40,15 @@ $enreg = mysql_fetch_assoc(mysql_query($requete));
 
 					</select>
 				</td>
-				</th>
+				
 			</tr>
 			<tr>
 				<td>Intervention?</td>
-				<td colspan="3">
-				<input type="checkbox" id="rad_Intervention" name="rad_Intervention" /> 
-				</td>
-				<td>Motif: <input type="text" id="motif_Intervention" name="motif_Intervention" value="<?php echo ($enreg['DEMI_MOTIF'])?>" />
+				<td><input type="checkbox" id="rad_Intervention" name="rad_Intervention" /></td>
+			</tr>
+			<tr>
+				<td>Motif: </td>
+				<td><input type="text" id="motif_Intervention" name="motif_Intervention" value="<?php echo ($enreg['DEMI_MOTIF'])?>" /></td>
 			</tr>
 			<tr>
 			

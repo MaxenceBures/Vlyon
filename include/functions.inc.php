@@ -377,6 +377,20 @@ function createint(){
         }
     }
 
+    function getUneDemande($code)
+    {
+       // $oSql = connecter();
+        $sReq = "SELECT *
+                 FROM DEMANDEINTER
+                 WHERE DEMI_NUM = '".$code."'";
+        $rstCde = mysql_query($sReq);
+
+        if($uneLigne = mysql_fetch_assoc($rstCde))
+        {
+            return($uneLigne);
+        }
+    }
+
 function getAllStation()
     {
         $lesStations = array() ;
@@ -406,6 +420,24 @@ function getAllStation()
                 AND VEL_ETAT = ETA_CODE
                 AND DEMI_STATION='". $pInfo ."'
                 ORDER BY DEMI_NUM ASC";
+        $sReqExe = mysql_query($sReq);
+
+        while ($uneLigne = mysql_fetch_assoc($sReqExe) ){
+            $lesInfos[$i] =  $uneLigne ;
+            $i=$i+1;
+        }
+
+        return $lesInfos ;
+    } 
+
+    function getVeloInfo($pInfo)
+    {
+        $lesInfos = array() ;
+       
+        $i=1;
+        $sReq = " SELECT *
+                FROM VELO
+                WHERE VEL_NUM = '".$pInfo."'";
         $sReqExe = mysql_query($sReq);
 
         while ($uneLigne = mysql_fetch_assoc($sReqExe) ){
