@@ -1,24 +1,15 @@
 <?php
-	
 $pages = paginationCommande();
 ?>
-	
-
-
 	<div data-role="page">
 		<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width=42 height=42></img></a></br>
 		
 	<div align="center">
-		
-				
-	
 	<div id="content2" ></div>
-	
-				
-
 	<table  class="style1">
-	<tr><Td>
-			<ul id="pagination">
+		<tr>
+			<td>
+				<ul id="pagination">
 			
 				<?php
 				//Show page links
@@ -28,8 +19,11 @@ $pages = paginationCommande();
 				}
 				?>
 
-	</ul>	
-	</Td></tr></table></div>
+				</ul>	
+			</td>
+		</tr>
+	</table>
+	</div>
 
 	<script type="text/javascript">
 	

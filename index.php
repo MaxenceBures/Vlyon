@@ -1,28 +1,14 @@
 <?php
  	session_start();
- 	/**
- 	 * @todo mettre ici un include
- 	 *       du fichier function connexion bdd
- 	 *       et virer les autres dans le code
- 	 */
 
-	include_once('classe/clstBaseMysql.classe.php') ;
-	//require_once('include/connexion.inc.php');
 	require_once('include/functions.inc.php');
-
-	/**
-	 * @todo ce truc la est un peu bof,
-	 *       faut le passer dans connexion.inc
-	 */
 	login();
 ?>
 <meta http-equiv= "content-type" content= "text/html; charset=UTF-8" >
 <?php
-	// Si la variable de session n'existe pas
+	
 	if(!isset($_SESSION['id'])) {
-		// On affiche une page de login
 		include_once('Pages/connexion.php');
-		//die();// on stop le chargement de la page
    }
    else{
 
@@ -32,14 +18,6 @@
 					switch($_GET['page'])
 					{
 
-						/*case "formulaire":
-							$fichier = "Test/formulaire.php";
-							$titre   =  "test";
-							break ;
-						case "tableau":
-							$fichier = "Test/tableau.php";
-							$titre   =  "test";
-							break ;	*/
 						case "listeDemande":
 							$fichier = "FO/VUES/Demande/fo_ListeDemande.php";
 							$titre   =  "Liste";
