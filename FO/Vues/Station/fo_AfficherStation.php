@@ -26,7 +26,7 @@
 ?>
 					<tr>
 						<td><?php echo $uneStation["QUA_LIB"] ;  ?></td>
-						<td><?php echo $uneStation["STA_CODE"]; ?></td>
+						<td><?php echo $uneStation["STA_NOM"]; ?></td>
 						<td colspan="1" >
 							<form action="?page=AfficherInfo&idStation=<?php echo $uneStation["STA_CODE"]; ?>" method="POST">
 								

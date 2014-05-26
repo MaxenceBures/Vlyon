@@ -327,7 +327,7 @@ function createint(){
 
       }
     }
-    function getAllProduits()
+  /*  function getAllProduits()
     {
         $oSql= connecter() ;
         $sReq = " SELECT PDT_CODE, PDT_LIBELLE
@@ -341,9 +341,9 @@ function createint(){
             $lesProduits[$iNb] =  $uneLigne ;
         }
         return ($lesProduits) ;
-    }
+    } */
 
-    function getAllCommandes()
+  /*  function getAllCommandes()
     {
         $oSql = connecter();
         $sReq = "SELECT COM_CODE, COM_DATE, COM_QTE, COM_PRODUIT, COM_VALIDE, PDT_LIBELLE
@@ -361,9 +361,9 @@ function createint(){
             $lesCommandes[$iNb] = $uneLigne;
         }
         return ($lesCommandes);
-    }
+    }*/
 
-    function getUneCommande($code)
+   /* function getUneCommande($code)
     {
         $oSql = connecter();
         $sReq = "SELECT *
@@ -375,27 +375,27 @@ function createint(){
         {
             return($uneLigne);
         }
-    }
+    }*/
 
 function getAllStation()
     {
         $lesStations = array() ;
-        $oSql= connecter() ;
+        //$oSql= connecter() ;
 
         $sReq = " SELECT STA_CODE, STA_NOM, STA_QUARTIER, QUA_ID, QUA_LIB
                 FROM STATION, QUARTIER
                 WHERE STA_QUARTIER = QUA_ID
                 ORDER BY STA_CODE ASC";
-        $sReqExe = $oSql->query($sReq);
+        $sReqExe = mysql_query($sReq);
 
-        while ($uneLigne = $oSql->tabAssoc($sReqExe) ){
+        while ($uneLigne = mysql_fetch_assoc($sReqExe) ){
             $lesStations[] =  $uneLigne ;
         }
 
         return $lesStations ;
     }
 
-    function getAllInfo($pInfo)
+   /* function getAllInfo($pInfo)
     {
         $lesInfos = array() ;
         $oSql= connecter() ;
@@ -413,26 +413,26 @@ function getAllStation()
         }
 
         return $lesInfos ;
-    }
+    } */
 
-    function getAllVelo()
+   /* function getAllVelo()
     {
         $lesInfos = array() ;
-        $oSql= connecter() ;
+        //$oSql= connecter() ;
         $i=1;
         $sReq = " SELECT VEL_NUM
                 FROM VELO
                 ORDER BY VEL_NUM ASC";
-        $sReqExe = $oSql->query($sReq);
+        $sReqExe = mysql_query($sReq);
 
-        while ($uneLigne = $oSql->tabAssoc($sReqExe) ){
+        while ($uneLigne = mysql_fetch_assoc($sReqExe) ){
             $lesInfos[$i] =  $uneLigne ;
             $i=$i+1;
         }
 
         return $lesInfos ;
-    }
-        function getAllInfoE($pInfo)
+    }*/
+       /* function getAllInfoE($pInfo)
     {
         $lesInfosE = array() ;
         $oSql= connecter() ;
@@ -454,9 +454,9 @@ function getAllStation()
         }
 
         return $lesInfosE ;
-    }
+    }*/
 
-    function getEtats()
+   /* function getEtats()
     {
         $lesEtats = array() ;
         $oSql= connecter() ;
@@ -470,7 +470,7 @@ function getAllStation()
         }
 
         return $lesEtats ;
-    }
+    }*/
 
      function ajoutCommande(){
 
@@ -636,7 +636,7 @@ $nb= mysql_fetch_row(mysql_query("SELECT max(DEMI_NUM) from DEMANDEINTER"));
 $max = $nb[0] + 1;
 $sReq = mysql_query("INSERT INTO DEMANDEINTER (DEMI_NUM,DEMI_VELO,DEMI_DATE,DEMI_TECHNICIEN,DEMI_MOTIF, DEMI_TRAITE, DEMI_STATION, DEMI_ATTACHE) VALUES('".$max."', '".$velo."','".date("Y-m-d")."' ,'".$_SESSION['id']."','".$motif."', '".$sRadIntervention."','".$station."','".$attache."')") or mysql_error();
 var_dump($sReq);
-//$sReq2 = mysql_query("UPDATE VELO SET VEL_ETAT ='".$etat."' WHERE VEL_NUM = '".$velo."'");
+$sReq2 = mysql_query("UPDATE VELO SET VEL_ETAT ='".$etat."' WHERE VEL_NUM = '".$velo."'");
     ?>
     <script language="Javascript">
         alert("enregistrée");
