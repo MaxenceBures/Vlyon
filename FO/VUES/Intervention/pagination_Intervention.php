@@ -43,7 +43,7 @@ $rsd = pagination_InterventionListe($page);
 					<td><?php echo substr($listes["BI_DATDEBUT"], 5); ?></td>
 					<td><?php echo substr($listes["BI_DATFIN"], 5) ; ?></td>
 					<td><?php echo $listes["BI_DUREE"] ;?></td>
-					<td><?php echo $listes["BI_CPTERENDU"] ; ?></td>
+					<td><?php echo substr($listes["BI_CPTERENDU"], 0, 20) ; ?></td>
 					<td><?php if($listes["BI_REPARABLE"] == 0){echo "non";}else{echo"oui";} ; ?></td>
 					<td><?php if($listes["BI_DEMANDE"] == 0){echo "non";}else{echo"oui";} ;?></td>
 					<td><?php echo $listes["TEC_NOM"] ;?></td>

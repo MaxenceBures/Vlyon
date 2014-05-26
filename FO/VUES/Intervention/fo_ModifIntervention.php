@@ -80,7 +80,7 @@ if(isset($_SESSION['id'])) {
 					</br>
 				<tr>
 					<td>
-						<label for="duree">Durée </label>
+						<label for="duree">Dur&eacute;e </label>
 					</td>
 					<td>
 						<input type="text" required="" value="<?php echo($enreg['BI_DUREE'])?>" id="duree" name="duree"/>
