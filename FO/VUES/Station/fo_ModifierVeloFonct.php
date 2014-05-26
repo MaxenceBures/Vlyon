@@ -3,16 +3,13 @@ $id = $_SESSION['id'];
 ajoutDemanInter();
 $lesEtats = getEtats() ;
 $sVelo = $_POST["idVelModif"];
-//$requete = "SELECT * FROM VELO where VEL_NUM= '".$sVelo."'";
 $enreg = getVeloInfo($sVelo)
 ?>
 
 <div data-role="page">
-<center>
-	<br/>
-<form name="frm_SelecModif" method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
-	<table class="style1">
-		
+	<center>
+		<form name="frm_SelecModif" method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
+		<table class="style1">
 			<tr>
 				<th>Effectuer une demande d'intervention</th>
 			</tr>
@@ -22,31 +19,22 @@ $enreg = getVeloInfo($sVelo)
 					
 					<input type="hidden" name="idVelCode" id="idVelCode" value="<?php echo $sVelo; ?>"/>
 					<input type="hidden" name="idStation" id="idStation" value="<?php echo $enreg["VEL_STATION"]; ?>"/>
-					
-
 					<select name="lst_Modif" size = "1">
 			
-<?php		
-				
-						foreach ($lesEtats as $unEtat) 
-
-							{
+<?php				
+					foreach ($lesEtats as $unEtat) 
+					{
 ?>
-								<option value="<?php echo $unEtat["ETA_CODE"] ; ?>"> <?php echo $unEtat["ETA_LIBELLE"] ; ?> </option> 
+					<option value="<?php echo $unEtat["ETA_CODE"] ; ?>"> <?php echo $unEtat["ETA_LIBELLE"] ; ?> </option> 
 <?php					
-							}	
+					}	
 ?>
-
-
 					</select>
 				</td>
-				
 			</tr>
 			<tr>
 				<td>Intervention?</td>
-				<td colspan="3">
-				<input type="checkbox" id="rad_Intervention" name="rad_Intervention" /> 
-				</td>
+				<td colspan="3"><input type="checkbox" id="rad_Intervention" name="rad_Intervention" /></td>
 			</tr>
 			<tr>	
 				<td>Motif: </td>
@@ -57,10 +45,7 @@ $enreg = getVeloInfo($sVelo)
 				<td><input type="text" id="Attache" name="Attache" value="" /></td>
 			</tr>
 			<tr>
-			
-
-				<td colspan="5" class="titre">
-					<center><input type="submit" name="go_modif" id="go_modif" value="Valider" onClick="
+				<td colspan="5" class="titre"><center><input type="submit" name="go_modif" id="go_modif" value="Valider" onClick="
 					if(confirm('êtes vous sur de vouloir effectuer cette modification?'))
 									{	
 										submit();
@@ -68,13 +53,10 @@ $enreg = getVeloInfo($sVelo)
 									else{
 									return false;
 									}
-									" /></center>
+									" />
 				</td>
 			</tr>
-	</table>
-</form>
+		</table>
+		</form>
+	</center>	
 </div>
-
-<?php
-
-?>
