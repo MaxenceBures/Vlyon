@@ -35,18 +35,13 @@ function login() {
             echo 'Vous devez remplir tous les champs !';
     }
 }
-
+    //Permet de se deconnecter
 function logout() {
-  //  session_start();
     unset($_SESSION);
     session_destroy();
     header('Location: ../index.php');
-   /* echo '<script language="Javascript">'.
-       'alert("Vous êtes deconnecté");'.
-       'window.location.replace("../index.php")'.
-       '</script>';*/
 }
-
+    //Alimente la liste deroulante qui affiche les stations
 function ListeDeroulanteStation()
 {
     $sReq = " SELECT STA_CODE, STA_NOM
@@ -61,7 +56,7 @@ function ListeDeroulanteStation()
     }
     return ($oStation) ;
 }
-
+    //Permet de recuperer les informations concernant l'utilisateur connecté
 function utilisateur()
 {
     $id = $_SESSION['id'];
@@ -75,7 +70,7 @@ function utilisateur()
 
     return ($oUtilisateur) ;
 }
-
+    //Affiche les demandes d'intervention que le technicien connecté a effectué
 function listedemandeint()
 {
     $id = $_SESSION['id'];
@@ -92,31 +87,28 @@ function listedemandeint()
 
     return ($demande) ;
 }
-
+    //Affiche toutes les interventions
 function listeint()
 {
     $id = $_SESSION['id'];
-    /**
-     * @todo a ce tarif la fait un select *
-     */
     $sReq = "SELECT BI_NUM, BI_VELO, BI_DATDEBUT, BI_DATFIN, BI_REPARABLE, BI_DEMANDE, BI_SURPLACE, BI_DUREE, BI_CPTERENDU, BI_TECHNICIEN
-                FROM BONINTERV";
+             FROM BONINTERV";
     $rstPdt = mysql_query($sReq) ;
     $iNb = 0 ;
-    $intevention = array() ;
-    while ($intevention2 = mysql_fetch_assoc($rstPdt) ){
+    $intervention = array() ;
+    while ($intervention2 = mysql_fetch_assoc($rstPdt) ){
         $iNb = $iNb + 1 ;
-        $intevention[$iNb] =  $intevention2 ;
+        $intervention[$iNb] =  $intervention2 ;
     }
 
-    return ($intevention) ;
+    return ($intervention) ;
 }
-
+    //Affiche les informations de la demande selectionnée
 function listedemandeNumint($id)
 {
     $sReq = " SELECT DEMI_NUM, DEMI_VELO, DEMI_ATTACHE, DEMI_STATION, DEMI_DATE, DEMI_MOTIF, DEMI_TRAITE, STA_NOM
                 FROM DEMANDEINTER, STATION
-                WHERE DEMI_NUM='".$id."' AND DEMI_VALIDE=1 AND DEMI_STATION = STA_CODE ";
+                WHERE DEMI_NUM='".$id."' AND DEMI_STATION = STA_CODE ";
     $rstPdt = mysql_query($sReq) ;
     $iNb = 0 ;
     $demande = array() ;
@@ -127,19 +119,10 @@ function listedemandeNumint($id)
 
     return ($demande) ;
 }
-
-function cmd_Inf()
-{
-    if(isset($_POST['cmd_Inf']))
-        header('Location: VUES/fo_InformationStation.php');
-}
-
+    //Affiche toutes les demandes d'interventions    
 function listedemandeintAdmin()
 {
     $id = $_SESSION['id'];
-    /**
-     * @todo a ce tarif la fait un select *
-     */
     $sReq = "SELECT DEMI_NUM, DEMI_VELO, DEMI_ATTACHE, DEMI_STATION, DEMI_DATE, DEMI_MOTIF, DEMI_TRAITE, DEMI_TECHNICIEN, DEMI_VALIDE
                 FROM DEMANDEINTER ";
     $rstPdt = mysql_query($sReq) ;
@@ -152,10 +135,10 @@ function listedemandeintAdmin()
 
     return ($demande) ;
 }
-
+    //Permet l'ajout d'une demande d'intervention
 function createdemandeint(){
     if (isset($_POST['go_createint']))
- {       
+    {       
 
     $date = date("Y-m-d");
     $id = $_SESSION['id'];
@@ -178,13 +161,13 @@ function createdemandeint(){
         'alert("Demande enregistré");'.
         'window.location.replace("index.php")'.
         '</script>';
+    }
 }
-}
-
+    //Permet d'ajouter une intervention
 function createint(){
     if (isset($_POST['go_createinter']))
-{        
-    //   $date = date("Y-m-d");
+    {        
+
     $id = $_SESSION['id'];
     $velo = mysql_real_escape_string($_POST['velo']);
     $ddebut = mysql_real_escape_string($_POST['ddebut']);
@@ -224,9 +207,10 @@ function createint(){
             alert("intevention enregistré");
             window.location.replace("index.php")
             </script>';
-}}
-
-  function modifinter()
+    }
+}
+    //Permet de modifier une intervention
+function modifinter()
 {
 
      if (isset($_POST['go_modifint']))
@@ -269,12 +253,12 @@ function createint(){
 
       }
     }
+        //Permet de modifier une demande d'intervention
+function modifdemandeint()
+{
 
-  function modifdemandeint()
+    if (isset($_POST['go_modifint']))
     {
-
-     if (isset($_POST['go_modifint']))
-     {
 
        $id = mysql_real_escape_string($_POST['id']);
        $motif = mysql_real_escape_string($_POST['motif']);
@@ -297,14 +281,14 @@ function createint(){
               </script>
           <?php
 
-      }
     }
+}
+        //Permet de modifier une commande
+function modifcommande()
+{
 
-	function modifcommande()
+    if (isset($_POST['go_modifcde']))
     {
-
-     if (isset($_POST['go_modifcde']))
-     {
 
        $code = mysql_real_escape_string($_POST['code']);
        $qte = mysql_real_escape_string($_POST['txt_qte']);
@@ -325,10 +309,11 @@ function createint(){
               </script>
           <?php
 
-      }
     }
-    function getAllProduits()
-    {
+}
+        //Permet d'alimenter une liste deroulante affichant tous les produits
+function getAllProduits()
+{
         
         $sReq = " SELECT PDT_CODE, PDT_LIBELLE
                   FROM PRODUIT ";
@@ -341,307 +326,311 @@ function createint(){
             $lesProduits[$iNb] =  $uneLigne ;
         }
         return ($lesProduits) ;
-    } 
-
-    function getAllCommandes()
-    {
+} 
+        //Permet d'afficher toutes les commandes
+function getAllCommandes()
+{
         
-        $sReq = "SELECT COM_CODE, COM_DATE, COM_QTE, COM_PRODUIT, COM_VALIDE, PDT_LIBELLE
-                 FROM COMMANDE, PRODUIT
-                 WHERE COMMANDE.COM_PRODUIT = PRODUIT.PDT_CODE
-                 Order By COM_CODE Asc";
-        //echo ($sReq) ; die;
-        $rstCde = mysql_query($sReq);
-        //var_dump($rstCde); die ;
-        $iNb = 0;
-        $lesCommandes = array();
-        while ($uneLigne = mysql_fetch_assoc($rstCde))
-        {
-            $iNb = $iNb + 1;
-            $lesCommandes[$iNb] = $uneLigne;
-        }
-        return ($lesCommandes);
-    }
-
-    function getUneCommande($code)
+    $sReq = "SELECT COM_CODE, COM_DATE, COM_QTE, COM_PRODUIT, COM_VALIDE, PDT_LIBELLE
+            FROM COMMANDE, PRODUIT
+            WHERE COMMANDE.COM_PRODUIT = PRODUIT.PDT_CODE
+            Order By COM_CODE Asc";
+    $rstCde = mysql_query($sReq);
+    $iNb = 0;
+    $lesCommandes = array();
+    while ($uneLigne = mysql_fetch_assoc($rstCde))
     {
-       // $oSql = connecter();
-        $sReq = "SELECT *
-                 FROM COMMANDE
-                 WHERE COM_CODE = '".$code."'";
-        $rstCde = mysql_query($sReq);
-
-        if($uneLigne = mysql_fetch_assoc($rstCde))
-        {
-            return($uneLigne);
-        }
+        $iNb = $iNb + 1;
+        $lesCommandes[$iNb] = $uneLigne;
     }
-
-    function datefr($unedate){
-        $date = substr($unedate, 8) ."-". substr($unedate, 5,2);
-
-        return $date;
-
-    }
-
-    function getUneDemande($code)
+    return ($lesCommandes);
+}
+        //Permet d'afficher les informations pour une commande
+function getUneCommande($code)
+{
+    $sReq = "SELECT *
+            FROM COMMANDE
+            WHERE COM_CODE = '".$code."'";
+    $rstCde = mysql_query($sReq);
+    if($uneLigne = mysql_fetch_assoc($rstCde))
     {
-       // $oSql = connecter();
-        $sReq = "SELECT *
-                 FROM DEMANDEINTER
-                 WHERE DEMI_NUM = '".$code."'";
-        $rstCde = mysql_query($sReq);
-
-        if($uneLigne = mysql_fetch_assoc($rstCde))
-        {
-            return($uneLigne);
-        }
+        return($uneLigne);
     }
+}
+        //Permet de convertir une date
+function datefr($unedate)
+{
+    $date = substr($unedate, 8) ."-". substr($unedate, 5,2);
 
+    return $date;
+
+}
+        //Permet d'afficher les informations d'une demande d'intervention
+function getUneDemande($code)
+{
+    $sReq = "SELECT *
+            FROM DEMANDEINTER
+            WHERE DEMI_NUM = '".$code."'";
+    $rstCde = mysql_query($sReq);
+    if($uneLigne = mysql_fetch_assoc($rstCde))
+    {
+        return($uneLigne);
+    }
+}
+        //Permet d'afficher toutes les stations
 function getAllStation()
+{
+    $lesStations = array() ;
+    $sReq = " SELECT STA_CODE, STA_NOM, STA_QUARTIER, QUA_ID, QUA_LIB
+            FROM STATION, QUARTIER
+            WHERE STA_QUARTIER = QUA_ID
+            ORDER BY STA_CODE ASC";
+    $sReqExe = mysql_query($sReq);
+
+    while ($uneLigne = mysql_fetch_assoc($sReqExe) )
     {
-        $lesStations = array() ;
-        //$oSql= connecter() ;
-
-        $sReq = " SELECT STA_CODE, STA_NOM, STA_QUARTIER, QUA_ID, QUA_LIB
-                FROM STATION, QUARTIER
-                WHERE STA_QUARTIER = QUA_ID
-                ORDER BY STA_CODE ASC";
-        $sReqExe = mysql_query($sReq);
-
-        while ($uneLigne = mysql_fetch_assoc($sReqExe) ){
-            $lesStations[] =  $uneLigne ;
-        }
-
-        return $lesStations ;
+        $lesStations[] =  $uneLigne ;
     }
 
-    function getAllInfo($pInfo)
-    {
-        $lesInfos = array() ;
+    return $lesStations ;
+}
+        //Permet d'obtenir toutes les demandes d'interventions pour une station
+function getAllInfo($pInfo)
+{
+    $lesInfos = array() ;
        
-        $i=1;
-        $sReq = " SELECT VEL_NUM, VEL_ETAT, DEMI_MOTIF, DEMI_NUM, ETA_LIBELLE
-                FROM VELO, DEMANDEINTER, ETAT
-                WHERE VEL_NUM = DEMI_VELO
-                AND VEL_ETAT = ETA_CODE
-                AND DEMI_STATION='". $pInfo ."'
-                ORDER BY DEMI_NUM ASC";
-        $sReqExe = mysql_query($sReq);
+    $i=1;
+    $sReq = " SELECT VEL_NUM, VEL_ETAT, DEMI_MOTIF, DEMI_NUM, ETA_LIBELLE
+        FROM VELO, DEMANDEINTER, ETAT
+        WHERE VEL_NUM = DEMI_VELO
+        AND VEL_ETAT = ETA_CODE
+        AND DEMI_STATION='". $pInfo ."'
+        ORDER BY DEMI_NUM ASC";
+    $sReqExe = mysql_query($sReq);
 
-        while ($uneLigne = mysql_fetch_assoc($sReqExe) ){
-            $lesInfos[$i] =  $uneLigne ;
-            $i=$i+1;
-        }
-
-        return $lesInfos ;
-    } 
-
-    function getVeloInfo($pInfo)
-    {
-        $lesInfos = array() ;
-       
-        $i=1;
-        $sReq = " SELECT *
-                FROM VELO
-                WHERE VEL_NUM = '".$pInfo."'";
-        $sReqExe = mysql_query($sReq);
-
-        while ($uneLigne = mysql_fetch_assoc($sReqExe) ){
-            $lesInfos[$i] =  $uneLigne ;
-            $i=$i+1;
-        }
-
-        return $lesInfos ;
-    } 
-
-    function getAllVelo()
-    {
-        $lesInfos = array() ;
-        
-        $i=1;
-        $sReq = " SELECT VEL_NUM
-                FROM VELO
-                ORDER BY VEL_NUM ASC";
-        $sReqExe = mysql_query($sReq);
-
-        while ($uneLigne = mysql_fetch_assoc($sReqExe) ){
-            $lesInfos[$i] =  $uneLigne ;
-            $i=$i+1;
-        }
-
-        return $lesInfos ;
+    while ($uneLigne = mysql_fetch_assoc($sReqExe) ){
+        $lesInfos[$i] =  $uneLigne ;
+        $i=$i+1;
     }
-        function getAllInfoE($pInfo)
+
+    return $lesInfos ;
+} 
+        //Permet d'afficher les informations d'un velo
+function getVeloInfo($pInfo)
+{
+    $lesInfos = array() ;
+       
+    $i=1;
+    $sReq = " SELECT *
+            FROM VELO
+            WHERE VEL_NUM = '".$pInfo."'";
+    $sReqExe = mysql_query($sReq);
+
+    while ($uneLigne = mysql_fetch_assoc($sReqExe) )
     {
-        $lesInfosE = array() ;
+        $lesInfos[$i] =  $uneLigne ;
+        $i=$i+1;
+    }
+
+    return $lesInfos ;
+} 
+        //Permet d'afficher tous les velos
+function getAllVelo()
+{
+    $lesInfos = array() ;
+      
+    $i=1;
+    $sReq = " SELECT VEL_NUM
+            FROM VELO
+            ORDER BY VEL_NUM ASC";
+    $sReqExe = mysql_query($sReq);
+
+    while ($uneLigne = mysql_fetch_assoc($sReqExe) )
+    {
+        $lesInfos[$i] =  $uneLigne ;
+        $i=$i+1;
+    }
+
+    return $lesInfos ;
+}
+        //Affiche les velos ayant des demandes d'intervention
+function getAllInfoE($pInfo)
+{
+    $lesInfosE = array() ;
    
-        $i=1;
-        $sReq = " SELECT VEL_NUM, ETA_LIBELLE
-                FROM VELO, ETAT
-                WHERE VEL_NUM NOT
-                IN (
-
+    $i=1;
+    $sReq = " SELECT VEL_NUM, ETA_LIBELLE
+            FROM VELO, ETAT
+            WHERE VEL_NUM NOT
+            IN (
                 SELECT DEMI_VELO
                 FROM DEMANDEINTER
                 )
-                AND VEL_STATION='". $pInfo ."'
-                AND VEL_ETAT = ETA_CODE";
-        $sReqExe = mysql_query($sReq);
+            AND VEL_STATION='". $pInfo ."'
+            AND VEL_ETAT = ETA_CODE";
+    $sReqExe = mysql_query($sReq);
 
-        while ($uneLigne = mysql_fetch_assoc($sReqExe) ){
-            $lesInfosE[$i] =  $uneLigne ;
-            $i=$i+1;
-        }
-
-        return $lesInfosE ;
+    while ($uneLigne = mysql_fetch_assoc($sReqExe) ){
+        $lesInfosE[$i] =  $uneLigne ;
+        $i=$i+1;
     }
+    return $lesInfosE ;
+}
+        //Permet de lister les etats
+function getEtats()
+{
+    $lesEtats = array() ;
 
-    function getEtats()
+    $sReq = " SELECT ETA_CODE, ETA_LIBELLE
+            FROM ETAT";
+    $sReqExe = mysql_query($sReq);
+
+    while ($uneLigne = mysql_fetch_assoc($sReqExe) )
     {
-        $lesEtats = array() ;
-       // $oSql= connecter() ;
-
-        $sReq = " SELECT ETA_CODE, ETA_LIBELLE
-                FROM ETAT";
-        $sReqExe = mysql_query($sReq);
-
-        while ($uneLigne = mysql_fetch_assoc($sReqExe) ){
-            $lesEtats[] =  $uneLigne ;
-        }
-
-        return $lesEtats ;
+        $lesEtats[] =  $uneLigne ;
     }
 
-     function ajoutCommande(){
-
-     if (isset($_POST['go_ajoutcde']))
+    return $lesEtats ;
+}
+        //Permet d'ajouter une commande
+function ajoutCommande()
+{
+    if (isset($_POST['go_ajoutcde']))
         {    
-    $dDateCde = date("Y-m-d");
-    //réception des valeurs saisies
-    $sCodePdt   = mysql_real_escape_string($_POST["lst_produit"]);
-    $sQtePdt    = mysql_real_escape_string($_POST["txt_qte"]);
+        $dDateCde = date("Y-m-d");
+        //réception des valeurs saisies
+        $sCodePdt   = mysql_real_escape_string($_POST["lst_produit"]);
+        $sQtePdt    = mysql_real_escape_string($_POST["txt_qte"]);
 
-    //génération d'un numéro d'intervention
-    $sReq = "SELECT MAX(COM_CODE) FROM COMMANDE" ;
-    $iNumCde = mysql_fetch_row(mysql_query($sReq));
-    //$iNumCde  = $oSql->getNombre($sReq) ;
-    $iNumCde = $iNumCde[0]  +  1 ;
+        //génération d'un numéro d'intervention
+        $sReq = "SELECT MAX(COM_CODE) FROM COMMANDE" ;
+        $iNumCde = mysql_fetch_row(mysql_query($sReq));
+        //$iNumCde  = $oSql->getNombre($sReq) ;
+        $iNumCde = $iNumCde[0]  +  1 ;
 
-    //insertion des données dans la base
-    $sReq = "INSERT INTO COMMANDE(COM_CODE, COM_DATE, COM_QTE, COM_VALIDE, COM_PRODUIT)
-             VALUES (".$iNumCde.",'".$dDateCde."',".$sQtePdt .",'Non', '" .$sCodePdt."')";
-    $oSql= mysql_query($sReq);
-    ?>
-    <script language="Javascript">
-        alert("Commande enregistrée");
-        window.location.replace("index.php")
-    </script>
-    <?php
+        //insertion des données dans la base
+        $sReq = "INSERT INTO COMMANDE(COM_CODE, COM_DATE, COM_QTE, COM_VALIDE, COM_PRODUIT)
+                 VALUES (".$iNumCde.",'".$dDateCde."',".$sQtePdt .",'Non', '" .$sCodePdt."')";
+        $oSql= mysql_query($sReq);
+?>
+        <script language="Javascript">
+            alert("Commande enregistrée");
+            window.location.replace("index.php")
+        </script>
+<?php
         }
-    }
-
-    function paginationCommande(){
-        $per_page = 5;
+}
+        //Retourne les nombres de pages à afficher
+function paginationCommande()
+{
+    $per_page = 5;
 
 //getting number of rows and calculating no of pages
-$sql = "SELECT * FROM COMMANDE";
-$rsd = mysql_query($sql);
-$count = mysql_num_rows($rsd);
-$pages = ceil($count/$per_page);
-return($pages);
-    }
-        function paginationIntervention(){
-        $per_page = 5;
+    $sql = "SELECT * FROM COMMANDE";
+    $rsd = mysql_query($sql);
+    $count = mysql_num_rows($rsd);
+    $pages = ceil($count/$per_page);
+    return($pages);
+}
+        //Retourne les nombres de pages à afficher
+function paginationIntervention()
+{
+    $per_page = 5;
 
-//getting number of rows and calculating no of pages
-$sql = "   SELECT *
-                FROM BONINTERV";
-$rsd = mysql_query($sql);
-$count = mysql_num_rows($rsd);
-$pages = ceil($count/$per_page);
-return($pages);
-    }
+    //getting number of rows and calculating no of pages
+    $sql = "   SELECT * FROM BONINTERV";
+    $rsd = mysql_query($sql);
+    $count = mysql_num_rows($rsd);
+    $pages = ceil($count/$per_page);
+    return($pages);
+}
+        //Retourne les nombres de pages à afficher
+function paginationDemande()
+{
+    $per_page = 5;
 
-   function paginationDemande(){
-$per_page = 5;
+    //getting number of rows and calculating no of pages
+    $sql = "   SELECT * FROM DEMANDEINTER WHERE DEMI_VALIDE = 1";
+    $rsd = mysql_query($sql);
+    $count = mysql_num_rows($rsd);
+    $pages = ceil($count/$per_page);
+    return($pages);
+}
+        //Retourne les nombres de pages à afficher
+function paginationDemandeAdmin()
+{
+    $per_page = 5;
 
-//getting number of rows and calculating no of pages
-$sql = "   SELECT *
-                FROM DEMANDEINTER WHERE DEMI_VALIDE = 1";
-$rsd = mysql_query($sql);
-$count = mysql_num_rows($rsd);
-$pages = ceil($count/$per_page);
-return($pages);
-    }
-
-function paginationDemandeAdmin(){
-$per_page = 5;
-
-//getting number of rows and calculating no of pages
-$sql = "   SELECT *
-                FROM DEMANDEINTER ";
-$rsd = mysql_query($sql);
-$count = mysql_num_rows($rsd);
-$pages = ceil($count/$per_page);
-return($pages);
-    }
-
-function pagination_ProduitListe($page){
-$per_page = 5;
-$start = ($page-1)*$per_page;
-$sql = "select * from COMMANDE, PRODUIT WHERE COM_PRODUIT = PDT_CODE ORDER BY COM_CODE ASC limit $start,$per_page";//order by demi_num
-$rsd = mysql_query($sql);
-return($rsd);
+    //getting number of rows and calculating no of pages
+    $sql = "   SELECT *
+                    FROM DEMANDEINTER ";
+    $rsd = mysql_query($sql);
+    $count = mysql_num_rows($rsd);
+    $pages = ceil($count/$per_page);
+    return($pages);
+}
+        //Retourne resultats à afficher suivant la page selectionnée
+function pagination_ProduitListe($page)
+{
+    $per_page = 5;
+    $start = ($page-1)*$per_page;
+    $sql = "select * from COMMANDE, PRODUIT WHERE COM_PRODUIT = PDT_CODE ORDER BY COM_CODE ASC limit $start,$per_page";//order by demi_num
+    $rsd = mysql_query($sql);
+    return($rsd);
+}
+    //Retourne resultats à afficher suivant la page selectionnée    
+function pagination_DemandeAdminListe($page)
+{
+    $per_page = 5;
+    $start = ($page-1)*$per_page;
+    $sql = "select * from DEMANDEINTER, STATION, TECHNICIEN WHERE DEMI_STATION = STA_CODE AND DEMI_TECHNICIEN = TEC_MATRICULE ORDER BY DEMI_NUM ASC limit $start,$per_page";//order by demi_num
+    $rsd = mysql_query($sql);
+    return($rsd);
 }
 
-function pagination_DemandeAdminListe($page){
-$per_page = 5;
-$start = ($page-1)*$per_page;
-$sql = "select * from DEMANDEINTER, STATION, TECHNICIEN WHERE DEMI_STATION = STA_CODE AND DEMI_TECHNICIEN = TEC_MATRICULE ORDER BY DEMI_NUM ASC limit $start,$per_page";//order by demi_num
-$rsd = mysql_query($sql);
-return($rsd);
+    //Retourne resultats à afficher suivant la page selectionnée
+function pagination_InterventionListe($page)
+{
+    $per_page = 5;
+    $start = ($page-1)*$per_page;
+    $sql = "SELECT BI_NUM, BI_VELO, BI_DATDEBUT, BI_DATFIN, BI_REPARABLE, BI_DEMANDE, BI_SURPLACE, BI_DUREE, BI_CPTERENDU, TEC_NOM FROM BONINTERV, TECHNICIEN WHERE BI_TECHNICIEN = TEC_MATRICULE  limit $start,$per_page";//order by demi_num
+    $rsd = mysql_query($sql);
+    return($rsd);
 }
-
-
-function pagination_InterventionListe($page){
-$per_page = 5;
-$start = ($page-1)*$per_page;
-$sql = "SELECT BI_NUM, BI_VELO, BI_DATDEBUT, BI_DATFIN, BI_REPARABLE, BI_DEMANDE, BI_SURPLACE, BI_DUREE, BI_CPTERENDU, TEC_NOM FROM BONINTERV, TECHNICIEN WHERE BI_TECHNICIEN = TEC_MATRICULE  limit $start,$per_page";//order by demi_num
-$rsd = mysql_query($sql);
-return($rsd);
+    //Retourne resultats à afficher suivant la page selectionnée
+function pagination_DemandeListe($page)
+{
+    $per_page = 5;
+    $start = ($page-1)*$per_page;
+    $sql = "select * from DEMANDEINTER, STATION where DEMI_VALIDE = 1 AND DEMI_STATION = STA_CODE ORDER BY DEMI_NUM ASC limit $start,$per_page";//order by demi_num
+    $rsd = mysql_query($sql);
+    return($rsd);
 }
-
-function pagination_DemandeListe($page){
-$per_page = 5;
-$start = ($page-1)*$per_page;
-$sql = "select * from DEMANDEINTER, STATION where DEMI_VALIDE = 1 AND DEMI_STATION = STA_CODE ORDER BY DEMI_NUM ASC limit $start,$per_page";//order by demi_num
-$rsd = mysql_query($sql);
-return($rsd);
+    //Retourne resultats à afficher suivant la page selectionnée
+function InterventionListe($demande)
+{
+    $per_page = 5;
+    $start = ($page-1)*$per_page;
+    $sql = "SELECT BI_NUM, BI_VELO, BI_DATDEBUT, BI_DATFIN, BI_REPARABLE, BI_DEMANDE, BI_SURPLACE, BI_DUREE, BI_CPTERENDU, BI_TECHNICIEN FROM BONINTERV  limit $start,$per_page";//order by demi_num
+    $rsd = mysql_query($sql);
+    return($rsd);
 }
-
-function InterventionListe($demande){
-$per_page = 5;
-$start = ($page-1)*$per_page;
-$sql = "SELECT BI_NUM, BI_VELO, BI_DATDEBUT, BI_DATFIN, BI_REPARABLE, BI_DEMANDE, BI_SURPLACE, BI_DUREE, BI_CPTERENDU, BI_TECHNICIEN FROM BONINTERV  limit $start,$per_page";//order by demi_num
-$rsd = mysql_query($sql);
-return($rsd);
+    //Retourne les informations d'une demande
+function infosDemande($id)
+{
+    $requete = "SELECT * FROM DEMANDEINTER where DEMI_NUM= '".$id."'";
+    $enreg = mysql_query($requete);
+    return(mysql_fetch_assoc($enreg));
 }
-
-function infosDemande($id){
-$requete = "SELECT * FROM DEMANDEINTER where DEMI_NUM= '".$id."'";
-$enreg = mysql_query($requete);
-return(mysql_fetch_assoc($enreg));
-}
-
-function modifDemanInter(){
+    //Permet de modifier une demande d'intervention
+function modifDemanInter()
+{
     if (isset($_POST['go_modif']))
     {
         
         $id = mysql_real_escape_string($_POST["idVelModif"]);
         $etat =  mysql_real_escape_string($_POST["lst_Modif"]);
         $motif =  mysql_real_escape_string($_POST["motif_Intervention"]);
-       // $etat = mysql_real_escape_string($_POST["rad_Intervention"]);
         $velo = mysql_real_escape_string($_POST["idVelCode"]);
         if (empty($_POST['rad_Intervention'])){
         $sRadIntervention= '1';
@@ -650,28 +639,25 @@ function modifDemanInter(){
         $sRadIntervention='0';
         }
 
-$sReq = mysql_query("UPDATE DEMANDEINTER SET DEMI_MOTIF = '".$motif."', DEMI_TRAITE = '".$sRadIntervention."' WHERE DEMI_NUM = '".$id."'");
-$sReq2 = mysql_query("UPDATE VELO SET VEL_ETAT ='".$etat."' WHERE VEL_NUM = '".$velo."'");
+        $sReq = mysql_query("UPDATE DEMANDEINTER SET DEMI_MOTIF = '".$motif."', DEMI_TRAITE = '".$sRadIntervention."' WHERE DEMI_NUM = '".$id."'");
+        $sReq2 = mysql_query("UPDATE VELO SET VEL_ETAT ='".$etat."' WHERE VEL_NUM = '".$velo."'");
 ?>
     <script language="Javascript">
         alert("Enregistrée");
         window.location.replace("index.php")
     </script>
-    <?php
+<?php
     }
-      
-
 }
 
-function ajoutDemanInter(){
+function ajoutDemanInter()
+{
     if (isset($_POST['go_modif']))
     {
         $station = mysql_real_escape_string($_POST["idStation"]);
         $attache = mysql_real_escape_string($_POST["Attache"]);
-        //$id = mysql_real_escape_string($_POST["idVelModif"]);
         $etat =  mysql_real_escape_string($_POST["lst_Modif"]);
         $motif =  mysql_real_escape_string($_POST["motif_Intervention"]);
-       // $etat = mysql_real_escape_string($_POST["rad_Intervention"]);
         $velo = mysql_real_escape_string($_POST["idVelCode"]);
         if (empty($_POST['rad_Intervention'])){
         $sRadIntervention= '1';
@@ -679,104 +665,15 @@ function ajoutDemanInter(){
      else{
         $sRadIntervention='0';
         }
-$nb= mysql_fetch_row(mysql_query("SELECT max(DEMI_NUM) from DEMANDEINTER"));
-$max = $nb[0] + 1;
-$sReq = mysql_query("INSERT INTO DEMANDEINTER (DEMI_NUM,DEMI_VELO,DEMI_DATE,DEMI_TECHNICIEN,DEMI_MOTIF, DEMI_TRAITE, DEMI_STATION, DEMI_ATTACHE, DEMI_VALIDE) VALUES('".$max."', '".$velo."','".date("Y-m-d")."' ,'".$_SESSION['id']."','".$motif."', '".$sRadIntervention."','".$station."','".$attache."',1)") or mysql_error();
-//var_dump($sReq);
-$sReq2 = mysql_query("UPDATE VELO SET VEL_ETAT ='".$etat."' WHERE VEL_NUM = '".$velo."'");
-    ?>
+            $nb= mysql_fetch_row(mysql_query("SELECT max(DEMI_NUM) from DEMANDEINTER"));
+            $max = $nb[0] + 1;
+            $sReq = mysql_query("INSERT INTO DEMANDEINTER (DEMI_NUM,DEMI_VELO,DEMI_DATE,DEMI_TECHNICIEN,DEMI_MOTIF, DEMI_TRAITE, DEMI_STATION, DEMI_ATTACHE, DEMI_VALIDE) VALUES('".$max."', '".$velo."','".date("Y-m-d")."' ,'".$_SESSION['id']."','".$motif."', '".$sRadIntervention."','".$station."','".$attache."',1)") or mysql_error();
+            $sReq2 = mysql_query("UPDATE VELO SET VEL_ETAT ='".$etat."' WHERE VEL_NUM = '".$velo."'");
+?>
     <script language="Javascript">
         alert("Enregistrée");
         window.location.replace("index.php")
     </script>
-    <?php
-    }
-      
-
-}
-
-/*function modifcommande()
-    {
-
-     if (isset($_POST['go_modifcde']))
-     {
-
-       $code = mysql_real_escape_string($_POST['code']);
-       $qte = mysql_real_escape_string($_POST['txt_qte']);
-        if (empty($_POST['valide']))
-        {
-          $valide = 0;
-        }
-        else
-        {
-          $valide = 1;
-        }
-        $query = mysql_query("UPDATE COMMANDE SET COM_QTE='".$qte."', COM_VALIDE='".$valide."' Where COM_CODE='".$code."'") or die (mysql_error());
-
-         ?>
-              <script language="Javascript">
-                alert("Modification enregistré");
-                window.location.replace("index.php")
-              </script>
-          <?php
-
-      }
-    }*/
-/*function modifdem(){
-if (isset($_POST['go_ajout']))
-     {
-        $id = mysql_real_escape_string($_POST["idVelModif"]);
-        $motif =  mysql_real_escape_string($_POST["lst_Modif"]);
-        $etat = mysql_real_escape_string($_POST["rad_Intervention"]);
-        $velo = mysql_real_escape_string($_POST["idVelCode"]);
-        if (empty($_POST['rad_Intervention'])){
-        $sRadIntervention= '1';
-    }
-    else
-        $sRadIntervention='0';
-}
-
-$sReq = mysql_query("UPDATE DEMANDEINTER(DEMI_MOTIF) SET DEMI_MOTIF = '".$motif."', DEMI_TRAITE = '".$sRadIntervention."' WHERE DEMI_NUM = '".$id."'");
-$sReq2 = mysql_query("UPDATE VELO(VEL_ETAT) SET VEL_ETAT ='".$etat."' WHERE VEL_NUM = '".$velo."'");
- 
-      getEtats();
-        $sNumVelo = mysql_real_escape_string($_POST['idVelModif']);
-        $id = $_SESSION['id'];
-
-    $sMotif = mysql_real_escape_string($_POST["motif_Intervention"]);
-    $sEtatVelo= mysql_real_escape_string($_POST["lst_Modif"]);
-    if (empty($_POST['rad_Intervention'])){
-        $sRadIntervention= '1';
-    }
-    else
-        $sRadIntervention='0';
-   // $dDate=date("y-m-d");
-
-   // $count = mysql_fetch_row(mysql_query("SELECT MAX(DEMI_NUM) FROM DEMANDEINTER "));
-                $test = $count[0] + 1;
-
-    $sReq = "UPDATE VELO
-            SET VEL_ETAT='". $sEtatVelo ."'
-            WHERE VEL_NUM='". $sNumVelo ."'";
-    $sReqExe=mysql_query($sReq);
-    if ($RadIntervention='1')
-    {
-        $sReq = "INSERT INTO DEMANDEINTER (DEMI_NUM, DEMI_VELO, DEMI_DATE, DEMI_TECHNICIEN, DEMI_MOTIF, DEMI_TRAITE)
-                VALUES ('". $test ."',
-                        '". $sNumVelo ."',
-                        '". $dDate ."',
-                        '". $id ."',
-                        '". $sMotif ."',
-                        '0')";
-        $reqExe=mysql_query($sReq);
-    }
-?>
-    <script language="Javascript">alert("les enreistrements ont ete effectué avec succès");
-       window.location.replace("index.php")
-    </script>
-
 <?php
-    
-
-   
-}*/
+    }
+}
