@@ -1,9 +1,7 @@
 <?php
 if(isset($_SESSION['id'])) {
-//	
-	    createint();
-	 //Bures Maxence
-	?>
+    createint();
+?>
 
 	<div data-role="page">
 		<a href="?page=accueil"><img src="css/Home.png" border="0" align="center" width="42" height="42"></img></a>
@@ -12,30 +10,29 @@ if(isset($_SESSION['id'])) {
 				<th colspan="4">Ajout d'une intervention</th>
 				<tr>
 					<td>
-					<label for="Velo">Velo : </label>
+						<label for="Velo">Velo : </label>
 					</td>
 					<td>
-					<select id="velo" required="" name="velo">
-				<?php
-				$oVelo = getAllVelo() ;
-				foreach ($oVelo as $Velo)
-				{
-	?>
-					<option value="<?php echo $Velo['VEL_NUM']; ?>"><?php echo $Velo["VEL_NUM"] ?> </option>
-	<?php
-				}
-	?>
-					</select>
+						<select id="velo" required="" name="velo">
+<?php
+						$oVelo = getAllVelo() ;
+						foreach ($oVelo as $Velo)
+						{
+?>
+						<option value="<?php echo $Velo['VEL_NUM']; ?>"><?php echo $Velo["VEL_NUM"] ?> </option>
+<?php
+						}
+?>
+						</select>
 					</td>
 				</tr>
-				</br>
 				<tr>
-				<td>
-					<label for="ddebut">Date Debut : </label>
-				</td>
-				<td>
-					<input type="date" id="ddebut" name="ddebut"/>
-				</td>
+					<td>
+						<label for="ddebut">Date Debut : </label>
+					</td>
+					<td>
+						<input type="date" id="ddebut" name="ddebut"/>
+					</td>
 				</tr>
 				<tr>
 					<td>
@@ -45,7 +42,6 @@ if(isset($_SESSION['id'])) {
 						<input type="date" id="dfin"  name="dfin"/>
 					</td>
 				</tr>
-				</br>
 				<tr>
 					<td>
 						<label for="compterendu">Compte Rendu : </label>
@@ -54,7 +50,6 @@ if(isset($_SESSION['id'])) {
 						<textarea rows="4" cols="50"id="compterendu" name="compterendu"></textarea>
 					</td>
 				</tr>
-				</br>
 				<tr>
 					<td>
 						<label for="reparable">Reparable </label>
@@ -63,7 +58,6 @@ if(isset($_SESSION['id'])) {
 						<input type="checkbox" id="reparable" name="reparable"/>
 					</td>
 				</tr>
-					</br>
 				<tr>
 					<td>
 						<label for="demande">Demande </label>
@@ -72,7 +66,6 @@ if(isset($_SESSION['id'])) {
 						<input type="checkbox" id="demande" name="demande"/>
 					</td>
 				</tr>
-					</br>
 				<tr>
 					<td>
 						<label for="surplace">Sur Place </label>
@@ -81,7 +74,6 @@ if(isset($_SESSION['id'])) {
 						<input type="checkbox" id="surplace" name="surplace"/>
 					</td>
 				</tr>
-					</br>
 				<tr>
 					<td>
 						<label for="duree">Dur&eacute;e </label>
@@ -91,15 +83,15 @@ if(isset($_SESSION['id'])) {
 					</td>
 				</tr>
 			</table>
-			</br>
-						<input type="submit" name="go_createinter" id="go_createinter" value="Creer"/>
+			<input type="submit" name="go_createinter" id="go_createinter" value="Creer"/>
 		</form>
 		
 		</div>
 
 <?php
 }
-else{
-header('Location:/Vlyon/Pages/connexion.php');
+else
+{
+	header('Location:/Vlyon/Pages/connexion.php');
 }
 ?>

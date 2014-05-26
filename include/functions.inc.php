@@ -631,7 +631,7 @@ return($rsd);
 function infosDemande($id){
 $requete = "SELECT * FROM DEMANDEINTER where DEMI_NUM= '".$id."'";
 $enreg = mysql_query($requete);
-return($enreg);
+return(mysql_fetch_assoc($enreg));
 }
 
 function modifDemanInter(){
